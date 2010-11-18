@@ -13,8 +13,13 @@ namespace KataTennis
 
         public void Score(Player player)
         {
+            this.IsOver = true;
         }
         
-        public bool IsOver { get; set; }
+        public bool IsOver 
+        { 
+            get; 
+            private set; 
+        }
     }
 }

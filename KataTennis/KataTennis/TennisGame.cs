@@ -8,9 +8,9 @@ namespace KataTennis
 {
     public class TennisGame
     {
-        public int[] scores = new int[2];
+        public Score[] scores = new Score[2];
 
-        public TennisGame(int scorePlayer1, int scorePlayer2)
+        public TennisGame(Score scorePlayer1, Score scorePlayer2)
         {
             this.scores[0] = scorePlayer1;
             this.scores[1] = scorePlayer2;
@@ -25,7 +25,7 @@ namespace KataTennis
         {
             get
             {
-                return this.scores[0] > 3 || this.scores[1] > 3;
+                return (int)this.scores[0] > 3 || (int)this.scores[1] > 3;
             }
         }
     }

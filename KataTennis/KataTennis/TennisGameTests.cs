@@ -14,5 +14,13 @@ namespace KataTennis
             TennisGame game = new TennisGame("0:0");
             Assert.False(game.IsOver);
         }
+
+        [Fact]
+        public void When_Forty_Love_And_PlayerOne_Scores_Then_Game_Is_Over()
+        {
+            TennisGame game = new TennisGame("40:0");
+            game.Score(Player.One);
+            Assert.True(game.IsOver);
+        }
     }
 }

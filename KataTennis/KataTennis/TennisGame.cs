@@ -11,6 +11,10 @@ namespace KataTennis
         {
         }
 
+        public void Score(Player player)
+        {
+        }
+        
         public bool IsOver { get; set; }
     }
 }

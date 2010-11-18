@@ -30,5 +30,13 @@ namespace KataTennis
             game.Score(Player.Two);
             Assert.False(game.IsOver);
         }
+
+        [Fact]
+        public void When_Deuce_And_PlayerOne_Scores_Then_Game_Is_Not_Over()
+        {
+            TennisGame game = new TennisGame(Score.Forty, Score.Forty);
+            game.Score(Player.One);
+            Assert.False(game.IsOver);
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace KataTennis
         {
             get
             {
-                return (int)this.scores[0] > 3 || (int)this.scores[1] > 3;
+                return ((int)this.scores[0] > 3 || (int)this.scores[1] > 3) && Math.Abs((int)this.scores[0] - (int)this.scores[1]) > 1;
             }
         }
     }

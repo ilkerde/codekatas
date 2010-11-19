@@ -27,7 +27,7 @@ namespace KataTennis
 
         public bool IsWinner(Player player)
         {
-            throw new NotImplementedException();
+            return false;
         }
 
         private bool IsAnyScoreOverThreePoints()

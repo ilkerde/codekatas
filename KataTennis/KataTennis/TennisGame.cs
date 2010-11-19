@@ -20,19 +20,19 @@ namespace KataTennis
 
         private void UpdateScore(Player player)
         {
-            int winPlayer = (int)player;
-            int losePlayer = (int)this.GetOpponent(player);
+            int scorer = (int)player;
+            int opponent = (int)this.GetOpponent(player);
 
             if (this.IsWinner(player))
             {
-                this.scores[winPlayer] = Score.Game;
-                this.scores[losePlayer] = Score.Love;
+                this.scores[scorer] = Score.Game;
+                this.scores[opponent] = Score.Love;
             }
 
-            if (!this.IsOver && (this.scores[winPlayer] > Score.Forty && this.scores[losePlayer] > Score.Forty))
+            if (!this.IsOver && IsInDeuceMode())
             {
-                this.scores[winPlayer] = Score.Forty;
-                this.scores[losePlayer] = Score.Forty;
+                this.scores[scorer] = Score.Forty;
+                this.scores[opponent] = Score.Forty;
             }
         }
 
@@ -65,6 +65,11 @@ namespace KataTennis
         private Player GetOpponent(Player player)
         {
             return (Player)(1 - (int)player);
+        }
+
+        private bool IsInDeuceMode()
+        {
+            return this.scores[0] > Score.Forty && this.scores[1] > Score.Forty;
         }
 
         private bool IsAnyScoreOverThreePoints()

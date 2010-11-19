@@ -8,6 +8,7 @@ namespace KataTennis
         Fifteen,
         Thirty,
         Forty,
-        Advantage
+        Advantage,
+        Game
     }
 }

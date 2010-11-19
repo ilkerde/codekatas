@@ -13,5 +13,14 @@ namespace KataTennis
             Assert.False(game.IsWinner(Player.One));
             Assert.False(game.IsWinner(Player.Two));
         }
+
+        [Fact]
+        public void When_Forty_Love_And_PlayerOne_Scores_Then_PlayerOne_Wins()
+        {
+            TennisGame game = new TennisGame(Score.Forty, Score.Love);
+            game.Score(Player.One);
+
+            Assert.True(game.IsWinner(Player.One));
+        }
     }
 }

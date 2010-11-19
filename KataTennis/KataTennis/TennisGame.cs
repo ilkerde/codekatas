@@ -15,9 +15,10 @@ namespace KataTennis
         public void GrantScoreTo(Player player)
         {
             this.scores[(int)player]++;
+            this.UpdateScore(player);
         }
 
-        public Score GetScoreOf(Player player)
+        private void UpdateScore(Player player)
         {
             int winPlayer = (int)player;
             int losePlayer = (int)this.GetOpponent(player);
@@ -27,13 +28,10 @@ namespace KataTennis
                 this.scores[winPlayer] = Score.Game;
                 this.scores[losePlayer] = Score.Love;
             }
+        }
 
-            if (this.IsWinner(this.GetOpponent(player)))
-            {
-                this.scores[winPlayer] = Score.Love;
-                this.scores[losePlayer] = Score.Game;
-            }
-
+        public Score GetScoreOf(Player player)
+        {
             return this.scores[(int)player];
         }
 

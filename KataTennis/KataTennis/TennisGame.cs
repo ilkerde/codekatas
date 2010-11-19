@@ -19,6 +19,21 @@ namespace KataTennis
 
         public Score GetScoreOf(Player player)
         {
+            int testForWinPlayer = (int)player;
+            int opponentPlayer = 1 - testForWinPlayer;
+
+            if (this.IsWinner(player))
+            {
+                this.scores[testForWinPlayer] = Score.Game;
+                this.scores[opponentPlayer] = Score.Love;
+            }
+
+            if (this.IsWinner((Player)opponentPlayer))
+            {
+                this.scores[testForWinPlayer] = Score.Love;
+                this.scores[opponentPlayer] = Score.Game;
+            }
+
             return this.scores[(int)player];
         }
 

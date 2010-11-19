@@ -19,7 +19,7 @@ namespace KataTennis
 
         public Score GetScoreOfPlayer(Player player)
         {
-            throw new NotImplementedException();
+            return KataTennis.Score.Love;
         }
 
         public bool IsOver 

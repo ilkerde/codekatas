@@ -27,7 +27,7 @@ namespace KataTennis
 
         public bool IsWinner(Player player)
         {
-            return false;
+            return this.scores[0] > this.scores[1];
         }
 
         private bool IsAnyScoreOverThreePoints()

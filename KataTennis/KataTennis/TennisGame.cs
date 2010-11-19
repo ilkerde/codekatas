@@ -30,7 +30,7 @@ namespace KataTennis
             int testForWinPlayer = (int)player;
             int opponentPlayer = 1 - testForWinPlayer;
 
-            return this.scores[testForWinPlayer] > this.scores[opponentPlayer];
+            return this.IsOver && this.scores[testForWinPlayer] > this.scores[opponentPlayer];
         }
 
         private bool IsAnyScoreOverThreePoints()

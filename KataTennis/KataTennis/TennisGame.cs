@@ -27,10 +27,15 @@ namespace KataTennis
 
         public bool IsWinner(Player player)
         {
+            return this.IsOver && this.IsPlayerLeading(player);
+        }
+
+        private bool IsPlayerLeading(Player player)
+        {
             int testForWinPlayer = (int)player;
             int opponentPlayer = 1 - testForWinPlayer;
 
-            return this.IsOver && this.scores[testForWinPlayer] > this.scores[opponentPlayer];
+            return this.scores[testForWinPlayer] > this.scores[opponentPlayer];
         }
 
         private bool IsAnyScoreOverThreePoints()

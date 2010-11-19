@@ -33,5 +33,14 @@ namespace KataTennis
             Assert.Equal(Score.Love, game.GetScoreOf(Player.One));
             Assert.Equal(Score.Game, game.GetScoreOf(Player.Two));
         }
+
+        [Fact]
+        public void When_Forty_Forty_And_PlayerOne_Scores_Then_Score_Is_Advantage_Forty()
+        {
+            TennisGame game = new TennisGame(Score.Forty, Score.Forty);
+            game.GrantScoreTo(Player.One);
+            Assert.Equal(Score.Advantage, game.GetScoreOf(Player.One));
+            Assert.Equal(Score.Forty, game.GetScoreOf(Player.Two));
+        }
     }
 }

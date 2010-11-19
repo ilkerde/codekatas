@@ -28,6 +28,12 @@ namespace KataTennis
                 this.scores[winPlayer] = Score.Game;
                 this.scores[losePlayer] = Score.Love;
             }
+
+            if (!this.IsOver && (this.scores[winPlayer] > Score.Forty && this.scores[losePlayer] > Score.Forty))
+            {
+                this.scores[winPlayer] = Score.Forty;
+                this.scores[losePlayer] = Score.Forty;
+            }
         }
 
         public Score GetScoreOf(Player player)

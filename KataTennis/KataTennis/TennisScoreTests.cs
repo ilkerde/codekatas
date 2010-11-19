@@ -39,7 +39,19 @@ namespace KataTennis
         {
             TennisGame game = new TennisGame(Score.Forty, Score.Forty);
             game.GrantScoreTo(Player.One);
+
             Assert.Equal(Score.Advantage, game.GetScoreOf(Player.One));
+            Assert.Equal(Score.Forty, game.GetScoreOf(Player.Two));
+        }
+
+        [Fact]
+        public void When_Forty_Forty_And_PlayerOne_Scores_And_PlayerTwo_Scores_Then_Score_Is_Forty_Forty()
+        {
+            TennisGame game = new TennisGame(Score.Forty, Score.Forty);
+            game.GrantScoreTo(Player.One);
+            game.GrantScoreTo(Player.Two);
+    
+            Assert.Equal(Score.Forty, game.GetScoreOf(Player.One));
             Assert.Equal(Score.Forty, game.GetScoreOf(Player.Two));
         }
     }

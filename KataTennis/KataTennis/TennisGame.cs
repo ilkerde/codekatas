@@ -12,14 +12,14 @@ namespace KataTennis
             this.scores[1] = scorePlayer2;
         }
 
-        public void Score(Player player)
+        public void GrantScoreTo(Player player)
         {
             this.scores[(int)player]++;
         }
 
-        public Score GetScoreOfPlayer(Player player)
+        public Score GetScoreOf(Player player)
         {
-            return KataTennis.Score.Love;
+            return Score.Love;
         }
 
         public bool IsOver 
@@ -32,10 +32,10 @@ namespace KataTennis
 
         public bool IsWinner(Player player)
         {
-            return this.IsOver && this.IsPlayerLeading(player);
+            return this.IsOver && this.IsLeading(player);
         }
 
-        private bool IsPlayerLeading(Player player)
+        private bool IsLeading(Player player)
         {
             int testForWinPlayer = (int)player;
             int opponentPlayer = 1 - testForWinPlayer;

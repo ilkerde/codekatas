@@ -10,8 +10,8 @@ namespace KataTennis
         {
             TennisGame game = new TennisGame(Score.Love, Score.Love);
 
-            Assert.Equal(Score.Love, game.GetScoreOfPlayer(Player.One));
-            Assert.Equal(Score.Love, game.GetScoreOfPlayer(Player.Two));
+            Assert.Equal(Score.Love, game.GetScoreOf(Player.One));
+            Assert.Equal(Score.Love, game.GetScoreOf(Player.Two));
         }
     }
 }

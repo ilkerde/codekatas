@@ -16,7 +16,7 @@ namespace KataTennis
         public void When_Forty_Love_And_PlayerOne_Scores_Then_Game_Is_Over()
         {
             TennisGame game = new TennisGame(Score.Forty, Score.Love);
-            game.Score(Player.One);
+            game.GrantScoreTo(Player.One);
             Assert.True(game.IsOver);
         }
 
@@ -24,7 +24,7 @@ namespace KataTennis
         public void When_Forty_Love_And_PlayerTwo_Scores_Then_Game_Is_Not_Over()
         {
             TennisGame game = new TennisGame(Score.Forty, Score.Love);
-            game.Score(Player.Two);
+            game.GrantScoreTo(Player.Two);
             Assert.False(game.IsOver);
         }
 
@@ -32,7 +32,7 @@ namespace KataTennis
         public void When_Deuce_And_PlayerOne_Scores_Then_Game_Is_Not_Over()
         {
             TennisGame game = new TennisGame(Score.Forty, Score.Forty);
-            game.Score(Player.One);
+            game.GrantScoreTo(Player.One);
             Assert.False(game.IsOver);
         }
 
@@ -40,8 +40,8 @@ namespace KataTennis
         public void When_Deuce_And_PlayerOne_Scores_Twice_Then_Game_Is_Over()
         {
             TennisGame game = new TennisGame(Score.Forty, Score.Forty);
-            game.Score(Player.One);
-            game.Score(Player.One);
+            game.GrantScoreTo(Player.One);
+            game.GrantScoreTo(Player.One);
             Assert.True(game.IsOver);
         }
 
@@ -49,8 +49,8 @@ namespace KataTennis
         public void When_Deuce_And_PlayerOne_Scores_And_PlayerTwo_Scores_Then_Game_Is_Not_Over()
         {
             TennisGame game = new TennisGame(Score.Forty, Score.Forty);
-            game.Score(Player.One);
-            game.Score(Player.Two);
+            game.GrantScoreTo(Player.One);
+            game.GrantScoreTo(Player.Two);
             Assert.False(game.IsOver);
         }
     }

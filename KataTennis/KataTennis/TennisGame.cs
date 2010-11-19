@@ -19,19 +19,19 @@ namespace KataTennis
 
         public Score GetScoreOf(Player player)
         {
-            int testForWinPlayer = (int)player;
-            int opponentPlayer = 1 - testForWinPlayer;
+            int winPlayer = (int)player;
+            int losePlayer = (int)this.GetOpponent(player);
 
             if (this.IsWinner(player))
             {
-                this.scores[testForWinPlayer] = Score.Game;
-                this.scores[opponentPlayer] = Score.Love;
+                this.scores[winPlayer] = Score.Game;
+                this.scores[losePlayer] = Score.Love;
             }
 
-            if (this.IsWinner((Player)opponentPlayer))
+            if (this.IsWinner(this.GetOpponent(player)))
             {
-                this.scores[testForWinPlayer] = Score.Love;
-                this.scores[opponentPlayer] = Score.Game;
+                this.scores[winPlayer] = Score.Love;
+                this.scores[losePlayer] = Score.Game;
             }
 
             return this.scores[(int)player];
@@ -53,9 +53,14 @@ namespace KataTennis
         private bool IsLeading(Player player)
         {
             int testForWinPlayer = (int)player;
-            int opponentPlayer = 1 - testForWinPlayer;
+            int opponentPlayer = (int)this.GetOpponent(player);
 
             return this.scores[testForWinPlayer] > this.scores[opponentPlayer];
+        }
+
+        private Player GetOpponent(Player player)
+        {
+            return (Player)(1 - (int)player);
         }
 
         private bool IsAnyScoreOverThreePoints()

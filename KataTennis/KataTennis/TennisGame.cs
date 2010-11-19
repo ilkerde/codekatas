@@ -25,6 +25,11 @@ namespace KataTennis
             }
         }
 
+        public bool IsWinner(Player player)
+        {
+            throw new NotImplementedException();
+        }
+
         private bool IsAnyScoreOverThreePoints()
         {
             return ((int)this.scores[0] > 3 || (int)this.scores[1] > 3);

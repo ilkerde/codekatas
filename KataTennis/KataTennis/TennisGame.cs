@@ -16,7 +16,12 @@ namespace KataTennis
         {
             this.scores[(int)player]++;
         }
-        
+
+        public Score GetScoreOfPlayer(Player player)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool IsOver 
         {
             get

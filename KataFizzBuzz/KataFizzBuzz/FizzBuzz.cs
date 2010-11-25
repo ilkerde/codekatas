@@ -26,7 +26,7 @@ namespace KataFizzBuzz
             Dictionary<int, string> translations = new Dictionary<int, string>();
 
             for (int i = from; i <= to; i++)
-                translations.Add(i, null);
+                translations.Add(i, this.Translate(i));
 
             return translations;
         }

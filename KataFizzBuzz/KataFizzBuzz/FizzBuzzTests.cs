@@ -51,7 +51,7 @@ namespace KataFizzBuzz
             FizzBuzz fizzbuzz = new FizzBuzz();
             Dictionary<int, string> translations = fizzbuzz.TranslateRange(1, 100);
 
-            Assert.That(translations, Has.Length.EqualTo(100));
+            Assert.That(translations, Has.Count.EqualTo(100));
         }
     }
 }

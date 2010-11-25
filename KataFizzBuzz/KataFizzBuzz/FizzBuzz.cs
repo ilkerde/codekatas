@@ -20,9 +20,15 @@ namespace KataFizzBuzz
 
             return number.ToString();
         }
+
         public Dictionary<int, string> TranslateRange(int from, int to)
         {
-            throw new NotImplementedException();
+            Dictionary<int, string> translations = new Dictionary<int, string>();
+
+            for (int i = from; i <= to; i++)
+                translations.Add(i, null);
+
+            return translations;
         }
     }
 }

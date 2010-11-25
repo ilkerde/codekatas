@@ -9,6 +9,9 @@ namespace KataFizzBuzz
     {
         public string Translate(int number)
         {
+            if (number % 5 == 0)
+                return "Buzz";
+
             return "Fizz";
         }
     }

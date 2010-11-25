@@ -26,5 +26,14 @@ namespace KataFizzBuzz
 
             Assert.That(translation, Is.EqualTo("Buzz"));
         }
+
+        [Test]
+        public void Multiples_Of_Three_And_Five_Returns_FizzBuzz()
+        {
+            FizzBuzz fizzbuzz = new FizzBuzz();
+            string translation = fizzbuzz.Translate(15);
+
+            Assert.That(translation, Is.EqualTo("FizzBuzz"));
+        }
     }
 }

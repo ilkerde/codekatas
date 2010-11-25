@@ -1,13 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using NUnit.Framework;
 
 namespace KataFizzBuzz
 {
     [TestFixture]
-    public class FizzBuzzTests
+    public class FizzBuzzTranslateTests
     {
         [Test]
         public void Multiples_Of_Three_Returns_Fizz()
@@ -43,15 +40,6 @@ namespace KataFizzBuzz
             string translation = fizzbuzz.Translate(7);
 
             Assert.That(translation, Is.EqualTo("7"));
-        }
-
-        [Test]
-        public void Range_From_1_To_100_Returns_100_Elements()
-        {
-            FizzBuzz fizzbuzz = new FizzBuzz();
-            Dictionary<int, string> translations = fizzbuzz.TranslateRange(1, 100);
-
-            Assert.That(translations, Has.Count.EqualTo(100));
         }
     }
 }

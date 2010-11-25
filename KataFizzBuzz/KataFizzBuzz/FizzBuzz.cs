@@ -9,7 +9,7 @@ namespace KataFizzBuzz
     {
         public string Translate(int number)
         {
-            throw new NotImplementedException();
+            return "Fizz";
         }
     }
 }

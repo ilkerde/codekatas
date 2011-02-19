@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TranslationEntry.cs" />
+    <Compile Include="when_bulk_translation_starts_with_1_and_ends_with_100.cs" />
     <Compile Include="when_number_is_multiples_of_five.cs" />
     <Compile Include="when_number_is_multiples_of_three.cs" />
     <Compile Include="FizzBuzz.cs" />

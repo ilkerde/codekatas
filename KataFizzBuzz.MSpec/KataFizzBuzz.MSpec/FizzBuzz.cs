@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KataFizzBuzz.MSpec
 {
@@ -21,7 +22,10 @@ namespace KataFizzBuzz.MSpec
 
         public List<TranslationEntry> TranslateRange(int fromNumber, int toNumber)
         {
-            throw new NotImplementedException();
+            return (
+                from number in Enumerable.Range(fromNumber, toNumber)
+                select new TranslationEntry(number, null)
+                ).ToList();
         }
     }
 }

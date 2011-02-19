@@ -48,6 +48,7 @@
     <Compile Include="FizzBuzz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="when_number_is_multiples_of_three_and_five.cs" />
+    <Compile Include="when_number_is_no_multiples_of_three_or_five.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

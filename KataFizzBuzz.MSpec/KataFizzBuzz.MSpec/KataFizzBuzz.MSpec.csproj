@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="when_number_is_multiples_of_five.cs" />
     <Compile Include="when_number_is_multiples_of_three.cs" />
     <Compile Include="FizzBuzz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

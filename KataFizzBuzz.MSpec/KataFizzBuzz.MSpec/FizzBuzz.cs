@@ -6,7 +6,7 @@ namespace KataFizzBuzz.MSpec
     {
         public string Translate(int number)
         {
-            throw new NotImplementedException();
+            return "Fizz";
         }
     }
 }

@@ -24,7 +24,7 @@ namespace KataFizzBuzz.MSpec
         {
             return (
                 from number in Enumerable.Range(fromNumber, toNumber)
-                select new TranslationEntry(number, null)
+                select new TranslationEntry(number, Translate(number))
                 ).ToList();
         }
     }

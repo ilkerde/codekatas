@@ -7,6 +7,15 @@ namespace KataStringCalculator
 {
     public class StringCalculatorParserSpecs
     {
+        public class when_source_starts_with_line_with_double_slash_followed_by_a_delimiter : for_parsing_calculator_source
+        {
+            It should_parse_two_numbers_separated_by_the_delimiter
+                = () => numbers.Count().ShouldEqual(2);
+
+            Because of
+                = () => numbers = parser.Parse("//;\n7;8");
+        }
+
         public class when_source_has_newline_and_comma_as_separator_for_three_numbers : for_parsing_calculator_source
         {
             It should_parse_three_numbers

@@ -13,6 +13,9 @@ namespace KataStringCalculator
             It should_throw_an_argumentexception
                 = () => exception.ShouldBeOfType(typeof(ArgumentException));
 
+            It should_have_the_negative_number_within_the_exception_message
+                = () => exception.Message.ShouldContain("-1");
+
             Because of 
                 = () => 
                 {

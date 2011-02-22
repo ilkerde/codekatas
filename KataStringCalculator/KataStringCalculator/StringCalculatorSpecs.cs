@@ -80,7 +80,7 @@ namespace KataStringCalculator
         public abstract class for_calculator_add
         {
             Establish context
-                = () => calculator = new StringCalculator();
+                = () => calculator = new StringCalculator(new StringCalculatorParser());
 
             protected static int result;
             protected static StringCalculator calculator { get; private set; }

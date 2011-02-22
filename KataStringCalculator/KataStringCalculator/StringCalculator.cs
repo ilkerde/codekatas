@@ -5,16 +5,19 @@ namespace KataStringCalculator
 {
     public class StringCalculator
     {
+        private StringCalculatorParser parser;
+
+        public StringCalculator(StringCalculatorParser parser)
+        {
+            this.parser = parser;
+        }
+
         public int Add(string source)
         {
             if (String.IsNullOrEmpty(source))
                 return 0;
 
-            var parts = source
-                .Split(new string[] { ",", "\n" }, StringSplitOptions.None);
-
-            if (parts.Where(String.IsNullOrEmpty).Any())
-                throw new InvalidOperationException();
+            string[] parts = this.parser.Parse(source);
 
             return parts
                 .Select(x => Convert.ToInt32(x))

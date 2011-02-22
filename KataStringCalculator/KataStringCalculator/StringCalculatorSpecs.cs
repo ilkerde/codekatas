@@ -9,6 +9,15 @@ namespace KataStringCalculator
 {
     public class StringCalculatorSpecs
     {
+        public class when_source_is_single_number : for_calculator_add
+        {
+            It should_result_the_number_given
+                = () => result.ShouldEqual(5);
+
+            Because of
+                = () => result = calculator.Add("5");
+        }
+
         public class when_source_is_empty : for_calculator_add
         {
             It should_result_to_zero

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace KataStringCalculator
 {
@@ -9,7 +10,10 @@ namespace KataStringCalculator
             if (String.IsNullOrEmpty(source))
                 return 0;
 
-            return Convert.ToInt32(source);
+            return source
+                .Split(',')
+                .Select(x => Convert.ToInt32(x))
+                .Sum();
         }
     }
 }

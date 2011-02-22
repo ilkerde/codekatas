@@ -8,6 +8,26 @@ namespace KataStringCalculator
 {
     public class StringCalculatorSpecs
     {
+        public class when_source_has_more_than_one_negative_number : for_calculator_add
+        {
+            It should_throw_an_argumentexception
+                = () => exception.ShouldBeOfType(typeof(ArgumentException));
+
+            It should_have_all_negative_numbers_within_the_exception_message
+                = () => (
+                    exception.Message.Contains("-1")
+                    && exception.Message.Contains("-2")
+                    ).ShouldBeTrue();
+
+            Because of 
+                = () => 
+                {
+                    exception = Catch.Exception(() => calculator.Add("-1,-2"));
+                };
+
+            static Exception exception;
+        }
+
         public class when_source_has_a_negative_number : for_calculator_add
         {
             It should_throw_an_argumentexception

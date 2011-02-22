@@ -17,10 +17,8 @@ namespace KataStringCalculator
             if (String.IsNullOrEmpty(source))
                 return 0;
 
-            string[] parts = this.parser.Parse(source);
-
-            return parts
-                .Select(x => Convert.ToInt32(x))
+            return
+                this.parser.Parse(source)
                 .Sum();
         }
     }

@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="StringCalculatorParser.cs" />
+    <Compile Include="StringCalculatorParserSpecs.cs" />
     <Compile Include="StringCalculatorSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringCalculator.cs" />

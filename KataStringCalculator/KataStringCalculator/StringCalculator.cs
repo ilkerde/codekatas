@@ -6,7 +6,7 @@ namespace KataStringCalculator
     {
         public int Add(string source)
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }

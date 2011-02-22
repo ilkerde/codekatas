@@ -9,6 +9,15 @@ namespace KataStringCalculator
 {
     public class StringCalculatorSpecs
     {
+        public class when_source_has_two_numbers : for_calculator_add
+        {
+            It should_result_the_sum_of_both_numbers
+                = () => result.ShouldEqual(15);
+
+            Because of
+                = () => result = calculator.Add("7,8");
+        }
+
         public class when_source_is_single_number : for_calculator_add
         {
             It should_result_the_number_given

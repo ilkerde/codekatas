@@ -8,8 +8,16 @@ namespace KataStringCalculator
     {
         public IEnumerable<int> Parse(string source)
         {
+            List<string> delimiters = new List<string>() {",", "\n"};
+
+            if (source.StartsWith("//"))
+            {
+                delimiters.Add(Convert.ToString(source[2]));
+                source = source.Substring(4);
+            }
+
             var parts = source
-                .Split(new string[] { ",", "\n" }, StringSplitOptions.None);
+                .Split(delimiters.ToArray(), StringSplitOptions.None);
 
             if (parts.Where(String.IsNullOrEmpty).Any())
                 throw new InvalidOperationException();

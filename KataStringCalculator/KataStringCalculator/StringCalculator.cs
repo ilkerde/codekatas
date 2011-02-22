@@ -6,7 +6,10 @@ namespace KataStringCalculator
     {
         public int Add(string source)
         {
-            return 0;
+            if (String.IsNullOrEmpty(source))
+                return 0;
+
+            return Convert.ToInt32(source);
         }
     }
 }

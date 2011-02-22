@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace KataStringCalculator
@@ -16,6 +17,18 @@ namespace KataStringCalculator
         {
             if (String.IsNullOrEmpty(source))
                 return 0;
+
+            IEnumerable<int> numbers = this.parser.Parse(source);
+
+            IEnumerable<int> negativenumbers = 
+                numbers.Where(number => number < 0);
+
+            if (negativenumbers.Any())
+                throw new ArgumentException(
+                    String.Format(
+                        "Invalid operation: found negative numbers: {0}",
+                        String.Join(",", negativenumbers))
+                    );
 
             return
                 this.parser.Parse(source)

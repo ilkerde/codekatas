@@ -10,8 +10,8 @@ namespace KataStringCalculator
     {
         public class when_source_has_a_negative_number : for_calculator_add
         {
-            It should_throw_an_invalidoperationexception
-                = () => exception.ShouldNotBeNull();
+            It should_throw_an_argumentexception
+                = () => exception.ShouldBeOfType(typeof(ArgumentException));
 
             Because of 
                 = () => 

@@ -11,7 +11,7 @@ namespace KataStringCalculator
                 return 0;
 
             return source
-                .Split(',')
+                .Split(new string[]{ ",", "\n" }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(x => Convert.ToInt32(x))
                 .Sum();
         }

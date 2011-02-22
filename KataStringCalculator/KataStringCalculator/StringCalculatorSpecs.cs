@@ -9,6 +9,29 @@ namespace KataStringCalculator
 {
     public class StringCalculatorSpecs
     {
+        public class when_source_has_newline_and_comma_as_separator_without_number_in_between : for_calculator_add
+        {
+            It should_throw_an_invalidoperationexception
+                = () => exception.ShouldNotBeNull();
+
+            Because of
+                = () =>
+                {
+                    exception = Catch.Exception(() => calculator.Add("7,\n9"));
+                };
+
+            static Exception exception;
+        }
+
+        public class when_source_has_newline_and_comma_as_separator : for_calculator_add
+        {
+            It should_result_the_sum_of_all_numbers
+                = () => result.ShouldEqual(24);
+
+            Because of
+                = () => result = calculator.Add("7,8\n9");
+        }
+
         public class when_source_has_newline_as_number_separator : for_calculator_add
         {
             It should_result_the_sum_of_all_numbers

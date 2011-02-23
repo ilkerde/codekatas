@@ -23,6 +23,12 @@ namespace KataRomanNumerals.Part1
 		{
 			Assert.That(converter.Convert(2), Is.EqualTo("II"));
 		}
+
+		[Test]
+		public void convert_6_should_give_vi() 
+		{
+			Assert.That(converter.Convert(6), Is.EqualTo("VI"));
+		}
 		
 		private RomanNumberConverter converter;
 	

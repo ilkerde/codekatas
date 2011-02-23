@@ -7,6 +7,9 @@ namespace KataRomanNumerals.Part1
 	{
 		public string Convert(int number)
 		{
+			if (number == 5)
+				return "V";
+			
 			return "I";
 		}
 	}

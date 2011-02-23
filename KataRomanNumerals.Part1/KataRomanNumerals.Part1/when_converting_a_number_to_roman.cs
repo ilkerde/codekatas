@@ -30,6 +30,12 @@ namespace KataRomanNumerals.Part1
 			Assert.That(converter.Convert(6), Is.EqualTo("VI"));
 		}
 		
+		[Test]
+		public void convert_4_should_give_iv() 
+		{
+			Assert.That(converter.Convert(4), Is.EqualTo("IV"));
+		}
+		
 		private RomanNumberConverter converter;
 	
 		[SetUp]

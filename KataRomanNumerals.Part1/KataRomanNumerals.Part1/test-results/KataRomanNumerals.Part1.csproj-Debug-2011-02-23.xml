@@ -138,6 +138,32 @@
       <TotalIgnored>0</TotalIgnored>
       <Time />
     </UnitTestResult>
+    <UnitTestResult>
+      <TestDate>2011-02-23T21:45:16</TestDate>
+      <Status>Success</Status>
+      <TotalFailures>0</TotalFailures>
+      <TotalSuccess>8</TotalSuccess>
+      <TotalIgnored>0</TotalIgnored>
+      <Time />
+    </UnitTestResult>
+    <UnitTestResult>
+      <TestDate>2011-02-23T21:46:00</TestDate>
+      <Status>Success Failure</Status>
+      <TotalFailures>1</TotalFailures>
+      <TotalSuccess>8</TotalSuccess>
+      <TotalIgnored>0</TotalIgnored>
+      <Time />
+      <Message>Child test failed</Message>
+    </UnitTestResult>
+    <UnitTestResult>
+      <TestDate>2011-02-23T21:48:14</TestDate>
+      <Status>Success Failure</Status>
+      <TotalFailures>1</TotalFailures>
+      <TotalSuccess>7</TotalSuccess>
+      <TotalIgnored>0</TotalIgnored>
+      <Time />
+      <Message>Child test failed</Message>
+    </UnitTestResult>
   </Results>
   <Tests>
     <TestRecord Name="KataRomanNumerals">
@@ -278,6 +304,32 @@
           <TotalSuccess>7</TotalSuccess>
           <TotalIgnored>0</TotalIgnored>
           <Time />
+        </UnitTestResult>
+        <UnitTestResult>
+          <TestDate>2011-02-23T21:45:16</TestDate>
+          <Status>Success</Status>
+          <TotalFailures>0</TotalFailures>
+          <TotalSuccess>8</TotalSuccess>
+          <TotalIgnored>0</TotalIgnored>
+          <Time />
+        </UnitTestResult>
+        <UnitTestResult>
+          <TestDate>2011-02-23T21:46:00</TestDate>
+          <Status>Success Failure</Status>
+          <TotalFailures>1</TotalFailures>
+          <TotalSuccess>8</TotalSuccess>
+          <TotalIgnored>0</TotalIgnored>
+          <Time />
+          <Message>Child test failed</Message>
+        </UnitTestResult>
+        <UnitTestResult>
+          <TestDate>2011-02-23T21:48:14</TestDate>
+          <Status>Success Failure</Status>
+          <TotalFailures>1</TotalFailures>
+          <TotalSuccess>7</TotalSuccess>
+          <TotalIgnored>0</TotalIgnored>
+          <Time />
+          <Message>Child test failed</Message>
         </UnitTestResult>
       </Results>
       <Tests>
@@ -420,6 +472,32 @@
               <TotalIgnored>0</TotalIgnored>
               <Time />
             </UnitTestResult>
+            <UnitTestResult>
+              <TestDate>2011-02-23T21:45:16</TestDate>
+              <Status>Success</Status>
+              <TotalFailures>0</TotalFailures>
+              <TotalSuccess>8</TotalSuccess>
+              <TotalIgnored>0</TotalIgnored>
+              <Time />
+            </UnitTestResult>
+            <UnitTestResult>
+              <TestDate>2011-02-23T21:46:00</TestDate>
+              <Status>Success Failure</Status>
+              <TotalFailures>1</TotalFailures>
+              <TotalSuccess>8</TotalSuccess>
+              <TotalIgnored>0</TotalIgnored>
+              <Time />
+              <Message>Child test failed</Message>
+            </UnitTestResult>
+            <UnitTestResult>
+              <TestDate>2011-02-23T21:48:14</TestDate>
+              <Status>Success Failure</Status>
+              <TotalFailures>1</TotalFailures>
+              <TotalSuccess>7</TotalSuccess>
+              <TotalIgnored>0</TotalIgnored>
+              <Time />
+              <Message>Child test failed</Message>
+            </UnitTestResult>
           </Results>
           <Tests>
             <TestRecord Name="when_converting_a_number_to_roman">
@@ -560,6 +638,32 @@
                   <TotalSuccess>7</TotalSuccess>
                   <TotalIgnored>0</TotalIgnored>
                   <Time />
+                </UnitTestResult>
+                <UnitTestResult>
+                  <TestDate>2011-02-23T21:45:16</TestDate>
+                  <Status>Success</Status>
+                  <TotalFailures>0</TotalFailures>
+                  <TotalSuccess>8</TotalSuccess>
+                  <TotalIgnored>0</TotalIgnored>
+                  <Time />
+                </UnitTestResult>
+                <UnitTestResult>
+                  <TestDate>2011-02-23T21:46:00</TestDate>
+                  <Status>Success Failure</Status>
+                  <TotalFailures>1</TotalFailures>
+                  <TotalSuccess>8</TotalSuccess>
+                  <TotalIgnored>0</TotalIgnored>
+                  <Time />
+                  <Message>Child test failed</Message>
+                </UnitTestResult>
+                <UnitTestResult>
+                  <TestDate>2011-02-23T21:48:14</TestDate>
+                  <Status>Success Failure</Status>
+                  <TotalFailures>1</TotalFailures>
+                  <TotalSuccess>7</TotalSuccess>
+                  <TotalIgnored>0</TotalIgnored>
+                  <Time />
+                  <Message>Child test failed</Message>
                 </UnitTestResult>
               </Results>
               <Tests>
@@ -775,6 +879,45 @@ Execution time: 0.01ms</Message>
                       <ConsoleOutput />
                       <ConsoleError />
                     </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:45:16</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:46:00</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:48:14</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.01ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
                   </Results>
                 </TestRecord>
                 <TestRecord Name="convert_5_should_give_v">
@@ -955,6 +1098,45 @@ Execution time: 0.00ms</Message>
                       <ConsoleOutput />
                       <ConsoleError />
                     </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:45:16</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:46:00</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:48:14</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
                   </Results>
                 </TestRecord>
                 <TestRecord Name="convert_2_should_give_ii">
@@ -1109,6 +1291,45 @@ Execution time: 0.00ms</Message>
                       <ConsoleOutput />
                       <ConsoleError />
                     </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:45:16</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:46:00</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:48:14</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
                   </Results>
                 </TestRecord>
                 <TestRecord Name="convert_6_should_give_vi">
@@ -1237,6 +1458,45 @@ Execution time: 0.00ms</Message>
                       <ConsoleOutput />
                       <ConsoleError />
                     </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:45:16</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:46:00</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:48:14</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
                   </Results>
                 </TestRecord>
                 <TestRecord Name="convert_4_should_give_iv">
@@ -1346,6 +1606,45 @@ Execution time: 0.00ms</Message>
                       <ConsoleOutput />
                       <ConsoleError />
                     </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:45:16</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:46:00</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:48:14</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
                   </Results>
                 </TestRecord>
                 <TestRecord Name="convert_10_should_give_x">
@@ -1409,6 +1708,45 @@ Execution time: 0.00ms</Message>
                       <ConsoleOutput />
                       <ConsoleError />
                     </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:45:16</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:46:00</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:48:14</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
                   </Results>
                 </TestRecord>
                 <TestRecord Name="convert_9_should_give_IX">
@@ -1443,6 +1781,123 @@ Execution time: 0.00ms</Message>
                       <Message>Test successful
 
 Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:45:16</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:46:00</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:48:14</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                  </Results>
+                </TestRecord>
+                <TestRecord Name="convert_14_should_give_XIV">
+                  <Results>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:45:16</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:46:00</TestDate>
+                      <Status>Success</Status>
+                      <TotalFailures>0</TotalFailures>
+                      <TotalSuccess>1</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>Test successful
+
+Execution time: 0.00ms</Message>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                  </Results>
+                </TestRecord>
+                <TestRecord Name="convert_19_should_give_IXX">
+                  <Results>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:46:00</TestDate>
+                      <Status>Failure</Status>
+                      <TotalFailures>1</TotalFailures>
+                      <TotalSuccess>0</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>  String lengths are both 3. Strings differ at index 0.
+  Expected: "IXX"
+  But was:  "XIX"
+  -----------^
+</Message>
+                      <StackTrace>  at NUnit.Framework.Assert.That (System.Object actual, IResolveConstraint expression, System.String message, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0 
+  at NUnit.Framework.Assert.That (System.Object actual, IResolveConstraint expression) [0x00000] in &lt;filename unknown&gt;:0 
+  at KataRomanNumerals.Part1.when_converting_a_number_to_roman.convert_19_should_give_IXX () [0x00000] in /home/ilker/Code/CodeKatasOnGithub/KataRomanNumerals.Part1/KataRomanNumerals.Part1/when_converting_a_number_to_roman.cs:61 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&amp;)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in &lt;filename unknown&gt;:0 </StackTrace>
+                      <ConsoleOutput />
+                      <ConsoleError />
+                    </UnitTestResult>
+                  </Results>
+                </TestRecord>
+                <TestRecord Name="convert_50_should_give_L">
+                  <Results>
+                    <UnitTestResult>
+                      <TestDate>2011-02-23T21:48:14</TestDate>
+                      <Status>Failure</Status>
+                      <TotalFailures>1</TotalFailures>
+                      <TotalSuccess>0</TotalSuccess>
+                      <TotalIgnored>0</TotalIgnored>
+                      <Time />
+                      <Message>  Expected string length 1 but was 5. Strings differ at index 0.
+  Expected: "L"
+  But was:  "XXXXX"
+  -----------^
+</Message>
+                      <StackTrace>  at NUnit.Framework.Assert.That (System.Object actual, IResolveConstraint expression, System.String message, System.Object[] args) [0x00000] in &lt;filename unknown&gt;:0 
+  at NUnit.Framework.Assert.That (System.Object actual, IResolveConstraint expression) [0x00000] in &lt;filename unknown&gt;:0 
+  at KataRomanNumerals.Part1.when_converting_a_number_to_roman.convert_50_should_give_L () [0x00000] in /home/ilker/Code/CodeKatasOnGithub/KataRomanNumerals.Part1/KataRomanNumerals.Part1/when_converting_a_number_to_roman.cs:54 
+  at (wrapper managed-to-native) System.Reflection.MonoMethod:InternalInvoke (object,object[],System.Exception&amp;)
+  at System.Reflection.MonoMethod.Invoke (System.Object obj, BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00000] in &lt;filename unknown&gt;:0 </StackTrace>
                       <ConsoleOutput />
                       <ConsoleError />
                     </UnitTestResult>

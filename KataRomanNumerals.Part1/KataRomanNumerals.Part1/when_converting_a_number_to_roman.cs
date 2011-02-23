@@ -48,7 +48,12 @@ namespace KataRomanNumerals.Part1
 			Assert.That(converter.Convert(9), Is.EqualTo("IX"));
 		}
 		
-		
+		[Test]
+		public void convert_50_should_give_L() 
+		{
+			Assert.That(converter.Convert(50), Is.EqualTo("L"));
+		}
+
 		private RomanNumberConverter converter;
 	
 		[SetUp]

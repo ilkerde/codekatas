@@ -113,5 +113,29 @@
       <TotalIgnored>0</TotalIgnored>
       <Time />
     </UnitTestResult>
+    <UnitTestResult>
+      <TestDate>2011-02-23T21:45:16</TestDate>
+      <Status>Success</Status>
+      <TotalFailures>0</TotalFailures>
+      <TotalSuccess>8</TotalSuccess>
+      <TotalIgnored>0</TotalIgnored>
+      <Time />
+    </UnitTestResult>
+    <UnitTestResult>
+      <TestDate>2011-02-23T21:46:00</TestDate>
+      <Status>Success Failure</Status>
+      <TotalFailures>1</TotalFailures>
+      <TotalSuccess>8</TotalSuccess>
+      <TotalIgnored>0</TotalIgnored>
+      <Time />
+    </UnitTestResult>
+    <UnitTestResult>
+      <TestDate>2011-02-23T21:48:14</TestDate>
+      <Status>Success Failure</Status>
+      <TotalFailures>1</TotalFailures>
+      <TotalSuccess>7</TotalSuccess>
+      <TotalIgnored>0</TotalIgnored>
+      <Time />
+    </UnitTestResult>
   </Results>
 </TestRecord>

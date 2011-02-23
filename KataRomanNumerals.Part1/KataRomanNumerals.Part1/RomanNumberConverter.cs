@@ -10,6 +10,9 @@ namespace KataRomanNumerals.Part1
 			if (number >= 10)
 				return "X"
 					+ Convert(number - 10);
+		
+			if (10 - number == 1)
+				return "IX";
 			
 			if (number >= 5)
 				return "V" 

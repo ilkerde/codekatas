@@ -7,7 +7,7 @@ namespace KataRomanNumerals.Part1
 	{
 		public string Convert(int number)
 		{
-			return null;
+			return "I";
 		}
 	}
 }

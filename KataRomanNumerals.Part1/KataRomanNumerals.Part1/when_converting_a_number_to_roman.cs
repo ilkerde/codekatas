@@ -11,9 +11,16 @@ namespace KataRomanNumerals.Part1
 		{
 			Assert.That(converter.Convert(1), Is.EqualTo("I"));
 		}
-	
-		private RomanNumberConverter converter;
+
+		[Test]
+		public void convert_5_should_give_v() 
+		{
+			Assert.That(converter.Convert(5), Is.EqualTo("V"));
+		}
 		
+		private RomanNumberConverter converter;
+	
+		[SetUp]
 		public void establish_context()
 		{
 			converter = new RomanNumberConverter();

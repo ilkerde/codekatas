@@ -9,8 +9,8 @@ namespace KataRomanNumerals.Part1
 		{
 			if (number == 5)
 				return "V";
-			
-			return "I";
+		
+			return new String('I', number);
 		}
 	}
 }

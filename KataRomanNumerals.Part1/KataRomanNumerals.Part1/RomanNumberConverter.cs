@@ -11,6 +11,9 @@ namespace KataRomanNumerals.Part1
 				return "V" 
 					+ Convert(number - 5);
 	
+			if (5 - number == 1)
+				return "IV";
+			
 			if (number >= 1)
 				return new String('I', number);
 		

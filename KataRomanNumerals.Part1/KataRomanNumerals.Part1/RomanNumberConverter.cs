@@ -7,6 +7,10 @@ namespace KataRomanNumerals.Part1
 	{
 		public string Convert(int number)
 		{
+			if (number >= 10)
+				return "X"
+					+ Convert(number - 10);
+			
 			if (number >= 5)
 				return "V" 
 					+ Convert(number - 5);

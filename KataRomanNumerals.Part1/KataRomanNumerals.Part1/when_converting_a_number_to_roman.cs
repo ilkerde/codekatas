@@ -41,6 +41,13 @@ namespace KataRomanNumerals.Part1
 		{
 			Assert.That(converter.Convert(10), Is.EqualTo("X"));
 		}
+
+		[Test]
+		public void convert_9_should_give_IX() 
+		{
+			Assert.That(converter.Convert(9), Is.EqualTo("IX"));
+		}
+		
 		
 		private RomanNumberConverter converter;
 	

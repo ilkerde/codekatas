@@ -1,9 +1,15 @@
 class FizzBuzz
 	def translate(number)
+		if number % 15 == 0
+			return "fizzbuzz"
+		end
+
 		if number % 5 == 0
-			"buzz"
-		else
-			"fizz"
+			return "buzz"
+		end
+
+		if number % 3 == 0
+			return "fizz"
 		end
 	end
 end

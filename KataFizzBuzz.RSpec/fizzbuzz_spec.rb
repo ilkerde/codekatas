@@ -18,3 +18,9 @@ describe "fizzbuzz, translate" do
 	end
 end
 
+describe "fizzbuzz, translate_all" do
+	it "returns list of 100 entries for start number 1 and stop number 100" do
+		FizzBuzz.new.translate_all(1, 100).length.should == 100
+	end
+end
+

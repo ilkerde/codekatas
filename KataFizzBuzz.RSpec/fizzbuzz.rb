@@ -14,5 +14,9 @@ class FizzBuzz
 
 		return number.to_s
 	end
+
+	def translate_all(start, stop)
+		[]
+	end
 end
 

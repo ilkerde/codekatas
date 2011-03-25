@@ -16,7 +16,7 @@ class FizzBuzz
 	end
 
 	def translate_all(start, stop)
-		[]
+		(1..100).to_a
 	end
 end
 

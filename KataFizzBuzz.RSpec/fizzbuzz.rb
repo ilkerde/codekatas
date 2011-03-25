@@ -11,6 +11,8 @@ class FizzBuzz
 		if number % 3 == 0
 			return "fizz"
 		end
+
+		return number.to_s
 	end
 end
 

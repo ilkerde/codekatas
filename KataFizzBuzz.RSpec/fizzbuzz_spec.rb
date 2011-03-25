@@ -12,5 +12,9 @@ describe "fizzbuzz, translate" do
 	it "returns fizzbuzz for multiples of five and three" do
 		FizzBuzz.new.translate(15).should == "fizzbuzz"
 	end
+
+	it "returns number for no multiples of five or three" do
+		FizzBuzz.new.translate(1).should == "1"
+	end
 end
 

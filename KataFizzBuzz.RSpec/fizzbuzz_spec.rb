@@ -24,10 +24,11 @@ describe "fizzbuzz, translate_all" do
 	end
 
 	it "uses translation for a range number" do
-		FizzBuzz.should_receive(:translate).and_return("buzz")
+		fizzbuzz = FizzBuzz.new
+		fizzbuzz.should_receive(:translate).and_return("some")
 
-		FizzBuzz.new.translate_all(5, 5).each do |translation|
-			translation.should == "buzz"
+		fizzbuzz.translate_all(5, 5).each do |translation|
+			translation.should == "some"
 		end
 	end
 end

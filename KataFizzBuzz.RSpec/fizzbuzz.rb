@@ -16,7 +16,9 @@ class FizzBuzz
 	end
 
 	def translate_all(start, stop)
-		(1..100).to_a
+		(start..stop).collect do |number|
+			translate number
+		end
 	end
 end
 

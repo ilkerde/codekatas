@@ -10,7 +10,7 @@ namespace KataStringReplacer
 		
 		public string Render(string template)
 		{
-			return String.Empty;
+			return template;
 		}
 	}
 }

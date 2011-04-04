@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 
 namespace KataStringReplacer {
@@ -6,7 +7,7 @@ namespace KataStringReplacer {
 	public class StringRendererTests {
 		[Test]
 		public void When_Template_Is_Empty_Then_Text_Is_Empty() {
-			StringRenderer renderer = new StringRenderer();
+			StringRenderer renderer = new StringRenderer(null);
 			string template = String.Empty;
 			
 			string text = renderer.Render(template);
@@ -16,12 +17,27 @@ namespace KataStringReplacer {
 		
 		[Test]
 		public void When_Template_Contains_Text_Without_Placeholders_Then_Text_Is_Same_As_Template() {
-			StringRenderer renderer = new StringRenderer();
+			StringRenderer renderer = new StringRenderer(null);
 			string template = "A simple text message.";
 			
 			string text = renderer.Render(template);
 			
 			Assert.That(text, Is.EqualTo(template));
+		}
+		
+		[Test]
+		public void When_Template_Contains_A_Known_Placeholder_Then_Text_Contains_Value_Of_Placeholder() {
+			var placeholderDefinition = new Dictionary<string, string>()
+			{
+				{ "KEY", "VALUE" }
+			};
+			
+			StringRenderer renderer = new StringRenderer(placeholderDefinition);
+			string template = "THE $KEY$";
+			
+			string text = renderer.Render(template);
+			
+			Assert.That(text, Is.EqualTo("THE VALUE"));
 		}
 	}
 }

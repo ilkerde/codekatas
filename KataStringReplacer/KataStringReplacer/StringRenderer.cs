@@ -17,11 +17,16 @@ namespace KataStringReplacer
 		{
 			if (_placeholders != null)
 				foreach (var keyValue in _placeholders)
-					template = template.Replace(String.Format("${0}$", keyValue.Key), keyValue.Value);
+					template = template.Replace(GetPlaceholder(keyValue.Key), keyValue.Value);
 			
 			template = RemoveUnrecognizedPlaceholders(template);
 			
 			return template;
+		}
+		
+		private string GetPlaceholder(string name)
+		{
+			return String.Format("${0}$", name);
 		}
 		
 		private string RemoveUnrecognizedPlaceholders(string text)

@@ -39,5 +39,20 @@ namespace KataStringReplacer {
 			
 			Assert.That(text, Is.EqualTo("THE VALUE"));
 		}
+		
+		[Test]
+		public void When_Template_Contains_An_Unknown_Placeholder_Then_Text_Does_No_Longer_Have_That_Placeholder() {
+			var placeholderDefinition = new Dictionary<string, string>()
+			{
+				{ "KEY", "VALUE" }
+			};
+			
+			StringRenderer renderer = new StringRenderer(placeholderDefinition);
+			string template = "THE $UNKNOWN$";
+			
+			string text = renderer.Render(template);
+			
+			Assert.That(text, Is.EqualTo("THE "));
+		}
 	}
 }

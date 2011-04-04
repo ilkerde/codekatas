@@ -10,7 +10,7 @@ namespace KataStringReplacer
 		
 		public string Render(string template)
 		{
-			throw new NotImplementedException();
+			return String.Empty;
 		}
 	}
 }

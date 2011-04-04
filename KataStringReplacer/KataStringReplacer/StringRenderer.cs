@@ -18,7 +18,17 @@ namespace KataStringReplacer
 			if (_placeholders != null)
 				foreach (var keyValue in _placeholders)
 					template = template.Replace(String.Format("${0}$", keyValue.Key), keyValue.Value);
+			
+			int tokenStart = template.IndexOf('$');
+			
+			if (tokenStart > -1) 
+			{
+				int tokenEnd = template.IndexOf('$', tokenStart + 1);
 				
+				if (tokenEnd > tokenStart)
+					template = template.Substring(0, tokenStart) + template.Substring(tokenEnd + 1);
+			}
+			
 			return template;
 		}
 	}

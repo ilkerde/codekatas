@@ -18,7 +18,7 @@ namespace KataStringReplacer
 			if (_placeholders != null)
 				foreach (var keyValue in _placeholders)
 					template = template.Replace(GetPlaceholder(keyValue.Key), keyValue.Value);
-			
+		
 			template = RemoveUnrecognizedPlaceholders(template);
 			
 			return template;
@@ -31,15 +31,21 @@ namespace KataStringReplacer
 		
 		private string RemoveUnrecognizedPlaceholders(string text)
 		{
-			int tokenStart = text.IndexOf('$');
+			int tokenStart, tokenEnd = -1;
 			
-			if (tokenStart > -1) 
+			do 
 			{
-				int tokenEnd = text.IndexOf('$', tokenStart + 1);
+				tokenStart = text.IndexOf('$');
+			
+				if (tokenStart > -1) 
+				{
+					tokenEnd = text.IndexOf('$', tokenStart + 1);
 				
-				if (tokenEnd > tokenStart)
-					text = text.Substring(0, tokenStart) + text.Substring(tokenEnd + 1);
+					if (tokenEnd > tokenStart)
+						text = text.Substring(0, tokenStart) + text.Substring(tokenEnd + 1);
+				} 
 			}
+			while (tokenEnd > tokenStart && tokenStart > 0);
 			
 			return text;
 		}

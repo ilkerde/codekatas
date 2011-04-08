@@ -25,3 +25,16 @@ describe("FizzBuzz Translation", function() {
 		fizzbuzz = FizzBuzz;
 	});
 });
+
+describe("FizzBuzz Range Translation", function() {
+	var fizzbuzz;
+
+	it("should contain a sequence of 100 entries for a range from 1 to 100", function() {
+		var translations = fizzbuzz.translateRange(1, 100);
+		expect(translations.length).toEqual(100);
+	});
+
+	beforeEach(function() {
+		fizzbuzz = FizzBuzz;
+	});
+});

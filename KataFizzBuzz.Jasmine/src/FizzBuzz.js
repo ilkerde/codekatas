@@ -10,5 +10,8 @@ var FizzBuzz = {
 			return "Fizz";
 
 		return number.toString();
+	},
+	
+    translateRange: function() {
 	}
 };

@@ -11,6 +11,11 @@ describe("FizzBuzz Translation", function() {
 		expect(translation).toEqual("Buzz");
 	});
 
+	it("should translate multiples of three and five to 'FizzBuzz'", function() {
+		var translation = fizzbuzz.translate(15);
+		expect(translation).toEqual("FizzBuzz");
+	});
+
 	beforeEach(function() {
 		fizzbuzz = FizzBuzz;
 	});

@@ -34,6 +34,12 @@ describe("FizzBuzz Range Translation", function() {
 		expect(translations.length).toEqual(100);
 	});
 
+	it("should translate all entries", function() {
+		spyOn(fizzbuzz, 'translate');
+		var translations = fizzbuzz.translateRange(1, 100);
+		expect(fizzbuzz.translate).toHaveBeenCalled();
+	});
+
 	beforeEach(function() {
 		fizzbuzz = FizzBuzz;
 	});

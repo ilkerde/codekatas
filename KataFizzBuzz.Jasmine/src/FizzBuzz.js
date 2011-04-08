@@ -15,7 +15,7 @@ var FizzBuzz = {
     translateRange: function(from, to) {
 		var translations = [];
 		for(var i=from; i<to; i++)
-			translations[i] = null;
+			translations[i] = this.translate(i);
 
 		return translations;
 	}

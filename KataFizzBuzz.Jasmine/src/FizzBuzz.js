@@ -1,3 +1,5 @@
 var FizzBuzz = {
-	translate: function() {}
+	translate: function() {
+		return "Fizz";
+	}
 };

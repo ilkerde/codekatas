@@ -12,6 +12,11 @@ var FizzBuzz = {
 		return number.toString();
 	},
 	
-    translateRange: function() {
+    translateRange: function(from, to) {
+		var translations = [];
+		for(var i=from; i<to; i++)
+			translations[i] = null;
+
+		return translations;
 	}
 };

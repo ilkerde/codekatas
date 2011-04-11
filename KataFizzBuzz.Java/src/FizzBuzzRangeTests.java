@@ -20,7 +20,7 @@ public class FizzBuzzRangeTests {
 		when(fizzbuzz.Translate(anyInt())).thenReturn("fake");
 		
 		FizzBuzzRange fizzbuzzrange = new FizzBuzzRange(fizzbuzz);
-		List<String> translations = fizzbuzzrange.Range(1, 10);
+		fizzbuzzrange.Range(1, 10);
 		
 		for (int i=1; i<=10; i++)
 			verify(fizzbuzz).Translate(i);

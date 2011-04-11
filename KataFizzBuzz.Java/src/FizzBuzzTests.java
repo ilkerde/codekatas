@@ -15,4 +15,11 @@ public class FizzBuzzTests {
 		String translation = fizzbuzz.Translate(10);
 		assertEquals("buzz", translation);
 	}
+
+	@Test
+	public void multiples_of_three_and_five_translates_to_fizzbuzz() {
+		FizzBuzz fizzbuzz = new FizzBuzz();
+		String translation = fizzbuzz.Translate(15);
+		assertEquals("fizzbuzz", translation);
+	}
 }

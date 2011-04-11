@@ -22,4 +22,11 @@ public class FizzBuzzTests {
 		String translation = fizzbuzz.Translate(15);
 		assertEquals("fizzbuzz", translation);
 	}
+	
+	@Test
+	public void no_multiples_of_three_or_five_translates_to_number() {
+		FizzBuzz fizzbuzz = new FizzBuzz();
+		String translation = fizzbuzz.Translate(7);
+		assertEquals("7", translation);
+	}
 }

@@ -2,6 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FizzBuzzRange {
+	public FizzBuzzRange(FizzBuzz fizzbuzz) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public List<String> Range(int from, int to) {
 		List<String> translations = new ArrayList<String>();
 		

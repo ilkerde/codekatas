@@ -5,8 +5,11 @@ public class FizzBuzz {
 		
 		if (number % 5 == 0)
 			return "buzz";
+
+		if (number % 3 == 0)
+			return "fizz";
 		
-		return "fizz";
+		return String.valueOf(number);
 	}
 }
 

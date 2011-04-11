@@ -8,4 +8,11 @@ public class FizzBuzzTests {
 		String translation = fizzbuzz.Translate(6);
 		assertEquals("fizz", translation);
 	}
+
+	@Test
+	public void multiples_of_five_translates_to_buzz() {
+		FizzBuzz fizzbuzz = new FizzBuzz();
+		String translation = fizzbuzz.Translate(10);
+		assertEquals("buzz", translation);
+	}
 }

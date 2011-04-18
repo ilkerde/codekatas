@@ -12,6 +12,7 @@ namespace KataPickAkin
 		{
 			Board board = new Board(left, right);
 			board.Akin.AddRange(board.Left.Union(board.Right));
+			board.Left.Clear();
 			
 			return board;
 		}

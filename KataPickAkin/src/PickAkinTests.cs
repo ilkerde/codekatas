@@ -33,6 +33,12 @@ namespace KataPickAkin
 			{
 				Assert.That(board.Left, Is.Empty);
 			}
+			
+			[Test]
+			public void Then_Right_Is_Empty()
+			{
+				Assert.That(board.Right, Is.Empty);
+			}
 		}
 	}
 }

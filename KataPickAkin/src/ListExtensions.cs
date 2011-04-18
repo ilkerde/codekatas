@@ -11,8 +11,10 @@ namespace KataPickAkin
 		public static Board PickAkin(this List<string> left, List<string> right)
 		{
 			Board board = new Board(left, right);
+			
 			board.Akin.AddRange(board.Left.Union(board.Right));
 			board.Left.Clear();
+			board.Right.Clear();
 			
 			return board;
 		}

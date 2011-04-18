@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 using NUnit.Framework;
 
@@ -9,7 +10,10 @@ namespace KataPickAkin
 	{
 		public static Board PickAkin(this List<string> left, List<string> right)
 		{
-			throw new NotImplementedException();
+			Board board = new Board(left, right);
+			board.Akin.AddRange(board.Left.Union(board.Right));
+			
+			return board;
 		}
 	}
 }

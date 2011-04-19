@@ -15,7 +15,10 @@ namespace KataPickAkin {
 			var left = LeftCodeList;
 			var right = RightCodeList;
 			var akin = left
-				.Union(right)
+				.Where(l => right.Any(r => r[0] == l[0]))
+				.Union(right
+					.Where(r => left.Any(l => l[0] == r[0]))
+				)
 				.ToList();
 
 			return new PickAkinResult {

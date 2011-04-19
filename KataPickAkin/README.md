@@ -33,7 +33,7 @@ Results in following "Akin List" with modified CEO and control lists:
     ceoList = [C1,E1,E2]
     controlList = [F1]
 
-_(Note: The order is not relevant)_
+_Note: The order is not relevant_
 
 #### Be smart ####
 Let's put it straight: Write a program that takes two lists (`ceoList` and `controlList`) containing an arbitrary set of product codes in the above described format. The program produces three lists. The first list is the `akinList`, that is, the list of all akin products taken from the input lists. The remaining two lists are the reduced `ceoList` and `controlList`, respectively.
@@ -52,6 +52,6 @@ The objective of this kata is to sharpen design skills for trivial algorithms. [
 > 
 > [@ilkerde](http://ilker.de)
 
-_(Original Blog Post: http://ilker.de/code-kata-pickakin)_
+_Original Blog Post: http://ilker.de/code-kata-pickakin_
 
 [drm]: http://swemusings.blogspot.com/ "SWE Musings, the blog of Dr.M"

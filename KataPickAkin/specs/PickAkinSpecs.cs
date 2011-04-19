@@ -27,5 +27,22 @@ namespace KataPickAkin {
 			static List<string> left, right;
 			static PickAkinResult result;
 		}
+
+		public class when_left_contains_no_akin_product_of_right {
+			It should_have_no_akin =
+				() => result.AkinList.ShouldBeEmpty();
+
+			Because of =
+				() => result = new PickAkin(left, right).Pick();
+
+			Establish context =
+				() => {
+					left = new List<string> { "A1" };
+					right = new List<string> { "B1" };
+				};
+
+			static List<string> left, right;
+			static PickAkinResult result;
+		}
 	}
 }

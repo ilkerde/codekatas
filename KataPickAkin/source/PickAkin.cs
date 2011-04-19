@@ -22,7 +22,11 @@ namespace KataPickAkin {
 				LeftCodeList = left
 					.Except(akin)
 					.ToList(),
-				RightCodeList = right,
+				
+				RightCodeList = right
+					.Except(akin)
+					.ToList(),
+
 				AkinList = akin
 			};
 		}

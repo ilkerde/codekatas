@@ -11,6 +11,18 @@ namespace KataPickAkin {
 		public List<string> LeftCodeList { get; private set; }
 		public List<string> RightCodeList { get; private set; }
 
-		public PickAkinResult Pick() { return null; }
+		public PickAkinResult Pick() {
+			var left = LeftCodeList;
+			var right = RightCodeList;
+			var akin = left
+				.Union(right)
+				.ToList();
+
+			return new PickAkinResult {
+				LeftCodeList = left,
+				RightCodeList = right,
+				AkinList = akin
+			};
+		}
 	}
 }

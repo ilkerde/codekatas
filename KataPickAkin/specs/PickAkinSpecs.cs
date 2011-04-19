@@ -12,6 +12,9 @@ namespace KataPickAkin {
 			It should_have_empty_left = 
 				() => result.LeftCodeList.ShouldBeEmpty();
 
+			It should_have_empty_right = 
+				() => result.RightCodeList.ShouldBeEmpty();
+
 			Because of =
 				() => result = new PickAkin(left, right).Pick();
 

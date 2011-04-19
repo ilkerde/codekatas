@@ -9,6 +9,9 @@ namespace KataPickAkin {
 			It should_have_both_product_code_in_akin_list = 
 				() => result.AkinList.ShouldContain(new [] {"A1", "A2"});
 
+			It should_have_empty_left = 
+				() => result.LeftCodeList.ShouldBeEmpty();
+
 			Because of =
 				() => result = new PickAkin(left, right).Pick();
 

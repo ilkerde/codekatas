@@ -14,10 +14,11 @@ namespace KataPickAkin {
 		public PickAkinResult Pick() {
 			var left = LeftCodeList;
 			var right = RightCodeList;
+
 			var akin = left
-				.Where(l => right.Any(r => r[0] == l[0]))
+				.Where(l => right.Any(r => AreAkin(l, r)))
 				.Union(right
-					.Where(r => left.Any(l => l[0] == r[0]))
+					.Where(r => left.Any(l => AreAkin(l, r)))
 				)
 				.ToList();
 
@@ -32,6 +33,10 @@ namespace KataPickAkin {
 
 				AkinList = akin
 			};
+		}
+
+		private bool AreAkin(string leftCode, string rightCode) {
+			return leftCode[0] == rightCode[0];
 		}
 	}
 }

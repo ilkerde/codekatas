@@ -19,7 +19,9 @@ namespace KataPickAkin {
 				.ToList();
 
 			return new PickAkinResult {
-				LeftCodeList = left,
+				LeftCodeList = left
+					.Except(akin)
+					.ToList(),
 				RightCodeList = right,
 				AkinList = akin
 			};

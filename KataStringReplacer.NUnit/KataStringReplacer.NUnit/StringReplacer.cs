@@ -6,11 +6,7 @@ namespace KataStringReplacer.NUnit
     {
         public string Replace(string template)
         {
-            throw new NotImplementedException();
-        }
-        public StringReplacer()
-        {
-
+            return string.Empty;
         }
     }
 }

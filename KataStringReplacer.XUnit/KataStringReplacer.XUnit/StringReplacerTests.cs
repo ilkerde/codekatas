@@ -39,5 +39,19 @@ namespace KataStringReplacer.XUnit
 
             Assert.Equal("value", text);
         }
+
+        [Fact]
+        public void when_template_has_unknown_placeholder_then_text_does_not_contain_that_placeholder() {
+            var table = new Dictionary<string, string>() {
+                {"key", "value"}
+            };
+
+            var template = "$what$";
+            var replacer = new StringReplacer(table);
+
+            var text = replacer.Replace(template);
+
+            Assert.Equal(string.Empty, text);
+        }
     }
 }

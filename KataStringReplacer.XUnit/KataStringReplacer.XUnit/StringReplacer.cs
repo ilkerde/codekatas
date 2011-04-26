@@ -17,6 +17,10 @@ namespace KataStringReplacer.XUnit {
                 text = text.Replace(GetPlaceHolder(entry.Key), entry.Value);
             }
 
+            return RemoveUnknownPlaceHolders(text);
+        }
+
+        private static string RemoveUnknownPlaceHolders(string text) {
             int tokenStart = text.IndexOf('$');
 
             if (tokenStart > -1) { 
@@ -27,7 +31,6 @@ namespace KataStringReplacer.XUnit {
                     text = text.Replace(unknownPlaceHolder, string.Empty);
                 }
             }
-
             return text;
         }
 

@@ -17,6 +17,17 @@ namespace KataStringReplacer.XUnit {
                 text = text.Replace(GetPlaceHolder(entry.Key), entry.Value);
             }
 
+            int tokenStart = text.IndexOf('$');
+
+            if (tokenStart > -1) { 
+                int tokenEnd = text.IndexOf('$', tokenStart + 1);
+
+                if (tokenEnd > -1) {
+                    string unknownPlaceHolder = text.Substring(tokenStart, tokenEnd + 1);
+                    text = text.Replace(unknownPlaceHolder, string.Empty);
+                }
+            }
+
             return text;
         }
 

@@ -7,17 +7,23 @@ namespace KataStringReplacer.NUnit
     {
         public string Replace(string template)
         {
-            return template;
+            string text = template;
+
+            foreach (var entry in _table)
+            {
+                text = text.Replace(String.Format("${0}$", entry.Key), entry.Value);                
+            }
+
+            return text;
         }
 
         public StringReplacer(Dictionary<string, string> table)
         {
-            throw new NotImplementedException();
+            _table = table;
         }
 
-        public StringReplacer()
-        {
-            
-        }
+        public StringReplacer() {}
+
+        Dictionary<string, string> _table = new Dictionary<string,string>();
     }
 }

@@ -11,7 +11,7 @@ namespace KataStringReplacer.NUnit
 
             foreach (var entry in _table)
             {
-                text = text.Replace(String.Format("${0}$", entry.Key), entry.Value);                
+                text = text.Replace(GetPlaceholder(entry.Key), entry.Value);                
             }
 
             return text;
@@ -22,7 +22,12 @@ namespace KataStringReplacer.NUnit
             _table = table;
         }
 
-        public StringReplacer() {}
+        private static string GetPlaceholder(string key)
+        {
+            return String.Format("${0}$", key);
+        }
+
+        public StringReplacer() { }
 
         Dictionary<string, string> _table = new Dictionary<string,string>();
     }

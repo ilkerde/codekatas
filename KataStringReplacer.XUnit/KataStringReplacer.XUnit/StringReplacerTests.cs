@@ -15,5 +15,14 @@ namespace KataStringReplacer.XUnit
 
             Assert.Equal(string.Empty, text);
         }
+        [Fact]
+        public void when_template_contains_no_placeholder_then_text_equals_template() {
+            var template = "Test";
+            var replacer = new StringReplacer();
+
+            var text = replacer.Replace(template);
+
+            Assert.Equal("Test", text);
+        }
     }
 }

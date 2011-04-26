@@ -14,10 +14,14 @@ namespace KataStringReplacer.XUnit {
             var text = template;
 
             foreach (var entry in _table) {
-                text = text.Replace(String.Format("${0}$", entry.Key), entry.Value);
+                text = text.Replace(GetPlaceHolder(entry.Key), entry.Value);
             }
 
             return text;
+        }
+
+        private static string GetPlaceHolder(string key) {
+            return String.Format("${0}$", key);
         }
     }
 }

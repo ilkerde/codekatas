@@ -21,16 +21,21 @@ namespace KataStringReplacer.XUnit {
         }
 
         private static string RemoveUnknownPlaceHolders(string text) {
-            int tokenStart = text.IndexOf('$');
+            int tokenStart, tokenEnd = -1;
 
-            if (tokenStart > -1) { 
-                int tokenEnd = text.IndexOf('$', tokenStart + 1);
+            tokenStart = text.IndexOf('$');
+
+            while (tokenStart > -1) { 
+                tokenEnd = text.IndexOf('$', tokenStart + 1);
 
                 if (tokenEnd > -1) {
-                    string unknownPlaceHolder = text.Substring(tokenStart, tokenEnd + 1);
+                    string unknownPlaceHolder = text.Substring(tokenStart, tokenEnd - tokenStart + 1);
                     text = text.Replace(unknownPlaceHolder, string.Empty);
                 }
+
+                tokenStart = text.IndexOf('$');
             }
+
             return text;
         }
 

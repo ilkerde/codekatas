@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace KataStringReplacer.NUnit
 {
@@ -7,6 +8,16 @@ namespace KataStringReplacer.NUnit
         public string Replace(string template)
         {
             return template;
+        }
+
+        public StringReplacer(Dictionary<string, string> table)
+        {
+            throw new NotImplementedException();
+        }
+
+        public StringReplacer()
+        {
+            
         }
     }
 }

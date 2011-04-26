@@ -23,20 +23,24 @@ namespace KataStringReplacer.XUnit {
         private static string RemoveUnknownPlaceHolders(string text) {
             int tokenStart, tokenEnd = -1;
 
-            tokenStart = text.IndexOf('$');
+            tokenStart = GetTokenPosition(text);
 
-            while (tokenStart > -1) { 
-                tokenEnd = text.IndexOf('$', tokenStart + 1);
+            while (tokenStart > -1) {
+                tokenEnd = GetTokenPosition(text, tokenStart + 1);
 
                 if (tokenEnd > -1) {
                     string unknownPlaceHolder = text.Substring(tokenStart, tokenEnd - tokenStart + 1);
                     text = text.Replace(unknownPlaceHolder, string.Empty);
                 }
 
-                tokenStart = text.IndexOf('$');
+                tokenStart = GetTokenPosition(text);
             }
 
             return text;
+        }
+
+        private static int GetTokenPosition(string text, int startFromPosition = 0) {
+            return text.IndexOf('$', startFromPosition);
         }
 
         private static string GetPlaceHolder(string key) {

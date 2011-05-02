@@ -14,6 +14,16 @@ namespace KataStringReplacer.NUnit
                 text = text.Replace(GetPlaceholder(entry.Key), entry.Value);                
             }
 
+            return RemoveUnknownPlaceHolders(text);
+        }
+
+        private static string GetPlaceholder(string key)
+        {
+            return String.Format("${0}$", key);
+        }
+
+        private static string RemoveUnknownPlaceHolders(string text)
+        {
             int tokenBegin, tokenEnd = -1;
 
             do
@@ -29,7 +39,7 @@ namespace KataStringReplacer.NUnit
                         string unknownToken = text.Substring(tokenBegin, tokenEnd - tokenBegin + 1);
                         text = text.Replace(unknownToken, string.Empty);
                     }
-                }            	
+                }
             } while (tokenBegin > -1 && tokenEnd > -1);
 
             return text;
@@ -38,11 +48,6 @@ namespace KataStringReplacer.NUnit
         public StringReplacer(Dictionary<string, string> table)
         {
             _table = table;
-        }
-
-        private static string GetPlaceholder(string key)
-        {
-            return String.Format("${0}$", key);
         }
 
         public StringReplacer() { }

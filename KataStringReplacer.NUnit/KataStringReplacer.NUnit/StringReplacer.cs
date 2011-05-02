@@ -14,6 +14,19 @@ namespace KataStringReplacer.NUnit
                 text = text.Replace(GetPlaceholder(entry.Key), entry.Value);                
             }
 
+            int tokenBegin = text.IndexOf('$');
+
+            if (tokenBegin > -1)
+            {
+                int tokenEnd = text.IndexOf('$', tokenBegin + 1);
+
+                if (tokenEnd > -1)
+                {
+                    string unknownToken = text.Substring(tokenBegin, tokenEnd - tokenBegin + 1);
+                    text = text.Replace(unknownToken, string.Empty);
+                }
+            }
+
             return text;
         }
 

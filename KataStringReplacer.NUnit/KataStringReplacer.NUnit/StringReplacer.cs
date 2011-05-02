@@ -14,18 +14,23 @@ namespace KataStringReplacer.NUnit
                 text = text.Replace(GetPlaceholder(entry.Key), entry.Value);                
             }
 
-            int tokenBegin = text.IndexOf('$');
+            int tokenBegin, tokenEnd = -1;
 
-            if (tokenBegin > -1)
+            do
             {
-                int tokenEnd = text.IndexOf('$', tokenBegin + 1);
+                tokenBegin = text.IndexOf('$');
 
-                if (tokenEnd > -1)
+                if (tokenBegin > -1)
                 {
-                    string unknownToken = text.Substring(tokenBegin, tokenEnd - tokenBegin + 1);
-                    text = text.Replace(unknownToken, string.Empty);
-                }
-            }
+                    tokenEnd = text.IndexOf('$', tokenBegin + 1);
+
+                    if (tokenEnd > -1)
+                    {
+                        string unknownToken = text.Substring(tokenBegin, tokenEnd - tokenBegin + 1);
+                        text = text.Replace(unknownToken, string.Empty);
+                    }
+                }            	
+            } while (tokenBegin > -1 && tokenEnd > -1);
 
             return text;
         }

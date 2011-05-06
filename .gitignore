@@ -1,6 +1,12 @@
 bin
 obj
+test-results
+*.pidb
 *.suo
 *.cache
 *.user
 *[Rr]e[Ss]harper*
+.classpath
+.metadata
+.project
+.settings

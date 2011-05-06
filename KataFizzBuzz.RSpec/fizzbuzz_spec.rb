@@ -25,7 +25,7 @@ describe "fizzbuzz, translate_all" do
 
 	it "uses translation for a range number" do
 		fizzbuzz = FizzBuzz.new
-		fizzbuzz.should_receive(:translate).and_return("some")
+		fizzbuzz.stub!(:translate).and_return("some")
 
 		fizzbuzz.translate_all(5, 5).each do |translation|
 			translation.should == "some"

@@ -1,3 +1,5 @@
 var Replacer = {
-  replace: function(template){}
+  replace: function(template) {
+    return '';
+  }
 };

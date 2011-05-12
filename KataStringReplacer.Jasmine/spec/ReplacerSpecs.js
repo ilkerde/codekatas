@@ -9,3 +9,12 @@ describe('replacing a text without placeholders', function(){
     expect(Replacer.replace('text')).toEqual('text');
   });
 });
+
+describe('replacing template with known placeholder', function(){
+  it('should yield to value assigned it placeholder', function(){
+    Replacer.placeholders = {
+      key: "value"
+    };
+    expect(Replacer.replace('$key$')).toEqual('value');
+  });
+});

@@ -8,6 +8,14 @@ var Replacer = {
         text = text.replace(placeholder, this.placeholders[key]);
     }
 
+    var tokenstart = text.indexOf('$') > -1;
+    if (tokenstart > -1) {
+      var tokenend = text.indexOf('$', tokenstart + 1);
+      if (tokenend > tokenstart) {
+        text = text.replace(text.substr(tokenstart - 1, tokenend + 1 - tokenstart + 1), '');
+      }
+    }
+
     return text;
   },
 

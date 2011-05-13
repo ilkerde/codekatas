@@ -28,3 +28,8 @@ describe('replacing template with multiple instances of a known placeholder', fu
   });
 });
 
+describe('replacing template with unknown placeholder', function(){
+  it('should yield to an empty string replace for a placeholder', function(){
+    expect(Replacer.replace('$unknownkey$')).toEqual('');
+  });
+});

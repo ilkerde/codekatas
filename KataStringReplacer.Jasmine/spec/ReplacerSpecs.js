@@ -33,3 +33,9 @@ describe('replacing template with unknown placeholder', function(){
     expect(Replacer.replace('$unknownkey$')).toEqual('');
   });
 });
+
+describe('replacing template with multiple unknown placeholders', function(){
+  it('should yield to an empty string replace for all unknown placeholders', function(){
+    expect(Replacer.replace('$unknownkey$-$unknownkey$')).toEqual('-');
+  });
+});

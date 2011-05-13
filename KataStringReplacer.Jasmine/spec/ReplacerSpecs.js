@@ -18,3 +18,13 @@ describe('replacing template with known placeholder', function(){
     expect(Replacer.replace('$key$')).toEqual('value');
   });
 });
+
+describe('replacing template with multiple instances of a known placeholder', function(){
+  it('should replace all placeholder instances with assigned value', function(){
+    Replacer.placeholders = {
+      key: "value"
+    };
+    expect(Replacer.replace('$key$ - $key$')).toEqual('value - value');
+  });
+});
+

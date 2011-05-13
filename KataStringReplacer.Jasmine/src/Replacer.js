@@ -8,13 +8,9 @@ var Replacer = {
         text = text.replace(placeholder, this.placeholders[key]);
     }
 
-    var tokenstart = text.indexOf('$') + 1;
-    var tokenend = text.indexOf('$', tokenstart + 1);
-    while ((tokenstart > -1) && (tokenend > tokenstart)) {
-      text = text.replace(text.substr(tokenstart - 1, tokenend + 1 - tokenstart + 1), '');
-
-      var tokenstart = text.indexOf('$') + 1;
-      var tokenend = text.indexOf('$', tokenstart + 1);
+    while (this.containsPlaceholderToken(text)) {
+      var token = this.parsePlaceholderToken(text);
+      text = text.replace(text.substr(token.start - 1, token.end + 1 - token.start + 1), '');
     }
 
     return text;
@@ -22,6 +18,21 @@ var Replacer = {
 
   getPlaceholder: function(key) {
     return "$" + key + "$";
+  },
+
+  containsPlaceholderToken: function(text) {
+    token = this.parsePlaceholderToken(text);
+    return (token.end > token.start) && (token.start > -1);
+  },
+
+  parsePlaceholderToken: function(text) {
+    var tokenstart = text.indexOf('$') + 1;
+    var tokenend = text.indexOf('$', tokenstart + 1);
+
+    return {
+      start: tokenstart,
+      end: tokenend
+    };
   },
 
   placeholders: {}

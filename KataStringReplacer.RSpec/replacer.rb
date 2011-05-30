@@ -1,0 +1,2 @@
+def replacer template
+end

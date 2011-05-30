@@ -1,2 +1,3 @@
 def replacer template
+  ""
 end

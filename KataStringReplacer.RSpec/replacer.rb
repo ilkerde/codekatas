@@ -1,3 +1,3 @@
-def replacer template
+def replacer template, placeholders={}
   template
 end

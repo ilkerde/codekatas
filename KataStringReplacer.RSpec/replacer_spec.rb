@@ -12,4 +12,11 @@ describe "replacer" do
       replacer("text").should == "text"
     end
   end
+
+  describe "when template has known placeholder" do
+    it "should return value of placeholder" do
+      placeholders = { "key" => "value" }
+      replacer("$key$", placeholders).should == "value"
+    end
+  end
 end

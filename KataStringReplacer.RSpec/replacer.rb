@@ -1,3 +1,7 @@
 def replacer template, placeholders={}
-  template
+  text = template
+  placeholders.each do |key,value|
+    text.gsub! "$#{key}$", value
+  end
+  text
 end

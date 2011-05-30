@@ -19,4 +19,10 @@ describe "replacer" do
       replacer("$key$", placeholders).should == "value"
     end
   end
+
+  describe "when template has unknown placeholder" do
+    it "should return the literal text only" do
+      replacer("$what$").should == ""
+    end
+  end
 end

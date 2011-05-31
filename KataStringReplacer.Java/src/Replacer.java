@@ -11,6 +11,8 @@ public class Replacer {
 			for (Map.Entry<String, String> placeholder : _placeholders.entrySet())
 				text = text.replaceAll(getPlaceholderTokenRegex(placeholder), placeholder.getValue());
 		
+		text = text.replaceAll("\\$.*?\\$", "");
+		
 		return text;
 	}
 

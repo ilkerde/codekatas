@@ -13,5 +13,5 @@ public class when_template_is_empty {
 	}
 	
 	private String _template;
-	private String _text;  
+	private String _text;
 }

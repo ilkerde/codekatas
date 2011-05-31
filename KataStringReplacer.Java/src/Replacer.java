@@ -9,7 +9,7 @@ public class Replacer {
 		
 		if (_placeholders != null)
 			for (Map.Entry<String, String> placeholder : _placeholders.entrySet())
-				text = text.replaceAll(String.format("\\$%s\\$", placeholder.getKey()), placeholder.getValue());
+				text = text.replaceAll(getPlaceholderToken(placeholder), placeholder.getValue());
 		
 		return text;
 	}
@@ -17,5 +17,9 @@ public class Replacer {
 	public static void setPlaceholders(HashMap<String, String> placeholders) {
 		Replacer._placeholders = new HashMap<String, String>();
 		Replacer._placeholders.putAll(placeholders);
+	}
+
+	private static String getPlaceholderToken(Map.Entry<String, String> placeholder) {
+		return String.format("\\$%s\\$", placeholder.getKey());
 	}
 }

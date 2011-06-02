@@ -3,6 +3,9 @@ namespace vala.fizzbuzz {
     public FizzBuzz() {}
 
     public string translate(int number) {
+      if (number % 15 == 0)
+        return "FizzBuzz";
+
       if (number % 5 == 0)
         return "Buzz";
 

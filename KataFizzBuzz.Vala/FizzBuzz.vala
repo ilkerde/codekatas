@@ -1,4 +1,6 @@
 namespace vala.fizzbuzz {
+  using Gee;
+
   public class FizzBuzz {
     public FizzBuzz() {}
 
@@ -13,6 +15,11 @@ namespace vala.fizzbuzz {
         return "Fizz";
 
       return number.to_string();
+    }
+
+    public HashMap<int,string> translate_range(int from, int to) {
+      var map = new HashMap<int,string>();
+      return map;
     }
   }
 
@@ -45,6 +52,12 @@ namespace vala.fizzbuzz {
       var fizzbuzz = new FizzBuzz();
       var translation = fizzbuzz.translate(7);
       assert(translation == "7");
+    });
+
+    Test.add_func("/ fizzbuzz / when tranlating numbers in range from 1 to 100 / then returns array of 100 entries", () => {
+      var fizzbuzz = new FizzBuzz();
+      var translations = fizzbuzz.translate_range(1, 100);
+      assert(translations.size == 100);
     });
 
     Test.run();

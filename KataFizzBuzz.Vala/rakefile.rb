@@ -13,7 +13,7 @@ end
 
 desc "build"
 task :build => [:clean] do
-  %x[ valac #{source} -o #{binary} ]
+  %x[ valac --pkg gee-1.0 #{source} -o #{binary} ]
 end
 
 desc "test"

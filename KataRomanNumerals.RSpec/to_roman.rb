@@ -1,6 +1,11 @@
 class Fixnum
   def to_roman 
-    return "V" if self == 5
-    "I"
+    romans = { 
+      1 => "I", 
+      5 => "V", 
+      10 => "X"
+    }
+    
+    romans[self]
   end
 end

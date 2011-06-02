@@ -13,6 +13,12 @@ describe "to_roman" do
     end
   end
 
+  describe "when number is 4" do
+    it "should return IV" do
+      4.to_roman.should == "IV"
+    end
+  end
+
   describe "when number is 5" do
     it "should return V" do
       5.to_roman.should == "V"

@@ -23,10 +23,16 @@ namespace vala.fizzbuzz {
       assert(translation == "Fizz");
     });
 
-    Test.add_func("/ buzzbuzz / when number is multiples of five / then returns buzz", () => {
+    Test.add_func("/ fizzbuzz / when number is multiples of five / then returns buzz", () => {
       var fizzbuzz = new FizzBuzz();
       var translation = fizzbuzz.translate(10);
       assert(translation == "Buzz");
+    });
+
+    Test.add_func("/ fizzbuzz / when number is multiples of five and three / then returns fizzbuzz", () => {
+      var fizzbuzz = new FizzBuzz();
+      var translation = fizzbuzz.translate(15);
+      assert(translation == "FizzBuzz");
     });
 
     Test.run();

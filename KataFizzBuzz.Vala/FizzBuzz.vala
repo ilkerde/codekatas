@@ -21,7 +21,7 @@ namespace vala.fizzbuzz {
       var map = new HashMap<int,string>();
 
       for (int i=from; i<=to; i++) 
-        map.set(i, "");
+        map.set(i, translate(i));
 
       return map;
     }

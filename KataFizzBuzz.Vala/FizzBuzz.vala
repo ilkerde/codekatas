@@ -3,7 +3,7 @@ namespace vala.fizzbuzz {
     public FizzBuzz() {}
 
     public string translate(int number) {
-      return "";
+      return "Fizz";
     }
   }
 

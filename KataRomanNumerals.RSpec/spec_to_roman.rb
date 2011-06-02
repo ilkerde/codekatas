@@ -25,6 +25,12 @@ describe "to_roman" do
     end
   end
 
+  describe "when number is 9" do
+    it "should return IX" do
+      9.to_roman.should == "IX"
+    end
+  end
+
   describe "when number is 10" do
     it "should return X" do
       10.to_roman.should == "X"

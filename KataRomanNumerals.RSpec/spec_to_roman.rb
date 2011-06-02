@@ -60,4 +60,10 @@ describe "to_roman" do
       90.to_roman.should == "XC"
     end
   end
+
+  describe "when number is 500" do
+    it "should return L" do
+      500.to_roman.should == "L"
+    end
+  end
 end

@@ -7,6 +7,12 @@ describe "to_roman" do
     end
   end
 
+  describe "when number is 2" do
+    it "should return II" do
+      2.to_roman.should == "II"
+    end
+  end
+
   describe "when number is 5" do
     it "should return V" do
       5.to_roman.should == "V"

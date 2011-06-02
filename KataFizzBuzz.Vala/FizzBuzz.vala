@@ -38,6 +38,12 @@ namespace vala.fizzbuzz {
       assert(translation == "FizzBuzz");
     });
 
+    Test.add_func("/ fizzbuzz / when number is no multiples of five or three / then returns number", () => {
+      var fizzbuzz = new FizzBuzz();
+      var translation = fizzbuzz.translate(7);
+      assert(translation == "7");
+    });
+
     Test.run();
   }
 }

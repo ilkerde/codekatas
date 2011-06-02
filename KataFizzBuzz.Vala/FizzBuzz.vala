@@ -19,6 +19,10 @@ namespace vala.fizzbuzz {
 
     public HashMap<int,string> translate_range(int from, int to) {
       var map = new HashMap<int,string>();
+
+      for (int i=from; i<=to; i++) 
+        map.set(i, "");
+
       return map;
     }
   }

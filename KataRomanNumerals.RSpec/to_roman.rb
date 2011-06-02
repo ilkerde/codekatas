@@ -6,6 +6,16 @@ class Fixnum
       10 => "X"
     }
     
-    romans[self]
+    roman = ""
+    value = self
+
+    romans.keys.sort.reverse.each do |dec|
+      while value >= dec
+        roman << romans[dec]
+        value -= dec
+      end
+    end
+
+    roman
   end
 end

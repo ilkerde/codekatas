@@ -37,6 +37,12 @@ describe "to_roman" do
     end
   end
 
+  describe "when number is 40" do
+    it "should return XL" do
+      40.to_roman.should == "XL"
+    end
+  end
+
   describe "when number is 50" do
     it "should return L" do
       50.to_roman.should == "L"

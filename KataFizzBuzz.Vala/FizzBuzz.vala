@@ -64,6 +64,14 @@ namespace vala.fizzbuzz {
       assert(translations.size == 100);
     });
 
+    Test.add_func("/ fizzbuzz / when translating number by range / then returns translation through translate()", () => {
+      var fizzbuzz = new FizzBuzz();
+      var translations = fizzbuzz.translate_range(1, 15);
+
+      foreach (var entry in translations.entries)
+        assert(entry.value == fizzbuzz.translate(entry.key));
+    });
+
     Test.run();
   }
 }

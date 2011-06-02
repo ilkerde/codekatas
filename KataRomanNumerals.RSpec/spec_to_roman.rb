@@ -72,4 +72,10 @@ describe "to_roman" do
       400.to_roman.should == "CL"
     end
   end
+
+  describe "when number is 1000" do
+    it "should return M" do
+      1000.to_roman.should == "M"
+    end
+  end
 end

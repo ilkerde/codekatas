@@ -84,4 +84,10 @@ describe "to_roman" do
       900.to_roman.should == "CM"
     end
   end
+
+  describe "when number is 1999" do
+    it "should return MCMXCIX" do
+      1999.to_roman.should == "MCMXCIX"
+    end
+  end
 end

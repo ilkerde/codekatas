@@ -25,6 +25,7 @@ namespace RomanNumbers {
       }
 
       result = result
+        .Replace("CCCC", "CD")
         .Replace("LXXXX", "XC")
         .Replace("XXXX", "XL")
         .Replace("VIIII", "IX")

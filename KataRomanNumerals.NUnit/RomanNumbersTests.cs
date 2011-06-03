@@ -43,5 +43,10 @@ namespace RomanNumbers {
     public void when_number_is_50_then_converts_to_L() {
       Assert.That(50.ToRoman(), Is.EqualTo("L"));
     }
+
+    [Test]
+    public void when_number_is_90_then_converts_to_XC() {
+      Assert.That(90.ToRoman(), Is.EqualTo("XC"));
+    }
   }
 }

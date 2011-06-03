@@ -53,5 +53,10 @@ namespace RomanNumbers {
     public void when_number_is_100_then_converts_to_C() {
       Assert.That(100.ToRoman(), Is.EqualTo("C"));
     }
+
+    [Test]
+    public void when_number_is_400_then_converts_to_CD() {
+      Assert.That(400.ToRoman(), Is.EqualTo("CD"));
+    }
   }
 }

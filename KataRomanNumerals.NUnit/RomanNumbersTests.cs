@@ -68,5 +68,10 @@ namespace RomanNumbers {
     public void when_number_is_900_then_converts_to_CM() {
       Assert.That(900.ToRoman(), Is.EqualTo("CM"));
     }
+
+    [Test]
+    public void when_number_is_1000_then_converts_to_M() {
+      Assert.That(1000.ToRoman(), Is.EqualTo("M"));
+    }
   }
 }

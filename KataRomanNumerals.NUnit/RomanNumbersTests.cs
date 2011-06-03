@@ -13,5 +13,10 @@ namespace RomanNumbers {
     public void when_number_is_2_then_converts_to_II() {
       Assert.That(2.ToRoman(), Is.EqualTo("II"));
     }
+
+    [Test]
+    public void when_number_is_4_then_converts_to_IV() {
+      Assert.That(4.ToRoman(), Is.EqualTo("IV"));
+    }
   }
 }

@@ -18,5 +18,10 @@ namespace RomanNumbers {
     public void when_number_is_4_then_converts_to_IV() {
       Assert.That(4.ToRoman(), Is.EqualTo("IV"));
     }
+
+    [Test]
+    public void when_number_is_5_then_converts_to_V() {
+      Assert.That(5.ToRoman(), Is.EqualTo("V"));
+    }
   }
 }

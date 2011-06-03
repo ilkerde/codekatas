@@ -10,8 +10,8 @@ namespace RomanNumbers {
     }
 
     private static IEnumerable<RomanValue> romanvalues = 
-      (new[] { 100, 50, 10, 5, 1 })
-        .Zip(new [] { "C", "L", "X", "V", "I" },
+      (new[] { 500, 100, 50, 10, 5, 1 })
+        .Zip(new [] { "D", "C", "L", "X", "V", "I" },
         (value, roman) => new RomanValue { Roman = roman, Value = value });
 
     public static string ToRoman(this int number) {

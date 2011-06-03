@@ -8,6 +8,8 @@ namespace RomanNumbers {
       while (number-- >= 1)
         result += "I";
 
+      result = result.Replace("IIII", "IV");
+
       return result;
     }
   }

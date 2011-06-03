@@ -73,5 +73,10 @@ namespace RomanNumbers {
     public void when_number_is_1000_then_converts_to_M() {
       Assert.That(1000.ToRoman(), Is.EqualTo("M"));
     }
+
+    [Test]
+    public void when_number_is_1999_then_converts_to_MCMXCIX() {
+      Assert.That(1999.ToRoman(), Is.EqualTo("MCMXCIX"));
+    }
   }
 }

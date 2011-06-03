@@ -24,7 +24,9 @@ namespace RomanNumbers {
         }
       }
 
-      result = result.Replace("IIII", "IV");
+      result = result
+        .Replace("VIIII", "IX")
+        .Replace("IIII", "IV");
 
       return result;
     }

@@ -28,5 +28,10 @@ namespace RomanNumbers {
     public void when_number_is_9_then_converts_to_IX() {
       Assert.That(9.ToRoman(), Is.EqualTo("IX"));
     }
+
+    [Test]
+    public void when_number_is_10_then_converts_to_X() {
+      Assert.That(10.ToRoman(), Is.EqualTo("X"));
+    }
   }
 }

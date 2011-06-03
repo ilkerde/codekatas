@@ -3,7 +3,12 @@ namespace RomanNumbers {
 
   public static class RomanNumberExtensions {
     public static string ToRoman(this int number) {
-      return "I";
+      string result = string.Empty;
+
+      while (number-- >= 1)
+        result += "I";
+
+      return result;
     }
   }
 }

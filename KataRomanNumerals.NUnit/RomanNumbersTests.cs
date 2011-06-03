@@ -38,5 +38,10 @@ namespace RomanNumbers {
     public void when_number_is_40_then_converts_to_XL() {
       Assert.That(40.ToRoman(), Is.EqualTo("XL"));
     }
+
+    [Test]
+    public void when_number_is_50_then_converts_to_L() {
+      Assert.That(50.ToRoman(), Is.EqualTo("L"));
+    }
   }
 }

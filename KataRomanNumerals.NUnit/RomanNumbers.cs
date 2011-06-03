@@ -25,6 +25,7 @@ namespace RomanNumbers {
       }
 
       result = result
+        .Replace("XXXX", "XL")
         .Replace("VIIII", "IX")
         .Replace("IIII", "IV");
 

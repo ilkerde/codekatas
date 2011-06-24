@@ -3,23 +3,22 @@ namespace HundredDoorsKata {
   using System.Linq;
 
   public class Floor {
-    private Door[] doors;
+    private Door[] _doors;
 
-    public Floor() : this(100) {
-    }
+    public Floor() : this(100) {}
 
     public Floor(int doorCount) {
-      doors = Enumerable.Range(1, doorCount)
+      _doors = Enumerable.Range(1, doorCount)
         .Select(i => new Door())
         .ToArray();
     }
 
     public Door[] GetDoors() {
-      return doors; 
+      return _doors; 
     }
 
     public Door GetDoor(int doorNumber) {
-      return doors[doorNumber - 1];;
+      return _doors[doorNumber - 1];
     }
   }
 

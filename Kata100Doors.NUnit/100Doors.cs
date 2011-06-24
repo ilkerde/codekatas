@@ -42,7 +42,7 @@ namespace HundredDoorsKata {
       int doorNumber = 0;
       foreach (Door door in floor.GetDoors()) {
         if (++doorNumber % _number == 0)  
-          door.IsOpen = true;
+          door.IsOpen = door.IsClosed;
       }
     }
   }

@@ -44,4 +44,13 @@ namespace HundredDoorsKata {
       Assert.That(new Door{IsClosed = false}.IsOpen);
     }
   }
+
+  [TestFixture]
+  public class Floor_GetDoor_Tests {
+    [Test]
+    public void When_Floor_Has_1_Door_Then_Returns_Door_For_Number_1() {
+      var floor = new Floor(1);
+      Assert.That(floor.GetDoor(1) != null);
+    }
+  }
 }

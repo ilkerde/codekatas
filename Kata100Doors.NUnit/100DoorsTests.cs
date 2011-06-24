@@ -21,4 +21,17 @@ namespace HundredDoorsKata {
       Assert.That(doors.All(door => door.IsOpen));
     }
   }
+
+  [TestFixture]
+  public class DoorTests {
+    [Test]
+    public void When_Door_Is_Closed_Then_Door_Is_Not_Open() {
+      Assert.That(!new Door{IsClosed = true}.IsOpen);
+    }
+
+    [Test]
+    public void When_Door_Is_Not_Closed_Then_Door_Is_Open() {
+      Assert.That(new Door{IsClosed = false}.IsOpen);
+    }
+  }
 }

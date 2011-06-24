@@ -20,6 +20,16 @@ namespace HundredDoorsKata {
       Door[] doors = floor.GetDoors();
       Assert.That(doors.All(door => door.IsOpen));
     }
+
+    [Test]
+    public void Given_4_closed_doors_when_second_monkey_runs_through_floor_then_monkey_opens_only_every_second_door() {
+      Floor floor = new Floor(4);
+      Monkey monkey = new Monkey(2);
+      monkey.RunThrough(floor);
+      Door[] doors = floor.GetDoors();
+      Assert.That(doors.Where((door, index) => (index + 1) % 2 == 0).All(door => door.IsOpen));
+      Assert.That(doors.Where((door, index) => (index + 1) % 2 != 0).All(door => door.IsClosed));
+    }
   }
 
   [TestFixture]

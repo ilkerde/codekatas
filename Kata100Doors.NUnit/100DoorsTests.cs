@@ -30,6 +30,17 @@ namespace HundredDoorsKata {
       Assert.That(doors.Where((door, index) => (index + 1) % 2 == 0).All(door => door.IsOpen));
       Assert.That(doors.Where((door, index) => (index + 1) % 2 != 0).All(door => door.IsClosed));
     }
+
+    [Test]
+    public void Given_an_open_and_a_closed_door_when_a_monkey_runs_through_floor_then_monkey_opens_closed_and_closes_opened_door() {
+      Floor floor = new Floor(2);
+      floor.GetDoor(2).IsOpen = true;
+
+      Monkey monkey = new Monkey(1);
+      monkey.RunThrough(floor);
+      Assert.That(floor.GetDoor(1).IsOpen);
+      Assert.That(floor.GetDoor(2).IsClosed);
+    }
   }
 
   [TestFixture]

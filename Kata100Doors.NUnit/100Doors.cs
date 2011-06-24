@@ -1,9 +1,10 @@
 namespace HundredDoorsKata {
   using System;
+  using System.Linq;
 
   public class Floor {
     public Door[] GetDoors() {
-      return null;
+      return Enumerable.Range(1, 100).Select(i => new Door{ IsClosed = true }).ToArray();
     }
   }
 

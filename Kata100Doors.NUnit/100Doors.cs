@@ -17,6 +17,10 @@ namespace HundredDoorsKata {
     public Door[] GetDoors() {
       return doors; 
     }
+
+    public Door GetDoor(int doorNumber) {
+      return doors[doorNumber - 1];;
+    }
   }
 
   public class Door {

@@ -10,5 +10,14 @@ namespace HundredDoorsKata {
 
   public class Door {
     public bool IsClosed { get; set; }
+    public bool IsOpen { get; set; }
+  }
+
+  public class Monkey {
+    public Monkey(int number) {
+    }
+
+    public void RunThrough(Floor floor) {
+    }
   }
 }

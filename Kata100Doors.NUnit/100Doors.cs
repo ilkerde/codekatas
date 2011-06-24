@@ -3,8 +3,9 @@ namespace HundredDoorsKata {
   using System.Linq;
 
   public class Floor {
+    private Door[] doors = Enumerable.Range(1, 100).Select(i => new Door{ IsClosed = true }).ToArray();
     public Door[] GetDoors() {
-      return Enumerable.Range(1, 100).Select(i => new Door{ IsClosed = true }).ToArray();
+      return doors; 
     }
   }
 
@@ -18,6 +19,9 @@ namespace HundredDoorsKata {
     }
 
     public void RunThrough(Floor floor) {
+      foreach (Door door in floor.GetDoors()) {
+        door.IsOpen = true;
+      }
     }
   }
 }

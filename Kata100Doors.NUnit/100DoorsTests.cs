@@ -4,14 +4,7 @@ namespace HundredDoorsKata {
   using NUnit.Framework;
 
   [TestFixture]
-  public class HundredDoorsAndHundredMonkeysTests {
-    [Test]
-    public void Given_no_monkeys_all_doors_are_closed() {
-      Floor floor = new Floor();
-      Door[] doors = floor.GetDoors();
-      Assert.That(doors.All(door => door.IsClosed));
-    }
-
+  public class Monkey_RunThrough_Tests {
     [Test]
     public void Given_doors_are_closed_when_first_monkey_runs_through_floor_then_all_doors_are_open() {
       Floor floor = new Floor();
@@ -73,6 +66,16 @@ namespace HundredDoorsKata {
     public void When_Floor_Has_1_Door_Then_Returns_Door_For_Number_1() {
       var floor = new Floor(1);
       Assert.That(floor.GetDoor(1) != null);
+    }
+  }
+
+  [TestFixture]
+  public class Floor_Tests {
+    [Test]
+    public void Given_a_new_floor_all_doors_are_closed() {
+      Floor floor = new Floor();
+      Door[] doors = floor.GetDoors();
+      Assert.That(doors.All(door => door.IsClosed));
     }
   }
 }

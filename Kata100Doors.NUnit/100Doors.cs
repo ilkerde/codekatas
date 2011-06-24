@@ -19,7 +19,7 @@ namespace HundredDoorsKata {
     }
 
     public bool IsClosed { get; set; }
-    public bool IsOpen { get; set; }
+    public bool IsOpen { get { return !IsClosed; } set { IsClosed = !value; } }
   }
 
   public class Monkey {

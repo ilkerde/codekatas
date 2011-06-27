@@ -27,5 +27,11 @@ namespace KataWordWrap {
       var result = Wrapper.Wrap("very cool thing", 9);
       Assert.AreEqual("very cool\nthing", result);
     }
+
+    [Test]
+    public void When_text_is_twice_as_long_as_wrap_marker_and_marker_is_within_a_word_then_wraps_twice_at_spacing_before_word() {
+      var result = Wrapper.Wrap("very cool thing", 7);
+      Assert.AreEqual("very\ncool\nthing", result);
+    }
   }
 }

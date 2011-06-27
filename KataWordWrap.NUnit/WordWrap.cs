@@ -7,14 +7,14 @@ namespace KataWordWrap {
         string firstLineCutoff = text.Substring(0, mark);
         
         if (IsSpaceAfterMark(text, mark))
-          return firstLineCutoff + NewLine + text.Substring(mark + 1);
+          return firstLineCutoff + NewLine + Wrap(text.Substring(mark + 1), mark);
 
         int lastSpacingIndex = firstLineCutoff.LastIndexOf(" ");
 
         if (lastSpacingIndex < 0)
-          return firstLineCutoff + NewLine + text.Substring(mark);
+          return firstLineCutoff + NewLine + Wrap(text.Substring(mark), mark);
 
-        return text.Substring(0, lastSpacingIndex) + NewLine + text.Substring(lastSpacingIndex + 1);
+        return text.Substring(0, lastSpacingIndex) + NewLine + Wrap(text.Substring(lastSpacingIndex + 1), mark);
       }
 
       return text;

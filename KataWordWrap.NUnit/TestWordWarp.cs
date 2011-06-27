@@ -15,5 +15,11 @@ namespace KataWordWrap {
       var result = Wrapper.Wrap("word", 2);
       Assert.AreEqual("wo\nrd", result);
     }
+
+    [Test]
+    public void When_2_words_are_larger_than_wrap_marker_then_does_wrap_at_spacing() {
+      var result = Wrapper.Wrap("very cool", 7);
+      Assert.AreEqual("very\ncool", result);
+    }
   }
 }

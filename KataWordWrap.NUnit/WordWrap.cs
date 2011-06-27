@@ -4,19 +4,26 @@ namespace KataWordWrap {
   public class Wrapper {
     public static string Wrap(string text, int mark) {
       if (text.Length > mark) {
-        if ((text[mark - 1] != ' ') && (text[mark] == ' '))
-          return text.Substring(0, mark) + "\n" + text.Substring(mark + 1);
-
         string firstLineCutoff = text.Substring(0, mark);
+        
+        if (IsSpaceAfterMark(text, mark))
+          return firstLineCutoff + NewLine + text.Substring(mark + 1);
+
         int lastSpacingIndex = firstLineCutoff.LastIndexOf(" ");
 
         if (lastSpacingIndex < 0)
-          return text.Substring(0, mark) + "\n" + text.Substring(mark);
+          return firstLineCutoff + NewLine + text.Substring(mark);
 
-        return text.Substring(0, lastSpacingIndex) + "\n" + text.Substring(lastSpacingIndex + 1);
+        return text.Substring(0, lastSpacingIndex) + NewLine + text.Substring(lastSpacingIndex + 1);
       }
 
       return text;
     }
+
+    private static bool IsSpaceAfterMark(string text, int mark) {
+      return (text[mark - 1] != ' ') && (text[mark] == ' ');
+    }
+
+    private const string NewLine = "\n";
   }
 }

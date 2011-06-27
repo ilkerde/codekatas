@@ -21,5 +21,11 @@ namespace KataWordWrap {
       var result = Wrapper.Wrap("very cool", 7);
       Assert.AreEqual("very\ncool", result);
     }
+
+    [Test]
+    public void When_wrap_marker_is_at_end_of_a_word_from_a_sequence_of_words_then_does_wrap_after_word() {
+      var result = Wrapper.Wrap("very cool thing", 9);
+      Assert.AreEqual("very cool\nthing", result);
+    }
   }
 }

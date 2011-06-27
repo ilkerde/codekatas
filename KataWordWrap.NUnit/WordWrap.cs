@@ -3,21 +3,24 @@ namespace KataWordWrap {
 
   public class Wrapper {
     public static string Wrap(string text, int mark) {
-      if (text.Length > mark) {
-        string firstLineCutoff = text.Substring(0, mark);
-        
-        if (IsSpaceAfterMark(text, mark))
-          return firstLineCutoff + NewLine + Wrap(text.Substring(mark + 1), mark);
+      bool canWrap = text.Length > mark;
 
-        int lastSpacingIndex = firstLineCutoff.LastIndexOf(" ");
+      if (!canWrap)
+        return text;
 
-        if (lastSpacingIndex < 0)
-          return firstLineCutoff + NewLine + Wrap(text.Substring(mark), mark);
+      string textLine = text.Substring(0, mark);
+      string remainingText = text.Substring(mark);
 
-        return text.Substring(0, lastSpacingIndex) + NewLine + Wrap(text.Substring(lastSpacingIndex + 1), mark);
-      }
+      if (IsSpaceAfterMark(text, mark))
+        return textLine + NewLine + Wrap(remainingText.Substring(1), mark);
 
-      return text;
+      int lastSpacingIndex = textLine.LastIndexOf(" ");
+      bool hasPrecedingSpacing = lastSpacingIndex > 0;
+
+      if (!hasPrecedingSpacing)
+        return textLine + NewLine + Wrap(remainingText, mark);
+
+      return text.Substring(0, lastSpacingIndex) + NewLine + Wrap(text.Substring(lastSpacingIndex + 1), mark);
     }
 
     private static bool IsSpaceAfterMark(string text, int mark) {

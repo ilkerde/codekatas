@@ -8,9 +8,18 @@ namespace KataWordWrap {
 
       int lastSpaceIndex = text.LastIndexOf(" ", size);
       if (lastSpaceIndex < 0)
-        return text.Substring(0, size) + '\n' + text.Substring(2);
+        return SplitText(text, size, false);
 
-      return text.Substring(0, lastSpaceIndex) + '\n' + text.Substring(lastSpaceIndex + 1);
+      return SplitText(text, lastSpaceIndex, true);
     }
+
+    private static string SplitText(string text, int position, bool omitSpace) {
+      return 
+          text.Substring(0, position) 
+        + NewLine 
+        + text.Substring(position + (omitSpace ? 1 : 0));
+    }
+
+    private const char NewLine = '\n';
   }
 }

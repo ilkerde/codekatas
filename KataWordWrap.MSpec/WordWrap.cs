@@ -3,7 +3,7 @@ namespace KataWordWrap {
 
   public class Wrapper {
     public static string Wrap(string text, int size) {
-      return null;
+      return text;
     }
   }
 }

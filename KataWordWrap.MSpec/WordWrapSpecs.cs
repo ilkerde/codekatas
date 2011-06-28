@@ -23,5 +23,12 @@ namespace KataWordWrap {
 
       static string text;
     }
+
+    public class when_marker_is_at_end_of_first_word {
+      It should_wrap_at_space_after = () => text.ShouldEqual("very cool\nthing");
+      Because of = () => text = Wrapper.Wrap("very cool thing", 9);
+
+      static string text;
+    }
   }
 }

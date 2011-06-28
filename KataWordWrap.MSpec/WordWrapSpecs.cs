@@ -30,5 +30,12 @@ namespace KataWordWrap {
 
       static string text;
     }
+
+    public class when_marker_is_within_second_word_on_two_lines {
+      It should_wrap_at_space_before_twice = () => text.ShouldEqual("very\ncool\nthing");
+      Because of = () => text = Wrapper.Wrap("very cool thing", 6);
+
+      static string text;
+    }
   }
 }

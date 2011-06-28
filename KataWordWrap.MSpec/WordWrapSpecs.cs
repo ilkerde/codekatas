@@ -16,5 +16,12 @@ namespace KataWordWrap {
 
       static string text;
     }
+
+    public class when_marker_is_within_second_word {
+      It should_wrap_at_space_before = () => text.ShouldEqual("very\ncool");
+      Because of = () => text = Wrapper.Wrap("very cool", 7);
+
+      static string text;
+    }
   }
 }

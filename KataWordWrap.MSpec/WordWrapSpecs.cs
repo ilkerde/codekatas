@@ -9,5 +9,12 @@ namespace KataWordWrap {
 
       static string text;
     }
+
+    public class when_word_is_longer_than_wrap_marker {
+      It should_wrap_word = () => text.ShouldEqual("wo\nrd");
+      Because of = () => text = Wrapper.Wrap("word", 2);
+
+      static string text;
+    }
   }
 }

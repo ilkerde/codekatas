@@ -1,13 +1,12 @@
 class String
   def wrap linesize
-    return self if self.size < linesize
+    return self if self.size <= linesize
 
     last_space = self.rindex ' ', linesize
     unless last_space.nil? 
-      self[last_space] = "\n"
-      return self
+      return self[0, last_space] + "\n" + self[last_space + 1, self.size].wrap(linesize)
     end
 
-    self.insert linesize, "\n" 
+    return self[0, linesize] + "\n" + self[linesize, self.size].wrap(linesize)
   end
 end

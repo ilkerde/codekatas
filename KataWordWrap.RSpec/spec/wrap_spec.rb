@@ -16,4 +16,12 @@ describe "word-wrapping long text into lines" do
       end
     end
   end
+
+  describe "break text with word at spacing" do
+    describe "when wrap-column points to 2nd word" do
+      it "should wrap text at spacing before 2nd word" do
+        "very cool".wrap(7).should == "very\ncool"
+      end
+    end
+  end
 end

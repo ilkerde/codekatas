@@ -23,5 +23,11 @@ describe "word-wrapping long text into lines" do
         "very cool".wrap(7).should == "very\ncool"
       end
     end
+
+    describe "when wrap-column points to end of 1st word" do
+      it "should wrap text at spacing after 1st word" do
+        "very cool".wrap(4).should == "very\ncool"
+      end
+    end
   end
 end

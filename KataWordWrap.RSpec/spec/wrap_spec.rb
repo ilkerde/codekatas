@@ -8,4 +8,12 @@ describe "word-wrapping long text into lines" do
       end
     end
   end
+
+  describe "break long word apart" do
+    describe "when a single word is longer than wrap-column" do
+      it "should wrap word into two lines" do
+        "text".wrap(2).should == "te\nxt"
+      end
+    end
+  end
 end

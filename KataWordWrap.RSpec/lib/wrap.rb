@@ -1,5 +1,6 @@
 class String
   def wrap linesize
-    self
+    return self if self.size < linesize
+    self.insert linesize, "\n"  
   end
 end

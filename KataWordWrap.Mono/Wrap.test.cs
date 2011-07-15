@@ -27,5 +27,11 @@ namespace KataWordWrap {
       var result = Wrapper.Wrap("word here", 4);
       Assert.AreEqual("word\nhere", result);
     }
+
+    [Test]
+    public void When_Text_Is__Word_Here_Baby__And_Column_Marker_Is_6_Then_Does_Wrap_At_Space_Twice() {
+      var result = Wrapper.Wrap("word here baby", 6);
+      Assert.AreEqual("word\nhere\nbaby", result);
+    }
   }
 }

@@ -1,0 +1,7 @@
+desc "run tests"
+task :test do
+  Dir.glob(File.join(File.dirname(__FILE__), "spec/*.rb")).each do |spec|
+    system "rspec #{spec}"
+  end
+end
+

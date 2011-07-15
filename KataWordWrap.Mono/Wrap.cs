@@ -1,28 +1,35 @@
 namespace KataWordWrap {
   using System;
+  using System.Linq;
   
   public class Wrapper {
     public static string Wrap(string input, int columnmarker) {
+      Func<string, int, int, string> doSplitLine;
+      
+      doSplitLine = (text, splitPosition, splitOffset) => {
+        return text.Substring(0, splitPosition)
+          + "\n"
+          + Wrap(text.Substring(splitPosition + splitOffset), columnmarker);
+      };
+
       if (input.Length <= columnmarker)
         return input;
 
-      string virtualLine = input.Substring(0, columnmarker);
-      int lastSpaceIndex = virtualLine.LastIndexOf(" ");
+      int lastSpaceIndex = input.LastIndexOf(" ", columnmarker);
 
-      if (lastSpaceIndex > 0)
-        return SplitLine(input, lastSpaceIndex, columnmarker, 1);
-
+      bool hasSpaceInFirstLine = lastSpaceIndex > 0;
       bool isMarkerBeforeSpace = 
         input.Length > columnmarker && 
         input[columnmarker] == ' ';
 
-      return SplitLine(input, columnmarker, columnmarker, isMarkerBeforeSpace ? 1 : 0);
-    }
+      int splitColumn = hasSpaceInFirstLine 
+        ? lastSpaceIndex : columnmarker;
 
-    private static string SplitLine(string text, int splitColumn, int columnMarker, int omitCharsAtSplit=0) {
-      return text.Substring(0, splitColumn)
-        + "\n"
-        + Wrap(text.Substring(splitColumn + omitCharsAtSplit), columnMarker);
+      int omitCharsAtSplit = 
+        hasSpaceInFirstLine || isMarkerBeforeSpace
+        ? 1 : 0;
+
+      return doSplitLine(input, splitColumn, omitCharsAtSplit);
     }
   }
 }

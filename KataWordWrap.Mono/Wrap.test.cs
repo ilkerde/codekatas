@@ -15,5 +15,11 @@ namespace KataWordWrap {
       var result = Wrapper.Wrap("word", 2);
       Assert.AreEqual("wo\nrd", result);
     }
+
+    [Test]
+    public void When_Text_Is__Word_Here__And_Column_Marker_Is_6_Then_Does_Wrap_At_Space() {
+      var result = Wrapper.Wrap("word here", 6);
+      Assert.AreEqual("word\nhere", result);
+    }
   }
 }

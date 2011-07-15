@@ -10,13 +10,15 @@ namespace KataWordWrap {
       int lastSpaceIndex = virtualLine.LastIndexOf(" ");
 
       if (lastSpaceIndex > 0)
-        return input.Substring(0, lastSpaceIndex)
-          + "\n"
-          + input.Substring(lastSpaceIndex + 1);
+        return SplitLine(input, lastSpaceIndex, 1);
 
-      return input.Substring(0, columnmarker)
+      return SplitLine(input, columnmarker);
+    }
+
+    private static string SplitLine(string text, int splitColumn, int omitCharsAtSplit=0) {
+      return text.Substring(0, splitColumn)
         + "\n"
-        + input.Substring(columnmarker);
+        + text.Substring(splitColumn + omitCharsAtSplit);
     }
   }
 }

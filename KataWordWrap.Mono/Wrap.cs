@@ -12,7 +12,11 @@ namespace KataWordWrap {
       if (lastSpaceIndex > 0)
         return SplitLine(input, lastSpaceIndex, 1);
 
-      return SplitLine(input, columnmarker);
+      bool isMarkerBeforeSpace = 
+        input.Length > columnmarker && 
+        input[columnmarker] == ' ';
+
+      return SplitLine(input, columnmarker, isMarkerBeforeSpace ? 1 : 0);
     }
 
     private static string SplitLine(string text, int splitColumn, int omitCharsAtSplit=0) {

@@ -1,11 +1,13 @@
 bin
 obj
 test-results
+*.swp
 *.pidb
 *.suo
 *.cache
 *.user
 *[Rr]e[Ss]harper*
+*.testsettings
 .classpath
 .metadata
 .project

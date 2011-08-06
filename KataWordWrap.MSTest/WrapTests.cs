@@ -8,11 +8,9 @@ namespace KataWordWrap.MSTest {
     public void When_Word_Is_Longer_Than_Marker_Then_Wraps_Word_At_Marker() {
       Assert.AreEqual("word\nwrap", Wrapper.Wrap("wordwrap", 4));
     }
-  }
-
-  public static class Wrapper {
-    public static string Wrap(string text, int marker) {
-      return text.Substring(0, marker) + "\n" + text.Substring(marker);
+    [TestMethod]
+    public void When_Word_Is_Shorter_Than_Marker_Then_Does_Not_Wrap() {
+      Assert.AreEqual("wordwrap", Wrapper.Wrap("wordwrap", 12));
     }
   }
 }

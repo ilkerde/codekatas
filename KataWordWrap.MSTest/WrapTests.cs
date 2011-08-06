@@ -16,5 +16,9 @@ namespace KataWordWrap.MSTest {
     public void When_Marker_Is_On_2nd_Word_Then_Wraps_At_Spacing() {
       Assert.AreEqual("word\nwrap", Wrapper.Wrap("word wrap", 7));
     }
+    [TestMethod]
+    public void When_Marker_Is_On_End_Of_1st_Word_Right_Before_Space_Then_Wraps_At_Spacing() {
+      Assert.AreEqual("word\nwrap", Wrapper.Wrap("word wrap", 4));
+    }
   }
 }

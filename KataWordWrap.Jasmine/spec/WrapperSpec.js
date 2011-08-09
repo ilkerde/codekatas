@@ -16,4 +16,10 @@ describe("wrap", function(){
       expect(wrap("any thing", 7)).toEqual("any\nthing");
     });
   });
+
+  describe("three words with marker being on 2nd word twice", function(){
+    it("should wrap at space between words", function(){
+      expect(wrap("heavy thing running", 8)).toEqual("heavy\nthing\nrunning");
+    });
+  });
 });

@@ -10,4 +10,10 @@ describe("wrap", function(){
       expect(wrap("word", 8)).toEqual("word");
     });
   });
+
+  describe("two words with marker being on 2nd word", function(){
+    it("should wrap at space between words", function(){
+      expect(wrap("any thing", 7)).toEqual("any\nthing");
+    });
+  });
 });

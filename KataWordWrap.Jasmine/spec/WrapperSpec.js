@@ -4,4 +4,10 @@ describe("wrap", function(){
       expect(wrap("wordwrap", 4)).toEqual("word\nwrap");
     });
   });
+
+  describe("a short word being shorter than marker", function(){
+    it("should not wrap at all", function(){
+      expect(wrap("word", 8)).toEqual("word");
+    });
+  });
 });

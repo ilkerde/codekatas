@@ -12,3 +12,7 @@ def test_wrap_at_space_when_2_words_with_marker_on_2nd():
   result = wrap_at("first second", 8)
   assert result == "first\nsecond"
 
+def test_wrap_twice_at_space_when_3_words_with_marker_on_2nd():
+  result = wrap_at("this runs well", 7)
+  assert result == "this\nruns\nwell"
+

@@ -1,2 +1,2 @@
 def wrap_at(text, marker):
-  return text
+  return text[:marker] + '\n' + text[marker:]

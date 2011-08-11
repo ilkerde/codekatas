@@ -61,6 +61,10 @@ namespace KataRomanNumbers {
         it("should value 90 with XC", () => {
           expect(() => 90.ToRoman() == "XC");
         });
+
+        it("should value 400 with CD", () => {
+          expect(() => 400.ToRoman() == "CD");
+        });
       });
     }
   }

@@ -17,6 +17,10 @@ namespace KataRomanNumbers {
         it("should value 10 with X", () => {
           expect(() => 10.ToRoman() == "X");
         });
+
+        it("should value 50 with L", () => {
+          expect(() => 50.ToRoman() == "L");
+        });
       });
     }
   }

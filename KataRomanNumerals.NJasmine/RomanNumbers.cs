@@ -15,15 +15,16 @@ namespace KataRomanNumbers {
     };
 
     public static string ToRoman(this int number) {
-      foreach (var romanLetter in romanLetters.Reverse()) {
-        if (romanLetter.Key == number)
-          return romanLetter.Value.ToString();
+      string roman = string.Empty;
 
-        if (romanLetter.Key < number)
-          return new String(romanLetter.Value, number);
+      foreach (var romanLetter in romanLetters.Reverse()) {
+        while (romanLetter.Key <= number) {
+          roman += romanLetter.Value.ToString();
+          number -= romanLetter.Key;
+        }
       }
 
-      return null;
+      return roman;
     }
   }
 }

@@ -43,9 +43,15 @@ namespace KataRomanNumbers {
         it("should value 7 with VII", () => {
           expect(() => 7.ToRoman() == "VII");
         });
+      });
 
+      describe("substractive values", () => {
         it("should value 4 with IV", () => {
           expect(() => 4.ToRoman() == "IV");
+        });
+
+        it("should value 9 with IX", () => {
+          expect(() => 9.ToRoman() == "IX");
         });
       });
     }

@@ -3,7 +3,7 @@ namespace KataRomanNumbers {
 
   public static class RomanNumberExtensions {
     public static string ToRoman(this int number) {
-      return null;
+      return "I";
     }
   }
 }

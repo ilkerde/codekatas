@@ -34,6 +34,12 @@ namespace KataRomanNumbers {
           expect(() => 1000.ToRoman() == "M");
         });
       });
+
+      describe("additive values", () => {
+        it("should value 2 with II", () => {
+          expect(() => 2.ToRoman() == "II");
+        });
+      });
     }
   }
 }

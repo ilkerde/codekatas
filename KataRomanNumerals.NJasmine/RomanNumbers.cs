@@ -5,13 +5,7 @@ namespace KataRomanNumbers {
 
   public static class RomanNumberExtensions {
     private static SortedDictionary<int, char> romanLetters = new SortedDictionary<int, char> {
-      { 1000, 'M' },
-      { 500, 'D' },
-      { 100, 'C' },
-      { 50, 'L' },
-      { 10, 'X' },
-      { 5, 'V' },
-      { 1, 'I' }
+      { 1000, 'M' }, { 500, 'D' }, { 100, 'C' }, { 50, 'L' }, { 10, 'X' }, { 5, 'V' }, { 1, 'I' }
     };
 
     public static string ToRoman(this int number) {

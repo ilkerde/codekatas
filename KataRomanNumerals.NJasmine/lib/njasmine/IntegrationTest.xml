@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Code\njasmine\build\NJasmine.tests.dll" total="2" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2011-08-11" time="19:33:10">
+  <environment nunit-version="2.5.9.10348" clr-version="2.0.50727.5446" os-version="Microsoft Windows NT 6.1.7601 Service Pack 1" platform="Win32NT" cwd="C:\Code\njasmine" machine-name="MAGENTA" user="Ilker" user-domain="Magenta" />
+  <culture-info current-culture="de-DE" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Code\njasmine\build\NJasmine.tests.dll" executed="True" result="Success" success="True" time="0.041" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="NJasmineTests" executed="True" result="Success" success="True" time="0.035" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="Specs" executed="True" result="Success" success="True" time="0.034" asserts="0">
+            <results>
+              <test-suite type="TestSuite" name="test_name_joins_specification" executed="True" result="Success" success="True" time="0.031" asserts="0">
+                <results>
+                  <test-case name="NJasmineTests.Specs.test_name_joins_specification, simple test" executed="True" result="Success" success="True" time="0.013" asserts="0">
+                    <properties>
+                      <property name="MultilineName" value="NJasmineTests.Specs.test_name_joins_specification,&#xA;simple test" />
+                    </properties>
+                  </test-case>
+                  <test-suite type="TestSuite" name="simple describe" executed="True" result="Success" success="True" time="0.008" asserts="0">
+                    <properties>
+                      <property name="MultilineName" value="NJasmineTests.Specs.test_name_joins_specification,&#xA;simple describe" />
+                    </properties>
+                    <results>
+                      <test-case name="NJasmineTests.Specs.test_name_joins_specification, simple describe, simple test" executed="True" result="Success" success="True" time="0.005" asserts="0">
+                        <properties>
+                          <property name="MultilineName" value="NJasmineTests.Specs.test_name_joins_specification,&#xA;simple describe,&#xA;simple test" />
+                        </properties>
+                      </test-case>
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

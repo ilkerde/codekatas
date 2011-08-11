@@ -29,6 +29,10 @@ namespace KataRomanNumbers {
         it("should value 500 with D", () => {
           expect(() => 500.ToRoman() == "D");
         });
+
+        it("should value 1000 with M", () => {
+          expect(() => 1000.ToRoman() == "M");
+        });
       });
     }
   }

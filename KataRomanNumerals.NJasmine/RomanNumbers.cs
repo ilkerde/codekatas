@@ -4,6 +4,7 @@ namespace KataRomanNumbers {
 
   public static class RomanNumberExtensions {
     private static Dictionary<int, string> romanLetters = new Dictionary<int, string> {
+      { 1000, "M" },
       { 500, "D" },
       { 100, "C" },
       { 50, "L" },

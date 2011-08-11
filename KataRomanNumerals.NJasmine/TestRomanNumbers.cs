@@ -9,6 +9,10 @@ namespace KataRomanNumbers {
         it("should value 1 with I", () => {
           expect(() => 1.ToRoman() == "I");
         });
+
+        it("should value 5 with V", () => {
+          expect(() => 5.ToRoman() == "V");
+        });
       });
     }
   }

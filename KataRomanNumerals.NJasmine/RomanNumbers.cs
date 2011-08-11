@@ -29,7 +29,8 @@ namespace KataRomanNumbers {
         .Replace("VIV", "IX")
         .Replace("XXXX", "XL")
         .Replace("LXL", "XC")
-        .Replace("CCCC", "CD");
+        .Replace("CCCC", "CD")
+        .Replace("DCD", "CM");
     }
   }
 }

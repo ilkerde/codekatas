@@ -25,7 +25,8 @@ namespace KataRomanNumbers {
       }
 
       return roman
-        .Replace("IIII", "IV");
+        .Replace("IIII", "IV")
+        .Replace("VIV", "IX");
     }
   }
 }

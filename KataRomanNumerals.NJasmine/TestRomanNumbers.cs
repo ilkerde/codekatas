@@ -39,6 +39,10 @@ namespace KataRomanNumbers {
         it("should value 2 with II", () => {
           expect(() => 2.ToRoman() == "II");
         });
+
+        it("should value 7 with VII", () => {
+          expect(() => 7.ToRoman() == "VII");
+        });
       });
     }
   }

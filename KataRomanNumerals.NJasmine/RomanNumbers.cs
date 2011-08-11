@@ -28,7 +28,8 @@ namespace KataRomanNumbers {
         .Replace("IIII", "IV")
         .Replace("VIV", "IX")
         .Replace("XXXX", "XL")
-        .Replace("XIX", "XC");
+        .Replace("LXL", "XC")
+        .Replace("CCCC", "CD");
     }
   }
 }

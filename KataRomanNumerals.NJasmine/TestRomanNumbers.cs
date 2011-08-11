@@ -43,6 +43,10 @@ namespace KataRomanNumbers {
         it("should value 7 with VII", () => {
           expect(() => 7.ToRoman() == "VII");
         });
+
+        it("should value 4 with IV", () => {
+          expect(() => 4.ToRoman() == "IV");
+        });
       });
     }
   }

@@ -1,3 +1,8 @@
 function to_roman($number) {
-  "I"
+  $letter = @{
+    1 = "I";
+    5 = "V"
+  }
+
+  $letter[$number]
 }

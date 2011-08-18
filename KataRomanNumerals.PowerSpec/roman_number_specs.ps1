@@ -2,3 +2,4 @@
 
 to_roman 1 | should be_equal "I"
 to_roman 5 | should be_equal "V"
+to_roman 10 | should be_equal "X"

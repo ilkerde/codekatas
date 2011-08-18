@@ -6,6 +6,7 @@ function to_roman($number) {
     50  = "L";
     100 = "C";
     500 = "D";
+    1000 = "M";
   }
 
   $letter[$number]

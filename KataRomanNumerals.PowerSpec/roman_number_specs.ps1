@@ -14,3 +14,4 @@ to_roman 4 | should be_equal "IV"
 to_roman 9 | should be_equal "IX"
 
 to_roman 20 | should be_equal "XX"
+to_roman 40 | should be_equal "XL"

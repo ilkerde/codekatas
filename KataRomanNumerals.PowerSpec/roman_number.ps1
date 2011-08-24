@@ -25,5 +25,6 @@ function to_roman($number) {
 
   $roman = $roman.replace("IIII", "IV")
   $roman = $roman.replace("VIV", "IX")
+  $roman = $roman.replace("XXXX", "XL")
   $roman
 }

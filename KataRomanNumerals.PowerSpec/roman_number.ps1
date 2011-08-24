@@ -28,5 +28,6 @@ function to_roman($number) {
   $roman = $roman.replace("XXXX", "XL")
   $roman = $roman.replace("LXL", "XC")
   $roman = $roman.replace("CCCC", "CD")
+  $roman = $roman.replace("DCD", "CM")
   $roman
 }

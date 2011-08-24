@@ -9,5 +9,13 @@ function to_roman($number) {
     1000 = "M";
   }
 
-  $letter[$number]
+  $roman = "";
+
+  while ($number -gt 0) {
+    $letter.getenumerator() | sort -p "key" -desc | 
+    ?{ ($number / $_.key) -ge 1 } | 
+    %{ $number -= $_.key; $roman += $_.value; }
+  }
+
+  $roman
 }

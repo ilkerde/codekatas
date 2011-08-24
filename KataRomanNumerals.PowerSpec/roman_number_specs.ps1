@@ -17,3 +17,5 @@ to_roman 20 | should be_equal "XX"
 
 to_roman 40 | should be_equal "XL"
 to_roman 90 | should be_equal "XC"
+
+to_roman 400 | should be_equal "CD"

@@ -17,5 +17,6 @@ function to_roman($number) {
     %{ $number -= $_.key; $roman += $_.value; }
   }
 
+  $roman = $roman.replace("IIII", "IV")
   $roman
 }

@@ -62,7 +62,7 @@ function format-assertion ($actual, $func, $tail) {
     return $items -join ' '
 }
 
-function call ($func, $func_args) {
+function call-function ($func, $func_args) {
     if ($func -ne 'throw'-and
         $func -ne 'not') {
         $func_args = @($func_args | eval)
@@ -88,7 +88,7 @@ function should {
     $input_list = $input | to_list
     $name = format-assertion $input_list 'should' $args
     $args[0] = $input_list
-    $result = call $func $args
+    $result = call-function $func $args
     write-assertion $name $result
 }
 
@@ -96,7 +96,7 @@ function not {
     $first = $args[0]
     $func = $args[1]
     $func_args = ,$first | concat ($args | select -skip 2)
-    return -not (call $func $func_args)
+    return -not (call-function $func $func_args)
 }
 
 function be_equal ($actual, $expected) {

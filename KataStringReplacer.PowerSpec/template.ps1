@@ -1,3 +1,3 @@
-function template($text, $tokens) {
-  ""
+function template($text, $tokens = @{}) {
+  $text
 }

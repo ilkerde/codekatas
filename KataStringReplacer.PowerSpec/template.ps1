@@ -1,0 +1,2 @@
+function template($text, $tokens) {
+}

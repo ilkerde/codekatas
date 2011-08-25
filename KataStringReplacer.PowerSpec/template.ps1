@@ -4,5 +4,5 @@ function template($text, $tokens = @{}) {
     $value = $_.value
     $text = $text.replace("%$key%", "$value")
   }
-  $text
+  $text -replace "%.+?%", ""
 }

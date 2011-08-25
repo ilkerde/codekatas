@@ -1,2 +1,3 @@
 function template($text, $tokens) {
+  ""
 }

@@ -6,14 +6,16 @@ namespace GameOfLife {
       int xMax = world.GetLength(0);
       int yMax = world.GetLength(1);
 
+      int[,] newWorld = new int[xMax,yMax];
+
       for (int x = 0; x < xMax; x++) {
         for (int y = 0; y < yMax; y++) {
           int neighbors = GetNumberOfNeighbors(x, y, world);
-          world[x,y] = neighbors == 3 ? 1 : world[1,1];
+          newWorld[x,y] = neighbors == 3 ? 1 : world[x,y];
         }
       }
 
-      return world;
+      return newWorld;
     }
 
     private static int GetNumberOfNeighbors(int x, int y, int[,] world) {

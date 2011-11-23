@@ -43,7 +43,7 @@ namespace GameOfLife {
     [Test]
     public void then_corner_becomes_alive() {
       int[,] nextworld = GOL.Spin(world);
-      Assert.AreEqual(1, nextworld[0,2]);
+      Assert.AreEqual(1, nextworld[2,0]);
     }
   }
 

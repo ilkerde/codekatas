@@ -25,21 +25,23 @@ namespace GameOfLife {
     }
 
     private static int GetNumberOfNeighbors(int x, int y, int[,] world) {
-      int xMax = world.GetLength(0);
-      int yMax = world.GetLength(1);
-
       int neighbors = -world[x,y];
 
       for (int ex = x-1; ex <= x+1; ex++) {
         for (int ey = y-1; ey <= y+1; ey++) {
-          if ((ex >= 0) && (ey >= 0) &&
-              (ex < xMax) &&
-              (ey < yMax))
+          if (IsInBounds(ex, ey, world))
             neighbors += world[ex, ey];
         }
       }
 
       return neighbors;
+    }
+
+    private static bool IsInBounds(int x, int y, int[,] world) {
+      int xMax = world.GetLength(0);
+      int yMax = world.GetLength(1);
+
+      return (x >= 0) && (y >= 0) && (x < xMax) && (y < yMax);
     }
   }
 }

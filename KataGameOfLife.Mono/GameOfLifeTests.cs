@@ -112,4 +112,34 @@ namespace GameOfLife {
       Assert.AreEqual(1, nextworld[1,1]);
     }
   }
+
+  [TestFixture]
+  public class when_alive_center_of_3x3_grid_has_more_than_three_neighbors {
+    int[,] world = new int[,]{
+      {0,1,0},
+      {1,1,1},
+      {0,1,0}
+    };
+
+    [Test]
+    public void then_center_dies() {
+      int[,] nextworld = GOL.Spin(world);
+      Assert.AreEqual(0, nextworld[1,1]);
+    }
+  }
+
+  [TestFixture]
+  public class when_alive_center_of_3x3_grid_has_less_than_two_neighbors {
+    int[,] world = new int[,]{
+      {0,0,0},
+      {1,1,0},
+      {0,0,0}
+    };
+
+    [Test]
+    public void then_center_dies() {
+      int[,] nextworld = GOL.Spin(world);
+      Assert.AreEqual(0, nextworld[1,1]);
+    }
+  }
 }

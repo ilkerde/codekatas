@@ -16,7 +16,7 @@ namespace GameOfLife {
           if (life == 0) {
             newWorld[x,y] = neighbors == 3 ? 1 : 0;
           } else {
-            newWorld[x,y] = neighbors == 2 ? 1 : 0;
+            newWorld[x,y] = neighbors >= 2 && neighbors <= 3 ? 1 : 0;
           }
         }
       }

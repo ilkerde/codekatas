@@ -97,4 +97,19 @@ namespace GameOfLife {
       Assert.AreEqual(1, nextworld[1,1]);
     }
   }
+
+  [TestFixture]
+  public class when_alive_center_of_3x3_grid_has_three_neighbors {
+    int[,] world = new int[,]{
+      {0,1,0},
+      {1,1,1},
+      {0,0,0}
+    };
+
+    [Test]
+    public void then_center_stays_alive() {
+      int[,] nextworld = GOL.Spin(world);
+      Assert.AreEqual(1, nextworld[1,1]);
+    }
+  }
 }

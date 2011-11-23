@@ -58,13 +58,28 @@ namespace GameOfLife {
     [Test]
     public void then_center_top_becomes_alive() {
       int[,] nextworld = GOL.Spin(world);
-      Assert.AreEqual(1, nextworld[1,0]);
+      Assert.AreEqual(1, nextworld[0,1]);
     }
 
     [Test]
     public void then_right_top_stays_dead() {
       int[,] nextworld = GOL.Spin(world);
       Assert.AreEqual(0, nextworld[2,0]);
+    }
+  }
+
+  [TestFixture]
+  public class when_alive_center_of_3x3_grid_has_no_neighbors {
+    int[,] world = new int[,]{
+      {0,0,0},
+      {0,1,0},
+      {0,0,0}
+    };
+
+    [Test]
+    public void then_center_dies() {
+      int[,] nextworld = GOL.Spin(world);
+      Assert.AreEqual(0, nextworld[1,1]);
     }
   }
 }

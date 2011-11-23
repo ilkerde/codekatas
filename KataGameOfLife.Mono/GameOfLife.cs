@@ -1,0 +1,3 @@
+namespace GameOfLife {
+  using System;
+}

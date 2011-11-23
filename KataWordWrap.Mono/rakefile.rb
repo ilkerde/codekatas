@@ -6,11 +6,15 @@ $HOME = ENV['HOME']
 source = File.join $ME, "*.cs"
 binary = File.join $ME, "bin/WordWrap.dll"
 
+bindir = File.join $ME, "bin"
+libdir = File.join $ME, "lib"
+
 nunitlib = File.join $ME, "lib/nunit/nunit.framework.dll"
 
 desc "clean"
 task :clean do
     FileUtils.rm_f binary
+    FileUtils.mkdir_p bindir unless FileTest.directory? bindir
 end
 
 desc "build"

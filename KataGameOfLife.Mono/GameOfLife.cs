@@ -10,8 +10,14 @@ namespace GameOfLife {
 
       for (int x = 0; x < xMax; x++) {
         for (int y = 0; y < yMax; y++) {
-          int neighbors = GetNumberOfNeighbors(x, y, world);
-          newWorld[x,y] = neighbors == 3 ? 1 : world[x,y];
+          int life = world[x,y];
+
+          if (life == 0) {
+            int neighbors = GetNumberOfNeighbors(x, y, world);
+            newWorld[x,y] = neighbors == 3 ? 1 : world[x,y];
+          } else {
+            newWorld[x,y] = 0;
+          }
         }
       }
 

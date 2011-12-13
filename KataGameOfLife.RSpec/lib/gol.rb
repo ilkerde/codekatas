@@ -2,12 +2,14 @@ class Gol
   def spin world
     x = 0
     y = 0
+    n = 0
 
-    n1 = world[x+1][y]
-    n2 = world[x+1][y+1]
-    n3 = world[x][y+1]
+    (x..x+1).each do |nx|
+      (y..y+1).each do |ny|
+        n += world[nx][ny]
+      end
+    end
 
-    n = n1+n2+n3
     world[x][y] = 1 if n == 3
 
     world

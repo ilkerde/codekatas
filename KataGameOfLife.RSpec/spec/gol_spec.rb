@@ -13,6 +13,18 @@ describe "three neighbors bring life" do
     end
   end
 
+  describe "when empty lower right corner has three neighbors" do
+    world = [ 
+      [0,0,0],
+      [0,1,1],
+      [0,1,0]
+    ]
+
+    it "should bring life to lower right corner" do
+      Gol.new.spin(world)[2][2].should == 1
+    end
+  end
+
   describe "when empty upper left corner has no neighbors" do
     world = [ 
       [0,0,0],

@@ -1,15 +1,17 @@
 class Gol
   def spin world
-    newworld = world
+    mx = world.length-1
+    my = world[0].length-1
 
-    mx = world.length
-    my = world[0].length
-
+    newworld = []
     (0..mx).each do |x|
+      newland = []
       (0..my).each do |y|
         n = count_neighbors world, x, y, mx, my
-        newworld[x][y] = 1 if n == 3
+        citizen = n == 3 && 1 || world[x][y]
+        newland << citizen
       end
+      newworld << newland
     end
 
     newworld
@@ -20,8 +22,8 @@ class Gol
   def count_neighbors world, x, y, mx, my
     lox = x-1 < 0 && 0 || x-1
     loy = y-1 < 0 && 0 || y-1
-    hix = x+1 >= mx && mx-1 || x+1
-    hiy = y+1 >= my && my-1 || y+1
+    hix = x+1 >= mx && mx || x+1
+    hiy = y+1 >= my && my || y+1
 
     n = 0
     

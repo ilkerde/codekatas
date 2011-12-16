@@ -7,21 +7,16 @@ class Gol
 
     (0..mx).each do |x|
       (0..my).each do |y|
-        lox = x-1
-        loy = y-1
-        hix = x+1
-        hiy = x+1
-
-        hix = world.length - 1 if hix >= world.length
-        hiy = world[hix].length - 1 if hiy >= world[hix].length
-        lox = 0 if lox < 0
-        loy = 0 if loy < 0
+        lox = x-1 < 0 && 0 || x-1
+        loy = y-1 < 0 && 0 || y-1
+        hix = x+1 >= mx && mx-1 || x+1
+        hiy = y+1 >= my && my-1 || y+1
 
         n = 0
         
         (lox..hix).each do |nx|
           (loy..hiy).each do |ny|
-            n += world[nx][ny]
+            n += world[nx][ny] 
           end
         end
 

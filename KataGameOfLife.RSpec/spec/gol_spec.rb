@@ -36,4 +36,20 @@ describe "three neighbors bring life" do
       Gol.new.spin(world)[0][0].should == 0
     end
   end
+
+  describe "when empty cell have exactly three neighbors and one cell beneath with two neighbors" do
+    world = [ 
+      [0,0,0],
+      [1,1,1],
+      [0,0,0]
+    ]
+
+    it "should be that empty cell becomes alive" do
+      Gol.new.spin(world)[0][1].should == 1
+    end
+
+    it "should be that cell beneath of it stays empty" do
+      Gol.new.spin(world)[0][2].should == 0
+    end
+  end
 end

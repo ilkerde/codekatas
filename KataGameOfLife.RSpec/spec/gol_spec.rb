@@ -11,6 +11,10 @@ describe "underpopulation" do
     it "should clear the cell for a single-neighbored cell" do
       Gol.new.spin(world)[2][2].should == 0
     end
+
+    it "should clear the cell for a lonesome cell" do
+      Gol.new.spin(world)[1][0].should == 0
+    end
   end
 end
 

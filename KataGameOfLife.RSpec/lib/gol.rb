@@ -9,6 +9,7 @@ class Gol
       (0..my).each do |y|
         n = count_neighbors world, x, y, mx, my
         citizen = n == 3 && 1 || world[x][y]
+        citizen = n > 3 && 0 || citizen
         newland << citizen
       end
       newworld << newland

@@ -7,12 +7,9 @@ class Gol
     (0..mx).each do |x|
       newland = []
       (0..my).each do |y|
-        n = count_neighbors world, x, y, mx, my
-        citizen = n == 3 && 1 || world[x][y]
-        citizen = (
-          n > 3 ||
-          n < 2
-        ) && 0 || citizen
+        neighbor = count_neighbors world, x, y, mx, my
+        citizen = next_generation world[x][y], neighbor
+
         newland << citizen
       end
       newworld << newland
@@ -22,6 +19,16 @@ class Gol
   end
 
   private 
+
+  def next_generation cell, neighbor
+    citizen = neighbor == 3 && 1 || cell
+    citizen = (
+      neighbor > 3 ||
+      neighbor < 2
+    ) && 0 || citizen
+
+    citizen
+  end
 
   def count_neighbors world, x, y, mx, my
     lox = x-1 < 0 && 0 || x-1

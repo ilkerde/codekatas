@@ -11,7 +11,7 @@ class Gol
         citizen = n == 3 && 1 || world[x][y]
         citizen = (
           n > 3 ||
-          n == 1
+          n < 2
         ) && 0 || citizen
         newland << citizen
       end

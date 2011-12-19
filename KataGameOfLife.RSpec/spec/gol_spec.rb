@@ -1,5 +1,19 @@
 require 'gol'
 
+describe "overpopulation" do
+  describe "when more than three neighbors exist for a single, alive cell" do
+    world = [
+      [0,1,0],
+      [1,1,1],
+      [0,1,0]
+    ]
+
+    it "should clear the cell" do
+      Gol.new.spin(world)[1][1].should == 0
+    end
+  end
+end
+
 describe "three neighbors bring life" do
   describe "when empty upper left corner has three neighbors" do
     world = [ 

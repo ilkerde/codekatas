@@ -9,7 +9,10 @@ class Gol
       (0..my).each do |y|
         n = count_neighbors world, x, y, mx, my
         citizen = n == 3 && 1 || world[x][y]
-        citizen = n > 3 && 0 || citizen
+        citizen = (
+          n > 3 ||
+          n == 1
+        ) && 0 || citizen
         newland << citizen
       end
       newworld << newland
@@ -26,7 +29,7 @@ class Gol
     hix = x+1 >= mx && mx || x+1
     hiy = y+1 >= my && my || y+1
 
-    n = 0
+    n = -world[x][y]
     
     (lox..hix).each do |nx|
       (loy..hiy).each do |ny|

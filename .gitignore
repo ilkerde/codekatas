@@ -2,6 +2,7 @@ bin
 obj
 test-results
 *.swp
+*.pyc
 *.pidb
 *.suo
 *.cache

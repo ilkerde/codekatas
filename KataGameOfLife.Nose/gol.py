@@ -1,10 +1,13 @@
 class Gol:
   def generate(self, cell):
-    return Cell()
+    return cell.next_generation()
 
 class Cell:
   def __init__(self, neighbors=[]):
-    pass
+    self.neighbors = neighbors
 
   def is_alive(self):
-    pass
+    return len(self.neighbors) == 3
+
+  def next_generation(self):
+    return self

@@ -9,11 +9,11 @@ class test_repopulation_rule:
     
     new_cell = self.gol.generate(cell)
 
-    assert new_cell.is_alive
+    assert new_cell.is_alive()
 
   def when_empty_cell_has_no_neighbors_then_cell_stays_empty_test(self):
     cell = Cell()
 
     new_cell = self.gol.generate(cell)
 
-    assert not new_cell.is_alive
+    assert not new_cell.is_alive()

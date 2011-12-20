@@ -1,6 +1,6 @@
 class Gol:
   def generate(self, cell):
-    pass
+    return Cell()
 
 class Cell:
   def __init__(self, neighbors=[]):

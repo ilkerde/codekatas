@@ -3,14 +3,16 @@ from gol import *
 class test_repopulation_rule:
   gol = Gol()
 
-  def when_empty_cell_has_three_neighbors_then_cell_gets_populated_test(self):
-    neighbors = [Cell(), Cell(), Cell()]
+  def when_empty_cell_has_three_alive_neighbors_then_cell_gets_populated_test(self):
+    alive_cell = Cell(is_alive=True)
+    neighbors = [alive_cell, alive_cell, alive_cell]
     cell = Cell(neighbors)
     new_cell = self.gol.generate(cell)
     assert new_cell.is_alive
 
   def when_empty_cell_has_three_neighbors_its_just_empty_test(self):
-    neighbors = [Cell(), Cell(), Cell()]
+    alive_cell = Cell(is_alive=True)
+    neighbors = [alive_cell, alive_cell, alive_cell]
     cell = Cell(neighbors)
     assert not cell.is_alive
 

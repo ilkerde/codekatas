@@ -8,5 +8,6 @@ class Cell:
     self.is_alive = is_alive
 
   def next_generation(self):
-    will_be_alive = len(self.neighbors) == 3
+    alive_neighbors = filter(lambda n: n.is_alive, self.neighbors)
+    will_be_alive = len(alive_neighbors) == 3
     return Cell(self.neighbors, will_be_alive)

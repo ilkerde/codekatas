@@ -26,3 +26,10 @@ class test_repopulation_rule:
     cell = Cell(neighbors)
     new_cell = self.gol.generate(cell)
     assert not new_cell.is_alive
+
+class test_neighbor_uniqueness:
+  def when_cell_already_has_same_cell_as_neighbor_then_may_not_accept_that_cell_as_neighbor_test(self):
+    a_cell = Cell()
+    cell = Cell([a_cell, a_cell])
+    assert len(cell.neighbors) == 1
+

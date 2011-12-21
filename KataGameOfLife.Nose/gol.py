@@ -4,7 +4,7 @@ class Gol:
 
 class Cell:
   def __init__(self, neighbors=[], is_alive=False):
-    self.neighbors = neighbors
+    self.neighbors = list(set(neighbors))
     self.is_alive = is_alive
 
   def next_generation(self):

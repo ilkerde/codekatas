@@ -5,5 +5,5 @@ class TennisGame:
     self.score = (score_p1, score_p2)
 
   def score_player_1(self):
-    pass
+    self.is_over = True
 

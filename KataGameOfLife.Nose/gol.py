@@ -11,3 +11,4 @@ class Cell:
     alive_neighbors = filter(lambda n: n.is_alive, self.neighbors)
     will_be_alive = len(alive_neighbors) == 3
     return Cell(self.neighbors, will_be_alive)
+

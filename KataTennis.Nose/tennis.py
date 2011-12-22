@@ -1,2 +1,2 @@
 class TennisGame:
-  pass
+  is_over=False

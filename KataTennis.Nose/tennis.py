@@ -1,0 +1,2 @@
+class TennisGame:
+  pass

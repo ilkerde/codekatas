@@ -3,7 +3,8 @@ class Gol:
     return cell.next_generation()
 
   def neighbors(cell, a_cell, b_cell):
-    pass
+    a_cell.neighbors.append(b_cell)
+    b_cell.neighbors.append(a_cell)
 
 class Cell:
   def __init__(self, neighbors=[], is_alive=False):

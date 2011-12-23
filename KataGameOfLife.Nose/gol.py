@@ -1,18 +1,13 @@
 class Gol:
   _cells = {}
  
-  def free_cell(self, pos):
-    self._cells[pos] = Cell()
-
-  def full_cell(self, pos):
+  def set_cell(self, pos, alive=True):
     vicinity = [
       (pos[0]-1,pos[1]),
       (pos[0]+1,pos[1]),
       (pos[0],pos[1]-1),
       (pos[0],pos[1]+1)]
-
-    cell = Cell(is_alive=True)
-
+    cell = Cell(is_alive=alive)
     for around in vicinity:
       neighbor = self.check_cell(around)
       if neighbor is not None:

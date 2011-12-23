@@ -77,36 +77,36 @@ class test_gol_neighbor_bidirection:
 class test_gol_cell_position:
   def when_cell_is_added_to_position_1_1_then_position_is_occupied_by_cell_test(self):
     g = Gol()
-    g.free_cell((1,1))
+    g.set_cell((1,1), alive=False)
     assert g.check_cell((1,1)) is not None
 
   def when_another_cell_is_added_to_position_1_1_then_position_is_occupied_by_new_cell_test(self):
     g = Gol()
-    g.free_cell((1,1))
-    g.full_cell((1,1))
+    g.set_cell((1,1), alive=False)
+    g.set_cell((1,1))
     assert g.check_cell((1,1)).is_alive
 
   def when_a_cell_is_added_to_next_x_axis_position_of_an_existing_cell_then_both_become_neighbors_test(self):
     g = Gol()
-    g.full_cell((1,1))
-    g.full_cell((2,1))
+    g.set_cell((1,1))
+    g.set_cell((2,1))
     assert are_beneath(g, (1,1), (2,1))
 
   def when_a_cell_is_added_to_previous_x_axis_position_of_an_existing_cell_then_both_become_neighbors_test(self):
     g = Gol()
-    g.full_cell((2,1))
-    g.full_cell((1,1))
+    g.set_cell((2,1))
+    g.set_cell((1,1))
     assert are_beneath(g, (1,1), (2,1))
 
   def when_a_cell_is_added_to_next_y_axis_position_of_an_existing_cell_then_both_become_neighbors_test(self):
     g = Gol()
-    g.full_cell((1,1))
-    g.full_cell((1,2))
+    g.set_cell((1,1))
+    g.set_cell((1,2))
     assert are_beneath(g, (1,1), (1,2))
 
   def when_a_cell_is_added_to_previous_x_axis_position_of_an_existing_cell_then_both_become_neighbors_test(self):
     g = Gol()
-    g.full_cell((1,2))
-    g.full_cell((1,1))
+    g.set_cell((1,2))
+    g.set_cell((1,1))
     assert are_beneath(g, (1,1), (1,2))
 

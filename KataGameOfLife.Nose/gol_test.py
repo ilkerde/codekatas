@@ -1,5 +1,7 @@
 from gol import *
 
+gol = Gol()
+
 def create_full_cells(count):
   return create_cells(count, True)
 
@@ -7,12 +9,10 @@ def create_cells(count, fill=False):
   return [Cell(is_alive=fill) for num in range(0, count)]
 
 class test_repopulation_rule:
-  gol = Gol()
-
   def when_empty_cell_has_three_alive_neighbors_then_cell_gets_populated_test(self):
     neighbors = create_cells(3, True)
     cell = Cell(neighbors)
-    new_cell = self.gol.generate(cell)
+    new_cell = gol.generate(cell)
     assert new_cell.is_alive
 
   def when_empty_cell_has_three_neighbors_its_just_empty_test(self):
@@ -22,37 +22,33 @@ class test_repopulation_rule:
 
   def when_empty_cell_has_no_neighbors_then_cell_stays_empty_test(self):
     cell = Cell()
-    new_cell = self.gol.generate(cell)
+    new_cell = gol.generate(cell)
     assert not new_cell.is_alive
 
   def when_empty_cell_has_three_empty_neighbors_then_cell_stays_empty_test(self):
     neighbors = create_cells(3)
     cell = Cell(neighbors)
-    new_cell = self.gol.generate(cell)
+    new_cell = gol.generate(cell)
     assert not new_cell.is_alive
 
 class test_underpopulation_rule:
-  gol = Gol()
-
   def when_full_cell_has_less_than_two_neighbors_then_cell_becomes_empty_test(self):
     neighbors = create_full_cells(1)
     cell = Cell(neighbors, is_alive=True)
-    new_cell = self.gol.generate(cell)
+    new_cell = gol.generate(cell)
     assert not new_cell.is_alive
 
   def when_full_cell_has_two_neighbors_then_cell_stays_alive_test(self):
     neighbors = create_full_cells(2)
     cell = Cell(neighbors, is_alive=True)
-    new_cell = self.gol.generate(cell)
+    new_cell = gol.generate(cell)
     assert new_cell.is_alive
 
 class test_overpopulation_rule:
-  gol = Gol()
-
   def when_full_cell_has_more_than_three_neighbors_then_cell_becomes_empty_test(self):
     neighbors = create_full_cells(4)
     cell = Cell(neighbors, is_alive=True)
-    new_cell = self.gol.generate(cell)
+    new_cell = gol.generate(cell)
     assert not new_cell.is_alive
 
 class test_neighbor_uniqueness:
@@ -60,4 +56,12 @@ class test_neighbor_uniqueness:
     a_cell = Cell()
     cell = Cell([a_cell, a_cell])
     assert len(cell.neighbors) == 1
+
+
+class test_gol_neighbor_bidirection:
+  def when_cell_is_assigned_as_neighbor_of_another_then_other_cell_becomes_neighbor_of_assignee_test(self):
+    a_cell = Cell()
+    b_cell = Cell()
+    gol.neighbors(a_cell, b_cell)
+    assert b_cell in a_cell.neighbors
 

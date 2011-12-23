@@ -4,6 +4,9 @@ class Gol:
   def free_cell(self, pos):
     self._cells[pos] = Cell()
 
+  def full_cell(self, pos):
+    self._cells[pos] = Cell(is_alive=True)
+
   def check_cell(self, pos):
     return self._cells[pos]
 

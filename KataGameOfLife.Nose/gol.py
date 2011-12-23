@@ -5,15 +5,19 @@ class Gol:
     self._cells[pos] = Cell()
 
   def full_cell(self, pos):
-    self._cells[pos] = Cell(is_alive=True)
+    before_cell = self.check_cell((pos[0]-1,pos[1]))
+    cell = Cell(is_alive=True)
+    if before_cell is not None:
+      self.neighbors(cell, before_cell)
+    self._cells[pos] = cell
 
   def check_cell(self, pos):
-    return self._cells[pos]
+    return self._cells[pos] if pos in self._cells else None
 
   def generate(self, cell):
     return cell.next_generation()
 
-  def neighbors(cell, a_cell, b_cell):
+  def neighbors(self, a_cell, b_cell):
     a_cell.neighbors.append(b_cell)
     b_cell.neighbors.append(a_cell)
 

@@ -31,6 +31,21 @@ class test_repopulation_rule:
     new_cell = self.gol.generate(cell)
     assert not new_cell.is_alive
 
+class test_underpopulation_rule:
+  gol = Gol()
+
+  def when_full_cell_has_less_than_two_neighbors_then_cell_becomes_empty_test(self):
+    neighbors = create_full_cells(1)
+    cell = Cell(neighbors, is_alive=True)
+    new_cell = self.gol.generate(cell)
+    assert not new_cell.is_alive
+
+  def when_full_cell_has_two_neighbors_then_cell_stays_alive_test(self):
+    neighbors = create_full_cells(2)
+    cell = Cell(neighbors, is_alive=True)
+    new_cell = self.gol.generate(cell)
+    assert new_cell.is_alive
+
 class test_overpopulation_rule:
   gol = Gol()
 

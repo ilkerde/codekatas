@@ -8,6 +8,7 @@ class Gol:
     xb_cell = self.check_cell((pos[0]-1,pos[1]))
     xa_cell = self.check_cell((pos[0]+1,pos[1]))
     yb_cell = self.check_cell((pos[0],pos[1]-1))
+    ya_cell = self.check_cell((pos[0],pos[1]+1))
     cell = Cell(is_alive=True)
     if xb_cell is not None:
       self.neighbors(cell, xb_cell)
@@ -15,6 +16,8 @@ class Gol:
       self.neighbors(cell, xa_cell)
     if yb_cell is not None:
       self.neighbors(cell, yb_cell)
+    if ya_cell is not None:
+      self.neighbors(cell, ya_cell)
     self._cells[pos] = cell
 
   def check_cell(self, pos):

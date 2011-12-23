@@ -1,4 +1,12 @@
 class Gol:
+  _cells = {}
+ 
+  def free_cell(self, pos):
+    self._cells[pos] = Cell()
+
+  def check_cell(self, pos):
+    return self._cells[pos]
+
   def generate(self, cell):
     return cell.next_generation()
 

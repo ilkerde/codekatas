@@ -68,7 +68,13 @@ class test_gol_neighbor_bidirection:
 
 
 class test_gol_cell_position:
-  gol = Gol()
   def when_cell_is_added_to_position_1_1_then_position_is_occupied_by_cell_test(self):
-    self.gol.free_cell((1,1))
-    assert gol.check_cell((1,1)) is not None
+    g = Gol()
+    g.free_cell((1,1))
+    assert g.check_cell((1,1)) is not None
+
+  def when_another_cell_is_added_to_position_1_1_then_position_is_occupied_by_new_cell_test(self):
+    g = Gol()
+    g.free_cell((1,1))
+    g.full_cell((1,1))
+    assert g.check_cell((1,1)).is_alive

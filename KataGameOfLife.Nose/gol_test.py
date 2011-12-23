@@ -59,9 +59,16 @@ class test_neighbor_uniqueness:
 
 
 class test_gol_neighbor_bidirection:
+  gol = Gol()
   def when_cell_is_assigned_as_neighbor_of_another_then_other_cell_becomes_neighbor_of_assignee_test(self):
     a_cell = Cell()
     b_cell = Cell()
-    gol.neighbors(a_cell, b_cell)
+    self.gol.neighbors(a_cell, b_cell)
     assert b_cell in a_cell.neighbors
 
+
+class test_gol_cell_position:
+  gol = Gol()
+  def when_cell_is_added_to_position_1_1_then_position_is_occupied_by_cell_test(self):
+    self.gol.free_cell((1,1))
+    assert gol.check_cell((1,1)) is not None

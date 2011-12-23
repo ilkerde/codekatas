@@ -8,6 +8,14 @@ def create_full_cells(count):
 def create_cells(count, fill=False):
   return [Cell(is_alive=fill) for num in range(0, count)]
 
+def are_beneath(grid, a_pos, b_pos):
+  return are_neighbors(grid.check_cell(a_pos), grid.check_cell(b_pos))
+
+def are_neighbors(a_cell, b_cell):
+  return \
+  a_cell in b_cell.neighbors and \
+  b_cell in a_cell.neighbors 
+
 class test_repopulation_rule:
   def when_empty_cell_has_three_alive_neighbors_then_cell_gets_populated_test(self):
     neighbors = create_cells(3, True)
@@ -66,7 +74,6 @@ class test_gol_neighbor_bidirection:
     self.gol.neighbors(a_cell, b_cell)
     assert b_cell in a_cell.neighbors
 
-
 class test_gol_cell_position:
   def when_cell_is_added_to_position_1_1_then_position_is_occupied_by_cell_test(self):
     g = Gol()
@@ -83,12 +90,10 @@ class test_gol_cell_position:
     g = Gol()
     g.full_cell((1,1))
     g.full_cell((2,1))
-    assert g.check_cell((1,1)) in g.check_cell((2,1)).neighbors
-    assert g.check_cell((2,1)) in g.check_cell((1,1)).neighbors
+    assert are_beneath(g, (1,1), (2,1))
 
   def when_a_cell_is_added_to_previous_x_axis_position_of_an_existing_cell_then_both_become_neighbors_test(self):
     g = Gol()
     g.full_cell((2,1))
     g.full_cell((1,1))
-    assert g.check_cell((1,1)) in g.check_cell((2,1)).neighbors
-    assert g.check_cell((2,1)) in g.check_cell((1,1)).neighbors
+    assert are_beneath(g, (1,1), (2,1))

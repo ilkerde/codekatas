@@ -78,3 +78,10 @@ class test_gol_cell_position:
     g.free_cell((1,1))
     g.full_cell((1,1))
     assert g.check_cell((1,1)).is_alive
+
+  def when_a_cell_is_added_to_next_x_axis_position_of_an_existing_cell_then_both_become_neighbors_test(self):
+    g = Gol()
+    g.full_cell((1,1))
+    g.full_cell((2,1))
+    assert g.check_cell((1,1)) in g.check_cell((2,1)).neighbors
+    assert g.check_cell((2,1)) in g.check_cell((1,1)).neighbors

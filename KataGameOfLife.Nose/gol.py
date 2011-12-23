@@ -5,19 +5,16 @@ class Gol:
     self._cells[pos] = Cell()
 
   def full_cell(self, pos):
-    xb_cell = self.check_cell((pos[0]-1,pos[1]))
-    xa_cell = self.check_cell((pos[0]+1,pos[1]))
-    yb_cell = self.check_cell((pos[0],pos[1]-1))
-    ya_cell = self.check_cell((pos[0],pos[1]+1))
+    vicinity = [
+      self.check_cell((pos[0]-1,pos[1])),
+      self.check_cell((pos[0]+1,pos[1])),
+      self.check_cell((pos[0],pos[1]-1)),
+      self.check_cell((pos[0],pos[1]+1))]
     cell = Cell(is_alive=True)
-    if xb_cell is not None:
-      self.neighbors(cell, xb_cell)
-    if xa_cell is not None:
-      self.neighbors(cell, xa_cell)
-    if yb_cell is not None:
-      self.neighbors(cell, yb_cell)
-    if ya_cell is not None:
-      self.neighbors(cell, ya_cell)
+
+    for neighbor in vicinity:
+      if neighbor is not None:
+        self.neighbors(cell, neighbor)
     self._cells[pos] = cell
 
   def check_cell(self, pos):

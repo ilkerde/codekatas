@@ -8,4 +8,4 @@ class TennisGame:
     self.is_over = self.score[0] == 40
 
   def score_player_2(self):
-    pass
+    self.is_over = self.score[1] == 40

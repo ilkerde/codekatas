@@ -14,3 +14,8 @@ def when_score_is_love_all_and_p1_score_then_game_is_not_over_test():
   tennis = TennisGame()
   tennis.score_player_1()
   assert not tennis.is_over
+
+def when_score_is_love_forty_and_p2_score_then_game_is_over_test():
+  tennis = TennisGame(0, 40)
+  tennis.score_player_2()
+  assert tennis.is_over == True

@@ -1,3 +1,6 @@
 def scal_add(expression):
-  return 1
+  parts = expression.split(',')
+  numbers = [int(part) for part in parts]
+  result = sum(numbers)
+  return result
 

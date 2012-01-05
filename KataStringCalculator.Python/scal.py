@@ -1,3 +1,3 @@
 def scal_add(expression):
-  pass
+  return 1
 

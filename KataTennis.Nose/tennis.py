@@ -18,8 +18,8 @@ class Score:
     return abs(score_a - score_b) > 1
 
   @staticmethod
-  def is_over_thirty(score):
-    return score > Score.THIRTY
+  def is_over_forty(score):
+    return score > Score.FORTY
 
 class TennisGame:
   is_over = False
@@ -41,6 +41,6 @@ class TennisGame:
     looser_score = self.score[looser]
 
     self.is_over = (
-      Score.is_over_thirty(scorer_score) and 
+      Score.is_over_forty(scorer_score) and 
       Score.is_two_ahead(scorer_score, looser_score)
     )

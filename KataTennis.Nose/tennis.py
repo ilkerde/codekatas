@@ -33,4 +33,4 @@ class TennisGame:
       for i, x in enumerate(self.score)
     )
 
-    self.is_over = Score.is_two_ahead(self.score[scorer], self.score[looser])
+    self.is_over = (self.score[scorer] > Score.THIRTY) and (Score.is_two_ahead(self.score[scorer], self.score[looser]))

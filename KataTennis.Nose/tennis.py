@@ -1,30 +1,26 @@
 class Score:
   LOVE = 0
-  FIFTEEN = 15
-  THIRTY = 30
-  FORTY = 40
-  ADVANTAGE = 50
-  GAME = 100
-
-  _table = [LOVE, FIFTEEN, THIRTY, FORTY, ADVANTAGE, GAME]
+  FIFTEEN = 1
+  THIRTY = 2
+  FORTY = 3
+  ADVANTAGE = 4
+  GAME = 5
 
   @staticmethod
   def next(score):
-    if score == Score.GAME:
-      return score
-
-    return Score._table[Score._table.index(score) + 1]
+    can_score = score < Score.GAME
+    if can_score:
+      score += 1
+    return score
 
   @staticmethod
   def is_two_ahead(score_a, score_b):
-    offset_a = Score._table.index(score_a)
-    offset_b = Score._table.index(score_b)
-    return abs(offset_a - offset_b) > 1
+    return abs(score_a - score_b) > 1
 
 class TennisGame:
   is_over = False
   
-  def __init__(self, score_p1=0, score_p2=0):
+  def __init__(self, score_p1=Score.LOVE, score_p2=Score.LOVE):
     self.score = score_p1, score_p2
 
   def score_player(self, player):

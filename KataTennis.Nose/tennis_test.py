@@ -30,7 +30,7 @@ def when_score_is_forty_all_and_p1_score_then_game_is_not_over_test():
   tennis.score_player(1)
   assert not tennis.is_over
 
-def when_score_is_fifteen_love_and_p1_score_then_game_is_not_over_test():
-  tennis = TennisGame(Score.FIFTEEN, Score.LOVE)
+def when_score_is_thirty_love_and_p1_score_then_game_is_not_over_test():
+  tennis = TennisGame(Score.THIRTY, Score.LOVE)
   tennis.score_player(1)
   assert not tennis.is_over

@@ -17,6 +17,10 @@ class Score:
   def is_two_ahead(score_a, score_b):
     return abs(score_a - score_b) > 1
 
+  @staticmethod
+  def is_over_thirty(score):
+    return score > Score.THIRTY
+
 class TennisGame:
   is_over = False
   
@@ -33,4 +37,10 @@ class TennisGame:
       for i, x in enumerate(self.score)
     )
 
-    self.is_over = (self.score[scorer] > Score.THIRTY) and (Score.is_two_ahead(self.score[scorer], self.score[looser]))
+    scorer_score = self.score[scorer]
+    looser_score = self.score[looser]
+
+    self.is_over = (
+      Score.is_over_thirty(scorer_score) and 
+      Score.is_two_ahead(scorer_score, looser_score)
+    )

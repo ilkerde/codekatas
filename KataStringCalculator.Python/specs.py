@@ -23,3 +23,8 @@ class test_when_numbers_are_separated_by_newline_are_given:
 class test_when_numbers_are_separated_by_newline_and_comma_are_given:
   def test_then_returns_sum_of_numbers(self):
     assert scal_add("3\n5,8") == 16
+
+class test_when_no_number_is_between_separators:
+  def test_then_returns_zero(self):
+    assert scal_add("3,") == 0
+

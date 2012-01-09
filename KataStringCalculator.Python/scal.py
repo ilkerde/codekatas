@@ -8,6 +8,9 @@ def scal_add(expression):
   for line in lines:
     parts.extend(line.split(','))
 
+  if '' in parts:
+    return 0
+
   numbers = [int(part) for part in parts]
 
   result = sum(numbers)

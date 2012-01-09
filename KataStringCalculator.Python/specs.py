@@ -11,3 +11,7 @@ class test_when_single_number_is_given:
 class test_when_two_numbers_separated_by_comma_are_given:
   def test_then_returns_sum_of_numbers(self):
     assert scal_add("3,5") == 8
+
+class test_when_arbitrary_number_of_numbers_are_given:
+  def test_then_returns_sum_of_numbers(self):
+    assert scal_add("3,5,8,13,21") == 50

@@ -37,3 +37,6 @@ class test_when_negative_number_is_given(TestCase):
   def test_then_raises_error_with_negative_number_in_message(self):
     self.assertRaises(ValueError, lambda: scal_add("-2,2"))
 
+  def test_then_includes_negatives_in_error_message(self):
+    self.assertRaisesRegexp(ValueError, '.*-2.*-4.*', lambda: scal_add("-2,-4"))
+

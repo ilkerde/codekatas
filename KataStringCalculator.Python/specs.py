@@ -34,7 +34,7 @@ class test_when_first_line_starts_with_doubleslash:
     assert scal_add("//:\n2:2") == 4
 
 class test_when_negative_number_is_given(TestCase):
-  def test_then_raises_error_with_negative_number_in_message(self):
+  def test_then_raises_error(self):
     self.assertRaises(ValueError, lambda: scal_add("-2,2"))
 
   def test_then_includes_negatives_in_error_message(self):

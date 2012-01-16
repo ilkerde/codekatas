@@ -5,8 +5,15 @@ def scal_add(expression):
   parts = []
   lines = expression.splitlines()
 
+  separator = ','
+
+  firstline = lines[0]
+  if firstline.startswith('//'):
+    separator = firstline[2]
+    lines = lines[1:]
+
   for line in lines:
-    parts.extend(line.split(','))
+    parts.extend(line.split(separator))
 
   if '' in parts:
     return 0

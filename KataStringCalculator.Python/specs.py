@@ -28,3 +28,7 @@ class test_when_no_number_is_between_separators:
   def test_then_returns_zero(self):
     assert scal_add("3,") == 0
 
+class test_when_first_line_starts_with_doubleslash:
+  def test_then_the_char_afterwards_is_a_delimiter(self):
+    assert scal_add("//:\n2:2") == 4
+

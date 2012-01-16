@@ -25,7 +25,7 @@ def scal_add(expression):
   ]
 
   if len(negatives) > 0:
-    raise ValueError
+    raise ValueError('Negatives not allowed: %s' % str(negatives))
 
   result = sum(numbers)
   return result

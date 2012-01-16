@@ -19,6 +19,13 @@ def scal_add(expression):
     return 0
 
   numbers = [int(part) for part in parts]
+  negatives = [
+    number for number in numbers 
+    if number < 0
+  ]
+
+  if len(negatives) > 0:
+    raise ValueError
 
   result = sum(numbers)
   return result

@@ -1,3 +1,4 @@
+from unittest import TestCase
 from scal import scal_add
 
 class test_when_nothing_is_given:
@@ -31,4 +32,8 @@ class test_when_no_number_is_between_separators:
 class test_when_first_line_starts_with_doubleslash:
   def test_then_the_char_afterwards_is_a_delimiter(self):
     assert scal_add("//:\n2:2") == 4
+
+class test_when_negative_number_is_given(TestCase):
+  def test_then_raises_error_with_negative_number_in_message(self):
+    self.assertRaises(ValueError, lambda: scal_add("-2,2"))
 

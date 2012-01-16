@@ -13,3 +13,4 @@ test-results
 .metadata
 .project
 .settings
+__pycache__

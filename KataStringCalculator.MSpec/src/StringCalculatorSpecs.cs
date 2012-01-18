@@ -24,6 +24,11 @@ namespace Kata {
 
   class When_having_expression_with_first_line_being_doubleslash_plus_char {
     It should_use_given_char_as_valid_separator = ()
-      => StringCalculator.Add("//:\n2:8").ShouldEqual(10);
+      => StringCalculator.Add("//:\n2:8")
+        .ShouldEqual(10);
+
+    It should_sum_with_a_comma_separator_as_well = ()
+      => StringCalculator.Add("//:\n2,8")
+        .ShouldEqual(10);
   }
 }

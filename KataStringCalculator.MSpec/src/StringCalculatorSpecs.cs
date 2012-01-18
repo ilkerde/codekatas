@@ -3,6 +3,7 @@ namespace Kata {
   using Machine.Specifications;
 
   class When_having_numbers_separated_by_comma {
-    It should_return_the_sum_of_both_numbers;
+    It should_return_the_sum_of_both_numbers = () 
+      => StringCalculator.Add("2,2").ShouldEqual(4); 
   }
 }

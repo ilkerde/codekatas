@@ -21,4 +21,9 @@ namespace Kata {
     It should_return_the_sum_of_all_numbers = ()
       => StringCalculator.Add("3\n5").ShouldEqual(8);
   }
+
+  class When_having_expression_with_first_line_being_doubleslash_plus_char {
+    It should_use_given_char_as_valid_separator = ()
+      => StringCalculator.Add("//:\n2:8").ShouldEqual(10);
+  }
 }

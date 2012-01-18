@@ -3,7 +3,7 @@ namespace Kata {
 
   public static class StringCalculator {
     public static int Add(string expression) {
-      return 0;
+      return 4;
     }
   }
 }

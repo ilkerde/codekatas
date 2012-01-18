@@ -3,6 +3,9 @@ namespace Kata {
 
   public static class StringCalculator {
     public static int Add(string expression) {
+      if (string.IsNullOrEmpty(expression))
+        return 0;
+
       string[] parts = expression.Split(',');
      
       int result = 0;

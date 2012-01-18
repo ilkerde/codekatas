@@ -11,4 +11,9 @@ namespace Kata {
     It should_return_just_the_number = ()
       => StringCalculator.Add("3").ShouldEqual(3);
   }
+
+  class When_having_nothing_at_all {
+    It should_return_zero = ()
+      => StringCalculator.Add("").ShouldEqual(0);
+  }
 }

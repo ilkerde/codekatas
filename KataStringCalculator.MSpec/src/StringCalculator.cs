@@ -6,7 +6,8 @@ namespace Kata {
       if (string.IsNullOrEmpty(expression))
         return 0;
 
-      string[] parts = expression.Split(',');
+      char[] separators = new [] { ',', '\n' };
+      string[] parts = expression.Split(separators);
      
       int result = 0;
       foreach (var part in parts)

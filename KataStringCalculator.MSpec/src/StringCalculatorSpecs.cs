@@ -16,4 +16,9 @@ namespace Kata {
     It should_return_zero = ()
       => StringCalculator.Add("").ShouldEqual(0);
   }
+
+  class When_having_numbers_separated_by_newline {
+    It should_return_the_sum_of_all_numbers = ()
+      => StringCalculator.Add("3\n5").ShouldEqual(8);
+  }
 }

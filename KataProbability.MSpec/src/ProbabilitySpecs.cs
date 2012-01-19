@@ -8,6 +8,12 @@ namespace Kata {
       .ShouldEqual(P.Of(0));
   }
 
+  class When_the_inversion_prob_of_prob_dot3_is_required {
+    It should_return_dot7 = () => P.Of(0.3m)
+      .InverseOf()
+      .ShouldEqual(P.Of(0.7m));
+  }
+
   public static class P {
     public static Probability Of(decimal value) {
       return new Probability(value);

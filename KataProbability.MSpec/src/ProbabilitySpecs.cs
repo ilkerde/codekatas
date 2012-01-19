@@ -26,6 +26,12 @@ namespace Kata {
       .ShouldEqual(P.Of(0.05m));
   }
 
+  class When_the_either_prob_of_dot5_and_dot5_is_required {
+    It should_return_dot75 = () => P.Of(0.5m)
+      .Either(P.Of(0.5m))
+      .ShouldEqual(P.Of(0.75m));
+  }
+
   public static class P {
     public static Probability Of(decimal value) {
       return new Probability(value);

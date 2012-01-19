@@ -16,6 +16,10 @@ namespace Kata {
       return new Probability(value * other.value);
     }
 
+    public Probability Either(Probability other) {
+      return null;
+    }
+
     public override int GetHashCode() {
       return value.GetHashCode();
     }

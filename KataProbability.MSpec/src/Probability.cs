@@ -9,7 +9,7 @@ namespace Kata {
     }
 
     public Probability InverseOf() {
-      return new Probability(0);
+      return new Probability(1 - value);
     }
 
     public override int GetHashCode() {

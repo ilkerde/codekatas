@@ -5,9 +5,14 @@ namespace Kata {
   [TestFixture] public class When_the_inverse_probability_of_a_probability_is_required {
     [Test] public void Then_a_probability_of_1_should_invert_to_0() {
       Assert.AreEqual(
-        new Probability(1).InverseOf(),
-        new Probability(0)
+        P.Of(1).InverseOf(), P.Of(0)
       );
+    }
+  }
+
+  public static class P {
+    public static Probability Of(decimal value) {
+      return new Probability(value);
     }
   }
 }

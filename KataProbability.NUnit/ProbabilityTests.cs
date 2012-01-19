@@ -8,6 +8,12 @@ namespace Kata {
         P.Of(1).InverseOf(), P.Of(0)
       );
     }
+
+    [Test] public void Then_a_probability_of_0_should_invert_to_1() {
+      Assert.AreEqual(
+        P.Of(0).InverseOf(), P.Of(1)
+      );
+    }
   }
 
   public static class P {

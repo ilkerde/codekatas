@@ -17,7 +17,7 @@ namespace Kata {
     }
 
     public Probability Either(Probability other) {
-      return new Probability(0.75m);
+      return new Probability(value + other.value - (value * other.value));
     }
 
     public override int GetHashCode() {

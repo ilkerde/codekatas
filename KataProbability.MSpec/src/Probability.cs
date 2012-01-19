@@ -1,7 +1,7 @@
 namespace Kata {
   using System;
 
-  class Probability : IEquatable<Probability> {
+  public class Probability : IEquatable<Probability> {
     decimal value;
 
     public Probability(decimal initialValue) {

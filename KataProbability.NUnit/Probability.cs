@@ -10,7 +10,7 @@ namespace Kata {
     }
 
     public Probability InverseOf() {
-      return new Probability(0);
+      return new Probability(1 - value);
     }
 
     public bool Equals(Probability other) {

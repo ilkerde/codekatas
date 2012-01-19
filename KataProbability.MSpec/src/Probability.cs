@@ -1,7 +1,7 @@
 namespace Kata {
   using System;
 
-  class Probability {
+  class Probability : IEquatable<Probability> {
     decimal value;
 
     public Probability(decimal initialValue) {
@@ -9,7 +9,19 @@ namespace Kata {
     }
 
     public Probability InverseOf() {
-      return null;
+      return new Probability(0);
+    }
+
+    public override int GetHashCode() {
+      return value.GetHashCode();
+    }
+
+    public override bool Equals(object other) {
+      return Equals(other as Probability);
+    }
+
+    public bool Equals(Probability other) {
+      return other != null && other.value.Equals(value);
     }
   }
 }

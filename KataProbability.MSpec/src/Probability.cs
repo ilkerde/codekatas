@@ -12,6 +12,10 @@ namespace Kata {
       return new Probability(1 - value);
     }
 
+    public Probability CombineWith(Probability other) {
+      return null;
+    }
+
     public override int GetHashCode() {
       return value.GetHashCode();
     }

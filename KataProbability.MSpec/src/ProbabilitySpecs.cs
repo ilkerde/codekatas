@@ -14,6 +14,12 @@ namespace Kata {
       .ShouldEqual(P.Of(0.7m));
   }
 
+  class When_the_combination_of_dot5_and_dot5_is_required {
+    It should_return_dot25 = () => P.Of(0.5m)
+      .CombineWith(P.Of(0.5m))
+      .ShouldEqual(P.Of(0.25m));
+  }
+
   public static class P {
     public static Probability Of(decimal value) {
       return new Probability(value);

@@ -9,7 +9,8 @@ binary = File.join $ME, "bin/Kata.dll"
 bindir = File.join $ME, "bin"
 libdir = File.join $ME, "lib"
 
-nunitlib = File.join $ME, "lib/nunit/nunit.framework.dll"
+nunitlib = File.join $ME, "lib/nunit/lib/nunit.framework.dll"
+nunittool = File.join $ME, "lib/nunit/tools/nunit-console.exe"
 
 desc "clean"
 task :clean do
@@ -25,5 +26,5 @@ end
 
 desc "test"
 task :test => [:build] do
-     system "nunit-console #{binary}"
+     system "mono #{nunittool} #{binary}"
 end

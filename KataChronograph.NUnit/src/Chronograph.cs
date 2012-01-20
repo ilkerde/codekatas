@@ -3,6 +3,11 @@ namespace KataChrono {
 
   public class Chronograph {
     private CultureInfo _culture = CultureInfo.InvariantCulture;
+    private TimeEntryImplant.Ensure _implant;
+
+    internal Chronograph(TimeEntryImplant.Ensure implant) {
+      _implant = implant;
+    }
 
     public bool IsDirty { get; set; }
 

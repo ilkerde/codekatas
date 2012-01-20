@@ -9,8 +9,12 @@ namespace KataChrono {
     public void Then_culture_is_ensured_with_time_entry() {
       var ensureWasCalled = false;
 
+      TimeEntryImplant.Ensure implant =
+        culture
+          => ensureWasCalled = true;
+
       var ts = new TimeServer();
-      var chrono = new Chronograph();
+      var chrono = new Chronograph(implant);
 
       chrono.IsDirty = false;
       chrono.SyncWith(ts);

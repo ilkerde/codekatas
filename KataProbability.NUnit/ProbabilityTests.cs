@@ -27,8 +27,8 @@ namespace Kata {
 
   [TestFixture]
   public class When_either_probability_of_two_is_required {
-    [TestCase(0.5,0.5, 0.75)]
-    [TestCase(0.5,0.1, 0.55)]
+    [TestCase(0.5, 0.5, 0.75)]
+    [TestCase(0.5, 0.1, 0.55)]
     public void Then_either_is_sum_of_both_minus_combination_of_both(decimal firstValue, decimal secondValue, decimal expectedValue) {
       Assert.AreEqual(
         P.Of(firstValue).Either(P.Of(secondValue)),
@@ -36,6 +36,7 @@ namespace Kata {
       );
     }
   }
+
   public static class P {
     public static Probability Of(decimal value) {
       return new Probability(value);

@@ -12,6 +12,17 @@ namespace Kata {
     }
   }
 
+  [TestFixture] public class 
+  When_the_combined_probability_of_two_is_required {
+    [TestCase(0.5, 0.5, 0.25)] public void
+    Then_the_combination_is_the_product_of_both(decimal firstValue, decimal secondValue, decimal expectedValue) {
+      Assert.AreEqual(
+        P.Of(firstValue).CombineWith(P.Of(secondValue)),
+        P.Of(expectedValue)
+      );
+    }
+  }
+
   public static class P {
     public static Probability Of(decimal value) {
       return new Probability(value);

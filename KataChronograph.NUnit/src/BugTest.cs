@@ -18,4 +18,8 @@ namespace KataChrono {
       Assert.IsTrue(ensureWasCalled);
     }
   }
+
+  public static class TimeEntryImplant {
+    public delegate void Ensure(CultureInfo culture);
+  }
 }

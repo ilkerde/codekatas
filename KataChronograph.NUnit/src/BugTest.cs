@@ -1,6 +1,5 @@
 namespace KataChrono {
   using System;
-  using System.Globalization;
   using NUnit.Framework;
 
   [TestFixture]
@@ -20,14 +19,6 @@ namespace KataChrono {
       chrono.SyncWith(ts);
 
       Assert.IsTrue(ensureWasCalled);
-    }
-  }
-
-  public static class TimeEntryImplant {
-    public delegate void Ensure(CultureInfo culture);
-
-    public static void EnsureImplant(this TimeEntry entry, CultureInfo culture, Ensure implant) {
-      (implant ?? entry.Ensure)(culture);
     }
   }
 }

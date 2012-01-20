@@ -1,5 +1,5 @@
 OUT=Kata.dll
-MOD=Kata.netmodule
+FOUT=Kata.FSharp.dll
 
 MSPEC=Machine.Specifications.dll
 MTOOL=lib/mspec.exe
@@ -9,8 +9,8 @@ clean:
 	mkdir -p bin
 
 run:	clean
-	fsc --out:bin/$(MOD) --target:module --lib:lib src/*.fs
-	dmcs -out:bin/$(OUT) -t:library -lib:lib -addmodule:bin/$(MOD) -r:Machine.Specifications.dll -r:FSharp.Core.dll src/*.cs
+	fsc -o:bin/$(FOUT) --target:library -I:lib src/*.fs
+	dmcs -out:bin/$(OUT) -t:library -lib:lib -r:bin/$(FOUT) -r:Machine.Specifications.dll -r:FSharp.Core.dll src/*.cs
 	cp lib/$(MSPEC) bin
 	cp lib/FSharp.Core.dll bin
 

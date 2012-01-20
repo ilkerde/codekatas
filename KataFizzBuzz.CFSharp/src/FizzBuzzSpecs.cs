@@ -1,5 +1,6 @@
 namespace Kata {
   using System;
+  using System.Collections.Generic;
   using Machine.Specifications;
 
   class when_number_is_multiples_of_three {
@@ -20,5 +21,10 @@ namespace Kata {
   class when_number_is_not_multiples_of_three_or_five {
     It should_translate_to_number = 
       () => FizzBuzz.translate(7).ShouldEqual("7");
+  }
+
+  class when_range_starts_with_1_and_ends_with_30 {
+    It should_produce_a_list_of_translations = 
+      () => FizzBuzz.translateRange(1, 30).ShouldBeOfType(typeof(List<Translation>));
   }
 }

@@ -23,6 +23,6 @@ module FizzBuzz =
     new List<Translation>(
       seq { 
         for number in start .. stop do 
-        yield { Source = 0; Target = "" }
+        yield { Source = number; Target = translate number }
       }
     )

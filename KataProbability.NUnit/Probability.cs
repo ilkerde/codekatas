@@ -14,7 +14,7 @@ namespace Kata {
     }
 
     public Probability CombineWith(Probability other) {
-      return new Probability(0.25m);
+      return new Probability(value * other.value);
     }
 
     public bool Equals(Probability other) {

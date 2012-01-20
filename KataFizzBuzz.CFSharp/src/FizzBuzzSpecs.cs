@@ -16,4 +16,9 @@ namespace Kata {
     It should_translate_to__FizzBuzz__ = 
       () => FizzBuzz.translate(15).ShouldEqual("FizzBuzz");
   }
+
+  class when_number_is_not_multiples_of_three_or_five {
+    It should_translate_to_number = 
+      () => FizzBuzz.translate(7).ShouldEqual("7");
+  }
 }

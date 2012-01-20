@@ -24,9 +24,6 @@ namespace Kata {
   }
 
   class when_range_starts_with_1_and_ends_with_30 {
-    It should_produce_a_list_of_translations = 
-      () => translations.ShouldBeOfType(typeof(List<Translation>));
-
     It should_produce_30_entries = 
       () => translations.Count.ShouldEqual(30);
 

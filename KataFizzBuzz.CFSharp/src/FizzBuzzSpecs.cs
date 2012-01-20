@@ -1,6 +1,7 @@
 namespace Kata {
   using System;
   using System.Collections.Generic;
+
   using Machine.Specifications;
 
   class when_number_is_multiples_of_three {

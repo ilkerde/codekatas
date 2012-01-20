@@ -20,7 +20,7 @@ namespace KataChrono {
         localTime = te.ToLocalTime();
       } else {
         TimeEntry te = new TimeEntry(localTime);
-        te.Apply(_culture);
+        te.EnsureImplant(_culture, _implant);
         localTime = te.ToLocalTime();
       }
 

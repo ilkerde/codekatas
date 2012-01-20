@@ -3,15 +3,11 @@ namespace Kata {
   using NUnit.Framework;
 
   [TestFixture] public class When_the_inverse_probability_of_a_probability_is_required {
-    [Test] public void Then_a_probability_of_1_should_invert_to_0() {
+    [TestCase(1, 0)]
+    [TestCase(0, 1)]
+    public void Then_a_probability_should_invert_to_1_minus_probability(decimal originalValue, decimal invertedValue) {
       Assert.AreEqual(
-        P.Of(1).InverseOf(), P.Of(0)
-      );
-    }
-
-    [Test] public void Then_a_probability_of_0_should_invert_to_1() {
-      Assert.AreEqual(
-        P.Of(0).InverseOf(), P.Of(1)
+        P.Of(originalValue).InverseOf(), P.Of(invertedValue)
       );
     }
   }

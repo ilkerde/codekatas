@@ -17,6 +17,10 @@ namespace Kata {
       return new Probability(value * other.value);
     }
 
+    public Probability Either(Probability other) {
+      return null;
+    }
+
     public bool Equals(Probability other) {
       return other != null && other.value.Equals(value);
     }

@@ -27,6 +27,12 @@ namespace Kata {
     It should_produce_30_entries = 
       () => translations.Count.ShouldEqual(30);
 
+    It should_use_translate_for_all_entries = 
+      () => {
+        foreach (var translation in translations)
+          FizzBuzz.translate(translation.Source).ShouldEqual(translation.Target);
+      };
+
     Because of = () => translations = FizzBuzz.translateRange(1, 30);
 
     static List<Translation> translations;

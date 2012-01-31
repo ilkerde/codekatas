@@ -23,3 +23,9 @@ let should_replace_multiple_keys_with_values_when_found () =
   let text = subst "$say$ $who$" [("who", "bingo");("say", "hello")]
   Assert.Equal<string>("hello bingo", text)
 
+[<Fact>]
+let should_remove_placeholders_when_key_was_not_found () =
+  let text = subst "$say$ $me$" [("who", "bingo");("say", "hello")]
+  Assert.Equal<string>("hello ", text)
+
+

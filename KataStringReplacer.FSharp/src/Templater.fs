@@ -20,13 +20,13 @@ let subst (text:string) (values:(string * string) list) =
       else
         None
 
-  let rec wipeKey (text:string) = 
+  let rec wipeKeys (text:string) = 
     match text with
-    | AnyKey(k) -> wipeKey (text.Replace(k, ""))
+    | AnyKey(k) -> wipeKeys (text.Replace(k, ""))
     | _ -> text
 
   let newText = 
     values
     |> List.fold replaceSet text
 
-  wipeKey newText
+  wipeKeys newText

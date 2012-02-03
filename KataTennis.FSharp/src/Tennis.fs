@@ -21,6 +21,7 @@ let score player points =
   let advance p = 
     match p with
     | Love -> Fifteen
+    | Fifteen -> Thirty
     | Forty -> Win
     | _ -> p
 

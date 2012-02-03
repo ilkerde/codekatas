@@ -5,7 +5,7 @@ type players =
   | PlayerOne
   | PlayerTwo
 
-type scores = 
+type point = 
   | Love
   | Fifteen
   | Thirty
@@ -18,17 +18,17 @@ let game = id
 let nextpoint p = 
   match p with
   | Forty -> Win
-  | _____ -> p
+  | _ -> p
 
-let score player currentscore =
-  let p1, p2 = currentscore
+let score player points =
+  let p1, p2 = points
 
   match player with
   | PlayerOne -> (nextpoint p1, p2)
-  | PlayerTwo -> currentscore
+  | PlayerTwo -> points
   
-let isover (currentscore:scores * scores) = 
-  match currentscore with
+let isover (points:point * point) = 
+  match points with
   | (Win, _) -> true
-  | ________ -> false
+  | _ -> false
 

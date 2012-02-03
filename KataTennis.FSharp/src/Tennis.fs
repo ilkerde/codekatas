@@ -13,6 +13,19 @@ type scores =
   | Advantage
   | Win
 
-let game (score:scores * scores) = score
-let score player = game
-let isover game = false
+let game = id 
+
+let nextpoint p = Win
+
+let score player currentscore =
+  let p1, p2 = currentscore
+
+  match player with
+  | PlayerOne -> (nextpoint p1, p2)
+  | PlayerTwo -> currentscore
+  
+let isover (currentscore:scores * scores) = 
+  match currentscore with
+  | (Win, _) -> true
+  | ________ -> false
+

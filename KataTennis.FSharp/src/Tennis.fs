@@ -1,11 +1,11 @@
 module Tennis
 open System
 
-type players = 
+type Player = 
   | PlayerOne
   | PlayerTwo
 
-type point = 
+type Point = 
   | Love
   | Fifteen
   | Thirty
@@ -20,6 +20,7 @@ let score player points =
 
   let advance p = 
     match p with
+    | Love -> Fifteen
     | Forty -> Win
     | _ -> p
 

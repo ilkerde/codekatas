@@ -22,6 +22,7 @@ let score player points =
     match p with
     | Love -> Fifteen
     | Fifteen -> Thirty
+    | Thirty -> Forty
     | Forty -> Win
     | _ -> p
 

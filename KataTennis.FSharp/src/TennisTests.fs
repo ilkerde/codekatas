@@ -40,3 +40,11 @@ let when_score_is_deuce_and_player_one_scores_then_game_is_not_over () =
       |> score PlayerOne
       |> isover
   )
+
+[<Fact>]
+let when_score_is_love_all_and_player_one_scores_then_score_is_fifteen_love () =
+  Assert.Equal(Fifteen, 
+    game (Love, Love)
+      |> score PlayerOne
+      |> fst
+  )

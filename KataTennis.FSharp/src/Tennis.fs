@@ -15,17 +15,30 @@ type point =
 
 let game = id 
 
-let nextpoint p = 
-  match p with
-  | Forty -> Win
-  | _ -> p
-
 let score player points =
   let p1, p2 = points
 
-  match player with
-  | PlayerOne -> (nextpoint p1, p2)
-  | PlayerTwo -> (p1, nextpoint p2)
+  let advance p = 
+    match p with
+    | Forty -> Win
+    | _ -> p
+
+  let deuce = 
+    match player with
+    | PlayerOne when p1 = Advantage -> (Win, Forty)
+    | PlayerTwo when p2 = Advantage -> (Forty, Win)
+    | _ -> (Forty, Forty)
+ 
+  let straight = 
+    match player with
+    | PlayerOne -> (advance p1, p2)
+    | PlayerTwo -> (p1, advance p2)
+
+  match points with
+  | (Forty, Forty)
+  | (Advantage, _)
+  | (_, Advantage) -> deuce
+  | _ -> straight
   
 let isover points = 
   match points with

@@ -25,10 +25,11 @@ let score player points =
 
   match player with
   | PlayerOne -> (nextpoint p1, p2)
-  | PlayerTwo -> points
+  | PlayerTwo -> (p1, nextpoint p2)
   
-let isover (points:point * point) = 
+let isover points = 
   match points with
   | (Win, _) -> true
+  | (_, Win) -> true
   | _ -> false
 

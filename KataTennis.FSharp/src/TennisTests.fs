@@ -56,3 +56,11 @@ let when_score_is_love_fifteen_and_player_two_scores_then_score_is_love_thirty (
       |> score PlayerTwo
       |> snd
   )
+
+[<Fact>]
+let when_score_is_thirty_all_and_player_one_scores_then_score_is_forty_thirty () =
+  Assert.Equal(Forty, 
+    game (Thirty, Thirty)
+      |> score PlayerOne
+      |> fst
+  )

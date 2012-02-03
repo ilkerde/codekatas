@@ -15,7 +15,10 @@ type scores =
 
 let game = id 
 
-let nextpoint p = Win
+let nextpoint p = 
+  match p with
+  | Forty -> Win
+  | _____ -> p
 
 let score player currentscore =
   let p1, p2 = currentscore

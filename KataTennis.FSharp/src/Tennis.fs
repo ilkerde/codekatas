@@ -1,5 +1,18 @@
 module Tennis
 open System
 
-let game = 0
+type players = 
+  | PlayerOne
+  | PlayerTwo
+
+type scores = 
+  | Love
+  | Fifteen
+  | Thirty
+  | Forty
+  | Advantage
+  | Win
+
+let game (score:scores * scores) = score
+let score player = game
 let isover game = false

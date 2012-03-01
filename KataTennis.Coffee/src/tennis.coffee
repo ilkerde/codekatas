@@ -1,9 +1,11 @@
 class Game
-  isOver: -> false
+  constructor: (@score=0) ->
+
+  isOver: ->
+    @score > 1
 
   scorePlayer: (player) ->
-    @isOver = -> true
-    true
+    @score++
 
 exports.Game = Game
 

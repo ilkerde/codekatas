@@ -5,6 +5,11 @@ describe 'when no player has scored yet', ->
   it 'should not be game over', ->
     expect(game.isOver()).toBeFalsy()
 
+  describe 'when player 1 scores', ->
+    game.scorePlayer 1
+    it 'should not be game over', ->
+      expect(game.isOver()).toBeFalsy()
+
 describe 'when score is 40:0', ->
   game = new Game
   game.scorePlayer 1

@@ -1,5 +1,7 @@
 game =
-  isOver:-> false
+  isOver: -> false
+
+  scorePlayer: (player) ->
 
 exports.game = game
 

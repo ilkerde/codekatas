@@ -3,7 +3,7 @@
 
   game = {
     isOver: function() {
-      return true;
+      return false;
     }
   };
 

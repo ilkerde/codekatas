@@ -1,5 +1,5 @@
 game =
-  isOver:-> true
+  isOver:-> false
 
 exports.game = game
 

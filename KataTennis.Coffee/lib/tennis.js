@@ -1,13 +1,25 @@
 (function() {
-  var game;
+  var Game;
 
-  game = {
-    isOver: function() {
+  Game = (function() {
+
+    function Game() {}
+
+    Game.prototype.isOver = function() {
       return false;
-    },
-    scorePlayer: function(player) {}
-  };
+    };
 
-  exports.game = game;
+    Game.prototype.scorePlayer = function(player) {
+      this.isOver = function() {
+        return true;
+      };
+      return true;
+    };
+
+    return Game;
+
+  })();
+
+  exports.Game = Game;
 
 }).call(this);

@@ -1,7 +1,9 @@
-game =
+class Game
   isOver: -> false
 
   scorePlayer: (player) ->
+    @isOver = -> true
+    true
 
-exports.game = game
+exports.Game = Game
 

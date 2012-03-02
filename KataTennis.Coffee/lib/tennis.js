@@ -14,7 +14,7 @@
     }
 
     Game.prototype.isOver = function() {
-      return this.scores[0] > 3;
+      return this.scores[0] > 3 || this.scores[1] > 3;
     };
 
     Game.prototype.scorePlayer = function(player) {

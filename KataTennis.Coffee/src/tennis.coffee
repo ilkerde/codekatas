@@ -6,7 +6,7 @@ class Game
       2: '30'
     
   isOver: ->
-    @scores[0] > 2
+    @scores[0] > 3
 
   scorePlayer: (player) ->
     @scores[--player]++

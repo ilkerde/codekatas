@@ -1,14 +1,17 @@
 class Game
-  constructor: (@score=0) ->
+  constructor: (@scores=[0,0]) ->
 
   isOver: ->
-    @score > 1
+    @scores[0] > 1
 
   scorePlayer: (player) ->
-    @score++
+    @scores[--player]++
 
-  currentScore: () ->
-    if @score == 1 then '15:0' else '0:0'
+  currentScore: (f) ->
+    display = '0:0'
+    display = '15:0' if @scores[0] == 1
+    display = '0:15' if @scores[1] == 1
+    display
 
 exports.Game = Game
 

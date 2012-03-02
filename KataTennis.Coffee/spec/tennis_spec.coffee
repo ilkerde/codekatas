@@ -89,6 +89,9 @@ describe 'when score is 40:0', ->
     it 'should be game over', ->
       expect(game.isOver()).toBeTruthy()
 
+    it 'should have score GAME', ->
+      expect(game.currentScore()).toEqual "GAME"
+
 describe 'when score is 0:40', ->
   game =
 

@@ -6,9 +6,15 @@ class Game
       2: '30'
       3: '40'
     
-  isOver: ->
-    (@scores[0] > 3 or @scores[1] > 3) and
+  _anyAboveForty: ->
+    (@scores[0] > 3 or @scores[1] > 3)
+
+  _twoPointsAhead: ->
     (Math.abs(@scores[0] - @scores[1]) > 1)
+
+  isOver: ->
+    @_anyAboveForty() and @_twoPointsAhead()
+    
 
   scorePlayer: (player) ->
     @scores[--player]++
@@ -17,15 +23,15 @@ class Game
     textscores = {}
     textscores[i] = @scoremap[s] for s,i in @scores
 
-    if (@scores[0] > 3 or @scores[1] > 3)
-      textscores[i] = (if s%2 is 0 then 'ADV' else textscores[i]) for s,i in @scores
+    advantageDisplay = (score, index) ->
+      if s%2 is 0 then 'ADV' else textscores[index]
+
+    if @_anyAboveForty() 
+      textscores[i] = advantageDisplay s,i for s,i in @scores
 
     display = "#{textscores[0]}:#{textscores[1]}"
-
-    if (@isOver())
-      display = "GAME"
-
+    display = "GAME" if @isOver() 
     display
 
-exports.Game = Game
+  exports.Game = Game
 

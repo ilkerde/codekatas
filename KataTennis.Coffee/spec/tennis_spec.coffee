@@ -25,6 +25,19 @@ describe 'when no player has scored yet', ->
     it 'should 15:0', ->
       expect(game.currentScore()).toEqual '15:0'
 
+  describe 'when player 2 scores', ->
+    game = 
+
+    beforeEach () ->
+      game = new Game
+      game.scorePlayer 2
+
+    it 'should not be game over', ->
+      expect(game.isOver()).toBeFalsy()
+
+    it 'should 0:15', ->
+      expect(game.currentScore()).toEqual '0:15'
+
 describe 'when score is 40:0', ->
   game =
 

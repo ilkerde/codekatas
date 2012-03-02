@@ -57,10 +57,7 @@ describe 'when score is 40:0', ->
   game =
 
   beforeEach () ->
-    game = new Game
-    game.scorePlayer 1
-    game.scorePlayer 1
-    game.scorePlayer 1
+    game = new Game [3,0]
 
   describe 'when player 1 scores again', ->
     game =

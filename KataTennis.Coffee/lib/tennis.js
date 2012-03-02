@@ -5,6 +5,11 @@
 
     function Game(scores) {
       this.scores = scores != null ? scores : [0, 0];
+      this.scoremap = {
+        0: '0',
+        1: '15',
+        2: '30'
+      };
     }
 
     Game.prototype.isOver = function() {
@@ -17,9 +22,7 @@
 
     Game.prototype.currentScore = function(f) {
       var display;
-      display = '0:0';
-      if (this.scores[0] === 1) display = '15:0';
-      if (this.scores[1] === 1) display = '0:15';
+      display = "" + this.scoremap[this.scores[0]] + ":" + this.scoremap[this.scores[1]];
       return display;
     };
 

@@ -89,3 +89,18 @@ describe 'when score is 40:0', ->
     it 'should be game over', ->
       expect(game.isOver()).toBeTruthy()
 
+describe 'when score is 0:40', ->
+  game =
+
+  beforeEach () ->
+    game = new Game [0,3]
+
+  describe 'when player 2 scores again', ->
+    game =
+
+    beforeEach () ->
+      game.scorePlayer 2
+
+    it 'should be game over', ->
+      expect(game.isOver()).toBeTruthy()
+

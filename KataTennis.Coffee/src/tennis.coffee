@@ -4,6 +4,7 @@ class Game
       0: '0'
       1: '15'
       2: '30'
+      3: '40'
     
   isOver: ->
     @scores[0] > 3

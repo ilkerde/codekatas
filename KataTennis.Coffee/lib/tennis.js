@@ -16,7 +16,11 @@
     };
 
     Game.prototype.currentScore = function() {
-      return '15:0';
+      if (this.score === 1) {
+        return '15:0';
+      } else {
+        return '0:0';
+      }
     };
 
     return Game;

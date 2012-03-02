@@ -1,7 +1,11 @@
 Game = (require 'tennis').Game
 
 describe 'when no player has scored yet', ->
-  game = new Game
+  game = 
+
+  beforeEach () -> 
+    game = new Game
+
   it 'should not be game over', ->
     expect(game.isOver()).toBeFalsy()
 
@@ -9,8 +13,12 @@ describe 'when no player has scored yet', ->
     expect(game.currentScore()).toEqual '0:0'
 
   describe 'when player 1 scores', ->
-    game.scorePlayer 1
-    
+    game = 
+
+    beforeEach () ->
+      game = new Game
+      game.scorePlayer 1
+
     it 'should not be game over', ->
       expect(game.isOver()).toBeFalsy()
 
@@ -18,13 +26,19 @@ describe 'when no player has scored yet', ->
       expect(game.currentScore()).toEqual '15:0'
 
 describe 'when score is 40:0', ->
-  game = new Game
-  game.scorePlayer 1
-  game.scorePlayer 1
-  game.scorePlayer 1
+  game =
+
+  beforeEach () ->
+    game = new Game
+    game.scorePlayer 1
+    game.scorePlayer 1
+    game.scorePlayer 1
 
   describe 'when player 1 scores again', ->
-    game.scorePlayer 1
+    game =
+
+    beforeEach () ->
+      game.scorePlayer 1
 
     it 'should be game over', ->
       expect(game.isOver()).toBeTruthy()

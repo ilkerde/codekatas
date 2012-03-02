@@ -8,7 +8,7 @@ class Game
     @score++
 
   currentScore: () ->
-    '15:0'
+    if @score == 1 then '15:0' else '0:0'
 
 exports.Game = Game
 

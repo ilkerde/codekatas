@@ -14,7 +14,14 @@ class Game
     @scores[--player]++
 
   currentScore: (f) ->
-    display = "#{@scoremap[@scores[0]]}:#{@scoremap[@scores[1]]}"
+    textscores = {}
+    textscores[i] = @scoremap[s] for s,i in @scores
+
+    if (@scores[0] > 3 or @scores[1] > 3)
+      textscores[i] = (if s%2 is 0 then 'ADV' else textscores[i]) for s,i in @scores
+    else
+
+    display = "#{textscores[0]}:#{textscores[1]}"
     display
 
 exports.Game = Game

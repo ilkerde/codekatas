@@ -19,9 +19,12 @@ class Game
 
     if (@scores[0] > 3 or @scores[1] > 3)
       textscores[i] = (if s%2 is 0 then 'ADV' else textscores[i]) for s,i in @scores
-    else
 
     display = "#{textscores[0]}:#{textscores[1]}"
+
+    if (@isOver())
+      display = "GAME"
+
     display
 
 exports.Game = Game

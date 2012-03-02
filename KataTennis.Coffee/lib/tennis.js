@@ -35,10 +35,9 @@
           s = _ref2[i];
           textscores[i] = (s % 2 === 0 ? 'ADV' : textscores[i]);
         }
-      } else {
-
       }
       display = "" + textscores[0] + ":" + textscores[1];
+      if (this.isOver()) display = "GAME";
       return display;
     };
 

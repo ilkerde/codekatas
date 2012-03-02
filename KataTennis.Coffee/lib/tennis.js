@@ -8,7 +8,7 @@
     }
 
     Game.prototype.isOver = function() {
-      return this.scores[0] > 1;
+      return this.scores[0] > 2;
     };
 
     Game.prototype.scorePlayer = function(player) {

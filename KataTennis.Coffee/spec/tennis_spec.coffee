@@ -42,7 +42,7 @@ describe 'when score is 15:0', ->
   game = 
 
   beforeEach () ->
-    game = new Game [15,0]
+    game = new Game [1,0]
 
   describe 'when player 1 scores', ->
     game =

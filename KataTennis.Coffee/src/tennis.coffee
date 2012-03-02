@@ -2,7 +2,7 @@ class Game
   constructor: (@scores=[0,0]) ->
 
   isOver: ->
-    @scores[0] > 1
+    @scores[0] > 2
 
   scorePlayer: (player) ->
     @scores[--player]++

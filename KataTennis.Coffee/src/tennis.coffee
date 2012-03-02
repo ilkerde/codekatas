@@ -7,5 +7,8 @@ class Game
   scorePlayer: (player) ->
     @score++
 
+  currentScore: () ->
+    ''
+
 exports.Game = Game
 

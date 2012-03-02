@@ -15,6 +15,10 @@
       return this.score++;
     };
 
+    Game.prototype.currentScore = function() {
+      return '';
+    };
+
     return Game;
 
   })();

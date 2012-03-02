@@ -16,7 +16,7 @@
     };
 
     Game.prototype.currentScore = function() {
-      return '';
+      return '15:0';
     };
 
     return Game;

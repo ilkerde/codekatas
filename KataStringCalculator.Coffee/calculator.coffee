@@ -15,7 +15,7 @@ add = (numbers) ->
   ints = (parseInt(part) for part in parts)
   negs = (i for i in ints when i < 0)
 
-  throw new RangeError() if negs.length > 0
+  throw new RangeError(negs.join()) if negs.length > 0
 
   sum = 0
   sum += i for i in ints

@@ -1,0 +1,15 @@
+fs = require 'fs'
+{exec, spawn} = require 'child_process'
+
+task 'build', ->
+  exec 'coffee --compile calculator.coffee', (err, stdout, stderr) ->
+    throw err if err
+    console.log stdout + stderr
+
+task 'test', ->
+  options = ['.', '--coffee']
+  jasmine = spawn 'jasmine-node', options
+  jasmine.stdout.on 'data', (data) -> console.log data.toString()
+  jasmine.stderr.on 'data', (data) -> console.log data.toString()
+  jasmine.on 'exit', (status) -> console.log "OK" if status is 0
+

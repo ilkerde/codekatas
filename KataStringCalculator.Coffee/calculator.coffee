@@ -19,7 +19,6 @@ add = (numbers) ->
 
   sum = 0
   sum += i for i in ints
-
   sum
 
 root.add = add

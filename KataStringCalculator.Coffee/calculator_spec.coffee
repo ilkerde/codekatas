@@ -14,10 +14,14 @@ describe "summation of multiple numbers", ->
   it "should return sum of arbitrary numbers separated by comma", ->
     expect(calc.add "1,2,3,5").toEqual 11
 
-describe "number separators", ->
+describe "alternative separators", ->
   it "should accept newline as alternative number separator", ->
     expect(calc.add """
     1
     2
     3
     """).toEqual 6
+
+  it "should accept a custom separator in a prefix string sequence", ->
+    expect(calc.add """//:
+    1:2:3""").toEqual 6

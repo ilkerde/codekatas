@@ -28,4 +28,8 @@ describe "alternative separators", ->
 
 describe "negative numbers handling", ->
   it "should throw exception when negative numbers are passed", ->
-    expect(() -> calc.add "1,-2,3,-5").toThrow(new RangeError)
+    expect(() -> calc.add "1,-2,3,-5").toThrow(new RangeError("-2,-5"))
+
+  it "should include all negatives in error message", ->
+    expect(() -> calc.add "-1,2,-3,5").toThrow(new RangeError("-1,-3"))
+

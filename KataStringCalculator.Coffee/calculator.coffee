@@ -1,7 +1,8 @@
 root = exports ? this
 
 add = (numbers) ->
-  0
+  return 0 if numbers == "" or not numbers?
+  parseInt numbers
 
 root.add = add
 

@@ -10,3 +10,14 @@ describe "simple addition", ->
   it "should return sum of two comma-separated numbers", ->
     expect(calc.add "2,3").toEqual 5
 
+describe "summation of multiple numbers", ->
+  it "should return sum of arbitrary numbers separated by comma", ->
+    expect(calc.add "1,2,3,5").toEqual 11
+
+describe "number separators", ->
+  it "should accept newline as alternative number separator", ->
+    expect(calc.add """
+    1
+    2
+    3
+    """).toEqual 6

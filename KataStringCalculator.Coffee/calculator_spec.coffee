@@ -25,3 +25,7 @@ describe "alternative separators", ->
   it "should accept a custom separator in a prefix string sequence", ->
     expect(calc.add """//:
     1:2:3""").toEqual 6
+
+describe "negative numbers handling", ->
+  it "should throw exception when negative numbers are passed", ->
+    expect(() -> calc.add "1,-2,3,-5").toThrow(new RangeError)

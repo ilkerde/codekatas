@@ -1,7 +1,8 @@
 root = exports ? this
 
 count = (source) ->
-  1
+  lines = source.split /[\n]/
+  lines.length
 
 root.count = count
 

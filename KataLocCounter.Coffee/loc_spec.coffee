@@ -12,3 +12,11 @@ describe "standard code lines", ->
 
   it "should count multiple lines with simple text", ->
     expect(loc.count sample.multilinecode).toEqual 3
+
+  it "should not count empty lines", ->
+    expect(loc.count """
+      l1
+
+      l2
+    """).toEqual 2
+

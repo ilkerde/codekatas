@@ -16,3 +16,8 @@ describe "standard code lines", ->
       l2
     """).toEqual 2
 
+describe "single line comments", ->
+  it "should not count a single line starting with \#", ->
+    expect(loc.count """line 1
+    # comment
+    line 2""").toEqual 2

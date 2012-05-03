@@ -21,3 +21,12 @@ describe "single line comments", ->
     expect(loc.count """line 1
     # comment
     line 2""").toEqual 2
+
+describe "multi line comments", ->
+  it "should not count lines starting with \#\#\# and ending with \#\#\#", ->
+    expect(loc.count """line 1
+    ### comment
+    still comment
+    again comment ###
+    line 2""").toEqual 2
+

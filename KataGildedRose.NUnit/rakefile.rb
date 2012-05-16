@@ -23,10 +23,10 @@ task :build => [:clean] do
     FileUtils.cp nunitlib, File.join(File.dirname(binary), File.basename(nunitlib))
     source = Dir.glob(source).map {|f| File.basename(f)}
     source = source.join ' '
-    system "gmcs /t:library /out:#{binary} /r:#{nunitlib} /nologo /debug #{source}"
+    system "dmcs /t:library /out:#{binary} /r:#{nunitlib} /nologo /debug #{source}"
 end
 
 desc "test"
 task :test => [:build] do
-     system "mono #{nunittool} #{binary}"
+     system "mono --runtime=v4.0 #{nunittool} #{binary}"
 end

@@ -28,6 +28,13 @@ namespace Kata {
   }
 
   public class Store {
+    public static Store Create(IEnumerable<Item> items) {
+      return new Store {
+        Items = new List<Item>(items),
+        _updateItemQuality = item => Store.UpdateItemQuality(item)
+      };
+    }
+
     public static Store Create(IEnumerable<Item> items, Func<Item, Item> updateItemQuality) {
       return new Store {
         Items = new List<Item>(items),

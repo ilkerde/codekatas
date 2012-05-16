@@ -38,4 +38,18 @@ namespace Kata {
       Assert.AreEqual(3, calls);
     }
   }
+
+  [TestFixture]
+  public class When_Store_Is_Updated_Without_A_Custom_ItemUpdate_Call {
+    [Test]
+    public void Then_Should_Apply_Quality_Degredation_Rules_To_Items_In_Store() {
+      var store = Store.Create(new [] {
+        new Item { Name = "Item", SellIn = 1, Quality = 2 }
+      });
+
+      store.UpdateQuality();
+
+      Assert.AreEqual(1, store.Items[0].Quality);
+    }
+  }
 }

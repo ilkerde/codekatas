@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace GildedRose.Console
+namespace Kata
 {
     class Program
     {
@@ -28,13 +28,21 @@ namespace GildedRose.Console
 
                           };
 
-            app.UpdateQuality();
+            Store.Items = app.Items;
+            Store.UpdateQuality();
 
             System.Console.ReadKey();
 
         }
+      }
 
-        public void UpdateQuality()
+    public class Store {
+        public static IList<Item> Items;
+        public static Item UpdateQuality(Item item) {
+          return item;
+        }
+
+        public static void UpdateQuality()
         {
             for (var i = 0; i < Items.Count; i++)
             {

@@ -2,15 +2,6 @@ namespace Kata {
   using System;
   using System.Collections.Generic;
 
-  public static class Names {
-    public static string Vest = "+5 Dexterity Vest";
-    public static string AgedBrie = "Aged Brie";
-    public static string Elixir = "Elixir of the Mongoose";
-    public static string Sulfuras = "Sulfuras, Hand of Ragnaros";
-    public static string ConcertTickets = "Backstage passes to a TAFKAL80ETC concert";
-    public static string Cake = "Conjured Mana Cake";
-  }
-
   class Program {
     public Store Store { get; set; }
 
@@ -21,12 +12,12 @@ namespace Kata {
       var app = new Program
       {
         Store = Store.Create(new [] {
-          new Item (Names.Vest) { SellIn = 10, Quality = 20},
-          new Item (Names.AgedBrie) { SellIn = 2, Quality = 0},
-          new Item (Names.Elixir) { SellIn = 5, Quality = 7},
-          new Item (Names.Sulfuras) { SellIn = 0, Quality = 80},
-          new Item (Names.ConcertTickets) { SellIn = 15, Quality = 20},
-          new Item (Names.Cake) { SellIn = 3, Quality = 6}
+          new Item (N_.Vest) { SellIn = 10, Quality = 20},
+          new Item (N_.AgedBrie) { SellIn = 2, Quality = 0},
+          new Item (N_.Elixir) { SellIn = 5, Quality = 7},
+          new Item (N_.Sulfuras) { SellIn = 0, Quality = 80},
+          new Item (N_.ConcertTickets) { SellIn = 15, Quality = 20},
+          new Item (N_.Cake) { SellIn = 3, Quality = 6}
         }, i => Store.UpdateItemQuality(i))
       };
 

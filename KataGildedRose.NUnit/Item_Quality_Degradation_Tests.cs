@@ -45,4 +45,15 @@ namespace Kata.Item_Quality_Degradation_Tests {
       Assert.AreEqual(3, sellin);
     }
   }
+
+  [TestFixture]
+  public class When_Sulfuras_SellIn_Is_Negative {
+    [Test]
+    public void Then_Quality_Doesnt_Change_At_All() {
+      var quality = Store.UpdateItemQuality(
+        new Item(N_.Sulfuras) { SellIn = -5, Quality = 5 }
+      ).Quality;
+      Assert.AreEqual(5, quality);
+    }
+  }
 }

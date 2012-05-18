@@ -27,4 +27,15 @@ namespace Kata.Item_Quality_Degradation_Tests {
       Assert.AreEqual(0, quality);
     }
   }
+
+  [TestFixture]
+  public class When_Item_Is_Sulfuras {
+    [Test]
+    public void Then_Quality_Doesnt_Change_At_All() {
+      var quality = Store.UpdateItemQuality(
+        new Item { Name = "Sulfuras, Hand of Ragnaros", Quality = 4 }
+      ).Quality;
+      Assert.AreEqual(4, quality);
+    }
+  }
 }

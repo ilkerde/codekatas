@@ -18,7 +18,7 @@ namespace Kata {
           new Item (N_.Sulfuras) { SellIn = 0, Quality = 80},
           new Item (N_.ConcertTickets) { SellIn = 15, Quality = 20},
           new Item (N_.Cake) { SellIn = 3, Quality = 6}
-        }, i => Store.UpdateItemQuality(i))
+        }, i => Store.UpdateItem(i))
       };
 
       app.Store.UpdateQuality();
@@ -31,7 +31,7 @@ namespace Kata {
     public static Store Create(IEnumerable<Item> items) {
       return new Store {
         Items = new List<Item>(items),
-        _updateItemQuality = item => Store.UpdateItemQuality(item)
+        _updateItemQuality = item => Store.UpdateItem(item)
       };
     }
 
@@ -45,7 +45,7 @@ namespace Kata {
     public List<Item> Items { get; private set; }
     private Func<Item, Item> _updateItemQuality;
 
-    public static Item UpdateItemQuality(Item item) {
+    public static Item UpdateItem(Item item) {
       if (item.Name == N_.Sulfuras)
         return item;
 

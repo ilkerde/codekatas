@@ -6,7 +6,7 @@ namespace Kata.Item_Tests {
   public class When_Item_Is_Conjured {
     [Test]
     public void Then_Degrades_Twice_As_Fast() {
-      var quality = Store.UpdateItemQuality(_item).Quality;
+      var quality = Store.UpdateItem(_item).Quality;
       Assert.AreEqual(4, quality);
     }
 
@@ -20,7 +20,7 @@ namespace Kata.Item_Tests {
   public class When_Item_Has_Quality_Of_Zero {
     [Test]
     public void Then_Quality_Doesnt_Degrade_Below_Zero() {
-      var quality = Store.UpdateItemQuality(
+      var quality = Store.UpdateItem(
         new Item { Quality = 1 }
       ).Quality;
       Assert.AreEqual(0, quality);
@@ -31,7 +31,7 @@ namespace Kata.Item_Tests {
   public class When_Item_Is_Sulfuras {
     [Test]
     public void Then_Quality_Doesnt_Change_At_All() {
-      var quality = Store.UpdateItemQuality(
+      var quality = Store.UpdateItem(
         new Item(N_.Sulfuras) { Quality = 4 }
       ).Quality;
       Assert.AreEqual(4, quality);
@@ -39,7 +39,7 @@ namespace Kata.Item_Tests {
 
     [Test]
     public void Then_SellIn_Doesnt_Change_At_All() {
-      var sellin = Store.UpdateItemQuality(
+      var sellin = Store.UpdateItem(
         new Item(N_.Sulfuras) { SellIn = 3 }
       ).SellIn;
       Assert.AreEqual(3, sellin);
@@ -50,7 +50,7 @@ namespace Kata.Item_Tests {
   public class When_Sulfuras_SellIn_Is_Negative {
     [Test]
     public void Then_Quality_Doesnt_Change_At_All() {
-      var quality = Store.UpdateItemQuality(
+      var quality = Store.UpdateItem(
         new Item(N_.Sulfuras) { SellIn = -5, Quality = 5 }
       ).Quality;
       Assert.AreEqual(5, quality);

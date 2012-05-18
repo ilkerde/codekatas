@@ -10,8 +10,7 @@ namespace Kata.Item_Quality_Degradation_Tests {
       Assert.AreEqual(4, quality);
     }
 
-    Item _item = new Item { 
-      Name = "Conjured Mana Cake", 
+    Item _item = new Item(N_.Cake) { 
       SellIn = 3,
       Quality = 6
     };
@@ -33,7 +32,7 @@ namespace Kata.Item_Quality_Degradation_Tests {
     [Test]
     public void Then_Quality_Doesnt_Change_At_All() {
       var quality = Store.UpdateItemQuality(
-        new Item { Name = "Sulfuras, Hand of Ragnaros", Quality = 4 }
+        new Item(N_.Sulfuras) { Quality = 4 }
       ).Quality;
       Assert.AreEqual(4, quality);
     }
@@ -41,7 +40,7 @@ namespace Kata.Item_Quality_Degradation_Tests {
     [Test]
     public void Then_SellIn_Doesnt_Change_At_All() {
       var sellin = Store.UpdateItemQuality(
-        new Item { Name = "Sulfuras, Hand of Ragnaros", SellIn = 3 }
+        new Item(N_.Sulfuras) { SellIn = 3 }
       ).SellIn;
       Assert.AreEqual(3, sellin);
     }

@@ -46,16 +46,16 @@ namespace Kata {
     private Func<Item, Item> _updateItemQuality;
 
     public static Item UpdateItemQuality(Item item) {
-      if (item.Name == "Sulfuras, Hand of Ragnaros")
+      if (item.Name == N_.Sulfuras)
         return item;
 
-      if (item.Name == "Aged Brie" || item.Name == "Backstage passes to a TAFKAL80ETC concert")
+      if (item.Name == N_.AgedBrie || item.Name == N_.ConcertTickets)
       {
           if (item.Quality < 50)
           {
               item.Quality = item.Quality + 1;
 
-              if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+              if (item.Name == N_.ConcertTickets)
               {
                   if (item.SellIn < 11)
                   {
@@ -81,13 +81,13 @@ namespace Kata {
 
       if (item.SellIn < 0)
       {
-          if (item.Name != "Aged Brie")
+          if (item.Name != N_.AgedBrie)
           {
-              if (item.Name != "Backstage passes to a TAFKAL80ETC concert")
+              if (item.Name != N_.ConcertTickets)
               {
                   if (item.Quality > 0)
                   {
-                      if (item.Name != "Sulfuras, Hand of Ragnaros")
+                      if (item.Name != N_.Sulfuras)
                       {
                           item.Quality = item.Quality - 1;
                       }

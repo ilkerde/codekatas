@@ -18,6 +18,17 @@ namespace Kata {
   }
 
   [TestFixture]
+  public class When_Item_Has_Quality_Of_Zero {
+    [Test]
+    public void Then_Quality_Doesnt_Degrade_Below_Zero() {
+      var quality = Store.UpdateItemQuality(
+        new Item { Quality = 1 }
+      ).Quality;
+      Assert.AreEqual(0, quality);
+    }
+  }
+
+  [TestFixture]
   public class When_Complete_Store_Is_Updated {
     [Test]
     public void Then_Should_Call_UpdateQuality_Each_Item_In_Store() {

@@ -1,4 +1,4 @@
-namespace Kata.Item_Quality_Degradation_Tests {
+namespace Kata.Item_Tests {
   using System;
   using NUnit.Framework;
 

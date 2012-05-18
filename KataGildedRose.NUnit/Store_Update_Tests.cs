@@ -1,4 +1,4 @@
-namespace Kata.Store_Quality_Update_Tests {
+namespace Kata.Store_Update_Tests {
   using System;
   using NUnit.Framework;
   [TestFixture]

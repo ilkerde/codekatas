@@ -49,31 +49,21 @@ namespace Kata {
       if (item.Name == N_.Sulfuras)
         return item;
 
-      if (item.Name == N_.AgedBrie || item.Name == N_.ConcertTickets)
-      {
-          if (item.Quality < 50)
-          {
+      if (item.Name == N_.AgedBrie || item.Name == N_.ConcertTickets) {
+        item.Quality = item.Quality + 1;
+
+        if (item.Name == N_.ConcertTickets)
+        {
+            if (item.SellIn < 11)
+            {
               item.Quality = item.Quality + 1;
+            }
 
-              if (item.Name == N_.ConcertTickets)
-              {
-                  if (item.SellIn < 11)
-                  {
-                      if (item.Quality < 50)
-                      {
-                          item.Quality = item.Quality + 1;
-                      }
-                  }
-
-                  if (item.SellIn < 6)
-                  {
-                      if (item.Quality < 50)
-                      {
-                          item.Quality = item.Quality + 1;
-                      }
-                  }
-              }
-          }
+            if (item.SellIn < 6)
+            {
+              item.Quality = item.Quality + 1;
+            }
+        }
       } else
         item.Quality--;
 
@@ -90,14 +80,12 @@ namespace Kata {
           }
           else
           {
-              if (item.Quality < 50)
-              {
-                  item.Quality = item.Quality + 1;
-              }
+            item.Quality = item.Quality + 1;
           }
       }
 
       if (item.Quality < 0) item.Quality = 0;
+      if (item.Quality > 50) item.Quality = 50;
 
       return item;
     }

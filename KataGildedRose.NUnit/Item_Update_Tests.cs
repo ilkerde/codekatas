@@ -72,10 +72,27 @@ namespace Kata.Item_Tests {
   public class When_Item_Is_AgedBrie_And_SellIn_Is_Overdue {
     [Test]
     public void Then_Quality_Increases_Doubled() {
-      var quality = Store.UpdateItem(
-        new Item(N_.AgedBrie) { SellIn = -1, Quality = 3 }
-      ).Quality;
-      Assert.AreEqual(5, quality);
+      N_.AgedBrie
+        .WithQuality(3)
+        .AndSellIn(-1)
+        .ShouldHaveQuality(5);
+    }
+  }
+
+  public static class ItemTestExtensions {
+    public static Item WithQuality(this string name, int quality) {
+      return Store.UpdateItem(
+        new Item(name) { Quality = quality }
+      );
+    }
+
+    public static Item AndSellIn(this Item item, int sellIn) {
+      item.SellIn = sellIn;
+      return item;
+    }
+
+    public static void ShouldHaveQuality(this Item item, int expectedQuality) {
+      Assert.AreEqual(expectedQuality, item.Quality);
     }
   }
 }

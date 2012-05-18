@@ -67,4 +67,15 @@ namespace Kata.Item_Tests {
       Assert.AreEqual(4, quality);
     }
   }
+
+  [TestFixture]
+  public class When_Item_Is_AgedBrie_And_SellIn_Is_Overdue {
+    [Test]
+    public void Then_Quality_Increases_Doubled() {
+      var quality = Store.UpdateItem(
+        new Item(N_.AgedBrie) { SellIn = -1, Quality = 3 }
+      ).Quality;
+      Assert.AreEqual(5, quality);
+    }
+  }
 }

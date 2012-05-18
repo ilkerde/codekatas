@@ -20,10 +20,9 @@ namespace Kata.Item_Tests {
   public class When_Item_Has_Quality_Of_Zero {
     [Test]
     public void Then_Quality_Doesnt_Degrade_Below_Zero() {
-      var quality = Store.UpdateItem(
-        new Item { Quality = 1 }
-      ).Quality;
-      Assert.AreEqual(0, quality);
+      N_.Elixir
+        .WithQuality(1)
+        .ShouldHaveQuality(0);
     }
   }
 
@@ -31,18 +30,16 @@ namespace Kata.Item_Tests {
   public class When_Item_Is_Sulfuras {
     [Test]
     public void Then_Quality_Doesnt_Change_At_All() {
-      var quality = Store.UpdateItem(
-        new Item(N_.Sulfuras) { Quality = 4 }
-      ).Quality;
-      Assert.AreEqual(4, quality);
+      N_.Sulfuras
+        .WithQuality(4)
+        .ShouldHaveQuality(4);
     }
 
     [Test]
     public void Then_SellIn_Doesnt_Change_At_All() {
-      var sellin = Store.UpdateItem(
-        new Item(N_.Sulfuras) { SellIn = 3 }
-      ).SellIn;
-      Assert.AreEqual(3, sellin);
+      N_.Sulfuras
+        .WithSellIn(3)
+        .ShouldHaveSellIn(3);
     }
   }
 
@@ -50,10 +47,10 @@ namespace Kata.Item_Tests {
   public class When_Sulfuras_SellIn_Is_Negative {
     [Test]
     public void Then_Quality_Doesnt_Change_At_All() {
-      var quality = Store.UpdateItem(
-        new Item(N_.Sulfuras) { SellIn = -5, Quality = 5 }
-      ).Quality;
-      Assert.AreEqual(5, quality);
+      N_.Sulfuras
+        .WithQuality(5)
+        .AndSellIn(-5)
+        .ShouldHaveQuality(5);
     }
   }
 
@@ -61,10 +58,10 @@ namespace Kata.Item_Tests {
   public class When_Item_Is_AgedBrie_And_SellIn_Is_Not_Due {
     [Test]
     public void Then_Quality_Increases() {
-      var quality = Store.UpdateItem(
-        new Item(N_.AgedBrie) { SellIn = 1, Quality = 3 }
-      ).Quality;
-      Assert.AreEqual(4, quality);
+      N_.AgedBrie
+        .WithQuality(3)
+        .AndSellIn(1)
+        .ShouldHaveQuality(4);
     }
   }
 
@@ -81,9 +78,11 @@ namespace Kata.Item_Tests {
 
   public static class ItemTestExtensions {
     public static Item WithQuality(this string name, int quality) {
-      return Store.UpdateItem(
-        new Item(name) { Quality = quality }
-      );
+      return new Item(name) { Quality = quality };
+    }
+
+    public static Item WithSellIn(this string name, int sellIn) {
+      return new Item(name) { SellIn = sellIn };
     }
 
     public static Item AndSellIn(this Item item, int sellIn) {
@@ -92,7 +91,11 @@ namespace Kata.Item_Tests {
     }
 
     public static void ShouldHaveQuality(this Item item, int expectedQuality) {
-      Assert.AreEqual(expectedQuality, item.Quality);
+      Assert.AreEqual(expectedQuality, Store.UpdateItem(item).Quality);
+    }
+
+    public static void ShouldHaveSellIn(this Item item, int expectedSellIn) {
+      Assert.AreEqual(expectedSellIn, Store.UpdateItem(item).SellIn);
     }
   }
 }

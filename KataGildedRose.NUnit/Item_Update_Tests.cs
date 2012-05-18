@@ -21,7 +21,7 @@ namespace Kata.Item_Tests {
     [Test]
     public void Then_Quality_Doesnt_Degrade_Below_Zero() {
       N_.Elixir
-        .WithQuality(1)
+        .WithQuality(0)
         .ShouldHaveQuality(0);
     }
   }
@@ -73,6 +73,16 @@ namespace Kata.Item_Tests {
         .WithQuality(3)
         .AndSellIn(-1)
         .ShouldHaveQuality(5);
+    }
+  }
+
+  [TestFixture]
+  public class When_Item_Is_AgedBrie_And_Quality_Is_Already_50 {
+    [Test]
+    public void Then_Quality_Remains_At_50() {
+      N_.AgedBrie
+        .WithQuality(50)
+        .ShouldHaveQuality(50);
     }
   }
 

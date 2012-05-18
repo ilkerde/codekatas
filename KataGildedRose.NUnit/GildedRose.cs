@@ -97,6 +97,8 @@ namespace Kata {
           }
       }
 
+      if (item.Quality < 0) item.Quality = 0;
+
       return item;
     }
 

@@ -46,17 +46,11 @@ namespace Kata {
 
       if (item.SellIn < 0)
       {
-          if (item.Name != N_.AgedBrie)
-          {
-              if (item.Name == N_.ConcertTickets)
-              {
-                  item.Quality = item.Quality - item.Quality;
-              }
-          }
-          else
-          {
-            item.Quality = item.Quality + 1;
-          }
+        if (item.Name == N_.ConcertTickets)
+          item.Quality = 0;
+
+        if (item.Name == N_.AgedBrie)
+          item.Quality = item.Quality + 1;
       }
 
       if (item.Quality < 0) item.Quality = 0;

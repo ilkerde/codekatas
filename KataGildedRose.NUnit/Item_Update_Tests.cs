@@ -130,6 +130,16 @@ namespace Kata.Item_Tests {
     }
   }
 
+  [TestFixture]
+  public class When_Item_Has_Not_Reached_SellIn_Date {
+    [Test]
+    public void Then_SellIn_Is_Decreased_By_One() {
+      N_.Elixir
+        .WithSellIn(3)
+        .ShouldHaveSellIn(2);
+    }
+  }
+
   public static class ItemTestExtensions {
     public static Item WithQuality(this string name, int quality) {
       return new Item(name) { Quality = quality };

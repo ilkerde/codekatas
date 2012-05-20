@@ -21,7 +21,7 @@ namespace Kata {
         }, i => Item.Update(i))
       };
 
-      app.Store.UpdateQuality();
+      app.Store.Update();
 
       System.Console.ReadKey();
     }

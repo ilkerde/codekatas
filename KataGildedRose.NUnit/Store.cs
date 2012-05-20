@@ -6,24 +6,24 @@ namespace Kata {
     public static Store Create(IEnumerable<Item> items) {
       return new Store {
         Items = new List<Item>(items),
-        _updateItemQuality = item => Item.Update(item)
+        _updateItem = item => Item.Update(item)
       };
     }
 
-    public static Store Create(IEnumerable<Item> items, Func<Item, Item> updateItemQuality) {
+    public static Store Create(IEnumerable<Item> items, Func<Item, Item> updateItem) {
       return new Store {
         Items = new List<Item>(items),
-        _updateItemQuality = updateItemQuality
+        _updateItem = updateItem
       };
     }
 
     public List<Item> Items { get; private set; }
-    private Func<Item, Item> _updateItemQuality;
+    private Func<Item, Item> _updateItem;
 
-    public void UpdateQuality() {
+    public void Update() {
       for (var i = 0; i < Items.Count; i++) {
         var item = Items[i];
-        _updateItemQuality(item);
+        _updateItem(item);
       }
     }
   }

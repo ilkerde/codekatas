@@ -26,10 +26,16 @@ namespace Kata {
 
       int qualityChange = -1;
 
-      if (item.Name == N_.AgedBrie || item.Name == N_.ConcertTickets)
+      if (item.Name == N_.AgedBrie) {
         qualityChange = 1;
+        
+        if (item.SellIn < 1)
+          qualityChange = 2;
+      }
 
       if (item.Name == N_.ConcertTickets) {
+        qualityChange = 1;
+
         if (item.SellIn < 11)
           qualityChange = 2;
 
@@ -41,14 +47,7 @@ namespace Kata {
       }
 
       item.Quality = item.Quality + qualityChange;
-
       item.SellIn = item.SellIn - 1;
-
-      if (item.SellIn < 0)
-      {
-        if (item.Name == N_.AgedBrie)
-          item.Quality = item.Quality + 1;
-      }
 
       if (item.Quality < 0) item.Quality = 0;
       if (item.Quality > 50) item.Quality = 50;

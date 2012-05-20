@@ -18,7 +18,7 @@ namespace Kata {
           new Item (N_.Sulfuras) { SellIn = 0, Quality = 80},
           new Item (N_.ConcertTickets) { SellIn = 15, Quality = 20},
           new Item (N_.Cake) { SellIn = 3, Quality = 6}
-        }, i => Store.UpdateItem(i))
+        }, i => Item.Update(i))
       };
 
       app.Store.UpdateQuality();

@@ -6,7 +6,7 @@ namespace Kata.Item_Tests {
   public class When_Item_Is_Conjured {
     [Test]
     public void Then_Degrades_Twice_As_Fast() {
-      var quality = Store.UpdateItem(_item).Quality;
+      var quality = Item.Update(_item).Quality;
       Assert.AreEqual(4, quality);
     }
 
@@ -155,11 +155,15 @@ namespace Kata.Item_Tests {
     }
 
     public static void ShouldHaveQuality(this Item item, int expectedQuality) {
-      Assert.AreEqual(expectedQuality, Store.UpdateItem(item).Quality);
+      Assert.AreEqual(expectedQuality, ItemUpdate(item).Quality);
     }
 
     public static void ShouldHaveSellIn(this Item item, int expectedSellIn) {
-      Assert.AreEqual(expectedSellIn, Store.UpdateItem(item).SellIn);
+      Assert.AreEqual(expectedSellIn, ItemUpdate(item).SellIn);
+    }
+
+    public static Item ItemUpdate(Item item) {
+      return Item.Update(item);
     }
   }
 }

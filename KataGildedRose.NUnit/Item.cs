@@ -1,10 +1,13 @@
 namespace Kata {
   public class Item {
     public static Item Update(Item item) {
+      int qualityChange = -1;
+
       if (item.Name == N_.Sulfuras)
         return item;
 
-      int qualityChange = -1;
+      if (item.Name == N_.Cake)
+        qualityChange = -2;
 
       if (item.Name == N_.AgedBrie) {
         qualityChange = 1;

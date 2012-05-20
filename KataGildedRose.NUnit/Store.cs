@@ -24,31 +24,28 @@ namespace Kata {
       if (item.Name == N_.Sulfuras)
         return item;
 
-      if (item.Name == N_.AgedBrie || item.Name == N_.ConcertTickets) {
-        item.Quality = item.Quality + 1;
+      int qualityChange = -1;
 
-        if (item.Name == N_.ConcertTickets)
-        {
-            if (item.SellIn < 11)
-            {
-              item.Quality = item.Quality + 1;
-            }
+      if (item.Name == N_.AgedBrie || item.Name == N_.ConcertTickets)
+        qualityChange = 1;
 
-            if (item.SellIn < 6)
-            {
-              item.Quality = item.Quality + 1;
-            }
-        }
-      } else
-        item.Quality--;
+      if (item.Name == N_.ConcertTickets) {
+        if (item.SellIn < 11)
+          qualityChange = 2;
+
+        if (item.SellIn < 6)
+          qualityChange = 3;
+
+        if (item.SellIn < 1)
+          qualityChange = -item.Quality;
+      }
+
+      item.Quality = item.Quality + qualityChange;
 
       item.SellIn = item.SellIn - 1;
 
       if (item.SellIn < 0)
       {
-        if (item.Name == N_.ConcertTickets)
-          item.Quality = 0;
-
         if (item.Name == N_.AgedBrie)
           item.Quality = item.Quality + 1;
       }

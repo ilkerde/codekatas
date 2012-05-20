@@ -111,7 +111,7 @@ namespace Kata.Item_Tests {
   [TestFixture]
   public class When_Item_Is_Tickets_And_SellIn_Is_Between_0_And_5_Days_Ahead {
     [Test]
-    public void Then_Quality_Increases_By_Two() {
+    public void Then_Quality_Increases_By_Three() {
       N_.ConcertTickets
         .WithQuality(1)
         .AndSellIn(5)

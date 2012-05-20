@@ -119,6 +119,17 @@ namespace Kata.Item_Tests {
     }
   }
 
+  [TestFixture]
+  public class When_Item_Is_Tickets_And_SellIn_Is_Due {
+    [Test]
+    public void Then_Quality_Drops_To_Zero() {
+      N_.ConcertTickets
+        .WithQuality(10)
+        .AndSellIn(0)
+        .ShouldHaveQuality(0);
+    }
+  }
+
   public static class ItemTestExtensions {
     public static Item WithQuality(this string name, int quality) {
       return new Item(name) { Quality = quality };

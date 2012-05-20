@@ -86,6 +86,17 @@ namespace Kata.Item_Tests {
     }
   }
 
+  [TestFixture]
+  public class When_Item_Is_Tickets_And_SellIn_Is_More_Than_10_Days_Ahead {
+    [Test]
+    public void Then_Quality_Increases_By_One() {
+      N_.ConcertTickets
+        .WithQuality(1)
+        .AndSellIn(11)
+        .ShouldHaveQuality(2);
+    }
+  }
+
   public static class ItemTestExtensions {
     public static Item WithQuality(this string name, int quality) {
       return new Item(name) { Quality = quality };

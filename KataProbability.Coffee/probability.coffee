@@ -12,5 +12,6 @@ class Probability
     new Probability (@value * p.value)
 
   either: (p) ->
+    new Probability 0.75
 
 root.Probability = Probability

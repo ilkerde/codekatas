@@ -8,4 +8,6 @@ class Probability
   invert: ->
     new Probability 1-@value
 
+  combine: (p) ->
+
 root.Probability = Probability

@@ -21,3 +21,9 @@ describe "inverted probability", ->
     it "should be 0.4 for probability 0.6", ->
       p = p_of(0.6).invert()
       expect(p.value).toEqual 0.4
+
+describe "combined probability", ->
+  describe "is the product of two probabilities", ->
+    it "should be 0.25 for probabilities 0.5 and 0.5", ->
+      p = p_of(0.5).combine p_of(0.5)
+      expect(p.value).toEqual 0.25

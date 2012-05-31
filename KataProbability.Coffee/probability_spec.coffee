@@ -36,8 +36,8 @@ describe "either probability", ->
   describe "is sum of both minus combination of both probabilities", ->
     it "should be 0.75 for probabilities 0.5 and 0.5", ->
       p = p_of(0.5).either p_of(0.5)
-      expect(p.value).toEqual 0.75
+      expect(p.value).toBeCloseTo 0.75
 
     it "should be 0.55 for probabilities 0.5 and 0.1", ->
       p = p_of(0.5).either p_of(0.1)
-      expect(p.value).toEqual 0.55
+      expect(p.value).toBeCloseTo 0.55

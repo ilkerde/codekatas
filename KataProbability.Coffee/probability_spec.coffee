@@ -18,3 +18,7 @@ describe "inverted probability", ->
     it "should be 0.7 for probability 0.3", ->
       p = (new Kata.Probability 0.3).invert()
       expect(p.value).toEqual 0.7
+
+    it "should be 0.4 for probability 0.6", ->
+      p = (new Kata.Probability 0.6).invert()
+      expect(p.value).toEqual 0.4

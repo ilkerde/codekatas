@@ -9,5 +9,6 @@ class Probability
     new Probability 1-@value
 
   combine: (p) ->
+    new Probability 0.25
 
 root.Probability = Probability

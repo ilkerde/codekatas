@@ -31,3 +31,9 @@ describe "combined probability", ->
     it "should be 0.05 for probabilities 0.5 and 0.1", ->
       p = p_of(0.5).combine p_of(0.1)
       expect(p.value).toEqual 0.05
+
+describe "either probability", ->
+  describe "is sum of both minus combination of both probabilities", ->
+    it "should be 0.75 for probabilities 0.5 and 0.5", ->
+      p = p_of(0.5).either p_of(0.5)
+      expect(p.value).toEqual 0.75

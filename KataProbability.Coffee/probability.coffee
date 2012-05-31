@@ -12,6 +12,9 @@ class Probability
     new Probability (@value * p.value)
 
   either: (p) ->
-    new Probability (@value + p.value - (@combine p).value)
+    sum = @value + p.value
+    combined = (@combine p).value
+
+    new Probability (sum - combined)
 
 root.Probability = Probability

@@ -14,6 +14,7 @@ describe "a probability has a fractional value between 0 and 1", ->
     expect(p.value).toEqual 0
 
 describe "inverted probability", ->
-  it "should be 1 minus given probability", ->
-    p = (new Kata.Probability 0.3).invert()
-    expect(p.value).toEqual 0.7
+  describe "is 1 minus given probability", ->
+    it "should be 0.7 for probability 0.3", ->
+      p = (new Kata.Probability 0.3).invert()
+      expect(p.value).toEqual 0.7

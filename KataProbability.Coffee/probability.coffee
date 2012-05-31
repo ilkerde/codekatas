@@ -5,4 +5,6 @@ class Probability
     @value = 1 if @value > 1
     @value = 0 if @value < 0
 
+  invert: ->
+
 root.Probability = Probability

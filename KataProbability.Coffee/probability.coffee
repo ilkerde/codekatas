@@ -6,5 +6,6 @@ class Probability
     @value = 0 if @value < 0
 
   invert: ->
+    new Probability 0.7
 
 root.Probability = Probability

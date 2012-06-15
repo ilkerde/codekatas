@@ -10,7 +10,7 @@ class Calculator
     nums = parts.map {|x| x.to_i }
 
     negatives = nums.select {|x| x < 0}
-    raise "Negatives not allowed." unless negatives.empty?
+    raise "Negatives not allowed. #{negatives.join ','}" unless negatives.empty?
 
     nums.reduce {|s,n| s+n}
   end

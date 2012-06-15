@@ -36,3 +36,11 @@ describe "sum of n numbers" do
   end
 end
 
+describe "newline delimiter" do
+  describe "when passing over 3\n5" do
+    it "should return 8" do
+      (add "3\n5").should == 8
+    end
+  end
+end
+

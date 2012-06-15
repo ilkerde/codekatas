@@ -1,9 +1,13 @@
 require "calculator"
 
+def add numbers
+  Calculator.add numbers
+end
+
 describe "no numbers given" do
   describe "when given string is emtpy" do
     it "should return 0" do
-      (Calculator.add "").should == 0
+      (add "").should == 0
     end
   end
 end
@@ -11,7 +15,7 @@ end
 describe "single number" do
   describe "when string contains 5 as number" do
     it "should return 5" do
-      (Calculator.add "5").should == 5
+      (add "5").should == 5
     end
   end
 end
@@ -19,7 +23,7 @@ end
 describe "sum of 2 numbers" do
   describe "when passing over 3,5" do
     it "should return 8" do
-      (Calculator.add "3,5").should == 8
+      (add "3,5").should == 8
     end
   end
 end

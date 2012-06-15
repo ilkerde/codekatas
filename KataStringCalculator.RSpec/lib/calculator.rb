@@ -1,6 +1,10 @@
 class Calculator
   def self.add numbers
-    0 if numbers == ""
-    numbers.to_i
+    return 0 if numbers == ""
+
+    parts = numbers.split ','
+    nums = parts.map {|x| x.to_i }
+
+    nums.reduce {|s,n| s+n}
   end
 end

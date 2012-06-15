@@ -16,3 +16,11 @@ describe "single number" do
   end
 end
 
+describe "sum of 2 numbers" do
+  describe "when passing over 3,5" do
+    it "should return 8" do
+      (Calculator.add "3,5").should == 8
+    end
+  end
+end
+

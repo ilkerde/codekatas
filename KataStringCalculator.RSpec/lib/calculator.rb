@@ -9,6 +9,9 @@ class Calculator
     parts = numbers.split delimiters
     nums = parts.map {|x| x.to_i }
 
+    negatives = nums.select {|x| x < 0}
+    raise "Negatives not allowed." unless negatives.empty?
+
     nums.reduce {|s,n| s+n}
   end
 end

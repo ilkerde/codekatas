@@ -46,7 +46,7 @@ end
 
 describe "custom delimiter" do
   describe "when passing over //;\n1;2" do
-    it "shoud return 3" do
+    it "should return 3" do
       (add "//;\n1;2").should == 3
     end
   end

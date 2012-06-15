@@ -57,6 +57,10 @@ describe "negative numbers" do
     it "should raise an exception" do
       lambda { add "-1,2" }.should raise_error
     end
+
+    it "should give all negative numbers in error message" do
+      lambda { add "5,-2" }.should raise_error(RuntimeError, /-2/)
+    end
   end
 end
 

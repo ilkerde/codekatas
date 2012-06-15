@@ -28,3 +28,11 @@ describe "sum of 2 numbers" do
   end
 end
 
+describe "sum of n numbers" do
+  describe "when passing over 3,5,2" do
+    it "should return 10" do
+      (add "3,5,2").should == 10
+    end
+  end
+end
+

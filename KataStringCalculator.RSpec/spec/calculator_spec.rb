@@ -52,3 +52,11 @@ describe "custom delimiter" do
   end
 end
 
+describe "negative numbers" do
+  describe "when passing negative numbers" do
+    it "should raise an exception" do
+      lambda { add "-1,2" }.should raise_error
+    end
+  end
+end
+

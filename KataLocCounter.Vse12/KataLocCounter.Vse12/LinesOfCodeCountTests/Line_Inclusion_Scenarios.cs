@@ -10,7 +10,7 @@ namespace KataLocCounter.Vse12
     .LinesOfCodeCountTests
 {
     [TestClass]
-    public class Line_Insclusion_Scenarios
+    public class Line_Inclusion_Scenarios
     {
         [TestMethod]
         public void Empty_String_Does_Not_Count()

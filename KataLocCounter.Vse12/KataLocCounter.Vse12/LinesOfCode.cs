@@ -10,9 +10,23 @@ namespace KataLocCounter.Vse12
     {
         public static int Count(string sourceCode)
         {
+            bool isWithinMultilineComment = false;
+
             return sourceCode.ToLines()
-                .Where(line => IsNotSingleCommentLine(line))
+                .Select(line => {
+                    if (line.StartsWith("/*"))
+                        isWithinMultilineComment = true;
+
+                    if (line.IndexOf("*/") > line.IndexOf("/*"))
+                        isWithinMultilineComment = false;
+
+                    if (!isWithinMultilineComment)
+                        return !line.EndsWith("*/") ? line : null;
+
+                    return null;
+                })
                 .Where(line => IsNotBlankLine(line))
+                .Where(line => IsNotSingleCommentLine(line))
                 .Count();
         }
 

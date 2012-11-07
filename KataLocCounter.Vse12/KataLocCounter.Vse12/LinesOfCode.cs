@@ -14,7 +14,10 @@ namespace KataLocCounter.Vse12
                 return 0;
 
             var lines = sourceCode.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
-            return lines.Count();
+            return lines
+                .Where(line => !line.StartsWith("//"))
+                .Where(line => !String.IsNullOrWhiteSpace(line))
+                .Count();
         }
     }
 }

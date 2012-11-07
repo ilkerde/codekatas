@@ -33,6 +33,23 @@ using System.Text;
 using System.IO;")
                  .ShouldBe(3);
         }
+
+        [TestMethod]
+        public void Comment_Line_Does_Not_Count()
+        {
+            LinesOfCode.Count("// test")
+                .ShouldBe(0);
+        }
+
+        [TestMethod]
+        public void Blank_Line_Does_Not_Count()
+        {
+            LinesOfCode.Count(@"// test
+using System;
+
+using System.Text;")
+                .ShouldBe(2);
+        }
     }
 
     public static class AssertExtensions

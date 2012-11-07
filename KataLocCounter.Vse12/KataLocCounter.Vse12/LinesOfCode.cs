@@ -10,14 +10,20 @@ namespace KataLocCounter.Vse12
     {
         public static int Count(string sourceCode)
         {
-            if (string.IsNullOrEmpty(sourceCode))
-                return 0;
-
-            var lines = sourceCode.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
-            return lines
-                .Where(line => !line.StartsWith("//"))
-                .Where(line => !String.IsNullOrWhiteSpace(line))
+            return sourceCode.ToLines()
+                .Where(line => IsNotSingleCommentLine(line))
+                .Where(line => IsNotBlankLine(line))
                 .Count();
+        }
+
+        private static bool IsNotBlankLine(string line)
+        {
+            return !String.IsNullOrWhiteSpace(line);
+        }
+
+        private static bool IsNotSingleCommentLine(string line)
+        {
+            return !line.StartsWith("//");
         }
     }
 }

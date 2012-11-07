@@ -10,7 +10,11 @@ namespace KataLocCounter.Vse12
     {
         public static int Count(string sourceCode)
         {
-            return 0;
+            if (string.IsNullOrEmpty(sourceCode))
+                return 0;
+
+            var lines = sourceCode.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+            return lines.Count();
         }
     }
 }

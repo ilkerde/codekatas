@@ -18,5 +18,24 @@ namespace KataLocCounter.Vse12
             int loc = LinesOfCode.Count(sourceCode);
             Assert.AreEqual(0, loc);
         }
+
+        [TestMethod]
+        public void Single_Line_Does_Count()
+        {
+            string sourceCode = "using System;";
+            int loc = LinesOfCode.Count(sourceCode);
+            Assert.AreEqual(1, loc);
+        }
+
+        [TestMethod]
+        public void Multiple_Lines_Count()
+        {
+            string sourceCode = @"using System;
+using System.Text;
+using System.IO;";
+
+            int loc = LinesOfCode.Count(sourceCode);
+            Assert.AreEqual(3, loc);
+        }
     }
 }

@@ -14,20 +14,42 @@ namespace KataLocCounter.Vse12
 
             return sourceCode.ToLines()
                 .Select(line => {
-                    if (line.StartsWith("/*"))
-                        isWithinMultilineComment = true;
+                    bool wasWithinMultilineComment = isWithinMultilineComment;
+                    isWithinMultilineComment = IsMultilineCommentActive(wasWithinMultilineComment, line);
 
-                    if (line.IndexOf("*/") > line.IndexOf("/*"))
-                        isWithinMultilineComment = false;
-
-                    if (!isWithinMultilineComment)
-                        return !line.EndsWith("*/") ? line : null;
+                    if (!isWithinMultilineComment && (
+                        (!wasWithinMultilineComment && IsNotStartingWithMultilineCommentToken(line)) ||
+                        IsNotEndingWithMutlilineCommentEndToken(line)))
+                        return line;
 
                     return null;
                 })
                 .Where(line => IsNotBlankLine(line))
                 .Where(line => IsNotSingleCommentLine(line))
                 .Count();
+        }
+
+        private static bool IsNotStartingWithMultilineCommentToken(string line)
+        {
+            return !line.StartsWith("/*");
+        }
+
+        private static bool IsNotEndingWithMutlilineCommentEndToken(string line)
+        {
+            return !line.EndsWith("*/");
+        }
+
+        private static bool IsMultilineCommentActive(bool wasWithinMultilineComment, string line)
+        {
+            bool isWithinMultilineComment = wasWithinMultilineComment;
+
+            if (line.IndexOf("*/") < line.IndexOf("/*"))
+                isWithinMultilineComment = true;
+
+            if (line.IndexOf("*/") > line.IndexOf("/*"))
+                isWithinMultilineComment = false;
+
+            return isWithinMultilineComment;
         }
 
         private static bool IsNotBlankLine(string line)

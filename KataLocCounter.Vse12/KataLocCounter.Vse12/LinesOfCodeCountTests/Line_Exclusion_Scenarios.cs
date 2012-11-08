@@ -44,6 +44,13 @@ using System.Text;")
         }
 
         [TestMethod]
+        public void Multi_Comment_Line_With_Preceeding_Literal_Does_Count()
+        {
+            LinesOfCode.Count("using System; /* test */")
+                .ShouldBe(1);
+        }
+
+        [TestMethod]
         public void Multi_Comment_Line_Spanning_Lines_Do_Not_Count()
         {
             LinesOfCode.Count(@"/* test 

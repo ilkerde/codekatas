@@ -47,8 +47,9 @@
   <ItemGroup>
     <Compile Include="LinesOfCode.cs" />
     <Compile Include="LinesOfCodeCountTests\AssertExtensions.cs" />
-    <Compile Include="LinesOfCodeCountTests\Line_Exclusion_Scenarios.cs" />
-    <Compile Include="LinesOfCodeCountTests\Line_Inclusion_Scenarios.cs" />
+    <Compile Include="LinesOfCodeCountTests\Multiline_Comment_Scenarios.cs" />
+    <Compile Include="LinesOfCodeCountTests\Singleline_Exclusion_Scenarios.cs" />
+    <Compile Include="LinesOfCodeCountTests\Singleline_Inclusion_Scenarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringSplittingExtensions.cs" />
   </ItemGroup>

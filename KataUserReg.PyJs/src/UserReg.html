@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>User Registration</title>
+<style>
+#userreg label {
+  display:block;
+}
+#userreg input {
+  display:block;
+  margin-bottom:20px;
+}
+</style>
+<script src="lib/jquery-2.0.3.js"></script>
+<script src="UserReg.js"></script>
+<script>
+$(function(){
+  $("#register").click(validator.validate());
+});
+</script>
+</head>
+<body>
+<h1>User Registration</h1>
+<form id="userreg">
+  <label for="name">Name</label>
+  <input name="name" id="name" type="text"></input>
+  <label for="email">Email</label>
+  <input name="email" id="email" type="text"></input>
+  <label for="password">Password</label>
+  <input name="password" id="password" type="password"></input>
+  <label for="repeatedpassword">Repeat Password</label>
+  <input name="repeatedpassword" id="repeatedpassword" type="password"></input>
+  <input name="register" id="register" type="submit" value="Register"></input>
+</form>
+</body>
+</html>

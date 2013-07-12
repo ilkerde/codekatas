@@ -35,9 +35,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
     <Compile Include="SourceCodeAnalysis.cs" />
     <Compile Include="When_SourceCode_Contains_A_Single_Line.cs" />
+    <Compile Include="When_SourceCode_Is_Empty.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

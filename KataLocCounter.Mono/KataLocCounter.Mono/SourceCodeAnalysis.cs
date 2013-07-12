@@ -7,7 +7,7 @@ namespace KataLocCounter.Mono
 	{
 		public static int CountLinesOfCode(string sourceCode)
 		{
-			throw new NotImplementedException();
+			return 0;
 		}
 	}
 }

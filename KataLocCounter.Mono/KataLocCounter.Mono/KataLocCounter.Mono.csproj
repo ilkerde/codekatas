@@ -38,6 +38,7 @@
     <Compile Include="SourceCodeAnalysis.cs" />
     <Compile Include="When_SourceCode_Contains_A_Single_Line.cs" />
     <Compile Include="When_SourceCode_Is_Empty.cs" />
+    <Compile Include="When_SourceCode_Contains_A_Single_Line_Comment.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

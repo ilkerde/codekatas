@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using NUnit.Framework;
 
 namespace KataLocCounter.Mono
@@ -7,7 +8,10 @@ namespace KataLocCounter.Mono
 	{
 		public static int CountLinesOfCode(string sourceCode)
 		{
-			return 0;
+			if (String.IsNullOrEmpty (sourceCode))
+				return 0;
+
+			return 1;
 		}
 	}
 }

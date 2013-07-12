@@ -8,7 +8,10 @@ namespace KataLocCounter.Mono
 	{
 		public static int CountLinesOfCode(string sourceCode)
 		{
-			if (String.IsNullOrEmpty (sourceCode))
+			if (String.IsNullOrEmpty(sourceCode))
+				return 0;
+
+			if (sourceCode.StartsWith("//"))
 				return 0;
 
 			return 1;

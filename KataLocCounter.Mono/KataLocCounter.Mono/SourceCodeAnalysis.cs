@@ -6,6 +6,8 @@ namespace KataLocCounter.Mono
 {
 	public class SourceCodeAnalysis
 	{
+		static bool _isInBlockComment = false;
+
 		public static int CountLinesOfCode(string sourceCode)
 		{
 			var sourceCodeLines = sourceCode.SplitLinesToArray();
@@ -18,6 +20,17 @@ namespace KataLocCounter.Mono
 			if (sourceCodeLine.StartsWith("/*") &&
 				sourceCodeLine.EndsWith("*/"))
 				return false;
+
+			if (sourceCodeLine.StartsWith ("/*")) 
+			{
+				_isInBlockComment = true;
+				return false;
+			}
+
+			if (sourceCodeLine.EndsWith ("*/")) {
+				_isInBlockComment = false;
+				return false;
+			}
 
 			return !String.IsNullOrEmpty(sourceCodeLine) 
 				&& !sourceCodeLine.StartsWith("//");

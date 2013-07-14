@@ -8,10 +8,7 @@ namespace KataLocCounter.Mono
 	{
 		public static int CountLinesOfCode(string sourceCode)
 		{
-			var sourceCodeLines = sourceCode.Split(
-				new [] { Environment.NewLine }, 
-				StringSplitOptions.RemoveEmptyEntries);
-
+			var sourceCodeLines = sourceCode.SplitLinesToArray();
 			return sourceCodeLines.Count(IsCodeLine);
 		}
 

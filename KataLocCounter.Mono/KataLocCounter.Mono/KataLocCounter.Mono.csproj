@@ -44,6 +44,7 @@
     <Compile Include="When_SourceCode_Contains_Two_Code_Lines_And_One_Comment_Line.cs" />
     <Compile Include="StringExtensions.cs" />
     <Compile Include="When_SourceCode_Contains_A_Single_Line_With_Whitespaces_Only.cs" />
+    <Compile Include="When_SourceCode_Contains_A_Single_Line_Block_Comment.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

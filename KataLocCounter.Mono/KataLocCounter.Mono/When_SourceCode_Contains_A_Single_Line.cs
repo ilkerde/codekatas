@@ -14,4 +14,4 @@ namespace KataLocCounter.Mono
 			Assert.That(linesOfCode, Is.EqualTo(1));
 		}
 	}
-	}
+}

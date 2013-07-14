@@ -15,6 +15,10 @@ namespace KataLocCounter.Mono
 		private static bool IsCodeLine(string sourceCodeLine) {
 			sourceCodeLine = sourceCodeLine.Trim();
 
+			if (sourceCodeLine.StartsWith("/*") &&
+				sourceCodeLine.EndsWith("*/"))
+				return false;
+
 			return !String.IsNullOrEmpty(sourceCodeLine) 
 				&& !sourceCodeLine.StartsWith("//");
 		}

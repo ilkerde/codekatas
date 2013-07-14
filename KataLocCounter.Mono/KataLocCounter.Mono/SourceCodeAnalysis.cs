@@ -11,6 +11,8 @@ namespace KataLocCounter.Mono
 			if (String.IsNullOrEmpty(sourceCode))
 				return 0;
 
+			sourceCode = sourceCode.Trim();
+
 			if (sourceCode.StartsWith("//"))
 				return 0;
 

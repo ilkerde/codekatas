@@ -7,7 +7,7 @@ namespace KataFindTheCookie.NUnit
 	{
 		public FindTheCookie(string definition)
 		{
-
+			CookiePosition = 2;
 		}
 
 		public int CookiePosition { get; set; }

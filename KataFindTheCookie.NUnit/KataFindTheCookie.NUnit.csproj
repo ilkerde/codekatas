@@ -50,6 +50,9 @@
     <Compile Include="Definition.cs" />
     <Compile Include="GameRunTests\When_3_Moves_Are_Defined.cs" />
     <Compile Include="GameRunTests\When_Only_1_Move_Is_Defined.cs" />
+    <Compile Include="SystemTests\Case_1.cs" />
+    <Compile Include="SystemTests\Case_2.cs" />
+    <Compile Include="SystemTests\Case_3.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
@@ -59,5 +62,6 @@
     <Folder Include="DefinitionTests\" />
     <Folder Include="CookieTellerTests\" />
     <Folder Include="GameRunTests\" />
+    <Folder Include="SystemTests\" />
   </ItemGroup>
 </Project>

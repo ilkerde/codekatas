@@ -28,5 +28,4 @@ namespace KataFindTheCookie.NUnit
 			Assert.AreEqual(3, hints.Length);
 		}
 	}
-	
 }

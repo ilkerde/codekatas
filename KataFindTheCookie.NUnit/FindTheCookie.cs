@@ -16,5 +16,10 @@ namespace KataFindTheCookie.NUnit
 		}
 
 		public int CookiePosition { get; set; }
+
+		public Move NextStep()
+		{
+			return new Move();
+		}
 	}
 }

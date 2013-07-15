@@ -44,6 +44,8 @@
     <Compile Include="FindTheCookie.cs" />
     <Compile Include="When_Game_Definition_Starts_With_2.cs" />
     <Compile Include="When_Game_Definition_Starts_With_5.cs" />
+    <Compile Include="Move.cs" />
+    <Compile Include="When_Game_Definition_Has_First_Move_To_3.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

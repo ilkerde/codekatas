@@ -10,7 +10,7 @@ namespace KataFindTheCookie.NUnit.
 		[Test]
 		public void Should_Find_The_Cookie ()
 		{
-			var response = CookieTeller.AreWeThereYet (0, 1);
+			var response = new CookieTeller(1).AreWeThereYet (0, 1);
 			Assert.AreEqual ("Moving from 0 to 1: found it!", response);
 		}
 	}

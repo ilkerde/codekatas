@@ -34,10 +34,7 @@ namespace KataLocCounter.Mono
 				return false;
 			}
 
-			if (blockCommentState.IsActive)
-				return false;
-
-			return !String.IsNullOrEmpty(sourceCodeLine) 
+			return !blockCommentState.IsActive && !String.IsNullOrEmpty(sourceCodeLine) 
 				&& !sourceCodeLine.StartsWith("//");
 		}
 

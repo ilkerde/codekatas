@@ -25,10 +25,8 @@ namespace KataLocCounter.Mono
 			{
 				blockCommentState.IsActive = true;
 
-				if (HasBlockCommentTerminator(sourceCodeLine))
-					return IsBlockCommentTerminatedBeforeEOL(sourceCodeLine);
-
-				return false;
+				return HasBlockCommentTerminator(sourceCodeLine)
+					&& IsBlockCommentTerminatedBeforeEOL(sourceCodeLine);
 			}
 
 			if (sourceCodeLine.EndsWith ("*/")) {

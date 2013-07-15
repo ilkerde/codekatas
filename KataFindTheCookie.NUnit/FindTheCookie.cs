@@ -21,9 +21,10 @@ namespace KataFindTheCookie.NUnit
 
 		public int CookiePosition { get; set; }
 
-		public string[] Run ()
+		public string[] Run()
 		{
-			return new string[] { "1" };
+			Move nextMove = NextStep();
+			return new string[] { _teller.AreWeThereYet(nextMove.From, nextMove.To) };
 		}
 
 		public Move NextStep()

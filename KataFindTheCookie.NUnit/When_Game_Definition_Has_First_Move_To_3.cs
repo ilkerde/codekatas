@@ -3,7 +3,6 @@ using NUnit.Framework;
 
 namespace KataFindTheCookie.NUnit
 {
-
 	[TestFixture]
 	public class When_Game_Definition_Has_First_Move_To_3 
 	{

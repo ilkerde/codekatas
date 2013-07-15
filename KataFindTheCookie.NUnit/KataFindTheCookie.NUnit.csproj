@@ -46,6 +46,7 @@
     <Compile Include="When_Game_Definition_Starts_With_5.cs" />
     <Compile Include="Move.cs" />
     <Compile Include="When_Game_Definition_Has_First_Move_To_3.cs" />
+    <Compile Include="When_Game_Definition_Has_Already_Moved_To_3_And_Has_Second_Move_7.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

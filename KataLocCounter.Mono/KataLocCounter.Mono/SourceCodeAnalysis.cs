@@ -20,14 +20,20 @@ namespace KataLocCounter.Mono
 			if (sourceCodeLine.StartsWith ("/*")) 
 			{
 				_isInBlockComment = true;
-				return sourceCodeLine.Contains("*/") 
-					&& sourceCodeLine.IndexOf ("*/") < sourceCodeLine.Length - 2;
+
+				if (sourceCodeLine.Contains ("*/"))
+					return sourceCodeLine.IndexOf ("*/") < sourceCodeLine.Length - 2;
+
+				return false;
 			}
 
 			if (sourceCodeLine.EndsWith ("*/")) {
 				_isInBlockComment = false;
 				return false;
 			}
+
+			if (_isInBlockComment)
+				return false;
 
 			return !String.IsNullOrEmpty(sourceCodeLine) 
 				&& !sourceCodeLine.StartsWith("//");

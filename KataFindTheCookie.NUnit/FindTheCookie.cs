@@ -7,20 +7,16 @@ namespace KataFindTheCookie.NUnit
 {
 	public class FindTheCookie
 	{
-		int[] _path;
-		int _target;
 		int _step;
 
+		Definition _definition;
 		CookieTeller _teller;
 
 		public FindTheCookie(Definition definition, CookieTeller teller)
 		{
 			_teller = teller;
-			_path = definition.Path;
-			_target = definition.Target;
+			_definition = definition;
 		}
-
-		public int CookiePosition { get; set; }
 
 		public string[] Run()
 		{
@@ -28,20 +24,20 @@ namespace KataFindTheCookie.NUnit
 
 			while(CanMove()) {
 				Move nextMove = NextStep();
-				hints.Add(_teller.AreWeThereYet (nextMove.From, nextMove.To)); 
+				hints.Add(_teller.AreWeThereYet(nextMove.From, nextMove.To)); 
 			}
 
 			return hints.ToArray();
 		}
 
-		public Move NextStep()
+		private Move NextStep()
 		{
-			return new Move { From = _path[_step], To = _path[++_step] };
+			return new Move { From = _definition.Path[_step], To = _definition.Path[++_step] };
 		}
 
 		private bool CanMove()
 		{
-			return _step < _path.Length - 1;
+			return _step < _definition.Path.Length - 1;
 		}
 	}
 }

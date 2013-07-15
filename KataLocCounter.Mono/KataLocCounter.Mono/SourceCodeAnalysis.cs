@@ -25,8 +25,8 @@ namespace KataLocCounter.Mono
 			{
 				blockCommentState.IsActive = true;
 
-				if (sourceCodeLine.Contains ("*/"))
-					return sourceCodeLine.IndexOf ("*/") < sourceCodeLine.Length - 2;
+				if (HasBlockCommentTerminator(sourceCodeLine))
+					return IsBlockCommentTerminatedBeforeEOL(sourceCodeLine);
 
 				return false;
 			}
@@ -42,5 +42,16 @@ namespace KataLocCounter.Mono
 			return !String.IsNullOrEmpty(sourceCodeLine) 
 				&& !sourceCodeLine.StartsWith("//");
 		}
+
+		private static bool IsBlockCommentTerminatedBeforeEOL(string sourceCodeLine)
+		{
+			return sourceCodeLine.IndexOf ("*/") < sourceCodeLine.Length - 2;
+		}
+
+		private static bool HasBlockCommentTerminator(string sourceCodeLine)
+		{
+			return sourceCodeLine.Contains("*/");
+		}
+
 	}
 }

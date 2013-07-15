@@ -14,9 +14,6 @@ namespace KataFindTheCookie.NUnit
 
 		public string AreWeThereYet(int from, int to)
 		{
-			if (to == _target)
-				return "Moving from 0 to 1: found it!";
-
 			var diffToTarget = Math.Abs(to - _target);
 			var diffFromTarget = Math.Abs(from - _target);
 
@@ -25,8 +22,11 @@ namespace KataFindTheCookie.NUnit
 
 		private string DescribeDistanceDifference(int from, int to, int oldDistance, int newDistance)
 		{
-			var difference = oldDistance == newDistance ? "same" : "colder";
-			return String.Format("Moving from 0 to {0}: {1}.", to, difference);
+			var difference = oldDistance == newDistance ? "same." : "colder.";
+			if (newDistance == 0)
+				difference = "found it!";
+
+			return String.Format("Moving from 0 to {0}: {1}", to, difference);
 		}
 	}
 }

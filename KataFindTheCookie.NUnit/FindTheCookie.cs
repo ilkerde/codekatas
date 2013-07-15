@@ -18,6 +18,11 @@ namespace KataFindTheCookie.NUnit
 
 		public int CookiePosition { get; set; }
 
+		public string[] Run ()
+		{
+			throw new NotImplementedException ();
+		}
+
 		public Move NextStep()
 		{
 			return new Move { From = _path[_step], To = _path[++_step] };

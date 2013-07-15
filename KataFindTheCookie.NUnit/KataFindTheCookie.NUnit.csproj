@@ -42,6 +42,7 @@
     <Compile Include="Given_Cookie_Is_At_Position_1\When_Joey_Moves_From_3_to_0.cs" />
     <Compile Include="FindTheCookie.cs" />
     <Compile Include="When_Game_Definition_Starts_With_2.cs" />
+    <Compile Include="When_Game_Definition_Starts_With_5.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -9,6 +9,7 @@ namespace KataLocCounter.Mono
 		private class BlockCommentState
 		{
 			public bool IsActive { get; set; } 
+			public bool IsNotActive { get { return !IsActive; } }
 		}
 
 		public static int CountLinesOfCode(string sourceCode)
@@ -34,8 +35,14 @@ namespace KataLocCounter.Mono
 				return false;
 			}
 
-			return !blockCommentState.IsActive && !String.IsNullOrEmpty(sourceCodeLine) 
-				&& !sourceCodeLine.StartsWith("//");
+			return blockCommentState.IsNotActive 
+				&& sourceCodeLine.ContainsText() 
+				&& IsNotSingleLineComment(sourceCodeLine);
+		}
+
+		private static bool IsNotSingleLineComment(string sourceCodeLine)
+		{
+			return !sourceCodeLine.StartsWith("//");
 		}
 
 		private static bool IsBlockCommentTerminatedBeforeEOL(string sourceCodeLine)

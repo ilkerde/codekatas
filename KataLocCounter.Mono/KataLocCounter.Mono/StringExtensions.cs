@@ -12,5 +12,10 @@ namespace KataLocCounter.Mono
 				new [] { Environment.NewLine }, 
 				StringSplitOptions.RemoveEmptyEntries);
 		}
+
+		public static bool ContainsText(this string source)
+		{
+			return !String.IsNullOrEmpty (source);
+		}
 	}
 }

@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="Test.cs" />
     <Compile Include="CookieTeller.cs" />
+    <Compile Include="When_Joey_Moves_From_0_To_2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

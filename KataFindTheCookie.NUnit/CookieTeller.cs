@@ -3,6 +3,7 @@ using NUnit.Framework;
 
 namespace KataFindTheCookie.NUnit
 {
+
 	public class CookieTeller
 	{
 		int _target;
@@ -17,7 +18,7 @@ namespace KataFindTheCookie.NUnit
 			var diffToTarget = Math.Abs(to - _target);
 			var diffFromTarget = Math.Abs(from - _target);
 
-			return DescribeDistanceDifference (from, to, diffFromTarget, diffToTarget);
+			return DescribeDistanceDifference(from, to, diffFromTarget, diffToTarget);
 		}
 
 		private string DescribeDistanceDifference(int from, int to, int oldDistance, int newDistance)

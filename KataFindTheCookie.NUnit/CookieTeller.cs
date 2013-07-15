@@ -3,7 +3,6 @@ using NUnit.Framework;
 
 namespace KataFindTheCookie.NUnit
 {
-
 	public class CookieTeller
 	{
 		int _target;

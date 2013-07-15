@@ -37,22 +37,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CookieTeller.cs" />
-    <Compile Include="Given_Cookie_Is_At_Position_1\When_Joey_Moves_From_0_To_1.cs" />
-    <Compile Include="Given_Cookie_Is_At_Position_1\When_Joey_Moves_From_0_To_2.cs" />
-    <Compile Include="Given_Cookie_Is_At_Position_1\When_Joey_Moves_From_0_To_3.cs" />
-    <Compile Include="Given_Cookie_Is_At_Position_1\When_Joey_Moves_From_3_to_0.cs" />
     <Compile Include="FindTheCookie.cs" />
-    <Compile Include="When_Game_Definition_Starts_With_2.cs" />
-    <Compile Include="When_Game_Definition_Starts_With_5.cs" />
     <Compile Include="Move.cs" />
-    <Compile Include="When_Game_Definition_Has_First_Move_To_3.cs" />
-    <Compile Include="When_Game_Definition_Has_Already_Moved_To_3_And_Has_Second_Move_7.cs" />
+    <Compile Include="DefinitionTests\When_Game_Definition_Has_Already_Moved_To_3_And_Has_Second_Move_7.cs" />
+    <Compile Include="CookieTellerTests\Given_Cookie_Is_At_Position_1\When_Joey_Moves_From_0_To_1.cs" />
+    <Compile Include="CookieTellerTests\Given_Cookie_Is_At_Position_1\When_Joey_Moves_From_0_To_2.cs" />
+    <Compile Include="CookieTellerTests\Given_Cookie_Is_At_Position_1\When_Joey_Moves_From_0_To_3.cs" />
+    <Compile Include="CookieTellerTests\Given_Cookie_Is_At_Position_1\When_Joey_Moves_From_3_to_0.cs" />
+    <Compile Include="DefinitionTests\When_Game_Definition_Has_First_Move_To_3.cs" />
+    <Compile Include="DefinitionTests\When_Game_Definition_Starts_With_2.cs" />
+    <Compile Include="DefinitionTests\When_Game_Definition_Starts_With_5.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="Specs.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Given_Cookie_Is_At_Position_1\" />
+    <Folder Include="DefinitionTests\" />
+    <Folder Include="CookieTellerTests\" />
   </ItemGroup>
 </Project>

@@ -10,8 +10,11 @@ namespace KataFindTheCookie.NUnit
 		int _target;
 		int _step;
 
-		public FindTheCookie(Definition definition)
+		CookieTeller _teller;
+
+		public FindTheCookie(Definition definition, CookieTeller teller)
 		{
+			_teller = teller;
 			_path = definition.Path;
 			_target = definition.Target;
 		}

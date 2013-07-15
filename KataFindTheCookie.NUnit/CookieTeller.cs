@@ -14,10 +14,16 @@ namespace KataFindTheCookie.NUnit
 
 		public string AreWeThereYet(int from, int to)
 		{
-			if (to != _target)
+			if (to == _target)
+				return "Moving from 0 to 1: found it!";
+
+			var diffToTarget = Math.Abs(to - _target);
+			var diffFromTarget = Math.Abs(from - _target);
+
+			if (diffFromTarget == diffToTarget)
 				return String.Format ("Moving from 0 to {0}: same.", to);
 
-			return "Moving from 0 to 1: found it!";
+			return String.Format ("Moving from 0 to {0}: colder.", to);
 		}
 	}
 }

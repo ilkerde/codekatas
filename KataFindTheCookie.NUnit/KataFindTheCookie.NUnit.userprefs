@@ -1,0 +1,48 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Given_Cookie_Is_At_Position_1/When_Joey_Moves_From_0_To_2.cs">
+    <Files>
+      <File FileName="CookieTeller.cs" Line="18" Column="4" />
+      <File FileName="Given_Cookie_Is_At_Position_1/When_Joey_Moves_From_0_To_1.cs" Line="7" Column="1" />
+      <File FileName="Given_Cookie_Is_At_Position_1/When_Joey_Moves_From_0_To_2.cs" Line="8" Column="24" />
+      <File FileName="Given_Cookie_Is_At_Position_1/When_Joey_Moves_From_0_To_3.cs" Line="16" Column="3" />
+      <File FileName="Given_Cookie_Is_At_Position_1/When_Joey_Moves_From_0_To_1.cs" Line="11" Column="18" />
+      <File FileName="Given_Cookie_Is_At_Position_1/When_Joey_Moves_From_0_To_2.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="KataFindTheCookie.NUnit" expanded="True">
+            <Node name="Given_Cookie_Is_At_Position_1" expanded="True">
+              <Node name="When_Joey_Moves_From_0_To_1.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State expanded="True" selected="True">
+          <Node name="KataFindTheCookie.NUnit" expanded="True">
+            <Node name="KataFindTheCookie" expanded="True">
+              <Node name="NUnit" expanded="True">
+                <Node name="Given_The_Cookie_Is_At_Position_1" expanded="True">
+                  <Node name="When_Joey_Moves_From_0_To_1" expanded="True" />
+                  <Node name="When_Joey_Moves_From_0_To_2" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

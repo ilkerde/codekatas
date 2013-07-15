@@ -35,12 +35,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Test.cs" />
     <Compile Include="CookieTeller.cs" />
-    <Compile Include="When_Joey_Moves_From_0_To_2.cs" />
+    <Compile Include="Given_Cookie_Is_At_Position_1\When_Joey_Moves_From_0_To_1.cs" />
+    <Compile Include="Given_Cookie_Is_At_Position_1\When_Joey_Moves_From_0_To_2.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="Specs.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Given_Cookie_Is_At_Position_1\" />
   </ItemGroup>
 </Project>

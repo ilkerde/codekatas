@@ -6,20 +6,19 @@ namespace KataLocCounter.Mono
 {
 	public class SourceCodeAnalysis
 	{
-		static bool _isInBlockComment = false;
-
 		public static int CountLinesOfCode(string sourceCode)
 		{
+			var isInBlockComment = false;
 			var sourceCodeLines = sourceCode.SplitLinesToArray();
-			return sourceCodeLines.Count(IsCodeLine);
+			return sourceCodeLines.Count(x => IsCodeLine(x, ref isInBlockComment));
 		}
 
-		private static bool IsCodeLine(string sourceCodeLine) {
+		private static bool IsCodeLine(string sourceCodeLine, ref bool isInBlockComment) {
 			sourceCodeLine = sourceCodeLine.Trim();
 
 			if (sourceCodeLine.StartsWith ("/*")) 
 			{
-				_isInBlockComment = true;
+				isInBlockComment = true;
 
 				if (sourceCodeLine.Contains ("*/"))
 					return sourceCodeLine.IndexOf ("*/") < sourceCodeLine.Length - 2;
@@ -28,11 +27,11 @@ namespace KataLocCounter.Mono
 			}
 
 			if (sourceCodeLine.EndsWith ("*/")) {
-				_isInBlockComment = false;
+				isInBlockComment = false;
 				return false;
 			}
 
-			if (_isInBlockComment)
+			if (isInBlockComment)
 				return false;
 
 			return !String.IsNullOrEmpty(sourceCodeLine) 

@@ -6,6 +6,8 @@ namespace KataFindTheCookie.NUnit
 {
 	public class FindTheCookie
 	{
+		int[] _path;
+
 		public FindTheCookie(string definition)
 		{
 			var definitionNumbers = from definitionNumberString 
@@ -13,13 +15,14 @@ namespace KataFindTheCookie.NUnit
 				select Convert.ToInt32 (definitionNumberString);
 
 			CookiePosition = definitionNumbers.First();
+			_path = definitionNumbers.Skip(1).ToArray();
 		}
 
 		public int CookiePosition { get; set; }
 
 		public Move NextStep()
 		{
-			return new Move();
+			return new Move { From = 0, To = _path[0] };
 		}
 	}
 }

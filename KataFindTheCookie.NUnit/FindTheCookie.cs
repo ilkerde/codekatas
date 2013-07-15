@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using NUnit.Framework;
 
 namespace KataFindTheCookie.NUnit
@@ -7,7 +8,11 @@ namespace KataFindTheCookie.NUnit
 	{
 		public FindTheCookie(string definition)
 		{
-			CookiePosition = 2;
+			var definitionNumbers = from definitionNumberString 
+				in definition.Split (new string[] { " " }, StringSplitOptions.RemoveEmptyEntries)
+				select Convert.ToInt32 (definitionNumberString);
+
+			CookiePosition = definitionNumbers.First();
 		}
 
 		public int CookiePosition { get; set; }

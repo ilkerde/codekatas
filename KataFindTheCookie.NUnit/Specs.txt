@@ -1,0 +1,36 @@
+Laurie's little brother Joey has been playing Find the Cookie with her. However, after the 32,767th time, Laurie is tired of it. She wants to write a program to keep the boy occupied. Write a program to simulate a game of Find the Cookie. The game takes place in a long narrow hall, so Joey can only move forward and backward, not right or left. At the beginning of each game, a cookie is placed in the hall (not at the center of the hall) and Joey starts at the center of the hall. Joey attempts to find the cookie. He does this by moving to another point in the hall, whereupon the computer tells him whether he is "warmer" (he has moved closer to the cookie than his last position), "colder" (he has moved farther away from the cookie than his last position), "same" (he has not moved closer or farther away from the cookie), or he has reached the cookie. Joey continues until he exactly reaches the location of the cookie, which always happens within 20 moves.
+
+Input
+Each input line represents a new game. Each input line contains at least two and at most 21 integers separated by whitespace. The integers represent locations along the hall, expressed in units of feet. Joey begins each game at location 0 feet. The first integer on an input line is the location of the cookie. This integer is guaranteed to be different from 0. The remaining integers represent locations Joey moves to, in order. Joey will never move more than 5280 feet from his original location. Joey will always reach the cookie in each game, and this will be the last move on the input line. Your program should stop processing input lines when the cookie is located at 5280 feet (a mile from the center of the hall is way too far for Joey to go for only one cookie).
+
+Output
+For each location that Joey moves to, determine whether he is warmer, colder, the same, or has reached the cookie. Have a blank line between the output for different input lines. Follow the format in the Sample Output.
+
+Sample Input
+5 10 11 12 3 4 5
+3 10 10 7 3
+12 5 -3 1 4 6 7 8 9 12
+5280 10
+
+Sample Output
+Moving from 0 to 10: same.
+Moving from 10 to 11: colder.
+Moving from 11 to 12: colder.
+Moving from 12 to 3: warmer.
+Moving from 3 to 4: warmer.
+Moving from 4 to 5: found it!
+
+Moving from 0 to 10: colder.
+Moving from 10 to 10: same.
+Moving from 10 to 7: warmer.
+Moving from 7 to 3: found it!
+
+Moving from 0 to 5: warmer.
+Moving from 5 to -3: colder.
+Moving from -3 to 1: warmer.
+Moving from 1 to 4: warmer.
+Moving from 4 to 6: warmer.
+Moving from 6 to 7: warmer.
+Moving from 7 to 8: warmer.
+Moving from 8 to 9: warmer.
+Moving from 9 to 12: found it!

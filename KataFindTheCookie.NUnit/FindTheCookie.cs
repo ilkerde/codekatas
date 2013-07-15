@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace KataFindTheCookie.NUnit
 {
@@ -23,13 +24,24 @@ namespace KataFindTheCookie.NUnit
 
 		public string[] Run()
 		{
-			Move nextMove = NextStep();
-			return new string[] { _teller.AreWeThereYet(nextMove.From, nextMove.To) };
+			var hints = new List<string>();
+
+			while(CanMove()) {
+				Move nextMove = NextStep();
+				hints.Add(_teller.AreWeThereYet (nextMove.From, nextMove.To)); 
+			}
+
+			return hints.ToArray();
 		}
 
 		public Move NextStep()
 		{
 			return new Move { From = _path[_step], To = _path[++_step] };
+		}
+
+		private bool CanMove()
+		{
+			return _step < _path.Length - 1;
 		}
 	}
 }

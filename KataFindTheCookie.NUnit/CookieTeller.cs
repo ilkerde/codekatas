@@ -22,11 +22,18 @@ namespace KataFindTheCookie.NUnit
 
 		private string DescribeDistanceDifference(int from, int to, int oldDistance, int newDistance)
 		{
-			var difference = oldDistance == newDistance ? "same." : "colder.";
+			var difference = "same.";
+
+			if (oldDistance < newDistance)
+				difference = "colder.";
+
+			if (oldDistance > newDistance)
+				difference = "warmer.";
+
 			if (newDistance == 0)
 				difference = "found it!";
 
-			return String.Format("Moving from 0 to {0}: {1}", to, difference);
+			return String.Format("Moving from {0} to {1}: {2}", from, to, difference);
 		}
 	}
 }

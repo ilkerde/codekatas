@@ -14,5 +14,4 @@ namespace KataFindTheCookie.NUnit.
 			Assert.AreEqual ("Moving from 0 to 3: colder.", response);
 		}
 	}
-	
 }

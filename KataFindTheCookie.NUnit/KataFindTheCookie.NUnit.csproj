@@ -47,6 +47,7 @@
     <Compile Include="DefinitionTests\When_Game_Definition_Has_First_Move_To_3.cs" />
     <Compile Include="DefinitionTests\When_Game_Definition_Starts_With_2.cs" />
     <Compile Include="DefinitionTests\When_Game_Definition_Starts_With_5.cs" />
+    <Compile Include="Definition.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

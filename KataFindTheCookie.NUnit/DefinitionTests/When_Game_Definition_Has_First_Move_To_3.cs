@@ -9,10 +9,9 @@ namespace KataFindTheCookie.NUnit
 		[Test]
 		public void Should_Joey_Move_From_0_To_3_At_First_Step() 
 		{
-			var game = new FindTheCookie("5 3");
-			var move = game.NextStep();
-			Assert.AreEqual (0, move.From);
-			Assert.AreEqual (3, move.To);
+			var definition = new Definition("5 3");
+			Assert.AreEqual (0, definition.Path[0]);
+			Assert.AreEqual (3, definition.Path[1]);
 		}
 	}
 }

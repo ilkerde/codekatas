@@ -9,8 +9,8 @@ namespace KataFindTheCookie.NUnit
 		[Test]
 		public void Should_Cookie_Be_Placed_At_5() 
 		{
-			var game = new FindTheCookie("5 0");
-			Assert.AreEqual(5, game.CookiePosition);
+			var definition = new Definition("5 0");
+			Assert.AreEqual(5, definition.Target);
 		}
 	}
 }

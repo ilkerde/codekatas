@@ -9,8 +9,8 @@ namespace KataFindTheCookie.NUnit
 		[Test]
 		public void Should_Cookie_Be_Placed_At_2() 
 		{
-			var game = new FindTheCookie("2 0");
-			Assert.AreEqual(2, game.CookiePosition);
+			var definition = new Definition("2 0");
+			Assert.AreEqual(2, definition.Target);
 		}
 	}
 }

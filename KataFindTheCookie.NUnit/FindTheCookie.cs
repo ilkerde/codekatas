@@ -20,7 +20,7 @@ namespace KataFindTheCookie.NUnit
 
 		public string[] Run ()
 		{
-			throw new NotImplementedException ();
+			return new string[] { "1" };
 		}
 
 		public Move NextStep()

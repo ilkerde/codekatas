@@ -12,7 +12,7 @@ namespace Kata {
       if (number % 2 == 0)
         return new SplitPair { X=number/2, Y=number/2 };
 
-      return new SplitPair { X=1, Y=4 };
+      return new SplitPair { X=1, Y=number-1 };
     }
   }
 }

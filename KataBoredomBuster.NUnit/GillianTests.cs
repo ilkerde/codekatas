@@ -49,6 +49,35 @@ namespace Kata {
     }
   }
 
+  [TestFixture]
+  public class When_game_starts_with_4 {
+    [Test]
+    public void Then_gillian_should_split_the_number() {
+      var fake = new Fake();
+      var game = new Game(fake.Split);
+      game.Go(4);
+      Assert.IsTrue(fake.WasCalled);
+    }
+
+    [Test]
+    public void Then_gillian_should_split_4() {
+      var fake = new Fake();
+      var game = new Game(fake.Split);
+      game.Go(4);
+      Assert.That(fake.CalledNumber, Is.EqualTo(4));
+    }
+
+    private class Fake {
+      public bool WasCalled { get; set; }
+      public int CalledNumber { get; set; }
+      public SplitPair Split(int number) {
+        CalledNumber = number;
+        WasCalled = true;
+        return new SplitPair();
+      }
+    }
+  }
+
   public static class ShouldExtensions {
     public static void ShouldSplitTo(this SplitPair pair, int x, int y) {
       Assert.AreEqual(x, pair.X);

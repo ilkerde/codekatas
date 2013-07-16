@@ -67,11 +67,12 @@ namespace Kata {
       Assert.That(fake.CalledNumber, Is.EqualTo(4));
     }
 
-    [Test]
-    public void Then_returns_the_product_of_the_split_returned_by_gillian() {
-      var fake = new Fake(new SplitPair { X=9, Y=9 });
+    [TestCase(9, 9, 81)]
+    [TestCase(5, 7, 35)]
+    public void Then_returns_the_product_of_the_split_returned_by_gillian(int x, int y, int expectedProduct) {
+      var fake = new Fake(new SplitPair { X=x, Y=y });
       var game = new Game(fake.Split);
-      Assert.That(game.Go(2), Is.EqualTo(81));
+      Assert.That(game.Go(2), Is.EqualTo(expectedProduct));
     }
 
     private class Fake {

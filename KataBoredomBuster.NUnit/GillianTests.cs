@@ -9,5 +9,11 @@ namespace Kata {
       var split = Gillian.Split(2);
       Assert.AreEqual(1, split.X);
     }
+
+    [Test]
+    public void Then_returns_Y_as_number_divided_by_2() {
+      var split = Gillian.Split(2);
+      Assert.AreEqual(1, split.Y);
+    }
   }
 }

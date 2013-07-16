@@ -67,13 +67,29 @@ namespace Kata {
       Assert.That(fake.CalledNumber, Is.EqualTo(4));
     }
 
+    [Test]
+    public void Then_returns_the_product_of_the_split_returned_by_gillian() {
+      var fake = new Fake(new SplitPair { X=9, Y=9 });
+      var game = new Game(fake.Split);
+      Assert.That(game.Go(2), Is.EqualTo(81));
+    }
+
     private class Fake {
+      SplitPair _splitToReturn = new SplitPair();
+      
+      public Fake() {}
+
+      public Fake(SplitPair splitToReturn) {
+        _splitToReturn = splitToReturn;
+      }
+
       public bool WasCalled { get; set; }
       public int CalledNumber { get; set; }
+      
       public SplitPair Split(int number) {
         CalledNumber = number;
         WasCalled = true;
-        return new SplitPair();
+        return _splitToReturn;
       }
     }
   }

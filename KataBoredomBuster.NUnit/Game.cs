@@ -10,7 +10,7 @@ namespace Kata {
     }
 
     public int Go(int number) {
-      _splitter(0);
+      _splitter(number);
       return 0;
     }
   }

@@ -3,7 +3,7 @@ namespace Kata {
 
   public class Gillian {
     public static SplitPair Split(int number) {
-      throw new NotImplementedException();
+      return new SplitPair { X=1 };
     }
   }
 }

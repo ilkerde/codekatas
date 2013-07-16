@@ -32,10 +32,11 @@ namespace Kata {
 
   [TestFixture]
   public class When_number_is_not_divisible_by_2_or_3 {
-    [Test]
-    public void Then_returns_X_as_1_and_Y_as_remainder() {
-      var split = Gillian.Split(5);
-      split.ShouldSplitTo(1, 4);
+    [TestCase(5, 1, 4)]
+    [TestCase(11, 1, 10)]
+    public void Then_returns_X_as_1_and_Y_as_remainder(int number, int expectedX, int expectedY) {
+      var split = Gillian.Split(number);
+      split.ShouldSplitTo(expectedX, expectedY);
     }
   }
 

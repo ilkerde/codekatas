@@ -40,6 +40,15 @@ namespace Kata {
     }
   }
 
+  [TestFixture]
+  public class When_number_is_divisiblae_by_2_and_3 {
+    [Test]
+    public void Then_returns_X_and_Y_as_number_divided_by_2() {
+      var split = Gillian.Split(12);
+      split.ShouldSplitTo(6, 6);
+    }
+  }
+
   public static class ShouldExtensions {
     public static void ShouldSplitTo(this SplitPair pair, int x, int y) {
       Assert.AreEqual(x, pair.X);

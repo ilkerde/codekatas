@@ -12,6 +12,15 @@ namespace Kata {
     }
   }
 
+  [TestFixture]
+  public class When_number_is_divisible_by_3 {
+    [Test]
+    public void Then_returns_X_as_one_third_of_number_and_Y_as_remainder() {
+      var split = Gillian.Split(3);
+      split.ShouldSplitTo(1, 2);
+    }
+  }
+
   public static class ShouldExtensions {
     public static void ShouldSplitTo(this SplitPair pair, int x, int y) {
       Assert.AreEqual(x, pair.X);

@@ -14,10 +14,11 @@ namespace Kata {
 
   [TestFixture]
   public class When_number_is_divisible_by_3 {
-    [Test]
-    public void Then_returns_X_as_one_third_of_number_and_Y_as_remainder() {
-      var split = Gillian.Split(3);
-      split.ShouldSplitTo(1, 2);
+    [TestCase(3, 1, 2)]
+    [TestCase(9, 3, 6)]
+    public void Then_returns_X_as_one_third_of_number_and_Y_as_remainder(int number, int expectedX, int expectedY) {
+      var split = Gillian.Split(9);
+      split.ShouldSplitTo(3, 6);
     }
   }
 

@@ -22,6 +22,14 @@ namespace Kata {
     }
   }
 
+  [TestFixture]
+  public class When_number_is_1 {
+    [Test]
+    public void Then_does_not_split() {
+      Assert.That(() => Gillian.Split(1), Throws.TypeOf<ArgumentException>());
+    }
+  }
+
   public static class ShouldExtensions {
     public static void ShouldSplitTo(this SplitPair pair, int x, int y) {
       Assert.AreEqual(x, pair.X);

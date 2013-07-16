@@ -10,8 +10,8 @@ namespace Kata {
     }
 
     public int Go(int number) {
-      _splitter(number);
-      return 81;
+      var split = _splitter(number);
+      return split.X * split.Y;
     }
   }
 }

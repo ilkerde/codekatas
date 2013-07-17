@@ -53,7 +53,10 @@ namespace KataGameOfLife.Vse12
 
         public void NextGeneration()
         {
-            _cells[GetCellIndex(1, 1)] = new Cell(_cells[GetCellIndex(1, 1)]);
+            _cells = (
+                from cell in _cells
+                select new Cell(cell))
+                .ToArray();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace KataGameOfLife.Vse12
         [TestMethod]
         public void Then_Cell_On_2x1_Is_Different_From_Old_On_Same_Position()
         {
-            World world = new World(1, 1);
+            World world = new World(2, 2);
             Cell oldCell = world.GetCell(2, 1);
             
             world.NextGeneration();

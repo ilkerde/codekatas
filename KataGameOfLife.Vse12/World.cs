@@ -24,16 +24,16 @@ namespace KataGameOfLife.Vse12
             Cell neighborCell = new Cell();
 
             if (x > 1 && y > 1)
-                cell.NumberOfLivingNeighbors += _cells[GetCellIndex(x - 1, y - 1)].IsAlive ? 1 : 0;
+                cell.NumberOfLivingNeighbors += IsCellAlive(x - 1, y - 1) ? 1 : 0;
 
             if (x > 1 && y == 1)
-                cell.NumberOfLivingNeighbors += _cells[GetCellIndex(x - 1, y)].IsAlive ? 1 : 0;
+                cell.NumberOfLivingNeighbors += IsCellAlive(x - 1, y) ? 1 : 0;
 
             if (x == 1 && y > 1)
-                cell.NumberOfLivingNeighbors += _cells[GetCellIndex(x, y - 1)].IsAlive ? 1 : 0;
+                cell.NumberOfLivingNeighbors += IsCellAlive(x, y - 1) ? 1 : 0;
 
             if (x < _width && y < _height)
-                cell.NumberOfLivingNeighbors += _cells[GetCellIndex(x + 1, y + 1)].IsAlive ? 1 : 0;
+                cell.NumberOfLivingNeighbors += IsCellAlive(x + 1, y + 1) ? 1 : 0;
 
             return cell;
         }
@@ -41,6 +41,11 @@ namespace KataGameOfLife.Vse12
         public void SetCellAlive(int x, int y)
         {
             _cells[GetCellIndex(x, y)].IsAlive = true;
+        }
+
+        private bool IsCellAlive(int x, int y)
+        {
+            return _cells[GetCellIndex(x, y)].IsAlive;
         }
 
         private int GetCellIndex(int x, int y) {

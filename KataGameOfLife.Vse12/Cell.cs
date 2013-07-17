@@ -13,7 +13,8 @@ namespace KataGameOfLife.Vse12
                 IsAlive = true;
             else
             {
-                if (NumberOfLivingNeighbors < 2)
+                if ((NumberOfLivingNeighbors < 2) ||
+                    (NumberOfLivingNeighbors > 3))
                     IsAlive = false;
             }
         }

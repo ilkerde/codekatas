@@ -30,6 +30,9 @@ namespace KataGameOfLife.Vse12
             if (IsValidPosition(x, y - 1) && IsCellAlive(x, y - 1))
                 cell.NumberOfLivingNeighbors++;
 
+            if (IsValidPosition(x + 1, y - 1) && IsCellAlive(x + 1, y - 1))
+                cell.NumberOfLivingNeighbors++;
+
             if (IsValidPosition(x + 1, y + 1) && IsCellAlive(x + 1, y + 1))
                 cell.NumberOfLivingNeighbors++;
 

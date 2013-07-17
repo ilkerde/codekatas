@@ -4,18 +4,20 @@ namespace KataGameOfLife.Vse12
 {
     public class World
     {
+        Cell _cell = new Cell();
+
         public World(int x, int y)
         {
         }
 
         public Cell GetCell(int x, int y)
         {
-            return new Cell();
+            return _cell;
         }
 
-        internal void SetCellAlive(int p1, int p2)
+        public void SetCellAlive(int x, int y)
         {
-            throw new NotImplementedException();
+            _cell.IsAlive = true;
         }
     }
 }

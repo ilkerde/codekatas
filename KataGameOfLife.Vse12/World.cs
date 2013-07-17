@@ -25,6 +25,9 @@ namespace KataGameOfLife.Vse12
             if (x > 1 && y == 1)
                 neighborCell = _cells[GetCellIndex(x - 1, y)];
 
+            if (x == 1 && y > 1)
+                neighborCell = _cells[GetCellIndex(x, y - 1)];
+
             cell.NumberOfLivingNeighbors = neighborCell.IsAlive ? 1 : 0;
 
             return cell;

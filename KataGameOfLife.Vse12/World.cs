@@ -21,23 +21,23 @@ namespace KataGameOfLife.Vse12
         {
             Cell cell = _cells[GetCellIndex(x, y)];
 
-            if (IsValidPosition(x - 1, y - 1))
-                cell.NumberOfLivingNeighbors += IsCellAlive(x - 1, y - 1) ? 1 : 0;
+            if (IsValidPosition(x - 1, y - 1) && IsCellAlive(x - 1, y - 1))
+                cell.NumberOfLivingNeighbors++;
 
-            if (IsValidPosition(x - 1, y))
-                cell.NumberOfLivingNeighbors += IsCellAlive(x - 1, y) ? 1 : 0;
+            if (IsValidPosition(x - 1, y) && IsCellAlive(x - 1, y))
+                cell.NumberOfLivingNeighbors++;
 
-            if (IsValidPosition(x, y - 1))
-                cell.NumberOfLivingNeighbors += IsCellAlive(x, y - 1) ? 1 : 0;
+            if (IsValidPosition(x, y - 1) && IsCellAlive(x, y - 1))
+                cell.NumberOfLivingNeighbors++;
 
-            if (IsValidPosition(x + 1, y + 1))
-                cell.NumberOfLivingNeighbors += IsCellAlive(x + 1, y + 1) ? 1 : 0;
+            if (IsValidPosition(x + 1, y + 1) && IsCellAlive(x + 1, y + 1))
+                cell.NumberOfLivingNeighbors++;
 
-            if (IsValidPosition(x + 1, y))
-                cell.NumberOfLivingNeighbors += IsCellAlive(x + 1, y) ? 1 : 0;
+            if (IsValidPosition(x + 1, y) && IsCellAlive(x + 1, y))
+                cell.NumberOfLivingNeighbors++;
 
-            if (IsValidPosition(x, y + 1))
-                cell.NumberOfLivingNeighbors += IsCellAlive(x, y + 1) ? 1 : 0;
+            if (IsValidPosition(x, y + 1) && IsCellAlive(x, y + 1))
+                cell.NumberOfLivingNeighbors++;
 
             return cell;
         }

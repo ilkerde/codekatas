@@ -50,5 +50,10 @@ namespace KataGameOfLife.Vse12
             return (x > 0 && y > 0) 
                 && (x < _width + 1 && y < _height + 1);
         }
+
+        public void NextGeneration()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -33,6 +33,9 @@ namespace KataGameOfLife.Vse12
             if (IsValidPosition(x + 1, y - 1) && IsCellAlive(x + 1, y - 1))
                 cell.NumberOfLivingNeighbors++;
 
+            if (IsValidPosition(x - 1, y + 1) && IsCellAlive(x - 1, y + 1))
+                cell.NumberOfLivingNeighbors++;
+
             if (IsValidPosition(x + 1, y + 1) && IsCellAlive(x + 1, y + 1))
                 cell.NumberOfLivingNeighbors++;
 
@@ -56,7 +59,7 @@ namespace KataGameOfLife.Vse12
         }
 
         private int GetCellIndex(int x, int y) {
-            return (x-1)*(_width-1)+(y-1);
+            return (x-1)+(y-1)*_width;
         }
 
         private bool IsValidPosition(int x, int y)

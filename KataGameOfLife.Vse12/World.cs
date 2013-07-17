@@ -12,5 +12,10 @@ namespace KataGameOfLife.Vse12
         {
             return new Cell();
         }
+
+        internal void SetCellAlive(int p1, int p2)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -15,7 +15,10 @@ namespace KataGameOfLife.Vse12
 
         public Cell GetCell(int x, int y)
         {
-            return _cells[GetCellIndex(x, y)];
+            Cell cell = _cells[GetCellIndex(x, y)];
+            cell.NumberOfLivingNeighbors = 1;
+
+            return cell;
         }
 
         public void SetCellAlive(int x, int y)

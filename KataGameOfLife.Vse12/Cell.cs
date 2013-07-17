@@ -9,14 +9,7 @@ namespace KataGameOfLife.Vse12
 
         public void NextGeneration()
         {
-            if (NumberOfLivingNeighbors == 3)
-                IsAlive = true;
-            else
-            {
-                if ((NumberOfLivingNeighbors < 2) ||
-                    (NumberOfLivingNeighbors > 3))
-                    IsAlive = false;
-            }
+            IsAlive = NumberOfLivingNeighbors > 1 && NumberOfLivingNeighbors < 4;
         }
     }
 }

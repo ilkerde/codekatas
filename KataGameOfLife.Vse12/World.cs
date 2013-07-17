@@ -35,6 +35,9 @@ namespace KataGameOfLife.Vse12
             if (x < _width && y < _height)
                 cell.NumberOfLivingNeighbors += IsCellAlive(x + 1, y + 1) ? 1 : 0;
 
+            if (x < _width && y == _height)
+                cell.NumberOfLivingNeighbors += IsCellAlive(x + 1, y) ? 1 : 0;
+
             return cell;
         }
 

@@ -17,5 +17,17 @@ namespace KataGameOfLife.Vse12
 
             Assert.AreNotEqual(oldCell, newCell);
         }
+
+        [TestMethod]
+        public void Then_Cell_On_1x2_Is_Different_From_Old_On_Same_Position()
+        {
+            World world = new World(2, 2);
+            Cell oldCell = world.GetCell(1, 2);
+
+            world.NextGeneration();
+            Cell newCell = world.GetCell(1, 2);
+
+            Assert.AreNotEqual(oldCell, newCell);
+        }
     }
 }

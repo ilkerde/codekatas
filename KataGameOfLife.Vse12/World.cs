@@ -56,7 +56,7 @@ namespace KataGameOfLife.Vse12
         }
 
         private int GetCellIndex(int x, int y) {
-            return (x-1)*y+(y-1);
+            return (x-1)*(_width-1)+(y-1);
         }
 
         private bool IsValidPosition(int x, int y)

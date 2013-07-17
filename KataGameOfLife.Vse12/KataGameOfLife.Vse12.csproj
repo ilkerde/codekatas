@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Cell.cs" />
+    <Compile Include="WorldTests\When_World_Is_2x2_Big_And_Moves_To_Next_Generation.cs" />
     <Compile Include="WorldTests\When_World_Is_1x1_Big_And_Moves_To_Next_Generation.cs" />
     <Compile Include="WorldTests\When_World_Is_3x3_Big_And_Only_BottomLeft_Cell_Is_Active.cs" />
     <Compile Include="WorldTests\When_World_Is_3x3_Big_And_Only_TopRight_Cell_Is_Active.cs" />

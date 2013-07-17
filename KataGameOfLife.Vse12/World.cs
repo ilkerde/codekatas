@@ -6,10 +6,14 @@ namespace KataGameOfLife.Vse12
     public class World
     {
         Cell[] _cells;
+        int _width;
+        int _height;
 
         public World(int x, int y)
         {
-            _cells = (from i in Enumerable.Range(1, x*y)
+            _width = x;
+            _height = y;
+            _cells = (from i in Enumerable.Range(1, x * y)
                 select new Cell()).ToArray();
         }
 
@@ -20,15 +24,16 @@ namespace KataGameOfLife.Vse12
             Cell neighborCell = new Cell();
 
             if (x > 1 && y > 1)
-                neighborCell = _cells[GetCellIndex(x - 1, y - 1)];
+                cell.NumberOfLivingNeighbors += _cells[GetCellIndex(x - 1, y - 1)].IsAlive ? 1 : 0;
 
             if (x > 1 && y == 1)
-                neighborCell = _cells[GetCellIndex(x - 1, y)];
+                cell.NumberOfLivingNeighbors += _cells[GetCellIndex(x - 1, y)].IsAlive ? 1 : 0;
 
             if (x == 1 && y > 1)
-                neighborCell = _cells[GetCellIndex(x, y - 1)];
+                cell.NumberOfLivingNeighbors += _cells[GetCellIndex(x, y - 1)].IsAlive ? 1 : 0;
 
-            cell.NumberOfLivingNeighbors = neighborCell.IsAlive ? 1 : 0;
+            if (x < _width && y < _height)
+                cell.NumberOfLivingNeighbors += _cells[GetCellIndex(x + 1, y + 1)].IsAlive ? 1 : 0;
 
             return cell;
         }

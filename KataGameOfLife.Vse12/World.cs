@@ -16,7 +16,13 @@ namespace KataGameOfLife.Vse12
         public Cell GetCell(int x, int y)
         {
             Cell cell = _cells[GetCellIndex(x, y)];
-            cell.NumberOfLivingNeighbors = 1;
+
+            Cell neighborCell = new Cell();
+
+            if (x > 1 && y > 1)
+                neighborCell = _cells[GetCellIndex(x - 1, y - 1)];
+
+            cell.NumberOfLivingNeighbors = neighborCell.IsAlive ? 1 : 0;
 
             return cell;
         }

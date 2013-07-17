@@ -15,9 +15,10 @@ namespace KataGameOfLife.Vse12
         public bool IsAlive { get; set; }
         public int NumberOfLivingNeighbors { get; set; }
 
-        public void NextGeneration()
+        public Cell NextGeneration()
         {
             IsAlive = NumberOfLivingNeighbors > 1 && NumberOfLivingNeighbors < 4;
+            return new Cell(this);
         }
     }
 }

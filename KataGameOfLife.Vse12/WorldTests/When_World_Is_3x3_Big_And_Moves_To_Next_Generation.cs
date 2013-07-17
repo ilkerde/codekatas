@@ -17,7 +17,6 @@ namespace KataGameOfLife.Vse12
             world.NextGeneration();
 
             Cell cell = world.GetCell(2, 2);
-
             Assert.IsTrue(cell.IsAlive);
         }
     }

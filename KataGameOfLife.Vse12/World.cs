@@ -54,9 +54,11 @@ namespace KataGameOfLife.Vse12
         public void NextGeneration()
         {
             _cells = (
-                from cell in _cells
-                select new Cell(cell))
-                .ToArray();
+                from x in Enumerable.Range(1, _width)
+                from y in Enumerable.Range(1, _height)
+                let cell = new Cell(GetCell(x, y))
+                select cell.NextGeneration()
+                ).ToArray();
         }
     }
 }

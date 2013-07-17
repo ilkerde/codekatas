@@ -21,24 +21,22 @@ namespace KataGameOfLife.Vse12
         {
             Cell cell = _cells[GetCellIndex(x, y)];
 
-            Cell neighborCell = new Cell();
-
-            if (x > 1 && y > 1)
+            if (IsValidPosition(x - 1, y - 1))
                 cell.NumberOfLivingNeighbors += IsCellAlive(x - 1, y - 1) ? 1 : 0;
 
-            if (x > 1 && y == 1)
+            if (IsValidPosition(x - 1, y))
                 cell.NumberOfLivingNeighbors += IsCellAlive(x - 1, y) ? 1 : 0;
 
-            if (x == 1 && y > 1)
+            if (IsValidPosition(x, y - 1))
                 cell.NumberOfLivingNeighbors += IsCellAlive(x, y - 1) ? 1 : 0;
 
-            if (x < _width && y < _height)
+            if (IsValidPosition(x + 1, y + 1))
                 cell.NumberOfLivingNeighbors += IsCellAlive(x + 1, y + 1) ? 1 : 0;
 
-            if (x < _width && y == _height)
+            if (IsValidPosition(x + 1, y))
                 cell.NumberOfLivingNeighbors += IsCellAlive(x + 1, y) ? 1 : 0;
 
-            if (x == _width && y < _height)
+            if (IsValidPosition(x, y + 1))
                 cell.NumberOfLivingNeighbors += IsCellAlive(x, y + 1) ? 1 : 0;
 
             return cell;
@@ -56,6 +54,12 @@ namespace KataGameOfLife.Vse12
 
         private int GetCellIndex(int x, int y) {
             return (x-1)*y+(y-1);
+        }
+
+        private bool IsValidPosition(int x, int y)
+        {
+            return (x > 0 && y > 0) 
+                && (x < _width + 1 && y < _height + 1);
         }
     }
 }

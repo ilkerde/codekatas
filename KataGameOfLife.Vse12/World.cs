@@ -10,7 +10,7 @@ namespace KataGameOfLife.Vse12
 
         public Cell GetCell(int x, int y)
         {
-            throw new NotImplementedException();
+            return new Cell();
         }
     }
 }

@@ -25,5 +25,16 @@ namespace KataGameOfLife.Vse12
             Cell cell = world.GetCell(2, 3);
             Assert.AreEqual(1, cell.NumberOfLivingNeighbors);
         }
+
+
+        [TestMethod]
+        public void Then_Cell_In_MiddleRight_Has_1_Active_Neighbor()
+        {
+            World world = new World(3, 3);
+            world.SetCellAlive(3, 3);
+
+            Cell cell = world.GetCell(3, 2);
+            Assert.AreEqual(1, cell.NumberOfLivingNeighbors);
+        }
     }
 }

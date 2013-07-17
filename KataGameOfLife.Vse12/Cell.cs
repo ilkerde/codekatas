@@ -9,7 +9,7 @@ namespace KataGameOfLife.Vse12
 
         public void NextGeneration()
         {
-            throw new NotImplementedException();
+            IsAlive = true;
         }
     }
 }

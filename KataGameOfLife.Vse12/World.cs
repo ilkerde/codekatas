@@ -21,7 +21,7 @@ namespace KataGameOfLife.Vse12
 
         public void SetCellAlive(int x, int y)
         {
-            _cells[0].IsAlive = true;
+            _cells[y-1].IsAlive = true;
         }
     }
 }

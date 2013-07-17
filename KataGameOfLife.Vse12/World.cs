@@ -21,29 +21,12 @@ namespace KataGameOfLife.Vse12
         {
             Cell cell = _cells[GetCellIndex(x, y)];
 
-            if (IsValidPosition(x - 1, y - 1) && IsCellAlive(x - 1, y - 1))
-                cell.NumberOfLivingNeighbors++;
-
-            if (IsValidPosition(x - 1, y) && IsCellAlive(x - 1, y))
-                cell.NumberOfLivingNeighbors++;
-
-            if (IsValidPosition(x, y - 1) && IsCellAlive(x, y - 1))
-                cell.NumberOfLivingNeighbors++;
-
-            if (IsValidPosition(x + 1, y - 1) && IsCellAlive(x + 1, y - 1))
-                cell.NumberOfLivingNeighbors++;
-
-            if (IsValidPosition(x - 1, y + 1) && IsCellAlive(x - 1, y + 1))
-                cell.NumberOfLivingNeighbors++;
-
-            if (IsValidPosition(x + 1, y + 1) && IsCellAlive(x + 1, y + 1))
-                cell.NumberOfLivingNeighbors++;
-
-            if (IsValidPosition(x + 1, y) && IsCellAlive(x + 1, y))
-                cell.NumberOfLivingNeighbors++;
-
-            if (IsValidPosition(x, y + 1) && IsCellAlive(x, y + 1))
-                cell.NumberOfLivingNeighbors++;
+            cell.NumberOfLivingNeighbors = (
+                from xn in Enumerable.Range(x - 1, x + 1)
+                from yn in Enumerable.Range(y - 1, y + 1)
+                where GetCellIndex(x, y) != GetCellIndex(xn, yn) 
+                && IsValidPosition(xn, yn) && IsCellAlive(xn, yn)
+                select 1).Count();
 
             return cell;
         }

@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Cell.cs" />
+    <Compile Include="When_Cell_Is_Free_And_Has_No_Alive_Neighbors.cs" />
     <Compile Include="When_Cell_Is_Free_And_Has_3_Alive_Neighbors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

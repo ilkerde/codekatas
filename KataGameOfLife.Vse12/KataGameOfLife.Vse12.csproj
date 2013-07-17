@@ -51,15 +51,16 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Cell.cs" />
-    <Compile Include="When_Cell_Is_In_Center_Of_3x3_Board.cs" />
-    <Compile Include="When_Cell_Is_Alive_And_More_Than_3_Alive_Neighbors.cs" />
-    <Compile Include="When_Cell_Is_Alive_And_Has_2_Alive_Neighbors.cs" />
-    <Compile Include="When_Cell_Is_Alive_And_Has_Less_Than_2_Neighbors.cs" />
-    <Compile Include="When_Cell_Is_Free_And_Has_No_Alive_Neighbors.cs" />
-    <Compile Include="When_Cell_Is_Free_And_Has_3_Alive_Neighbors.cs" />
+    <Compile Include="WorldTests\When_World_Is_1x1_Big.cs" />
+    <Compile Include="CellTests\When_Cell_Is_Alive_And_More_Than_3_Alive_Neighbors.cs" />
+    <Compile Include="CellTests\When_Cell_Is_Alive_And_Has_2_Alive_Neighbors.cs" />
+    <Compile Include="CellTests\When_Cell_Is_Alive_And_Has_Less_Than_2_Neighbors.cs" />
+    <Compile Include="CellTests\When_Cell_Is_Free_And_Has_No_Alive_Neighbors.cs" />
+    <Compile Include="CellTests\When_Cell_Is_Free_And_Has_3_Alive_Neighbors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="World.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

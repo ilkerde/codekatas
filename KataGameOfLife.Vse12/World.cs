@@ -15,12 +15,16 @@ namespace KataGameOfLife.Vse12
 
         public Cell GetCell(int x, int y)
         {
-            return _cells[(x-1)*y+(y-1)];
+            return _cells[GetCellIndex(x, y)];
         }
 
         public void SetCellAlive(int x, int y)
         {
-            _cells[(x-1)*y+(y-1)].IsAlive = true;
+            _cells[GetCellIndex(x, y)].IsAlive = true;
+        }
+
+        private int GetCellIndex(int x, int y) {
+            return (x-1)*y+(y-1);
         }
     }
 }

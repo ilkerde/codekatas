@@ -6,7 +6,7 @@ namespace Kata {
   public class When_number_is_divisible_by_2 {
     [TestCase(2, 1, 1)]
     [TestCase(4, 2, 2)]
-    public void Then_returns_X_and_y_as_number_divided_by_2(int number, int expectedX, int expectedY) {
+    public void Then_returns_X_and_Y_as_number_divided_by_2(int number, int expectedX, int expectedY) {
       var split = Gillian.Split(number);
       split.ShouldSplitTo(expectedX, expectedY);
     }
@@ -41,7 +41,7 @@ namespace Kata {
   }
 
   [TestFixture]
-  public class When_number_is_divisiblae_by_2_and_3 {
+  public class When_number_is_divisible_by_2_and_3 {
     [Test]
     public void Then_returns_X_and_Y_as_number_divided_by_2() {
       var split = Gillian.Split(12);
@@ -50,7 +50,7 @@ namespace Kata {
   }
 
   [TestFixture]
-  public class When_game_starts_with_4 {
+  public class When_number_to_split_is_4 {
     [Test]
     public void Then_gillian_should_split_the_number() {
       var fake = new Fake();

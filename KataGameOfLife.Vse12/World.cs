@@ -1,23 +1,27 @@
 ﻿using System;
+using System.Linq;
 
 namespace KataGameOfLife.Vse12
 {
     public class World
     {
-        Cell _cell = new Cell();
+        Cell[] _cells;
 
         public World(int x, int y)
         {
+            _cells = (from i in Enumerable.Range(1, y)
+                select new Cell()).ToArray();
+
         }
 
         public Cell GetCell(int x, int y)
         {
-            return _cell;
+            return _cells[y-1];
         }
 
         public void SetCellAlive(int x, int y)
         {
-            _cell.IsAlive = true;
+            _cells[0].IsAlive = true;
         }
     }
 }

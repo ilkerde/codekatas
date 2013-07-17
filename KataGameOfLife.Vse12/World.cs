@@ -53,7 +53,7 @@ namespace KataGameOfLife.Vse12
 
         public void NextGeneration()
         {
-            throw new NotImplementedException();
+            _cells[GetCellIndex(1, 1)] = new Cell(_cells[GetCellIndex(1, 1)]);
         }
     }
 }

@@ -1,7 +1,7 @@
 using System;
 
 namespace Kata {
-  public class Probability {
+  public class Probability : IEquatable<Probability> {
     decimal _value;
     
     public static implicit operator decimal(Probability p) {
@@ -17,7 +17,19 @@ namespace Kata {
     }
 
     public Probability Inverse() {
-      return null;
+      return Probability.Of(0);
+    }
+
+    public bool Equals(Probability other) {
+      return other._value.Equals(_value);
+    }
+
+    public override bool Equals(object other) {
+      return Equals(other as Probability);
+    }
+
+    public override int GetHashCode() {
+      return _value.GetHashCode();
     }
   }
 }

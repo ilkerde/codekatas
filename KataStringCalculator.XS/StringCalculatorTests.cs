@@ -41,5 +41,13 @@ namespace KataStringCalculator.XS
 2")
 				.ShouldEqual (2+2);
 		}
+
+		[Test]
+		public void When_Delimiter_Is_Set_To_Semicolon_Should_Return_Sum_Of_Semicolon_Separated_Numbers ()
+		{
+			StringCalculator.Add (@"//;
+2;2")
+				.ShouldEqual (2+2);
+		}
 	}
 }

@@ -26,5 +26,12 @@ namespace KataStringCalculator.XS
 			StringCalculator.Add ("2")
 				.ShouldEqual (2);
 		}
+
+		[Test]
+		public void When_Two_Numbers_Are_Given_Should_Return_Sum_Of_Both ()
+		{
+			StringCalculator.Add ("2,2")
+				.ShouldEqual (2+2);
+		}
 	}
 }

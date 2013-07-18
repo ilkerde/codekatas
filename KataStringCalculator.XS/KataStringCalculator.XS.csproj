@@ -37,7 +37,7 @@
   <ItemGroup>
     <Compile Include="StringCalculator.cs" />
     <Compile Include="ShouldExtensions.cs" />
-    <Compile Include="When_No_Number_Is_Given.cs" />
+    <Compile Include="StringCalculatorTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

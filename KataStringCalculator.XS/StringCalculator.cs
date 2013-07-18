@@ -7,7 +7,7 @@ namespace KataStringCalculator.XS
 	{
 		public static int Add (string empty)
 		{
-			throw new NotImplementedException ();
+			return 0;
 		}
 	}
 }

@@ -5,7 +5,7 @@ namespace Kata {
     decimal _value;
     
     public static implicit operator decimal(Probability p) {
-      return 1;
+      return p._value;
     }
 
     public Probability(decimal value) {

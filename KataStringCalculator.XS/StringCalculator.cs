@@ -5,9 +5,12 @@ namespace KataStringCalculator.XS
 {
 	public class StringCalculator
 	{
-		public static int Add (string empty)
+		public static int Add (string numbers)
 		{
-			return 0;
+			if (string.IsNullOrEmpty (numbers))
+				return 0;
+
+			return 1;
 		}
 	}
 }

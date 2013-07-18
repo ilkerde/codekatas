@@ -7,4 +7,10 @@ namespace Kata {
       Assert.Equal(15, 15 * Probability.Of(1));
     }
   }
+
+  public class When_A_Number_Is_Multiplied_To_A_Probability_Of_0 {
+    [Fact] public void Then_Then_Product_Equals_To_0() {
+      Assert.Equal(0, 15 * Probability.Of(0));
+    }
+  }
 }

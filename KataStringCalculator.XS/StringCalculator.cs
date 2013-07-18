@@ -10,7 +10,7 @@ namespace KataStringCalculator.XS
 			if (string.IsNullOrEmpty (numbers))
 				return 0;
 
-			return 1;
+			return Convert.ToInt32 (numbers);
 		}
 	}
 }

@@ -9,14 +9,8 @@ namespace KataGameOfLife.Vse12
         [TestMethod]
         public void Then_Cell_Will_Stay_Free()
         {
-            Cell cell = new Cell
-            {
-                IsAlive = false,
-                NumberOfLivingNeighbors = 0
-            };
-
+            Cell cell = new Cell(false, 0);
             cell.NextGeneration();
-
             Assert.IsFalse(cell.IsAlive);
         }
     }

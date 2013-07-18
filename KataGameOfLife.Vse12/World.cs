@@ -9,31 +9,31 @@ namespace KataGameOfLife.Vse12
         int _width;
         int _height;
 
-        public World(int x, int y)
+        public World(int width, int height)
         {
-            _width = x;
-            _height = y;
-            _cells = (from i in Enumerable.Range(1, x * y)
+            _width = width;
+            _height = height;
+            _cells = (from i in Enumerable.Range(1, width * height)
                 select new Cell()).ToArray();
         }
 
         public Cell GetCell(int x, int y)
         {
-            Cell cell = _cells[GetCellIndex(x, y)];
+            bool isAlive = IsCellAlive(x, y);
 
-            cell.NumberOfLivingNeighbors = (
+            int numberOfLivingNeighbors = (
                 from xn in Enumerable.Range(x - 1, x + 1)
                 from yn in Enumerable.Range(y - 1, y + 1)
                 where GetCellIndex(x, y) != GetCellIndex(xn, yn) 
                 && IsValidPosition(xn, yn) && IsCellAlive(xn, yn)
                 select 1).Count();
 
-            return cell;
+            return new Cell(isAlive, numberOfLivingNeighbors);
         }
 
         public void SetCellAlive(int x, int y)
         {
-            _cells[GetCellIndex(x, y)].IsAlive = true;
+            _cells[GetCellIndex(x, y)] = new Cell(true);
         }
 
         private bool IsCellAlive(int x, int y)
@@ -56,8 +56,7 @@ namespace KataGameOfLife.Vse12
             _cells = (
                 from x in Enumerable.Range(1, _width)
                 from y in Enumerable.Range(1, _height)
-                let cell = new Cell(GetCell(x, y))
-                select cell.NextGeneration()
+                select GetCell(x, y).NextGeneration()
                 ).ToArray();
         }
     }

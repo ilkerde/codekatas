@@ -19,4 +19,10 @@ namespace Kata {
       Assert.Equal(Probability.Of(0), Probability.Of(1).Inverse());
     }
   }
+
+  public class When_Inverse_Of_Probability_0_Is_Calculated {
+    [Fact] public void Then_Inverse_Equals_Probability_Of_1() {
+      Assert.Equal(Probability.Of(1), Probability.Of(0).Inverse());
+    }
+  }
 }

@@ -17,7 +17,7 @@ namespace Kata {
     }
 
     public Probability Inverse() {
-      return Probability.Of(0);
+      return Probability.Of(1 - _value);
     }
 
     public bool Equals(Probability other) {

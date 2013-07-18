@@ -49,5 +49,12 @@ namespace KataStringCalculator.XS
 2;2")
 				.ShouldEqual (2+2);
 		}
+
+		[Test]
+		public void When_Negative_Number_Is_Given_Should_Throw_Exception ()
+		{
+			new Action(() => StringCalculator.Add ("-2"))
+				.ShouldThrow<Exception> ();
+		}
 	}
 }

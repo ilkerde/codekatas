@@ -19,12 +19,15 @@ namespace KataStringCalculator.XS
 				input = input.Substring (input.IndexOf (Environment.NewLine));
 			}
 
-			var numbers = input.Split (
-				delimiters.ToArray(), 
+			var numbers = from part in input.Split (
+				delimiters.ToArray (), 
 				StringSplitOptions.RemoveEmptyEntries
-			);
+			) select Convert.ToInt32 (part);
 
-			return (from number in numbers select Convert.ToInt32 (number)).Sum ();
+			if (numbers.Count (x => x < 0) > 0)
+				throw new Exception ();
+
+			return numbers.Sum ();
 		}
 	}
 }

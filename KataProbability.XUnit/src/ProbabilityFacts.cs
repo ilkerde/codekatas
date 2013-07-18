@@ -25,4 +25,10 @@ namespace Kata {
       Assert.Equal(Probability.Of(1), Probability.Of(0).Inverse());
     }
   }
+
+  public class When_Probability_Of_1_Is_Combined_With_Prabability_Of_1 {
+    [Fact] public void Then_Combination_Equals_Probability_Of_1() {
+      Assert.Equal(Probability.Of(1), Probability.Of(1).CombineWith(Probability.Of(1)));
+    }
+  }
 }

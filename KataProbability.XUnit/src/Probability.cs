@@ -20,6 +20,10 @@ namespace Kata {
       return Probability.Of(1 - _value);
     }
 
+    public Probability CombineWith(Probability other) {
+      return null;
+    }
+
     public bool Equals(Probability other) {
       return other._value.Equals(_value);
     }

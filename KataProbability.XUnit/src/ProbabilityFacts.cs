@@ -43,4 +43,10 @@ namespace Kata {
       Assert.Equal(Probability.Of(0), Probability.Of(0).CombineWith(Probability.Of(1)));
     }
   }
+
+  public class When_Probability_Of_Either_1_Or_1_Is_Calculated {
+    [Fact] public void Then_Resulting_Probability_Is_1() {
+      Assert.Equal(Probability.Of(1), Probability.Of(1).Either(Probability.Of(1)));
+    }
+  }
 }

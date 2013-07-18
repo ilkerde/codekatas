@@ -24,6 +24,10 @@ namespace Kata {
       return Probability.Of(other._value * _value);
     }
 
+    public Probability Either(Probability other) {
+      return null;
+    }
+
     public bool Equals(Probability other) {
       return other._value.Equals(_value);
     }

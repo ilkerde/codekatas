@@ -49,4 +49,10 @@ namespace Kata {
       Assert.Equal(Probability.Of(1), Probability.Of(1).Either(Probability.Of(1)));
     }
   }
+
+  public class When_Probability_Of_Either_1_Half_Or_1_Half_Is_Calculated {
+    [Fact] public void Then_Resulting_Probability_Is_3_4th() {
+      Assert.Equal(Probability.Of(.75m), Probability.Of(.5m).Either(Probability.Of(.5m)));
+    }
+  }
 }

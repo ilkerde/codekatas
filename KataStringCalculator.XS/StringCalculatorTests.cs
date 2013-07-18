@@ -19,5 +19,12 @@ namespace KataStringCalculator.XS
 			StringCalculator.Add ("1")
 				.ShouldEqual (1);
 		}
+
+		[Test]
+		public void When_2_Is_Given_Should_Sum_To_2 ()
+		{
+			StringCalculator.Add ("2")
+				.ShouldEqual (2);
+		}
 	}
 }

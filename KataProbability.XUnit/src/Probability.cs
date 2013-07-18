@@ -15,5 +15,9 @@ namespace Kata {
     public static Probability Of(decimal value) {
       return new Probability(value);
     }
+
+    public Probability Inverse() {
+      return null;
+    }
   }
 }

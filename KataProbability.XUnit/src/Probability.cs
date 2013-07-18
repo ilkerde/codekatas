@@ -21,7 +21,7 @@ namespace Kata {
     }
 
     public Probability CombineWith(Probability other) {
-      return null;
+      return this;
     }
 
     public bool Equals(Probability other) {

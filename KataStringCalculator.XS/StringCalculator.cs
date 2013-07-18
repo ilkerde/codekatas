@@ -12,7 +12,7 @@ namespace KataStringCalculator.XS
 				return 0;
 
 			var numbers = input.Split (
-				new[] { "," }, 
+				new[] { ",", Environment.NewLine }, 
 				StringSplitOptions.RemoveEmptyEntries
 			);
 

@@ -85,6 +85,14 @@ namespace Kata {
       game.Go(3);
       Assert.That(fake.NumberOfCalls, Is.EqualTo(2));
     }
+
+    [Test]
+    public void Then_the_second_split_is_done_with_X_of_previous_split() {
+      var fake = new Fake(new SplitPair { X=2, Y=1 });
+      var game = new Game(fake.Split);
+      game.Go(3);
+      Assert.That(fake.CalledNumber, Is.EqualTo(2));
+    }
   }
 
   public class Fake {

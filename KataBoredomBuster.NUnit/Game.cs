@@ -10,20 +10,13 @@ namespace Kata {
     }
 
     public int Go(int number) {
+      if (number < 2)
+        return 0;
+
       var split = _splitter(number);
       var result = split.X * split.Y;
 
-      if (split.Y > 1) {
-        var subSplit = _splitter(split.Y);
-        result += subSplit.X * subSplit.Y;
-      }
-
-      if (split.X > 1) {
-        var subSplit = _splitter(split.X);
-        result += subSplit.X * subSplit.Y;
-      }
-
-      return result;
+      return result + Go(split.X) + Go(split.Y);
     }
   }
 }

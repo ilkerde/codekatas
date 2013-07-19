@@ -76,11 +76,11 @@ namespace Kata {
 
   [TestFixture]
   public class When_a_split_returns_X_with_a_number_higher_than_1 {
-    Fake _fake;
+    FakeWithGillian _fake;
 
     [SetUp]
     public void Given_that_a_split_with_a_number_higher_than_2_was_done_before() {
-      _fake = new Fake(new SplitPair { X=2, Y=1 });
+      _fake = new FakeWithGillian(Gillian.Split);
       var game = new Game(_fake.Split);
       game.Go(3);
     }
@@ -98,11 +98,11 @@ namespace Kata {
 
   [TestFixture]
   public class When_a_split_returns_Y_with_a_number_higher_than_1 {
-    Fake _fake;
+    FakeWithGillian _fake;
 
     [SetUp]
     public void Given_that_a_split_with_a_number_higher_than_2_was_done_before() {
-      _fake = new Fake(new SplitPair { X=1, Y=2 });
+      _fake = new FakeWithGillian(Gillian.Split);
       var game = new Game(_fake.Split);
       game.Go(3);
     }
@@ -166,10 +166,14 @@ namespace Kata {
       _splitter = splitter;
     }
 
+    public bool WasCalled { get; set; }
     public int NumberOfCalls { get; set; }
+    public int CalledNumber { get; set; }
     
     public SplitPair Split(int number) {
       NumberOfCalls++;
+      CalledNumber = number;
+      WasCalled = true;
       return _splitter(number);
     }
   }

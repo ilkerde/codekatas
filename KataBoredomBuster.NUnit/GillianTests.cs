@@ -74,24 +74,37 @@ namespace Kata {
       var game = new Game(fake.Split);
       Assert.That(game.Go(2), Is.EqualTo(expectedProduct));
     }
+  }
 
-    private class Fake {
-      SplitPair _splitToReturn = new SplitPair();
-      
-      public Fake() {}
+  [TestFixture]
+  public class When_a_split_returns_a_number_higher_than_1 {
+    [Test]
+    public void Then_the_returned_number_is_splitted_again() {
+      var fake = new Fake(new SplitPair { X=2, Y=1 });
+      var game = new Game(fake.Split);
+      game.Go(3);
+      Assert.That(fake.NumberOfCalls, Is.EqualTo(2));
+    }
+  }
 
-      public Fake(SplitPair splitToReturn) {
-        _splitToReturn = splitToReturn;
-      }
+  public class Fake {
+    SplitPair _splitToReturn = new SplitPair();
+    
+    public Fake() {}
 
-      public bool WasCalled { get; set; }
-      public int CalledNumber { get; set; }
-      
-      public SplitPair Split(int number) {
-        CalledNumber = number;
-        WasCalled = true;
-        return _splitToReturn;
-      }
+    public Fake(SplitPair splitToReturn) {
+      _splitToReturn = splitToReturn;
+    }
+
+    public bool WasCalled { get; set; }
+    public int NumberOfCalls { get; set; }
+    public int CalledNumber { get; set; }
+    
+    public SplitPair Split(int number) {
+      NumberOfCalls++;
+      CalledNumber = number;
+      WasCalled = true;
+      return _splitToReturn;
     }
   }
 

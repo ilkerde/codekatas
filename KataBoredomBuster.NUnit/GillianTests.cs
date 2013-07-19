@@ -67,25 +67,22 @@ namespace Kata {
       Assert.That(fake.CalledNumber, Is.EqualTo(4));
     }
 
-    [TestCase(9, 9, 81)]
-    [TestCase(5, 7, 35)]
-    public void Then_returns_the_product_of_the_split_returned_by_gillian(int x, int y, int expectedProduct) {
-      var fake = new Fake(new SplitPair { X=x, Y=y });
+    public void Then_returns_the_product_of_the_split_returned_by_gillian() {
+      var fake = new Fake(new SplitPair { X=-3, Y=-2});
       var game = new Game(fake.Split);
-      Assert.That(game.Go(2), Is.EqualTo(expectedProduct));
+      Assert.That(game.Go(0), Is.EqualTo(6));
     }
   }
 
   [TestFixture]
   public class When_a_split_returns_X_with_a_number_higher_than_1 {
     Fake _fake;
-    int _result;
 
     [SetUp]
     public void Given_that_a_split_with_a_number_higher_than_2_was_done_before() {
       _fake = new Fake(new SplitPair { X=2, Y=1 });
       var game = new Game(_fake.Split);
-      _result = game.Go(3);
+      game.Go(3);
     }
 
     [Test]
@@ -102,13 +99,12 @@ namespace Kata {
   [TestFixture]
   public class When_a_split_returns_Y_with_a_number_higher_than_1 {
     Fake _fake;
-    int _result;
 
     [SetUp]
     public void Given_that_a_split_with_a_number_higher_than_2_was_done_before() {
       _fake = new Fake(new SplitPair { X=1, Y=2 });
       var game = new Game(_fake.Split);
-      _result = game.Go(3);
+      game.Go(3);
     }
 
     [Test]

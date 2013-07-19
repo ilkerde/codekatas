@@ -77,21 +77,24 @@ namespace Kata {
   }
 
   [TestFixture]
-  public class When_a_split_returns_a_number_higher_than_1 {
-    [Test]
-    public void Then_the_returned_number_is_splitted_again() {
-      var fake = new Fake(new SplitPair { X=2, Y=1 });
-      var game = new Game(fake.Split);
+  public class When_a_split_returns_X_with_a_number_higher_than_1 {
+    Fake _fake;
+
+    [SetUp]
+    public void Given_that_a_split_with_a_number_higher_than_2_was_done_before() {
+      _fake = new Fake(new SplitPair { X=2, Y=1 });
+      var game = new Game(_fake.Split);
       game.Go(3);
-      Assert.That(fake.NumberOfCalls, Is.EqualTo(2));
+    }
+
+    [Test]
+    public void Then_the_split_is_called_again() {
+      Assert.That(_fake.NumberOfCalls, Is.EqualTo(2));
     }
 
     [Test]
     public void Then_the_second_split_is_done_with_X_of_previous_split() {
-      var fake = new Fake(new SplitPair { X=2, Y=1 });
-      var game = new Game(fake.Split);
-      game.Go(3);
-      Assert.That(fake.CalledNumber, Is.EqualTo(2));
+      Assert.That(_fake.CalledNumber, Is.EqualTo(2));
     }
   }
 

@@ -79,12 +79,13 @@ namespace Kata {
   [TestFixture]
   public class When_a_split_returns_X_with_a_number_higher_than_1 {
     Fake _fake;
+    int _result;
 
     [SetUp]
     public void Given_that_a_split_with_a_number_higher_than_2_was_done_before() {
       _fake = new Fake(new SplitPair { X=2, Y=1 });
       var game = new Game(_fake.Split);
-      game.Go(3);
+      _result = game.Go(3);
     }
 
     [Test]
@@ -95,6 +96,14 @@ namespace Kata {
     [Test]
     public void Then_the_second_split_is_done_with_X_of_previous_split() {
       Assert.That(_fake.CalledNumber, Is.EqualTo(2));
+    }
+  }
+
+  public class When_a_split_of_3_is_performed {
+    [Test]
+    public void Then_the_sum_of_the_product_of_the_first_and_second_split_is_returned() {
+      var game = new Game(Gillian.Split);
+      Assert.That(game.Go(3), Is.EqualTo(2 * 1 + 1 * 1));
     }
   }
 

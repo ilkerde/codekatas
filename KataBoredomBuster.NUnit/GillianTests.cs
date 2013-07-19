@@ -118,11 +118,23 @@ namespace Kata {
     }
   }
 
+  [TestFixture]
   public class When_a_split_of_3_is_performed {
     [Test]
     public void Then_the_sum_of_the_product_of_the_first_and_second_split_is_returned() {
       var game = new Game(Gillian.Split);
       Assert.That(game.Go(3), Is.EqualTo(2 * 1 + 1 * 1));
+    }
+  }
+
+  [TestFixture]
+  public class When_a_split_of_5_is_performed {
+    [Test]
+    public void Then_the_split_is_called_4_times() {
+      var fake = new FakeWithGillian(Gillian.Split);
+      var game = new Game(fake.Split);
+      game.Go(5);
+      Assert.That(fake.NumberOfCalls, Is.EqualTo(4));
     }
   }
 
@@ -144,6 +156,21 @@ namespace Kata {
       CalledNumber = number;
       WasCalled = true;
       return _splitToReturn;
+    }
+  }
+
+  public class FakeWithGillian {
+    Func<int, SplitPair> _splitter;
+
+    public FakeWithGillian(Func<int, SplitPair> splitter) {
+      _splitter = splitter;
+    }
+
+    public int NumberOfCalls { get; set; }
+    
+    public SplitPair Split(int number) {
+      NumberOfCalls++;
+      return _splitter(number);
     }
   }
 

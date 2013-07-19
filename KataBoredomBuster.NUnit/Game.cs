@@ -18,6 +18,11 @@ namespace Kata {
         result += subSplit.X * subSplit.Y;
       }
 
+      if (split.X > 1) {
+        var subSplit = _splitter(split.X);
+        result += subSplit.X * subSplit.Y;
+      }
+
       return result;
     }
   }

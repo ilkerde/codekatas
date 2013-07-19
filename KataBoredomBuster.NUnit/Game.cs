@@ -14,9 +14,8 @@ namespace Kata {
         return 0;
 
       var split = _splitter(number);
-      var result = split.X * split.Y;
-
-      return result + Go(split.X) + Go(split.Y);
+      
+      return split.X * split.Y + Go(split.X) + Go(split.Y);
     }
   }
 }

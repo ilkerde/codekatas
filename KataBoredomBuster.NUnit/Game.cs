@@ -12,6 +12,9 @@ namespace Kata {
     public int Go(int number) {
       var split = _splitter(number);
 
+      if (split.X > 1)
+        _splitter(number);
+
       return split.X * split.Y;
     }
   }

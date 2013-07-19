@@ -11,11 +11,14 @@ namespace Kata {
 
     public int Go(int number) {
       var split = _splitter(number);
+      var result = split.X * split.Y;
 
-      if (split.X > 1)
-        _splitter(split.X);
+      if (split.Y > 1) {
+        var subSplit = _splitter(split.Y);
+        result += subSplit.X * subSplit.Y;
+      }
 
-      return split.X * split.Y;
+      return result;
     }
   }
 }

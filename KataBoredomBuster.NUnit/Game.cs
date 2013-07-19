@@ -13,7 +13,7 @@ namespace Kata {
       var split = _splitter(number);
 
       if (split.X > 1)
-        _splitter(number);
+        _splitter(split.X);
 
       return split.X * split.Y;
     }

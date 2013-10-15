@@ -66,4 +66,13 @@ namespace KataTennis {
       Assert.AreEqual("Forty Thirty", game.Score);
     }
   }
+
+  [TestFixture]
+  public class When_Both_Players_Have_Three_Points {
+    [Test]
+    public void Then_Score_Is_Deuce() {
+      var game = Game.At(3, 3);
+      Assert.AreEqual("Deuce", game.Score);
+    }
+  }
 }

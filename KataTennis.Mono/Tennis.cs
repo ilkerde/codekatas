@@ -19,6 +19,9 @@ namespace KataTennis {
       if ((pointsOfPlayerOne == 0) && (pointsOfPlayerTwo == 0))
         return "Love All";
 
+      if ((pointsOfPlayerOne == 1) && (pointsOfPlayerTwo == 0))
+        return "Fifteen Love";
+
       return "Fifteen All";
     }
 

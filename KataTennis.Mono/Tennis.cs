@@ -57,7 +57,7 @@ namespace KataTennis {
       public string Score { get; set; }
     }
 
-    private class Points {
+    public class Points {
       public bool AreEqual() {
         return PlayerOne == PlayerTwo;
       }

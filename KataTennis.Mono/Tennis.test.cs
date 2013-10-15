@@ -111,4 +111,13 @@ namespace KataTennis {
       Assert.AreEqual("Advantage Player Two", game.Score);
     }
   }
+
+  [TestFixture]
+  public class When_Player_Two_Has_3_Points {
+    [Test]
+    public void Then_Is_Any_Above_Thirty_Is_True() {
+      var points = new Game.Points { PlayerTwo = 3 };
+      Assert.IsTrue(points.IsAnyAboveThirty());
+    }
+  }
 }

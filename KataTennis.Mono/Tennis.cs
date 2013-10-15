@@ -20,14 +20,14 @@ namespace KataTennis {
       string scoreOfPlayerTwo = Game.ScoreForPoint(points.PlayerTwo);
 
       return
-        points.ArePointsEqual() ?
-          IsAboveThirty(points.PlayerOne) ?
+        points.AreEqual() ?
+          points.IsAnyAboveThirty() ?
             "Deuce"
           :
             scoreOfPlayerOne + " All"
         :
-          points.IsAnyAdvantage() ?
-            points.IsFirstLeading() ?
+          points.IsAnyInAdvantage() ?
+            points.IsPlayerOneLeading() ?
               "Advantage Player One"
             :
               "Advantage Player Two"
@@ -48,10 +48,6 @@ namespace KataTennis {
         .FirstOrDefault();
     }
 
-    private static bool IsAboveThirty(int p) {
-      return p > 2;
-    }
-
     private class PointTranslation {
       public PointTranslation(int point, string score) {
         Point = point;
@@ -62,15 +58,19 @@ namespace KataTennis {
     }
 
     private class Points {
-      public bool ArePointsEqual() {
+      public bool AreEqual() {
         return PlayerOne == PlayerTwo;
       }
 
-      public bool IsAnyAdvantage() {
+      public bool IsAnyAboveThirty() {
+        return PlayerOne > 2;
+      }
+
+      public bool IsAnyInAdvantage() {
         return PlayerOne > 3 || PlayerTwo > 3;
       }
 
-      public bool IsFirstLeading() {
+      public bool IsPlayerOneLeading() {
         return PlayerOne > PlayerTwo;
       }
 

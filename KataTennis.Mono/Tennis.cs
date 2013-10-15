@@ -19,12 +19,10 @@ namespace KataTennis {
       string scoreOfPlayerOne = Game.ScoreForPoint(pointsOfPlayerOne);
       string scoreOfPlayerTwo = Game.ScoreForPoint(pointsOfPlayerTwo);
 
-      if (pointsOfPlayerOne == pointsOfPlayerTwo) {
-        if (pointsOfPlayerOne == 3)
-          return "Deuce";
-
-        return scoreOfPlayerOne + " All";
-      }
+      if (pointsOfPlayerOne == pointsOfPlayerTwo)
+        return pointsOfPlayerOne == 3 
+          ? "Deuce"
+          : scoreOfPlayerOne + " All";
 
       return scoreOfPlayerOne + " " + scoreOfPlayerTwo;
     }

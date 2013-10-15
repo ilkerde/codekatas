@@ -19,7 +19,7 @@ namespace KataTennis {
     }
 
     public Game ScorePlayerOne() {
-      return Game.Start();
+      return Game.At(++Points.PlayerOne, 0);
     }
 
     private static string ScoreForPoints(GamePoints points) {

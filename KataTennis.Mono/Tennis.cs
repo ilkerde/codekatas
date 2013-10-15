@@ -12,7 +12,8 @@ namespace KataTennis {
     public static Game At(int pointsOfPlayerOne, int pointsOfPlayerTwo) {
       return new Game {
         PointsOfPlayerOne = pointsOfPlayerOne,
-        PointsOfPlayerTwo = pointsOfPlayerTwo
+        PointsOfPlayerTwo = pointsOfPlayerTwo,
+        Score = "Love All"
       };
     }
 

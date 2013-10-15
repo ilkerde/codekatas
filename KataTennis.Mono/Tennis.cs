@@ -11,6 +11,7 @@ namespace KataTennis {
     public static Game At(int pointsOfPlayerOne, int pointsOfPlayerTwo) {
       var points = new GamePoints { PlayerOne = pointsOfPlayerOne, PlayerTwo = pointsOfPlayerTwo };
       var score = Game.ScoreForPoints(points);
+
       return new Game {
         Points = points,
         Score = score

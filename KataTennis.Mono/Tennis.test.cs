@@ -113,6 +113,15 @@ namespace KataTennis {
   }
 
   [TestFixture]
+  public class When_Player_One_Has_2_Points_More_From_Deuce_Onwards {
+    [Test]
+    public void Then_Score_Is_Game_Player_One() {
+      var game = Game.At(5, 3);
+      Assert.AreEqual("Game Player One", game.Score);
+    }
+  }
+
+  [TestFixture]
   public class When_Player_Two_Has_3_Points {
     [Test]
     public void Then_Is_Any_Above_Thirty_Is_True() {

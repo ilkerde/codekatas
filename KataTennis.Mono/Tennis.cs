@@ -19,30 +19,32 @@ namespace KataTennis {
     }
 
     private static string ScoreForPoints(GamePoints points) {
+      return points.AreEqual()
+        ? ScoreForPlayersEqual(points)
+        : ScoreForPlayerLeading(points);
+    }
+
+    private static string ScoreForPlayerLeading(GamePoints points) {
       string scoreOfPlayerOne = Game.ScoreForPoint(points.PlayerOne);
       string scoreOfPlayerTwo = Game.ScoreForPoint(points.PlayerTwo);
 
-      return
-        points.AreEqual() ?
-          points.IsAnyAboveThirty() ?
-            "Deuce"
-          :
-            scoreOfPlayerOne + " All"
-        :
-          points.IsAnyInAdvantage() ?
-            points.IsPlayerOneLeadingBy(2) ?
-              "Game Player One"
-            :
-              points.IsPlayerOneLeadingBy(1) ?
-                "Advantage Player One"
-              :
-                points.IsPlayerTwoLeadingBy(2) ?
-                  "Game Player Two"
-                :
-                  "Advantage Player Two"
-          :
-            scoreOfPlayerOne + " " + scoreOfPlayerTwo
-        ;
+      return points.IsAnyInAdvantage()
+        ? ScoreForPlayerLeadingInAdvantage(points)
+        : scoreOfPlayerOne + " " + scoreOfPlayerTwo;
+    }
+
+    private static string ScoreForPlayerLeadingInAdvantage(GamePoints points) {
+      return points.IsAnyLeadingBy(2) 
+        ? points.IsPlayerOneLeading() ? "Game Player One" : "Game Player Two"
+        : points.IsPlayerOneLeading() ? "Advantage Player One" : "Advantage Player Two";
+    }
+
+    private static string ScoreForPlayersEqual(GamePoints points) {
+      string scoreOfPlayerOne = Game.ScoreForPoint(points.PlayerOne);
+
+      return points.IsAnyAboveThirty()
+        ? "Deuce"
+        : scoreOfPlayerOne + " All";
     }
 
     private static string ScoreForPoint(int point) {
@@ -72,12 +74,12 @@ namespace KataTennis {
         return PlayerOne > 3 || PlayerTwo > 3;
       }
 
-      public bool IsPlayerOneLeadingBy(int difference) {
-        return PlayerOne - PlayerTwo >= difference;
+      public bool IsPlayerOneLeading() {
+        return PlayerOne > PlayerTwo;
       }
 
-      public bool IsPlayerTwoLeadingBy(int difference) {
-        return PlayerTwo - PlayerOne >= difference;
+      public bool IsAnyLeadingBy(int difference) {
+        return Math.Abs(PlayerTwo - PlayerOne) >= difference;
       }
 
       public int PlayerOne { get; set; }

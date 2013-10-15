@@ -152,6 +152,27 @@ namespace KataTennis {
   }
 
   [TestFixture]
+  public class When_Player_Two_Wins_A_Point {
+    Game initial = Game.At(1, 1);
+    Game game = Game.At(1, 1).ScorePlayerTwo();
+
+    [Test]
+    public void Then_Points_Of_Player_Two_Are_Increased() {
+      Assert.AreEqual(2, game.Points.PlayerTwo);
+    }
+
+    [Test]
+    public void Then_Points_Of_Player_One_Remain_Unchanged() {
+      Assert.AreEqual(1, game.Points.PlayerOne);
+    }
+
+    [Test]
+    public void Then_Score_Is_Updated() {
+      Assert.AreNotEqual(initial.Score, game.Score);
+    }
+  }
+
+  [TestFixture]
   public class When_Player_Two_Has_3_Points {
     [Test]
     public void Then_Is_Any_Above_Thirty_Is_True() {

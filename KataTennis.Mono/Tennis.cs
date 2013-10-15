@@ -27,6 +27,9 @@ namespace KataTennis {
       if (pointsOfPlayerOne > 3)
         return scoreOfPlayerOne + " Player One";
 
+      if (pointsOfPlayerTwo > 3)
+        return scoreOfPlayerTwo + " Player Two";
+
       return scoreOfPlayerOne + " " + scoreOfPlayerTwo;
     }
 

@@ -26,6 +26,7 @@ namespace KataTennis {
     }
 
     private static string ScoreForPoint(int point) {
+      if (point == 2) return "Thirty";
       return point > 0 ? "Fifteen" : "Love";
     }
 

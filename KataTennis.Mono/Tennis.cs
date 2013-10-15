@@ -37,18 +37,20 @@ namespace KataTennis {
     }
 
     private static string ScoreForPoint(int point) {
-      return (new[] {
-        new PointTranslation(0, "Love"),
-        new PointTranslation(1, "Fifteen"),
-        new PointTranslation(2, "Thirty"),
-        new PointTranslation(3, "Forty"),
-      })
+      return PointTranslations
         .Where(pt => pt.Point == point)
         .Select(pt => pt.Score)
         .FirstOrDefault();
     }
 
-    private class PointTranslation {
+    static PointTranslation[] PointTranslations = new PointTranslation[] {
+        new PointTranslation(0, "Love"),
+        new PointTranslation(1, "Fifteen"),
+        new PointTranslation(2, "Thirty"),
+        new PointTranslation(3, "Forty"),
+    };
+
+    public class PointTranslation {
       public PointTranslation(int point, string score) {
         Point = point;
         Score = score;

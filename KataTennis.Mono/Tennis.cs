@@ -30,10 +30,16 @@ namespace KataTennis {
             scoreOfPlayerOne + " All"
         :
           points.IsAnyInAdvantage() ?
-            points.IsPlayerOneLeading() ?
-              "Advantage Player One"
+            points.IsPlayerOneLeadingBy(2) ?
+              "Game Player One"
             :
-              "Advantage Player Two"
+              points.IsPlayerOneLeading() ?
+                "Advantage Player One"
+              :
+                points.IsPlayerTwoLeadingBy(2) ?
+                  "Game Player Two"
+                :
+                  "Advantage Player Two"
           :
             scoreOfPlayerOne + " " + scoreOfPlayerTwo
         ;
@@ -64,6 +70,14 @@ namespace KataTennis {
 
       public bool IsAnyInAdvantage() {
         return PlayerOne > 3 || PlayerTwo > 3;
+      }
+
+      public bool IsPlayerOneLeadingBy(int difference) {
+        return PlayerOne - PlayerTwo >= 2;
+      }
+
+      public bool IsPlayerTwoLeadingBy(int difference) {
+        return PlayerTwo - PlayerOne >= 2;
       }
 
       public bool IsPlayerOneLeading() {

@@ -26,9 +26,25 @@ namespace KataTennis {
     }
 
     private static string ScoreForPoint(int point) {
-      if (point == 3) return "Forty";
-      if (point == 2) return "Thirty";
-      return point > 0 ? "Fifteen" : "Love";
+      return (new[] {
+        new PointTranslation(0, "Love"),
+        new PointTranslation(1, "Fifteen"),
+        new PointTranslation(2, "Thirty"),
+        new PointTranslation(3, "Forty")
+      })
+        .Where(pt => pt.Point == point)
+        .Select(pt => pt.Score)
+        .FirstOrDefault();
+    }
+
+    private class PointTranslation {
+      public PointTranslation(int point, string score) {
+        Point = point;
+        Score = score;
+      }
+
+      public int Point { get; set; }
+      public string Score { get; set; }
     }
 
     public string Score { get; set; }

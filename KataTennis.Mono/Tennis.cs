@@ -11,23 +11,23 @@ namespace KataTennis {
       return new Game {
         PointsOfPlayerOne = pointsOfPlayerOne,
         PointsOfPlayerTwo = pointsOfPlayerTwo,
-        Score = Game.ScoreForPoints(pointsOfPlayerOne, pointsOfPlayerTwo)
+        Score = Game.ScoreForPoints(new Points { PlayerOne = pointsOfPlayerOne, PlayerTwo = pointsOfPlayerTwo })
       };
     }
 
-    private static string ScoreForPoints(int pointsOfPlayerOne, int pointsOfPlayerTwo) {
-      string scoreOfPlayerOne = Game.ScoreForPoint(pointsOfPlayerOne);
-      string scoreOfPlayerTwo = Game.ScoreForPoint(pointsOfPlayerTwo);
+    private static string ScoreForPoints(Points points) {
+      string scoreOfPlayerOne = Game.ScoreForPoint(points.PlayerOne);
+      string scoreOfPlayerTwo = Game.ScoreForPoint(points.PlayerTwo);
 
       return
-        ArePointsEqual(pointsOfPlayerOne, pointsOfPlayerTwo) ?
-          IsAboveThirty(pointsOfPlayerOne) ?
+        ArePointsEqual(points) ?
+          IsAboveThirty(points.PlayerOne) ?
             "Deuce"
           :
             scoreOfPlayerOne + " All"
         :
-          IsAnyAdvantage(pointsOfPlayerOne, pointsOfPlayerTwo) ?
-            IsFirstLeading(pointsOfPlayerOne, pointsOfPlayerTwo) ?
+          IsAnyAdvantage(points) ?
+            IsFirstLeading(points) ?
               "Advantage Player One"
             :
               "Advantage Player Two"
@@ -48,20 +48,20 @@ namespace KataTennis {
         .FirstOrDefault();
     }
 
-    private static bool ArePointsEqual(int p1, int p2) {
-      return p1 == p2;
+    private static bool ArePointsEqual(Points points) {
+      return points.PlayerOne == points.PlayerTwo;
     }
 
     private static bool IsAboveThirty(int p) {
       return p > 2;
     }
 
-    private static bool IsAnyAdvantage(int p1, int p2) {
-      return (p1 > 3 || p2 > 3);
+    private static bool IsAnyAdvantage(Points points) {
+      return points.PlayerOne > 3 || points.PlayerTwo > 3;
     }
 
-    private static bool IsFirstLeading(int p1, int p2) {
-      return p1 > p2;
+    private static bool IsFirstLeading(Points points) {
+      return points.PlayerOne > points.PlayerTwo;
     }
 
     private class PointTranslation {
@@ -71,6 +71,11 @@ namespace KataTennis {
       }
       public int Point { get; set; }
       public string Score { get; set; }
+    }
+
+    private class Points {
+      public int PlayerOne { get; set; }
+      public int PlayerTwo { get; set; }
     }
 
     public string Score { get; set; }

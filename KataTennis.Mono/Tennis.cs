@@ -24,8 +24,14 @@ namespace KataTennis {
           ? "Deuce"
           : scoreOfPlayerOne + " All";
 
-      if (pointsOfPlayerOne > 3)
-        return scoreOfPlayerOne + " Player One";
+      if (pointsOfPlayerOne > 3 || pointsOfPlayerTwo > 3) {
+        bool isPlayerOneLeading = pointsOfPlayerOne > pointsOfPlayerTwo;
+
+        if (isPlayerOneLeading)
+          return scoreOfPlayerOne + " Player One";
+
+        return scoreOfPlayerTwo + " Player Two";
+      }
 
       if (pointsOfPlayerTwo > 3)
         return scoreOfPlayerTwo + " Player Two";
@@ -35,24 +41,28 @@ namespace KataTennis {
 
     private static string ScoreForPoint(int point) {
       return (new[] {
-        new PointTranslation(0, "Love"),
-        new PointTranslation(1, "Fifteen"),
-        new PointTranslation(2, "Thirty"),
-        new PointTranslation(3, "Forty"),
-        new PointTranslation(4, "Advantage")
+        new PointTranslation(p => p == 0, "Love"),
+        new PointTranslation(p => p == 1, "Fifteen"),
+        new PointTranslation(p => p == 2, "Thirty"),
+        new PointTranslation(p => p == 3, "Forty"),
+        new PointTranslation(p => p > 3, "Advantage")
       })
-        .Where(pt => pt.Point == point)
+        .Where(pt => pt.Matches(point))
         .Select(pt => pt.Score)
         .FirstOrDefault();
     }
 
     private class PointTranslation {
-      public PointTranslation(int point, string score) {
-        Point = point;
+      public PointTranslation(Func<int, bool> matcher, string score) {
+        Matcher = matcher;
         Score = score;
       }
 
-      public int Point { get; set; }
+      public bool Matches(int point) {
+        return Matcher(point);
+      }
+
+      public Func<int, bool> Matcher { get; set; }
       public string Score { get; set; }
     }
 

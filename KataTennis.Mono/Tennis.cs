@@ -33,7 +33,7 @@ namespace KataTennis {
             points.IsPlayerOneLeadingBy(2) ?
               "Game Player One"
             :
-              points.IsPlayerOneLeading() ?
+              points.IsPlayerOneLeadingBy(1) ?
                 "Advantage Player One"
               :
                 points.IsPlayerTwoLeadingBy(2) ?
@@ -73,15 +73,11 @@ namespace KataTennis {
       }
 
       public bool IsPlayerOneLeadingBy(int difference) {
-        return PlayerOne - PlayerTwo >= 2;
+        return PlayerOne - PlayerTwo >= difference;
       }
 
       public bool IsPlayerTwoLeadingBy(int difference) {
-        return PlayerTwo - PlayerOne >= 2;
-      }
-
-      public bool IsPlayerOneLeading() {
-        return PlayerOne > PlayerTwo;
+        return PlayerTwo - PlayerOne >= difference;
       }
 
       public int PlayerOne { get; set; }

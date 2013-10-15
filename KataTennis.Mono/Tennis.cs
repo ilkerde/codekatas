@@ -18,6 +18,10 @@ namespace KataTennis {
       };
     }
 
+    public Game ScorePlayerOne() {
+      return Game.Start();
+    }
+
     private static string ScoreForPoints(GamePoints points) {
       return points.AreEqual()
         ? ScoreForPlayersEqual(points)

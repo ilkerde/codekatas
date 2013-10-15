@@ -10,5 +10,7 @@ namespace KataTennis {
     }
 
     public string Score { get; set; }
+    public int PointsOfPlayerOne { get; set; }
+    public int PointsOfPlayerTwo { get; set; }
   }
 }

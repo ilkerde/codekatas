@@ -16,13 +16,17 @@ namespace KataTennis {
     }
 
     private static string ScoreForPoints(int pointsOfPlayerOne, int pointsOfPlayerTwo) {
-      if ((pointsOfPlayerOne == 0) && (pointsOfPlayerTwo == 0))
-        return "Love All";
+      string scoreOfPlayerOne = Game.ScoreForPoint(pointsOfPlayerOne);
+      string scoreOfPlayerTwo = Game.ScoreForPoint(pointsOfPlayerTwo);
 
-      if ((pointsOfPlayerOne == 1) && (pointsOfPlayerTwo == 0))
-        return "Fifteen Love";
+      if (scoreOfPlayerOne == scoreOfPlayerTwo)
+        return scoreOfPlayerOne + " All";
 
-      return "Fifteen All";
+      return scoreOfPlayerOne + " " + scoreOfPlayerTwo;
+    }
+
+    private static string ScoreForPoint(int point) {
+      return point > 0 ? "Fifteen" : "Love";
     }
 
     public string Score { get; set; }

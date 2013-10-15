@@ -39,4 +39,13 @@ namespace KataTennis {
       Assert.AreEqual("Fifteen All", game.Score);
     }
   }
+
+  [TestFixture]
+  public class When_Only_Player_One_Has_A_Single_Point {
+    [Test]
+    public void Then_Score_Is_Fifteen_Love() {
+      var game = Game.At(1, 0);
+      Assert.AreEqual("Fifteen Love", game.Score);
+    }
+  }
 }

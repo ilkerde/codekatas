@@ -9,14 +9,15 @@ namespace KataTennis {
     }
 
     public static Game At(int pointsOfPlayerOne, int pointsOfPlayerTwo) {
+      var points = new GamePoints { PlayerOne = pointsOfPlayerOne, PlayerTwo = pointsOfPlayerTwo };
+      var score = Game.ScoreForPoints(points);
       return new Game {
-        PointsOfPlayerOne = pointsOfPlayerOne,
-        PointsOfPlayerTwo = pointsOfPlayerTwo,
-        Score = Game.ScoreForPoints(new Points { PlayerOne = pointsOfPlayerOne, PlayerTwo = pointsOfPlayerTwo })
+        Points = points,
+        Score = score
       };
     }
 
-    private static string ScoreForPoints(Points points) {
+    private static string ScoreForPoints(GamePoints points) {
       string scoreOfPlayerOne = Game.ScoreForPoint(points.PlayerOne);
       string scoreOfPlayerTwo = Game.ScoreForPoint(points.PlayerTwo);
 
@@ -38,7 +39,7 @@ namespace KataTennis {
     }
 
     private static string ScoreForPoint(int point) {
-      return PointTranslations
+      return Game.PointTranslations
         .Where(pt => pt.Key == point)
         .Select(pt => pt.Value)
         .FirstOrDefault();
@@ -51,7 +52,7 @@ namespace KataTennis {
       { 3, "Forty" }
     };
 
-    public class Points {
+    public class GamePoints {
       public bool AreEqual() {
         return PlayerOne == PlayerTwo;
       }
@@ -72,8 +73,7 @@ namespace KataTennis {
       public int PlayerTwo { get; set; }
     }
 
+    public GamePoints Points { get; set; }
     public string Score { get; set; }
-    public int PointsOfPlayerOne { get; set; }
-    public int PointsOfPlayerTwo { get; set; }
   }
 }

@@ -13,12 +13,12 @@ namespace KataTennis {
 
     [Test]
     public void Then_Player_One_Has_No_Points() {
-      Assert.AreEqual(0, _game.PointsOfPlayerOne);
+      Assert.AreEqual(0, _game.Points.PlayerOne);
     }
 
     [Test]
     public void Then_Player_Two_Has_No_Points() {
-      Assert.AreEqual(0, _game.PointsOfPlayerTwo);
+      Assert.AreEqual(0, _game.Points.PlayerTwo);
     }
   }
 
@@ -116,7 +116,7 @@ namespace KataTennis {
   public class When_Player_Two_Has_3_Points {
     [Test]
     public void Then_Is_Any_Above_Thirty_Is_True() {
-      var points = new Game.Points { PlayerTwo = 3 };
+      var points = new Game.GamePoints { PlayerTwo = 3 };
       Assert.IsTrue(points.IsAnyAboveThirty());
     }
   }

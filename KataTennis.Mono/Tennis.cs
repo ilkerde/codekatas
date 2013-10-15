@@ -63,7 +63,7 @@ namespace KataTennis {
       }
 
       public bool IsAnyAboveThirty() {
-        return PlayerOne > 2;
+        return PlayerOne > 2 || PlayerTwo > 2;
       }
 
       public bool IsAnyInAdvantage() {

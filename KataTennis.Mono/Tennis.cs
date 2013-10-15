@@ -24,6 +24,9 @@ namespace KataTennis {
           ? "Deuce"
           : scoreOfPlayerOne + " All";
 
+      if (pointsOfPlayerOne > 3)
+        return scoreOfPlayerOne + " Player One";
+
       return scoreOfPlayerOne + " " + scoreOfPlayerTwo;
     }
 
@@ -32,7 +35,8 @@ namespace KataTennis {
         new PointTranslation(0, "Love"),
         new PointTranslation(1, "Fifteen"),
         new PointTranslation(2, "Thirty"),
-        new PointTranslation(3, "Forty")
+        new PointTranslation(3, "Forty"),
+        new PointTranslation(4, "Advantage")
       })
         .Where(pt => pt.Point == point)
         .Select(pt => pt.Score)

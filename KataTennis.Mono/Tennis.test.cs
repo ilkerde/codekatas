@@ -132,6 +132,7 @@ namespace KataTennis {
 
   [TestFixture]
   public class When_Player_One_Wins_A_Point {
+    Game initial = Game.At(1, 1);
     Game game = Game.At(1, 1).ScorePlayerOne();
 
     [Test]
@@ -142,6 +143,11 @@ namespace KataTennis {
     [Test]
     public void Then_Points_Of_Player_Two_Remain_Unchanged() {
       Assert.AreEqual(1, game.Points.PlayerTwo);
+    }
+
+    [Test]
+    public void Then_Score_Is_Updated() {
+      Assert.AreNotEqual(initial.Score, game.Score);
     }
   }
 

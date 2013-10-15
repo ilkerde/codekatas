@@ -18,21 +18,21 @@ namespace KataTennis {
       };
     }
 
-    public Game ScorePlayerOne() {
-      return Game.At(++Points.PlayerOne, Points.PlayerTwo);
-    }
-
-    public Game ScorePlayerTwo() {
-      return Game.At(Points.PlayerOne, ++Points.PlayerTwo);
-    }
-
-    private static string ScoreForPoints(GamePoints points) {
+    static string ScoreForPoints(GamePoints points) {
       return points.AreEqual()
         ? ScoreForPlayersEqual(points)
         : ScoreForPlayerLeading(points);
     }
 
-    private static string ScoreForPlayerLeading(GamePoints points) {
+    static string ScoreForPlayersEqual(GamePoints points) {
+      string scoreOfPlayerOne = Game.ScoreForPoint(points.PlayerOne);
+
+      return points.IsAnyAboveThirty()
+        ? "Deuce"
+        : scoreOfPlayerOne + " All";
+    }
+
+    static string ScoreForPlayerLeading(GamePoints points) {
       string scoreOfPlayerOne = Game.ScoreForPoint(points.PlayerOne);
       string scoreOfPlayerTwo = Game.ScoreForPoint(points.PlayerTwo);
 
@@ -41,21 +41,13 @@ namespace KataTennis {
         : scoreOfPlayerOne + " " + scoreOfPlayerTwo;
     }
 
-    private static string ScoreForPlayerLeadingInAdvantage(GamePoints points) {
+    static string ScoreForPlayerLeadingInAdvantage(GamePoints points) {
       return points.IsAnyLeadingBy(2) 
         ? points.IsPlayerOneLeading() ? "Game Player One" : "Game Player Two"
         : points.IsPlayerOneLeading() ? "Advantage Player One" : "Advantage Player Two";
     }
 
-    private static string ScoreForPlayersEqual(GamePoints points) {
-      string scoreOfPlayerOne = Game.ScoreForPoint(points.PlayerOne);
-
-      return points.IsAnyAboveThirty()
-        ? "Deuce"
-        : scoreOfPlayerOne + " All";
-    }
-
-    private static string ScoreForPoint(int point) {
+    static string ScoreForPoint(int point) {
       return Game.PointTranslations
         .Where(pt => pt.Key == point)
         .Select(pt => pt.Value)
@@ -69,32 +61,40 @@ namespace KataTennis {
       { 3, "Forty" }
     };
 
-    public class GamePoints {
-      public bool AreEqual() {
-        return PlayerOne == PlayerTwo;
-      }
-
-      public bool IsAnyAboveThirty() {
-        return PlayerOne > 2 || PlayerTwo > 2;
-      }
-
-      public bool IsAnyInAdvantage() {
-        return PlayerOne > 3 || PlayerTwo > 3;
-      }
-
-      public bool IsPlayerOneLeading() {
-        return PlayerOne > PlayerTwo;
-      }
-
-      public bool IsAnyLeadingBy(int difference) {
-        return Math.Abs(PlayerTwo - PlayerOne) >= difference;
-      }
-
-      public int PlayerOne { get; set; }
-      public int PlayerTwo { get; set; }
-    }
-
     public GamePoints Points { get; set; }
     public string Score { get; set; }
+
+    public Game ScorePlayerOne() {
+      return Game.At(++Points.PlayerOne, Points.PlayerTwo);
+    }
+
+    public Game ScorePlayerTwo() {
+      return Game.At(Points.PlayerOne, ++Points.PlayerTwo);
+    }
+  }
+
+  public class GamePoints {
+    public bool AreEqual() {
+      return PlayerOne == PlayerTwo;
+    }
+
+    public bool IsAnyAboveThirty() {
+      return PlayerOne > 2 || PlayerTwo > 2;
+    }
+
+    public bool IsAnyInAdvantage() {
+      return PlayerOne > 3 || PlayerTwo > 3;
+    }
+
+    public bool IsPlayerOneLeading() {
+      return PlayerOne > PlayerTwo;
+    }
+
+    public bool IsAnyLeadingBy(int difference) {
+      return Math.Abs(PlayerTwo - PlayerOne) >= difference;
+    }
+
+    public int PlayerOne { get; set; }
+    public int PlayerTwo { get; set; }
   }
 }

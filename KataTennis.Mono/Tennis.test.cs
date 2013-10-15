@@ -176,7 +176,7 @@ namespace KataTennis {
   public class When_Player_Two_Has_3_Points {
     [Test]
     public void Then_Is_Any_Above_Thirty_Is_True() {
-      var points = new Game.GamePoints { PlayerTwo = 3 };
+      var points = new GamePoints { PlayerTwo = 3 };
       Assert.IsTrue(points.IsAnyAboveThirty());
     }
   }

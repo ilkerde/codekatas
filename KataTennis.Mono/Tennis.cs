@@ -1,6 +1,7 @@
 namespace KataTennis {
   using System;
   using System.Linq;
+  using System.Collections.Generic;
 
   public class Game {
     public static Game Start() {
@@ -38,26 +39,17 @@ namespace KataTennis {
 
     private static string ScoreForPoint(int point) {
       return PointTranslations
-        .Where(pt => pt.Point == point)
-        .Select(pt => pt.Score)
+        .Where(pt => pt.Key == point)
+        .Select(pt => pt.Value)
         .FirstOrDefault();
     }
 
-    static PointTranslation[] PointTranslations = new PointTranslation[] {
-        new PointTranslation(0, "Love"),
-        new PointTranslation(1, "Fifteen"),
-        new PointTranslation(2, "Thirty"),
-        new PointTranslation(3, "Forty"),
+    static Dictionary<int, string> PointTranslations = new Dictionary<int, string> {
+      { 0, "Love" },
+      { 1, "Fifteen" },
+      { 2, "Thirty" },
+      { 3, "Forty" }
     };
-
-    public class PointTranslation {
-      public PointTranslation(int point, string score) {
-        Point = point;
-        Score = score;
-      }
-      public int Point { get; set; }
-      public string Score { get; set; }
-    }
 
     public class Points {
       public bool AreEqual() {

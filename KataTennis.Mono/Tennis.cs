@@ -11,8 +11,15 @@ namespace KataTennis {
       return new Game {
         PointsOfPlayerOne = pointsOfPlayerOne,
         PointsOfPlayerTwo = pointsOfPlayerTwo,
-        Score = "Love All"
+        Score = Game.ScoreForPoints(pointsOfPlayerOne, pointsOfPlayerTwo)
       };
+    }
+
+    private static string ScoreForPoints(int pointsOfPlayerOne, int pointsOfPlayerTwo) {
+      if ((pointsOfPlayerOne == 0) && (pointsOfPlayerTwo == 0))
+        return "Love All";
+
+      return "Fifteen All";
     }
 
     public string Score { get; set; }

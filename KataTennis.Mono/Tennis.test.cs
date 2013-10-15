@@ -84,4 +84,13 @@ namespace KataTennis {
       Assert.AreEqual("Advantage Player One", game.Score);
     }
   }
+
+  [TestFixture]
+  public class When_Player_Two_Has_1_Point_More_From_Deuce {
+    [Test]
+    public void Then_Score_Is_Advantage_Player_Two() {
+      var game = Game.At(3, 4);
+      Assert.AreEqual("Advantage Player Two", game.Score);
+    }
+  }
 }

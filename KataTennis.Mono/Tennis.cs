@@ -4,7 +4,9 @@ namespace KataTennis {
 
   public class Game {
     public static Game Start() {
-      return new Game();
+      return new Game {
+        Score = "Love All"
+      };
     }
 
     public string Score { get; set; }

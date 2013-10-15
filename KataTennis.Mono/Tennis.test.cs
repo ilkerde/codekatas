@@ -138,6 +138,13 @@ namespace KataTennis {
         .ScorePlayerOne();
       Assert.AreEqual(2, game.Points.PlayerOne);
     }
+
+    [Test]
+    public void Then_Points_Of_Player_Two_Remain_Unchanged() {
+      var game = Game.At(1, 1)
+        .ScorePlayerOne();
+      Assert.AreEqual(1, game.Points.PlayerTwo);
+    }
   }
 
   [TestFixture]

@@ -15,3 +15,7 @@ main = hspec $ do
   describe "multiples of 3 and 5" $ do
     it "returns FIZZBUZZ" $ do
       fizzbuzz 30 `shouldBe` "FIZZBUZZ"
+
+  describe "non-divisibles by 3 or 5" $ do
+    it "returns number" $ do
+      fizzbuzz 7 `shouldBe` "7"

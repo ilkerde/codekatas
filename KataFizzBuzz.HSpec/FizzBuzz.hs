@@ -1,3 +1,3 @@
 module FizzBuzz (fizzbuzz)
 where
-  fizzbuzz n = show 0
+  fizzbuzz n = "FIZZ"

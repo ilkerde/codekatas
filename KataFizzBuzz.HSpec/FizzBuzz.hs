@@ -1,3 +1,3 @@
 module FizzBuzz (fizzbuzz)
 where
-  fizzbuzz n = "FIZZ"
+  fizzbuzz n = if (n `mod` 5 == 0) then "BUZZ" else "FIZZ"

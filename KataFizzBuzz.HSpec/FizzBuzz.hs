@@ -4,3 +4,7 @@ where
              | n `mod` 5 == 0 = "BUZZ"
              | n `mod` 3 == 0 = "FIZZ"
              | otherwise = show n
+
+-- nothing more applicable since fizzbuzz-round is
+-- [fizzbuzz n | n <- [1..100]]
+

@@ -5,5 +5,5 @@ enum Point:
     Fifteen
     Thirty
     Forty
-    Game
+    Win
     Advantage

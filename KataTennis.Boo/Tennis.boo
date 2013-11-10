@@ -5,8 +5,11 @@ import System.Linq.Enumerable from System.Core
 
 import Kata.Point
 
-class TennisGame:
+class Game:
     public score as (Point)
+
+    static def At(player1 as Point, player2 as Point):
+        return Game(player1, player2)
 
     def constructor():
         score = (Love, Love)
@@ -16,21 +19,21 @@ class TennisGame:
 
     def scorePlayerOne():
         if isDeuce(score):
-            return TennisGame(Advantage, score[1])
+            return Game(Advantage, score[1])
 
         if advantagePlayerTwo():
-            return TennisGame(Forty, Forty)
+            return Game(Forty, Forty)
 
-        return TennisGame(next(score[0]), score[1])
+        return Game(next(score[0]), score[1])
 
     def scorePlayerTwo():
         if isDeuce(score):
-            return TennisGame(score[0], Advantage)
+            return Game(score[0], Advantage)
 
         if advantagePlayerOne():
-            return TennisGame(Forty, Forty)
+            return Game(Forty, Forty)
 
-        return TennisGame(score[0], next(score[1]))
+        return Game(score[0], next(score[1]))
 
     def next(point as Point):
         if point == Love:
@@ -40,9 +43,9 @@ class TennisGame:
         if point == Thirty:
             return Forty
         if point == Forty:
-            return Game
+            return Win
         if point == Advantage:
-            return Game
+            return Win
 
         return Love
 

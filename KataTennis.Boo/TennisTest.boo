@@ -6,13 +6,13 @@ import Kata.Point
 class Game_starts:
     [Test]
     def score_is_love_all():
-        game = TennisGame()
+        game = Game()
         assert game.score == (Love, Love)
 
     [Test]
     def if_player_one_scores_then_fifteen_love():
         game = (
-            TennisGame()
+            Game()
             .scorePlayerOne())
 
         assert game.score == (Fifteen, Love)
@@ -20,7 +20,7 @@ class Game_starts:
     [Test]
     def if_player_two_scores_then_love_fifteen():
         game = (
-            TennisGame()
+            Game()
             .scorePlayerTwo())
 
         assert game.score == (Love, Fifteen)
@@ -28,7 +28,7 @@ class Game_starts:
     [Test]
     def if_player_two_scores_after_player_one_then_fifteen_all():
         game = (
-            TennisGame()
+            Game()
             .scorePlayerOne()
             .scorePlayerTwo())
 
@@ -38,7 +38,7 @@ class Game_starts:
 class Game_is_at_fifteen_all:
     [Test]
     def if_player_one_scores_then_thirty_fifteen():
-        game = (TennisGame(Fifteen, Fifteen)
+        game = (Game(Fifteen, Fifteen)
             .scorePlayerOne()
         )
 
@@ -46,7 +46,7 @@ class Game_is_at_fifteen_all:
 
     [Test]
     def if_player_two_scores_then_fifteen_thirty():
-        game = (TennisGame(Fifteen, Fifteen)
+        game = (Game(Fifteen, Fifteen)
             .scorePlayerTwo()
         )
 
@@ -56,7 +56,7 @@ class Game_is_at_fifteen_all:
 class Game_is_at_thirty_all:
     [Test]
     def if_player_one_scores_then_forty_thirty():
-        game = (TennisGame(Thirty, Thirty)
+        game = (Game(Thirty, Thirty)
             .scorePlayerOne()
         )
 
@@ -64,7 +64,7 @@ class Game_is_at_thirty_all:
 
     [Test]
     def if_player_one_scores_then_thirty_forty():
-        game = (TennisGame(Thirty, Thirty)
+        game = (Game(Thirty, Thirty)
             .scorePlayerTwo()
         )
 
@@ -72,27 +72,27 @@ class Game_is_at_thirty_all:
 
     [Test]
     def if_player_one_score_twice_then_game():
-        game = (TennisGame(Thirty, Thirty)
+        game = (Game(Thirty, Thirty)
             .scorePlayerOne()
             .scorePlayerOne()
         )
 
-        assert game.score == (Game, Thirty)
+        assert game.score == (Win, Thirty)
 
     [Test]
     def if_player_two_score_twice_then_game():
-        game = (TennisGame(Thirty, Thirty)
+        game = (Game(Thirty, Thirty)
             .scorePlayerTwo()
             .scorePlayerTwo()
         )
 
-        assert game.score == (Thirty, Game)
+        assert game.score == (Thirty, Win)
 
 [TestFixture]
 class Game_is_at_forty_all:
     [Test]
     def if_player_one_scores_then_adv_player_one():
-        game = (TennisGame(Forty, Forty)
+        game = (Game(Forty, Forty)
             .scorePlayerOne()
         )
 
@@ -100,7 +100,7 @@ class Game_is_at_forty_all:
 
     [Test]
     def if_player_two_scores_then_adv_player_two():
-        game = (TennisGame(Forty, Forty)
+        game = (Game(Forty, Forty)
             .scorePlayerTwo()
         )
 
@@ -108,7 +108,7 @@ class Game_is_at_forty_all:
 
     [Test]
     def if_player_one_scores_and_player_two_scores_then_forty_all():
-        game = (TennisGame(Forty, Forty)
+        game = (Game(Forty, Forty)
             .scorePlayerOne()
             .scorePlayerTwo()
         )
@@ -117,7 +117,7 @@ class Game_is_at_forty_all:
 
     [Test]
     def if_player_two_scores_and_player_one_scores_then_forty_all():
-        game = (TennisGame(Forty, Forty)
+        game = (Game(Forty, Forty)
             .scorePlayerTwo()
             .scorePlayerOne()
         )
@@ -126,18 +126,18 @@ class Game_is_at_forty_all:
 
     [Test]
     def if_player_one_scores_twice_then_game():
-        game = (TennisGame(Forty, Forty)
+        game = (Game(Forty, Forty)
             .scorePlayerOne()
             .scorePlayerOne()
         )
 
-        assert game.score == (Game, Forty)
+        assert game.score == (Win, Forty)
 
     [Test]
     def if_player_two_scores_twice_then_game():
-        game = (TennisGame(Forty, Forty)
+        game = (Game(Forty, Forty)
             .scorePlayerTwo()
             .scorePlayerTwo()
         )
 
-        assert game.score == (Forty, Game)
+        assert game.score == (Forty, Win)

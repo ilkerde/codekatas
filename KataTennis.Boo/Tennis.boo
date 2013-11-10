@@ -21,26 +21,36 @@ class Game:
     def constructor(player1 as Point, player2 as Point):
         score = (player1, player2)
 
+    def constructor(player as Player, pointPlayer1 as Point, pointPlayer2 as Point):
+        score = (pointPlayer1, pointPlayer2)
+        if not player == One:
+            Array.Reverse(score)
+
+    def opponentOf(player as Player):
+        if player == One:
+            return Two
+        return One
+
     def pointsOfPlayer(player as Player):
         return score[player cast int]
 
+    def pointsOfOpponent(player as Player):
+        return score[opponentOf(player) cast int]
+
     def scorePlayerOne():
-        if isDeuce(score):
-            return Game(Advantage, score[1])
-
-        if advantagePlayer(Two):
-            return Game(Forty, Forty)
-
-        return Game(next(pointsOfPlayer(One)), pointsOfPlayer(Two))
+        return scorePlayer(One)
 
     def scorePlayerTwo():
+        return scorePlayer(Two)
+
+    def scorePlayer(player as Player):
         if isDeuce(score):
-            return Game(pointsOfPlayer(One), Advantage)
+            return Game(player, Advantage, pointsOfOpponent(player))
 
-        if advantagePlayer(One):
-            return Game(Forty, Forty)
+        if advantagePlayer(opponentOf(player)):
+            return Game.all(Forty)
 
-        return Game(pointsOfPlayer(One), next(pointsOfPlayer(Two)))
+        return Game(player, next(pointsOfPlayer(player)), pointsOfOpponent(player))
 
     def next(point as Point):
         if point == Love:

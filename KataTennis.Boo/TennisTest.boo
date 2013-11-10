@@ -3,7 +3,6 @@ namespace Kata
 import NUnit.Framework
 
 import Kata.Point
-import Kata.Game
 
 [TestFixture]
 class Game_starts:

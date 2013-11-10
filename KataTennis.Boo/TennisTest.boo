@@ -78,3 +78,14 @@ class Game_is_at_thirty_all:
         )
 
         assert game.score == (Game, Thirty)
+
+[TestFixture]
+class Game_is_at_forty_all:
+    [Test]
+    def if_player_one_scores_then_adv_player_one():
+        game = (TennisGame(Forty, Forty)
+            .scorePlayerOne()
+        )
+
+        assert game.score == (Advantage, Forty)
+

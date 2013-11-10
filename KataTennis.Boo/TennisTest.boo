@@ -3,15 +3,14 @@ import NUnit.Framework
 import Kata.Point
 
 [TestFixture]
-class TennisTest:
-
+class Game_starts:
     [Test]
-    def game_start_love_all():
+    def score_is_love_all():
         game = TennisGame()
         assert game.score == (Love, Love)
 
     [Test]
-    def test_player_one_scores_fifteen_love():
+    def if_player_one_scores_then_fifteen_love():
         game = (
             TennisGame()
             .scorePlayerOne())
@@ -19,7 +18,7 @@ class TennisTest:
         assert game.score == (Fifteen, Love)
 
     [Test]
-    def test_player_two_scores_love_fifteen():
+    def if_player_two_scores_then_love_fifteen():
         game = (
             TennisGame()
             .scorePlayerTwo())

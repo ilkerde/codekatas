@@ -72,7 +72,7 @@ class Game_is_at_thirty_all:
 
     [Test]
     def if_player_one_score_twice_then_game():
-        game = (TennisGame(Thirty, Forty)
+        game = (TennisGame(Thirty, Thirty)
             .scorePlayerOne()
             .scorePlayerOne()
         )

@@ -15,5 +15,5 @@ class TennisGame:
         return TennisGame(Fifteen, Love)
 
     def scorePlayerTwo():
-        return self
+        return TennisGame(Love, Fifteen)
 

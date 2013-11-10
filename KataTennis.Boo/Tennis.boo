@@ -14,6 +14,9 @@ class Game:
     static def at(player1 as Point, player2 as Point):
         return Game(player1, player2)
 
+    static def all(point as Point):
+        return Game(point, point)
+
     def constructor(player1 as Point, player2 as Point):
         score = (player1, player2)
 

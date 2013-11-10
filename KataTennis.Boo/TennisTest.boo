@@ -42,7 +42,7 @@ class Game_is_at_fifteen_all:
     [Test]
     def if_player_one_scores_then_thirty_fifteen():
         game = (Game
-            .at(Fifteen, Fifteen)
+            .all(Fifteen)
             .scorePlayerOne())
 
         assert game.score == (Thirty, Fifteen)
@@ -50,7 +50,7 @@ class Game_is_at_fifteen_all:
     [Test]
     def if_player_two_scores_then_fifteen_thirty():
         game = (Game
-            .at(Fifteen, Fifteen)
+            .all(Fifteen)
             .scorePlayerTwo())
 
         assert game.score == (Fifteen, Thirty)
@@ -60,7 +60,7 @@ class Game_is_at_thirty_all:
     [Test]
     def if_player_one_scores_then_forty_thirty():
         game = (Game
-            .at(Thirty, Thirty)
+            .all(Thirty)
             .scorePlayerOne())
 
         assert game.score == (Forty, Thirty)
@@ -68,7 +68,7 @@ class Game_is_at_thirty_all:
     [Test]
     def if_player_one_scores_then_thirty_forty():
         game = (Game
-            .at(Thirty, Thirty)
+            .all(Thirty)
             .scorePlayerTwo())
 
         assert game.score == (Thirty, Forty)
@@ -76,7 +76,7 @@ class Game_is_at_thirty_all:
     [Test]
     def if_player_one_score_twice_then_game():
         game = (Game
-            .at(Thirty, Thirty)
+            .all(Thirty)
             .scorePlayerOne()
             .scorePlayerOne())
 
@@ -85,7 +85,7 @@ class Game_is_at_thirty_all:
     [Test]
     def if_player_two_score_twice_then_game():
         game = (Game
-            .at(Thirty, Thirty)
+            .all(Thirty)
             .scorePlayerTwo()
             .scorePlayerTwo())
 
@@ -96,7 +96,7 @@ class Game_is_at_forty_all:
     [Test]
     def if_player_one_scores_then_adv_player_one():
         game = (Game
-            .at(Forty, Forty)
+            .all(Forty)
             .scorePlayerOne())
 
         assert game.score == (Advantage, Forty)
@@ -104,7 +104,7 @@ class Game_is_at_forty_all:
     [Test]
     def if_player_two_scores_then_adv_player_two():
         game = (Game
-            .at(Forty, Forty)
+            .all(Forty)
             .scorePlayerTwo())
 
         assert game.score == (Forty, Advantage)
@@ -112,7 +112,7 @@ class Game_is_at_forty_all:
     [Test]
     def if_player_one_scores_and_player_two_scores_then_forty_all():
         game = (Game
-            .at(Forty, Forty)
+            .all(Forty)
             .scorePlayerOne()
             .scorePlayerTwo())
 
@@ -121,7 +121,7 @@ class Game_is_at_forty_all:
     [Test]
     def if_player_two_scores_and_player_one_scores_then_forty_all():
         game = (Game
-            .at(Forty, Forty)
+            .all(Forty)
             .scorePlayerTwo()
             .scorePlayerOne())
 
@@ -130,7 +130,7 @@ class Game_is_at_forty_all:
     [Test]
     def if_player_one_scores_twice_then_game():
         game = (Game
-            .at(Forty, Forty)
+            .all(Forty)
             .scorePlayerOne()
             .scorePlayerOne())
 
@@ -139,7 +139,7 @@ class Game_is_at_forty_all:
     [Test]
     def if_player_two_scores_twice_then_game():
         game = (Game
-            .at(Forty, Forty)
+            .all(Forty)
             .scorePlayerTwo()
             .scorePlayerTwo())
 

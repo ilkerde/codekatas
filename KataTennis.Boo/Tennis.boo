@@ -41,6 +41,8 @@ class TennisGame:
             return Forty
         if point == Forty:
             return Game
+        if point == Advantage:
+            return Game
 
         return Love
 

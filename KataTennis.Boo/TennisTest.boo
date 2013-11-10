@@ -123,3 +123,12 @@ class Game_is_at_forty_all:
         )
 
         assert game.score == (Game, Forty)
+
+    [Test]
+    def if_player_two_scores_twice_then_game():
+        game = (TennisGame(Forty, Forty)
+            .scorePlayerTwo()
+            .scorePlayerTwo()
+        )
+
+        assert game.score == (Forty, Game)

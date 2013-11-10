@@ -12,9 +12,16 @@ class TennisGame:
         score = (player1, player2)
 
     def scorePlayerOne():
-        return TennisGame(Fifteen, score[1])
+        return TennisGame(next(score[0]), score[1])
 
     def scorePlayerTwo():
         return TennisGame(score[0], Fifteen)
 
+    def next(point as Point):
+        if point == Love:
+            return Fifteen
+        if point == Fifteen:
+            return Thirty
+
+        return Love
 

@@ -25,3 +25,12 @@ class TennisTest:
             .scorePlayerTwo())
 
         assert game.score == (Love, Fifteen)
+
+    [Test]
+    def if_player_two_scores_after_player_one_then_fifteen_all():
+        game = (
+            TennisGame()
+            .scorePlayerOne()
+            .scorePlayerTwo())
+
+        assert game.score == (Fifteen, Fifteen)

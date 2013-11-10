@@ -8,11 +8,11 @@ import Kata.Point
 class Game:
     public score as (Point)
 
-    static def At(player1 as Point, player2 as Point):
-        return Game(player1, player2)
+    static def start():
+        return Game(Love, Love)
 
-    def constructor():
-        score = (Love, Love)
+    static def at(player1 as Point, player2 as Point):
+        return Game(player1, player2)
 
     def constructor(player1 as Point, player2 as Point):
         score = (player1, player2)

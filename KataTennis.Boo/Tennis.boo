@@ -21,6 +21,9 @@ class Game:
     def constructor(player1 as Point, player2 as Point):
         score = (player1, player2)
 
+    def pointsOfPlayer(player as Player):
+        return score[player cast int]
+
     def scorePlayerOne():
         if isDeuce(score):
             return Game(Advantage, score[1])
@@ -28,16 +31,16 @@ class Game:
         if advantagePlayer(Two):
             return Game(Forty, Forty)
 
-        return Game(next(score[0]), score[1])
+        return Game(next(pointsOfPlayer(One)), pointsOfPlayer(Two))
 
     def scorePlayerTwo():
         if isDeuce(score):
-            return Game(score[0], Advantage)
+            return Game(pointsOfPlayer(One), Advantage)
 
         if advantagePlayer(One):
             return Game(Forty, Forty)
 
-        return Game(score[0], next(score[1]))
+        return Game(pointsOfPlayer(One), next(pointsOfPlayer(Two)))
 
     def next(point as Point):
         if point == Love:

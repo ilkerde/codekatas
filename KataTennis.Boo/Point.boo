@@ -4,4 +4,5 @@ enum Point:
     Love
     Fifteen
     Thirty
+    Forty
 

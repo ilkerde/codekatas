@@ -24,6 +24,9 @@ class TennisGame:
         if isDeuce(score):
             return TennisGame(score[0], Advantage)
 
+        if advantagePlayerOne():
+            return TennisGame(Forty, Forty)
+
         return TennisGame(score[0], next(score[1]))
 
     def next(point as Point):
@@ -41,3 +44,5 @@ class TennisGame:
     def isDeuce(score as (Point)):
         return score.All({ p as Point | p == Forty })
 
+    def advantagePlayerOne():
+        return score[0] == Advantage

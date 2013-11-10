@@ -18,6 +18,9 @@ class TennisGame:
         if isDeuce(score):
             return TennisGame(Advantage, score[1])
 
+        if advantagePlayerTwo():
+            return TennisGame(Forty, Forty)
+
         return TennisGame(next(score[0]), score[1])
 
     def scorePlayerTwo():
@@ -46,3 +49,7 @@ class TennisGame:
 
     def advantagePlayerOne():
         return score[0] == Advantage
+
+    def advantagePlayerTwo():
+        return score[1] == Advantage
+

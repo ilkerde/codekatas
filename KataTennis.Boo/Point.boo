@@ -6,4 +6,4 @@ enum Point:
     Thirty
     Forty
     Game
-
+    Advantage

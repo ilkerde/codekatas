@@ -1,5 +1,8 @@
 namespace Kata
+
 import System
+import System.Linq.Enumerable from System.Core
+
 import Kata.Point
 
 class TennisGame:
@@ -12,6 +15,9 @@ class TennisGame:
         score = (player1, player2)
 
     def scorePlayerOne():
+        if isDeuce(score):
+            return TennisGame(Advantage, score[1])
+
         return TennisGame(next(score[0]), score[1])
 
     def scorePlayerTwo():
@@ -28,4 +34,7 @@ class TennisGame:
             return Game
 
         return Love
+
+    def isDeuce(score as (Point)):
+        return score.All({ p as Point | p == Forty })
 

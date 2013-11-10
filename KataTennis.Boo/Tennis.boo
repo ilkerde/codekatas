@@ -1,15 +1,15 @@
 namespace Kata
 import System
-
-def Love():
-    pass
-
-def Fifteen():
-    return 1
+import Kata.Point
 
 class TennisGame:
-    def score():
-        return (Love, Love)
+    public score as (Point)
+
+    def constructor():
+        score = (Love, Love)
+
+    def constructor(player1 as Point, player2 as Point):
+        score = (player1, player2)
 
     def scorePlayerOne():
-        pass
+        return TennisGame(Fifteen, Love)

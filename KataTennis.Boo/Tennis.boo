@@ -12,9 +12,9 @@ class TennisGame:
         score = (player1, player2)
 
     def scorePlayerOne():
-        return TennisGame(Fifteen, Love)
+        return TennisGame(Fifteen, score[1])
 
     def scorePlayerTwo():
-        return TennisGame(Love, Fifteen)
+        return TennisGame(score[0], Fifteen)
 
 

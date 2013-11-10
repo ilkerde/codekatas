@@ -70,3 +70,11 @@ class Game_is_at_thirty_all:
 
         assert game.score == (Thirty, Forty)
 
+    [Test]
+    def if_player_one_score_twice_then_game():
+        game = (TennisGame(Thirty, Forty)
+            .scorePlayerOne()
+            .scorePlayerOne()
+        )
+
+        assert game.score == (Game, Thirty)

@@ -5,4 +5,5 @@ enum Point:
     Fifteen
     Thirty
     Forty
+    Game
 

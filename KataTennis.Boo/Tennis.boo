@@ -13,3 +13,7 @@ class TennisGame:
 
     def scorePlayerOne():
         return TennisGame(Fifteen, Love)
+
+    def scorePlayerTwo():
+        return self
+

@@ -17,3 +17,11 @@ class TennisTest:
             .scorePlayerOne())
 
         assert game.score == (Fifteen, Love)
+
+    [Test]
+    def test_player_two_scores_love_fifteen():
+        game = (
+            TennisGame()
+            .scorePlayerTwo())
+
+        assert game.score == (Love, Fifteen)

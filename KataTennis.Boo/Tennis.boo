@@ -4,6 +4,7 @@ import System
 import System.Linq.Enumerable from System.Core
 
 import Kata.Point
+import Kata.Player
 
 class Game:
     public score as (Point)
@@ -24,7 +25,7 @@ class Game:
         if isDeuce(score):
             return Game(Advantage, score[1])
 
-        if advantagePlayerTwo():
+        if advantagePlayer(Two):
             return Game(Forty, Forty)
 
         return Game(next(score[0]), score[1])
@@ -33,7 +34,7 @@ class Game:
         if isDeuce(score):
             return Game(score[0], Advantage)
 
-        if advantagePlayerOne():
+        if advantagePlayer(One):
             return Game(Forty, Forty)
 
         return Game(score[0], next(score[1]))
@@ -55,9 +56,5 @@ class Game:
     def isDeuce(score as (Point)):
         return score.All({ p as Point | p == Forty })
 
-    def advantagePlayerOne():
-        return score[0] == Advantage
-
-    def advantagePlayerTwo():
-        return score[1] == Advantage
-
+    def advantagePlayer(player as Player):
+        return score[player cast int] == Advantage

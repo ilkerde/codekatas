@@ -12,14 +12,14 @@ class Game:
     static def start():
         return Game(Love, Love)
 
-    static def at(player1 as Point, player2 as Point):
-        return Game(player1, player2)
+    static def at(pointPlayer1 as Point, pointPlayer2 as Point):
+        return Game(pointPlayer1, pointPlayer2)
 
     static def all(point as Point):
         return Game(point, point)
 
-    def constructor(player1 as Point, player2 as Point):
-        score = (player1, player2)
+    def constructor(pointPlayer1 as Point, pointPlayer2 as Point):
+        score = (pointPlayer1, pointPlayer2)
 
     def constructor(player as Player, pointPlayer1 as Point, pointPlayer2 as Point):
         score = (pointPlayer1, pointPlayer2)

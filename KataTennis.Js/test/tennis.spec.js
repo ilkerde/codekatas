@@ -57,4 +57,20 @@ describe('Score scan', function() {
       expect(playerTwoScore).toBe(0);
     });
   });
+
+  describe('given score is LOVE ALL', function(){
+    beforeEach(function(){
+      scoreCard = Score.scan('LOVE ALL');
+    });
+
+    it('should have 0 for player 1 on score card', function() {
+      var playerOneScore = scoreCard[0];
+      expect(playerOneScore).toBe(0);
+    });
+
+    it('should have 0 for player 2 on score card', function() {
+      var playerTwoScore = scoreCard[1];
+      expect(playerTwoScore).toBe(0);
+    });
+  });
 });

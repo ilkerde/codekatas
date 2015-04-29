@@ -10,6 +10,8 @@ var Score = {
     var forPlayerOne = scoreTexts[0];
     var forPlayerTwo = scoreTexts[1];
 
+    if (forPlayerTwo === 'ALL') forPlayerTwo = forPlayerOne;
+
     return [
       Score[forPlayerOne],
       Score[forPlayerTwo]

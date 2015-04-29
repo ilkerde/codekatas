@@ -83,8 +83,18 @@ describe('Score combine', function() {
       scoreBoard = Score.combine([1,0]);
     });
 
-    it('should have score text FIFTEEN for player one', function() {
+    it('should read FIFTEEN LOVE on score board', function() {
       expect(scoreBoard).toBe('FIFTEEN LOVE');
+    });
+  });
+
+  describe('given score card reads [0,0]', function() {
+    beforeEach(function(){
+      scoreBoard = Score.combine([0,0]);
+    });
+
+    it('should read LOVE ALL on score board', function() {
+      expect(scoreBoard).toBe('LOVE ALL');
     });
   });
 });

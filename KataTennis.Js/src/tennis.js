@@ -19,7 +19,16 @@ var Score = {
   },
 
   combine: function(scoreCard) {
-    return 'FIFTEEN LOVE';
+    var scoreText = ['LOVE', 'FIFTEEN'];
+
+    var scores = scoreCard.map(function(point) {
+      return scoreText[point];
+    });
+
+    var scoreBoard = scores.join(' ');
+    if (scoreBoard === 'LOVE LOVE') scoreBoard = 'LOVE ALL';
+
+    return scoreBoard;
   }
 };
 

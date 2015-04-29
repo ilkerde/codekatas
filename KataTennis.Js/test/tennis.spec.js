@@ -63,14 +63,28 @@ describe('Score scan', function() {
       scoreCard = Score.scan('LOVE ALL');
     });
 
-    it('should have 0 for player 1 on score card', function() {
+    it('should have 0 for player one on score card', function() {
       var playerOneScore = scoreCard[0];
       expect(playerOneScore).toBe(0);
     });
 
-    it('should have 0 for player 2 on score card', function() {
+    it('should have 0 for player two on score card', function() {
       var playerTwoScore = scoreCard[1];
       expect(playerTwoScore).toBe(0);
+    });
+  });
+});
+
+describe('Score combine', function() {
+  var score, scoreBoard;
+
+  describe('given score card reads [1,0]', function() {
+    beforeEach(function(){
+      scoreBoard = Score.combine([1,0]);
+    });
+
+    it('should have score text FIFTEEN for player one', function() {
+      expect(scoreBoard).toBe('FIFTEEN LOVE');
     });
   });
 });

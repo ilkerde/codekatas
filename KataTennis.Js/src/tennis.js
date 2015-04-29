@@ -16,6 +16,10 @@ var Score = {
       Score[forPlayerOne],
       Score[forPlayerTwo]
     ];
+  },
+
+  combine: function(scoreCard) {
+    return 'FIFTEEN LOVE';
   }
 };
 

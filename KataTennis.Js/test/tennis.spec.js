@@ -1,9 +1,8 @@
 'use strict';
 
 describe('Game', function() {
+  var game;
   describe('given game starts', function() {
-    var game;
-
     beforeEach(function() {
       game = Game.start();
     });
@@ -20,6 +19,42 @@ describe('Game', function() {
       it('should read FIFTEEN LOVE on scoreboard', function() {
         expect(game.scoreBoard).toBe('FIFTEEN LOVE');
       });
+    });
+  });
+
+  describe('given game is FIFTEEN LOVE', function() {
+    beforeEach(function() {
+      game = Game.at('FIFTEEN LOVE');
+    });
+
+    describe('when player one scores', function() {
+      beforeEach(function() {
+        game.scorePlayerOne();
+      });
+
+      it('should read THIRTY LOVE on scoreboard', function() {
+        expect(game.scoreBoard).toBe('THIRTY LOVE');
+      });
+    });
+  });
+});
+
+describe('Score scan', function() {
+  var score, scoreCard;
+
+  describe('given score is FIFTEEN LOVE', function(){
+    beforeEach(function(){
+      scoreCard = Score.scan('FIFTEEN LOVE');
+    });
+
+    it('should have 1 for player 1 on score card', function() {
+      var playerOneScore = scoreCard[0];
+      expect(playerOneScore).toBe(1);
+    });
+
+    it('should have 0 for player 2 on score card', function() {
+      var playerTwoScore = scoreCard[1];
+      expect(playerTwoScore).toBe(0);
     });
   });
 });

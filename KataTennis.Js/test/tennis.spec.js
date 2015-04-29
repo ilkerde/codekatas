@@ -4,7 +4,7 @@ describe('Game', function() {
   var game;
   describe('given game starts', function() {
     beforeEach(function() {
-      game = Game.start();
+      game = new Game().start();
     });
 
     it('should read LOVE ALL on scoreboard', function() {
@@ -20,11 +20,21 @@ describe('Game', function() {
         expect(game.scoreBoard).toBe('FIFTEEN LOVE');
       });
     });
+
+    describe('when player two scores', function() {
+      beforeEach(function() {
+        game.scorePlayerTwo();
+      });
+
+      it('should read LOVE FIFTEEN on scoreboard', function() {
+        expect(game.scoreBoard).toBe('LOVE FIFTEEN');
+      });
+    });
   });
 
   describe('given game is FIFTEEN LOVE', function() {
     beforeEach(function() {
-      game = Game.at('FIFTEEN LOVE');
+      game = new Game().at('FIFTEEN LOVE');
     });
 
     describe('when player one scores', function() {

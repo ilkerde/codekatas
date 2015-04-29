@@ -32,19 +32,30 @@ var Score = {
   }
 };
 
-var Game = {
-  start: function() {
-    return this;
-  },
-  at: function(scoreBoard) {
-    this.scoreBoard = scoreBoard;
-    return this;
-  },
-  scorePlayerOne: function() {
-    var scoreCard = Score.scan(this.scoreBoard);
-    scoreCard[0]++;
-    this.scoreBoard = Score.combine(scoreCard);
-  },
-  scoreBoard: 'LOVE ALL'
-};
+var Game = function() {
+  return {
+    start: function() {
+      return this;
+    },
+
+    at: function(scoreBoard) {
+      this.scoreBoard = scoreBoard;
+      return this;
+    },
+
+    scorePlayerOne: function() {
+      var scoreCard = Score.scan(this.scoreBoard);
+      scoreCard[0]++;
+      this.scoreBoard = Score.combine(scoreCard);
+    },
+
+    scorePlayerTwo: function() {
+      var scoreCard = Score.scan(this.scoreBoard);
+      scoreCard[1]++;
+      this.scoreBoard = Score.combine(scoreCard);
+    },
+
+    scoreBoard: 'LOVE ALL'
+  };
+}
 

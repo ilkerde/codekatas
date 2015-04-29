@@ -19,7 +19,7 @@ var Score = {
   },
 
   combine: function(scoreCard) {
-    var scoreText = ['LOVE', 'FIFTEEN'];
+    var scoreText = ['LOVE', 'FIFTEEN', 'THIRTY'];
 
     var scores = scoreCard.map(function(point) {
       return scoreText[point];
@@ -41,11 +41,9 @@ var Game = {
     return this;
   },
   scorePlayerOne: function() {
-    if (this.scoreBoard === 'FIFTEEN LOVE') {
-      this.scoreBoard = 'THIRTY LOVE';
-    } else {
-      this.scoreBoard = 'FIFTEEN LOVE';
-    }
+    var scoreCard = Score.scan(this.scoreBoard);
+    scoreCard[0]++;
+    this.scoreBoard = Score.combine(scoreCard);
   },
   scoreBoard: 'LOVE ALL'
 };
